@@ -31,5 +31,5 @@ public class CourseDataAndProgression extends BaseTest {
 		map.put("userpass", "password");
 		return new Object[][] {{map}};
 	}
-
+// git changes test  
 }

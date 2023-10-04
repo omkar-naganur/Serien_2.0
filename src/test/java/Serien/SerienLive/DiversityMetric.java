@@ -23,6 +23,8 @@ public class DiversityMetric extends BaseTest {
 		System.out.println(s);
 		List<WebElement> p = diversit.ValidationTopTabsText();	
 		System.out.println(p);
+		System.out.println("test git push");
+		System.out.println("Rajan");
 	}
 	
 	@DataProvider
