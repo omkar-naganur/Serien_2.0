@@ -55,8 +55,13 @@ public class Learning extends abstractReusable{
 	@FindBy(xpath = "(//div[@class='css-fk1ch0']//div)[3]//div[2]")
 	WebElement CoursesComProgression;
 	
-	@FindBy(xpath = "(//button[@type='button'])[2]")
+	//@FindBy(xpath = "(//button[@type='button'])[2]")
+	//WebElement start;
+	
+	@FindBy(xpath = "//div[@class='css-fk1ch0']//button")
 	WebElement start;
+	
+	//div[@class='css-fk1ch0']//button
 	
 	// Scrom Elements
 	

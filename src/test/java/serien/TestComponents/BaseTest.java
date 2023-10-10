@@ -128,3 +128,10 @@ public class BaseTest {
 // this link for install jankinkes 
 //https://github.com/javaexpresschannel/softwares_installation/blob/master/jenkins%20installation%20in%20Ubuntu
 //https://www.youtube.com/watch?v=b-5izLecX2c
+
+/* how to push the code to github
+ * git add .
+ * git commit -m "message"
+ * git push
+ */ 
+
