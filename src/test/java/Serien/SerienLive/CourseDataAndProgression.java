@@ -64,6 +64,25 @@ public class CourseDataAndProgression extends BaseTest {
 		Thread.sleep(2000);
 		actions.click(start).perform();
 		
+		// get module s name
+		Thread.sleep(2000);
+		
+		// List<WebElement> moduleName = driver.findElements(By.id("//div[@class='MuiBox-root css-i7dvqn']//p[@class='MuiTypography-root MuiTypography-body1 css-ukixra']"));
+		List<WebElement> moduleName = driver.findElements(By.id("//div[@class='MuiBox-root css-0']/button"));
+	//    //div[@class='MuiBox-root css-0']/button
+		for(int i = 0;i<moduleName.size();i++){
+			Actions actions2=new Actions(driver);
+			WebElement test = moduleName.get(i);
+			Thread.sleep(2000);
+			actions.click(test).perform();
+			
+			
+			moduleName.get(i).click();
+			System.out.println(moduleName.get(i).getText());
+		}
+		
+		
+		
 		// need to change the courses then start the test
 		//modules name
 	//	 //p[@class='MuiTypography-root MuiTypography-body1 css-ukixra']

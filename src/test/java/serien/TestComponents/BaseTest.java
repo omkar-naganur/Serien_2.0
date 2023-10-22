@@ -98,7 +98,6 @@ public class BaseTest {
 	  List<HashMap<String, String>> data = mapper.readValue(jsonContent, new TypeReference<List<HashMap<String, String>>>() {
       });
 	  return data;
-	
 	}
 	
 	public String getScreenshot(String testCaseName,WebDriver driver) throws IOException

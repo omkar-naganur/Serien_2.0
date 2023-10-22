@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-10-10T12:12:11Z" name="Default suite" finished-at="2023-10-10T12:12:19Z" duration-ms="8005">
+  <suite started-at="2023-10-11T05:40:26Z" name="Default suite" finished-at="2023-10-11T05:40:41Z" duration-ms="14960">
     <groups>
     </groups>
-    <test started-at="2023-10-10T12:12:11Z" name="Default test" finished-at="2023-10-10T12:12:19Z" duration-ms="8005">
+    <test started-at="2023-10-11T05:40:26Z" name="Default test" finished-at="2023-10-11T05:40:41Z" duration-ms="14960">
       <class name="Serien.SerienLive.CourseDataAndProgression">
-        <test-method is-config="true" signature="lunchApplication()[pri:0, instance:Serien.SerienLive.CourseDataAndProgression@5c2375a9]" started-at="2023-10-10T12:12:11Z" name="lunchApplication" finished-at="2023-10-10T12:12:13Z" duration-ms="2183" status="PASS">
+        <test-method is-config="true" signature="lunchApplication()[pri:0, instance:Serien.SerienLive.CourseDataAndProgression@5c2375a9]" started-at="2023-10-11T05:40:26Z" name="lunchApplication" finished-at="2023-10-11T05:40:28Z" duration-ms="2421" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- lunchApplication -->
-        <test-method signature="ValidationCourse(java.util.HashMap)[pri:0, instance:Serien.SerienLive.CourseDataAndProgression@5c2375a9]" started-at="2023-10-10T12:12:13Z" name="ValidationCourse" data-provider="getdata2" finished-at="2023-10-10T12:12:19Z" duration-ms="5809" status="PASS">
+        <test-method signature="ValidationCourse(java.util.HashMap)[pri:0, instance:Serien.SerienLive.CourseDataAndProgression@5c2375a9]" started-at="2023-10-11T05:40:28Z" name="ValidationCourse" data-provider="getdata2" finished-at="2023-10-11T05:40:41Z" duration-ms="12522" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -19,10 +19,77 @@
               </value>
             </param>
           </params>
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//div[@class='MuiBox-root css-0']//div[@class='zoomtwo courseNameAnd_Enroll_box MuiBox-root css-0']"}
+  (Session info: chrome=116.0.5845.110)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.10.0', revision: 'c14d967899'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.2.0-26-generic', java.version: '17.0.6'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [c51cb39c26c3edf3dc0793de3f84f0f4, findElement {using=xpath, value=//div[@class='MuiBox-root css-0']//div[@class='zoomtwo courseNameAnd_Enroll_box MuiBox-root css-0']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.110, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:41235}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:41235/devtoo..., se:cdpVersion: 116.0.5845.110, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: c51cb39c26c3edf3dc0793de3f84f0f4]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@class='MuiBox-root css-0']//div[@class='zoomtwo courseNameAnd_Enroll_box MuiBox-root css-0']"}
+  (Session info: chrome=116.0.5845.110)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.10.0', revision: 'c14d967899'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.2.0-26-generic', java.version: '17.0.6'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [c51cb39c26c3edf3dc0793de3f84f0f4, findElement {using=xpath, value=//div[@class='MuiBox-root css-0']//div[@class='zoomtwo courseNameAnd_Enroll_box MuiBox-root css-0']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.110, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:41235}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:41235/devtoo..., se:cdpVersion: 116.0.5845.110, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: c51cb39c26c3edf3dc0793de3f84f0f4
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:199)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:132)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:51)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:531)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+at Serien.SerienLive.CourseDataAndProgression.ValidationCourse(CourseDataAndProgression.java:26)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ValidationCourse -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:Serien.SerienLive.CourseDataAndProgression@5c2375a9]" started-at="2023-10-10T12:12:19Z" name="tearDown" finished-at="2023-10-10T12:12:19Z" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Serien.SerienLive.CourseDataAndProgression@5c2375a9]" started-at="2023-10-11T05:40:41Z" name="tearDown" finished-at="2023-10-11T05:40:41Z" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
