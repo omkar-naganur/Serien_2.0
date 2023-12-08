@@ -23,6 +23,7 @@ public class GroupEnrollment extends BaseTest {
 		LoginPage Dm= new LoginPage(driver);
 		Dm.serienLogin("admin@demo.com", "pass2023");
 		AdminDashboard as = new AdminDashboard(driver);
+		as.groupEnrollment();
 		
 	}
 	

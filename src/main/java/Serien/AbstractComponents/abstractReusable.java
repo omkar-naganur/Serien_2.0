@@ -18,6 +18,28 @@ public class abstractReusable {
 		this.driver = driver;
 	}
 	
+	//Below methods for Wait for Element to apper
+	
+		public void waitForElementTOApper(By LoginErroeMessage) {
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(5));
+		 wait.until(ExpectedConditions.visibilityOfElementLocated(LoginErroeMessage));	
+		}
+		
+		public void waitForWebElementTOApper(List<WebElement> findBy) {
+			WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
+		 wait.until(ExpectedConditions.visibilityOfAllElements(findBy));	
+		}
+		
+		public void waitForWebElementTOApper(WebElement findBy) {
+			WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(5));
+		 wait.until(ExpectedConditions.visibilityOf(findBy));	
+		}
+		
+		public void waitForElementTODissApper(WebElement ele) {
+			WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(5));	
+			 wait.until(ExpectedConditions.invisibilityOfAllElements(ele));	
+		}
+	
 	// this Elements for HR & User Panel
 	
 	@FindBy(xpath = "//div[contains(text(),'Logout')]")
@@ -45,30 +67,26 @@ public class abstractReusable {
 	WebElement Profile;
 	
 	// admin panel Side bard Elements
+	@FindBy(xpath = "//div[@class='sidebar-cnt']//a[@href='/admin/groupEnrollment']")
+	WebElement groupEnrollment;
+	
+	@FindBy(xpath = "//div[@class='sidebar-cnt']//a[@href='/admin/training']")
+	WebElement training;
+	
+	@FindBy(xpath = "//div[@class='sidebar-cnt']//a[@href='/admin']")
+	WebElement dashboard;
+	
+	@FindBy(xpath = "//div[@class='sidebar-cnt']//a[@href='/admin/users']")
+	WebElement users;
+	
+	@FindBy(xpath = "//div[@class='sidebar-cnt']//a[@href='/admin/groups']")
+	WebElement groups;
+	
+	@FindBy(xpath = "//div[contains(text(),'Logout')]")
+	WebElement Logout;
 	
 	
 	
-	//Below methods for Wait for Element to apper
-	
-	public void waitForElementTOApper(By LoginErroeMessage) {
-	WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(5));
-	 wait.until(ExpectedConditions.visibilityOfElementLocated(LoginErroeMessage));	
-	}
-	
-	public void waitForWebElementTOApper(List<WebElement> findBy) {
-		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
-	 wait.until(ExpectedConditions.visibilityOfAllElements(findBy));	
-	}
-	
-	public void waitForWebElementTOApper(WebElement findBy) {
-		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(5));
-	 wait.until(ExpectedConditions.visibilityOf(findBy));	
-	}
-	
-	public void waitForElementTODissApper(WebElement ele) {
-		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(5));	
-		 wait.until(ExpectedConditions.invisibilityOfAllElements(ele));	
-	}
 	
 	// HR and User panle navigations
 	
@@ -120,5 +138,41 @@ public class abstractReusable {
 	}
 	
 	// admin panle navigations
+	
+	public void groupEnrollment()
+	{
+		waitForWebElementTOApper(groupEnrollment);
+		groupEnrollment.click();
+	}
+	
+	public void training()
+	{
+		waitForWebElementTOApper(training);
+		training.click();
+	}
+	
+	public void dashboard()
+	{
+		waitForWebElementTOApper(dashboard);
+		dashboard.click();
+	}
+	
+	public void users()
+	{
+		waitForWebElementTOApper(users);
+		users.click();
+	}
+	
+	public void groups()
+	{
+		waitForWebElementTOApper(groups);
+		groups.click();
+	}
+	
+	public void Logout()
+	{
+		waitForWebElementTOApper(Logout);
+		Logout.click();
+	}
 	
 }
