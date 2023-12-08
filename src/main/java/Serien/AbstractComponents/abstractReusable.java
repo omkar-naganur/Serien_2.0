@@ -18,6 +18,8 @@ public class abstractReusable {
 		this.driver = driver;
 	}
 	
+	// this Elements for HR & User Panel
+	
 	@FindBy(xpath = "//div[contains(text(),'Logout')]")
 	WebElement userLogout;
 	
@@ -42,6 +44,12 @@ public class abstractReusable {
 	@FindBy(xpath = "//li[6]//div[1]//div[1]")
 	WebElement Profile;
 	
+	// admin panel Side bard Elements
+	
+	
+	
+	//Below methods for Wait for Element to apper
+	
 	public void waitForElementTOApper(By LoginErroeMessage) {
 	WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(5));
 	 wait.until(ExpectedConditions.visibilityOfElementLocated(LoginErroeMessage));	
@@ -61,6 +69,8 @@ public class abstractReusable {
 		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(5));	
 		 wait.until(ExpectedConditions.invisibilityOfAllElements(ele));	
 	}
+	
+	// HR and User panle navigations
 	
 	public void adminLogout()
 	{
@@ -108,5 +118,7 @@ public class abstractReusable {
 		waitForWebElementTOApper(Profile);
 		Profile.click();
 	}
+	
+	// admin panle navigations
 	
 }

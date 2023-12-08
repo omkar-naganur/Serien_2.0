@@ -34,7 +34,7 @@ public class BaseTest {
 
 	public WebDriver driver;
 	public LoginPage LoginPage;
-	
+		
 	public WebDriver  initializeDriver() throws IOException 
 	{
 		// properties class
