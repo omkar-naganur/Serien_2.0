@@ -20,7 +20,8 @@ public class AdminSetting extends abstractReusable{
 	// Generate random integer between 0 (inclusive) and 100 (exclusive)
 	int randomInt = random.nextInt(100);
 	String SubName = "xyz"+randomInt;
-	WebDriver driver;
+	String companynameforEdit = "TCS";
+WebDriver driver;
 	public AdminSetting(WebDriver driver)
 	{
 		super (driver);
@@ -82,6 +83,12 @@ public class AdminSetting extends abstractReusable{
 	
 	@FindBy(xpath = "//div[@class='templatename']")
 	List<WebElement> companyNameList;
+	
+	@FindBy(xpath ="//div[@class='setting_details_table']//div[@class='outer-inner-container']/div[@class='templatename']")
+	WebElement CompanyNameListforfirstone;
+	
+	@FindBy(xpath ="//div[@class='setting_details_table']//div[@class='outer-inner-container']/div[@class='templatename']")
+	List<WebElement> CompanyNameListforALL;
 	
 	
 	public void SubscriptionSettingOpen () throws Throwable
@@ -149,7 +156,7 @@ public class AdminSetting extends abstractReusable{
 	         
 	         }
 	      
-	      if(b==companyName)
+	      if(b.equals(companyName))
 	         {
 	        	 System.out.println(b);
 	         }
@@ -157,9 +164,7 @@ public class AdminSetting extends abstractReusable{
 	         {
 	        	 System.out.println("company creation fail");
 	         }
-	      
 	}
-	
 	
 	public void AddSubscription () throws Throwable
 	{
@@ -191,7 +196,7 @@ public class AdminSetting extends abstractReusable{
 	         b=s;
 	         }
 	     
-	      if(b==SubName)
+	      if(b.equals(SubName))
 	         {
 	        	 System.out.println(b);
 	         }
@@ -200,7 +205,36 @@ public class AdminSetting extends abstractReusable{
 	        	 System.out.println("subscrtion creation fail");
 	         }
 	      BackButton.click();
-	 
+	}
+	// not complated
+	public void ClickonSelectedCompanyEdit () throws Throwable
+	{
+		//waitForWebElementTOApper(CompanyNameListfor);
+		String exname= CompanyNameListforfirstone.getText();
+		//System.out.println(ListofComapnyNames);
+		System.out.println(exname);
+		
+		String b = "";
+		List<WebElement> m = CompanyNameListforALL;
+	      // iterate over list
+	      for(int i = 0; i< m.size(); i++) {
+	         //obtain text
+	         String s = m.get(i).getText();
+	         System.out.println(s);
+	         b=s;
+	         if(b.equals(companynameforEdit))
+	         {
+	    	  
+	        	 System.out.println("ok");
+	         }
+	         else
+	         {
+	        	 System.out.println("companyNameNotFound");
+	         }
+	         }
+	      
+	      //BackButton.click();
+		
 	}
 	
 	

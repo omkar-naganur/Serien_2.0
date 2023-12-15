@@ -23,11 +23,14 @@ public class SubscriptionExpired extends BaseTest {
 	{
 		LoginPage Dm= new LoginPage(driver);
 		Dm.serienLogin(input.get("AdminUseremail"), input.get("Adminuserpass"));
-		Profile pro= new Profile(driver);
+		Dm.Setting();
+		AdminSetting as= new AdminSetting(driver);
+		as.CompanySettingsOpen();
+		as.ClickonSelectedCompanyEdit();
 		
 	}
 	
-	@Test(dataProvider = "getdata2")
+/*	@Test(dataProvider = "getdata2")
 	public void HRporatlsubscriptionMessageTesting(HashMap<String, String> input) throws Throwable
 	{
 		LoginPage Dm= new LoginPage(driver);
@@ -37,7 +40,7 @@ public class SubscriptionExpired extends BaseTest {
 		boolean wow=actualsubexpTest.contains(input.get("expectedExpText"));
 		System.out.println(actualsubexpTest);
 		System.out.println(wow);
-	}
+	}*/
 	
 	@DataProvider
 	public Object[][] getdata2()

@@ -85,8 +85,8 @@ public class abstractReusable {
 	@FindBy(xpath = "//div[contains(text(),'Logout')]")
 	WebElement Logout;
 	
-	
-	
+	@FindBy(xpath = "//a[@href='/admin/settings']")
+	WebElement setting;
 	
 	// HR and User panle navigations
 	
@@ -173,6 +173,12 @@ public class abstractReusable {
 	{
 		waitForWebElementTOApper(Logout);
 		Logout.click();
+	}
+	
+	public void Setting()
+	{
+		waitForWebElementTOApper(setting);
+		setting.click();
 	}
 	
 }

@@ -6,8 +6,8 @@
       <class name="Serien.SerienLive.SubscriptionExpired">
         <methods>
           <include name="tearDown"/>
+          <include name="FromAdminPanleExpireTheSubscription" invocation-numbers="0"/>
           <include name="lunchApplication"/>
-          <include name="ValidationCourse" invocation-numbers="0"/>
         </methods>
       </class> <!-- Serien.SerienLive.SubscriptionExpired -->
     </classes>
