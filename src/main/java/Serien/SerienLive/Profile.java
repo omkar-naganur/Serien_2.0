@@ -32,6 +32,9 @@ public class Profile extends abstractReusable {
 	@FindBy(xpath = "//div[@class='hrbodytext MuiBox-root css-i5q2k0']/div[3]")
 	WebElement userSubName;
 	
+	@FindBy(xpath = "//div[@class='MuiBox-root css-1fr5fda']")
+	WebElement SubExpText;
+	
 	@FindBy(xpath = "//li[6]//div[2]/div[1]")
 	List<WebElement> moduleNames;
 	
@@ -76,6 +79,13 @@ public class Profile extends abstractReusable {
 		String ActualUserEmail1=userEmail.getText();
 		System.out.println(ActualUserEmail1);
 		return ActualUserEmail1;
+	}
+	
+	public String subExpTest()
+	{
+		waitForWebElementTOApper(SubExpText);
+		String subexpText=SubExpText.getText();
+		return 	subexpText;
 	}
 	
 }

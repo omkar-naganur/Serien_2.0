@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Serien.SerienLive.CourseDataAndProgression">
+      <class name="Serien.SerienLive.SubscriptionExpired">
         <methods>
-          <include name="ValidationCourse" invocation-numbers="0"/>
           <include name="tearDown"/>
           <include name="lunchApplication"/>
+          <include name="ValidationCourse" invocation-numbers="0"/>
         </methods>
-      </class> <!-- Serien.SerienLive.CourseDataAndProgression -->
+      </class> <!-- Serien.SerienLive.SubscriptionExpired -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
