@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-12-15T12:09:42Z" name="Default suite" finished-at="2023-12-15T12:09:52Z" duration-ms="10562">
+  <suite started-at="2023-12-18T05:52:29Z" name="Default suite" finished-at="2023-12-18T05:52:37Z" duration-ms="8655">
     <groups>
     </groups>
-    <test started-at="2023-12-15T12:09:42Z" name="Default test" finished-at="2023-12-15T12:09:52Z" duration-ms="10562">
+    <test started-at="2023-12-18T05:52:29Z" name="Default test" finished-at="2023-12-18T05:52:37Z" duration-ms="8655">
       <class name="Serien.SerienLive.SubscriptionExpired">
-        <test-method is-config="true" signature="lunchApplication()[pri:0, instance:Serien.SerienLive.SubscriptionExpired@600b90df]" started-at="2023-12-15T12:09:42Z" name="lunchApplication" finished-at="2023-12-15T12:09:44Z" duration-ms="2635" status="PASS">
+        <test-method is-config="true" signature="lunchApplication()[pri:0, instance:Serien.SerienLive.SubscriptionExpired@600b90df]" started-at="2023-12-18T05:52:29Z" name="lunchApplication" finished-at="2023-12-18T05:52:31Z" duration-ms="2437" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- lunchApplication -->
-        <test-method signature="FromAdminPanleExpireTheSubscription(java.util.HashMap)[pri:0, instance:Serien.SerienLive.SubscriptionExpired@600b90df]" started-at="2023-12-15T12:09:44Z" name="FromAdminPanleExpireTheSubscription" data-provider="getdata2" finished-at="2023-12-15T12:09:52Z" duration-ms="7913" status="PASS">
+        <test-method signature="FromAdminPanleExpireTheSubscription(java.util.HashMap)[pri:0, instance:Serien.SerienLive.SubscriptionExpired@600b90df]" started-at="2023-12-18T05:52:31Z" name="FromAdminPanleExpireTheSubscription" data-provider="getdata2" finished-at="2023-12-18T05:52:37Z" duration-ms="6207" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -22,7 +22,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- FromAdminPanleExpireTheSubscription -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:Serien.SerienLive.SubscriptionExpired@600b90df]" started-at="2023-12-15T12:09:52Z" name="tearDown" finished-at="2023-12-15T12:09:52Z" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Serien.SerienLive.SubscriptionExpired@600b90df]" started-at="2023-12-18T05:52:37Z" name="tearDown" finished-at="2023-12-18T05:52:37Z" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

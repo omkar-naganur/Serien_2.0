@@ -1,6 +1,8 @@
 package Serien.SerienLive;
 
 import java.util.List;
+import java.time.format.DateTimeFormatter;
+import java.time.LocalDateTime;  
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -90,6 +92,11 @@ WebDriver driver;
 	@FindBy(xpath ="//div[@class='setting_details_table']//div[@class='outer-inner-container']/div[@class='templatename']")
 	List<WebElement> CompanyNameListforALL;
 	
+	@FindBy(xpath = "//a[@href='/admin/settings/companycreate']")
+	WebElement CompanyEditButton;
+	
+	@FindBy(xpath = "//a[@href='/admin/settings/companycreate']")
+	List<WebElement> CompanyEditButtonList;
 	
 	public void SubscriptionSettingOpen () throws Throwable
 	{
@@ -226,14 +233,38 @@ WebDriver driver;
 	         {
 	    	  
 	        	 System.out.println("ok");
+	        	 // we need to click the Edit button here need to write the Logic
+	        	// CompanyNameListforALL.in
+	        	 break;
+	        	 
 	         }
 	         else
 	         {
 	        	 System.out.println("companyNameNotFound");
 	         }
 	         }
-	      
-	      //BackButton.click();
+		
+	}
+	
+	public void ChangeCompanyExpDate () throws Throwable
+	{
+		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+		   LocalDateTime now = LocalDateTime.now();
+		   System.out.println(dtf.format(now));
+		   String date= (dtf.format(now));
+		   String enddate = date.replace("/", "");
+		   System.out.println(enddate);
+		planEndDate.sendKeys(enddate);
+		planEndDate.sendKeys(Keys.TAB); 
+		CompanySettingsSubmit.click();
+		/*
+		 *     Date currentDate = new Date();  
+      currentDate.setTime(System.currentTimeMillis());  
+      Date yesterdayDate = new Date(currentDate.getTime() - (1000 * 60 * 60 * 24));  
+      SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");  
+      String yesterdayDateString = dateFormat.format(yesterdayDate);  
+      System.out.println("Yesterday's date: " + yesterdayDateString); 
+		 */
 		
 	}
 	
