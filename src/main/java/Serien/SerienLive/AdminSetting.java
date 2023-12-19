@@ -23,7 +23,7 @@ public class AdminSetting extends abstractReusable{
 	int randomInt = random.nextInt(100);
 	String SubName = "xyz"+randomInt;
 	String companynameforEdit = "TCS";
-WebDriver driver;
+	WebDriver driver;
 	public AdminSetting(WebDriver driver)
 	{
 		super (driver);

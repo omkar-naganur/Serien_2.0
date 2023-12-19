@@ -18,8 +18,8 @@ public class AdminGroupEnrollment extends abstractReusable{
 		PageFactory.initElements(driver, this);
 	}
 	
-	@FindBy(xpath = "//a[@href='/admin/settings']")
-	WebElement Setting;
+	@FindBy(xpath = "//a[@href='/admin/groupEnrollmentEdits/']")
+	WebElement addNewGroupEnrollment;
 	
 	@FindBy(xpath = "//a[@href='/admin/settings']/..")
 	WebElement SettingA;
@@ -27,20 +27,9 @@ public class AdminGroupEnrollment extends abstractReusable{
 	@FindBy(xpath = "//button[@type='submit']")
 	WebElement LoginButton;
 	
-	public AdminSetting GotoAdminSetting () throws Throwable
+	public void addNewGroup () throws Throwable
 	{
-		try {
-			waitForWebElementTOApper(Setting);
-			Setting.click();
-			}
-			catch(Exception e) {
-				waitForWebElementTOApper(SettingA);
-				SettingA.click();
-				System.out.println("catch working");
-			}
 		
-		AdminSetting Setting= new AdminSetting(driver);
-		return Setting;
 	}
 	
 	
