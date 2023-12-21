@@ -19,12 +19,25 @@ public class GroupTest extends BaseTest {
 		Dm.serienLogin(input.get("AdminUseremail"), input.get("Adminuserpass"));
 		Dm.groups();
 		AdminGroupPage ag=new AdminGroupPage(driver);
-		ag.creatingGroup();
+		ag.creatingGroup(input.get("GroupName"));
+		driver.quit();
 	}
+	
+//	@Test(dataProvider = "getdata4")
+//	public void ValidationOfGroupNameUserCountEnrollmentsCount(HashMap<String, String> input) throws Throwable
+//	{
+//		LoginPage Dm= new LoginPage(driver);
+//		Dm.serienLogin(input.get("AdminUseremail"), input.get("Adminuserpass"));
+//		Dm.groups();
+//		AdminGroupPage ag=new AdminGroupPage(driver);
+//		ag.SearchingComapnyNameInGroupListSecond();
+//		
+//	}
 	
 	@DataProvider
 	public Object[][] getdata4()
 	{
+		
 		HashMap<String, String> map= new HashMap<String, String>();
 		map.put("Useremail", "omkar@krishworks.com");
 		//map.put("Useremail", "subhajit@krishworks.com");
@@ -32,6 +45,7 @@ public class GroupTest extends BaseTest {
 		map.put("AdminUseremail", "admin@demo.com");
 		map.put("Adminuserpass", "pass2023");
 		map.put("expectedExpText", "Subscription Expired");
+		map.put("GroupName", "Group xyz1");
 		return new Object[][] {{map}};
 	}
 

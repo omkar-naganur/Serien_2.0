@@ -1,28 +1,96 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="2" passed="1" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-12-19T06:18:54Z" name="Default suite" finished-at="2023-12-19T06:19:02Z" duration-ms="7304">
+  <suite started-at="2023-12-21T10:58:38Z" name="Default suite" finished-at="2023-12-21T10:59:22Z" duration-ms="43823">
     <groups>
     </groups>
-    <test started-at="2023-12-19T06:18:54Z" name="Default test" finished-at="2023-12-19T06:19:02Z" duration-ms="7304">
+    <test started-at="2023-12-21T10:58:38Z" name="Default test" finished-at="2023-12-21T10:59:22Z" duration-ms="43823">
       <class name="Serien.SerienLive.GroupTest">
-        <test-method is-config="true" signature="lunchApplication()[pri:0, instance:Serien.SerienLive.GroupTest@600b90df]" started-at="2023-12-19T06:18:54Z" name="lunchApplication" finished-at="2023-12-19T06:18:57Z" duration-ms="2548" status="PASS">
+        <test-method is-config="true" signature="lunchApplication()[pri:0, instance:Serien.SerienLive.GroupTest@7c8c9a05]" started-at="2023-12-21T10:58:38Z" name="lunchApplication" finished-at="2023-12-21T10:58:41Z" duration-ms="2588" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- lunchApplication -->
-        <test-method signature="CreatingGroupinAdminPanle(java.util.HashMap)[pri:0, instance:Serien.SerienLive.GroupTest@600b90df]" started-at="2023-12-19T06:18:57Z" name="CreatingGroupinAdminPanle" data-provider="getdata4" finished-at="2023-12-19T06:19:02Z" duration-ms="4744" status="PASS">
+        <test-method signature="CreatingGroupinAdminPanle(java.util.HashMap)[pri:0, instance:Serien.SerienLive.GroupTest@7c8c9a05]" started-at="2023-12-21T10:58:41Z" name="CreatingGroupinAdminPanle" data-provider="getdata4" finished-at="2023-12-21T10:58:54Z" duration-ms="13216" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{Useremail=omkar@krishworks.com, Adminuserpass=pass2023, expectedExpText=Subscription Expired, AdminUseremail=admin@demo.com, userpass=password}]]>
+                <![CDATA[{GroupName=Group xyz1, Useremail=omkar@krishworks.com, Adminuserpass=pass2023, expectedExpText=Subscription Expired, userpass=password, AdminUseremail=admin@demo.com}]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.openqa.selenium.TimeoutException">
+            <message>
+              <![CDATA[Expected condition failed: waiting for visibility of all [[[ChromeDriver: chrome on linux (f41a904adb8b9e9bc72b197109ada874)] -> xpath: //div[@class='admin-overdue-bottom-table-cnt-grp']//div[3]]] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.10.0', revision: 'c14d967899'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.2.0-36-generic', java.version: '17.0.6'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.105, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:40457}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:40457/devtoo..., se:cdpVersion: 119.0.6045.105, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: f41a904adb8b9e9bc72b197109ada874]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of all [[[ChromeDriver: chrome on linux (f41a904adb8b9e9bc72b197109ada874)] -> xpath: //div[@class='admin-overdue-bottom-table-cnt-grp']//div[3]]] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.10.0', revision: 'c14d967899'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.2.0-36-generic', java.version: '17.0.6'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.105, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:40457}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:40457/devtoo..., se:cdpVersion: 119.0.6045.105, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: f41a904adb8b9e9bc72b197109ada874
+at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
+at Serien.AbstractComponents.abstractReusable.waitForWebElementTOApper(abstractReusable.java:30)
+at Serien.SerienLive.AdminGroupPage.creatingGroup(AdminGroupPage.java:70)
+at Serien.SerienLive.GroupTest.CreatingGroupinAdminPanle(GroupTest.java:22)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CreatingGroupinAdminPanle -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Serien.SerienLive.GroupTest@7c8c9a05]" started-at="2023-12-21T10:58:54Z" name="tearDown" finished-at="2023-12-21T10:58:54Z" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="lunchApplication()[pri:0, instance:Serien.SerienLive.GroupTest@7c8c9a05]" started-at="2023-12-21T10:58:54Z" name="lunchApplication" finished-at="2023-12-21T10:58:58Z" duration-ms="4520" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- lunchApplication -->
+        <test-method signature="ValidationOfGroupNameUserCountEnrollmentsCount(java.util.HashMap)[pri:0, instance:Serien.SerienLive.GroupTest@7c8c9a05]" started-at="2023-12-21T10:58:58Z" name="ValidationOfGroupNameUserCountEnrollmentsCount" data-provider="getdata4" finished-at="2023-12-21T10:59:22Z" duration-ms="23484" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{GroupName=Group xyz1, Useremail=omkar@krishworks.com, Adminuserpass=pass2023, expectedExpText=Subscription Expired, userpass=password, AdminUseremail=admin@demo.com}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- CreatingGroupinAdminPanle -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:Serien.SerienLive.GroupTest@600b90df]" started-at="2023-12-19T06:19:02Z" name="tearDown" finished-at="2023-12-19T06:19:02Z" duration-ms="0" status="PASS">
+        </test-method> <!-- ValidationOfGroupNameUserCountEnrollmentsCount -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Serien.SerienLive.GroupTest@7c8c9a05]" started-at="2023-12-21T10:59:22Z" name="tearDown" finished-at="2023-12-21T10:59:22Z" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
