@@ -1,5 +1,6 @@
 package Serien.SerienLive;
 
+import org.testng.annotations.Test;
 import java.io.FileInputStream;
 import java.util.HashMap;
 import java.util.List;
@@ -26,8 +27,7 @@ public class SubscriptionExpired extends BaseTest {
 		Dm.Setting();
 		AdminSetting as= new AdminSetting(driver);
 		as.CompanySettingsOpen();
-		as.ClickonSelectedCompanyEdit();
-		
+		as.ClickonSelectedCompanyEdit();	
 	}
 	
 /*	@Test(dataProvider = "getdata2")

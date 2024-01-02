@@ -4,27 +4,15 @@
   <listeners>
     <listener class-name="serien.TestComponents.Listeners"/>
   </listeners>
-  <test thread-count="5" name="ProfileTrueValidation(failed)">
-    <classes>
-      <class name="Serien.SerienLive.StandAloneTest">
-        <methods>
-          <include name="profileValidation"/>
-          <include name="tearDown"/>
-          <include name="profileValidationNagative"/>
-          <include name="lunchApplication"/>
-        </methods>
-      </class> <!-- Serien.SerienLive.StandAloneTest -->
-    </classes>
-  </test> <!-- ProfileTrueValidation(failed) -->
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="Serien.SerienLive.ErrorValidationInLoginPage">
+      <class name="Serien.SerienLive.LoginPageTest">
         <methods>
           <include name="tearDown"/>
-          <include name="invaildeCredentional" invocation-numbers="0"/>
+          <include name="InvalidespaceEmail" invocation-numbers="0"/>
           <include name="lunchApplication"/>
         </methods>
-      </class> <!-- Serien.SerienLive.ErrorValidationInLoginPage -->
+      </class> <!-- Serien.SerienLive.LoginPageTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

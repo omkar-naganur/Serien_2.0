@@ -1,45 +1,105 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="1" failed="1" skipped="0">
+<testng-results ignored="0" total="4" passed="3" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-12-21T10:58:38Z" name="Default suite" finished-at="2023-12-21T10:59:22Z" duration-ms="43823">
+  <suite started-at="2024-01-02T12:04:15Z" name="Suite" finished-at="2024-01-02T12:04:59Z" duration-ms="44103">
     <groups>
     </groups>
-    <test started-at="2023-12-21T10:58:38Z" name="Default test" finished-at="2023-12-21T10:59:22Z" duration-ms="43823">
-      <class name="Serien.SerienLive.GroupTest">
-        <test-method is-config="true" signature="lunchApplication()[pri:0, instance:Serien.SerienLive.GroupTest@7c8c9a05]" started-at="2023-12-21T10:58:38Z" name="lunchApplication" finished-at="2023-12-21T10:58:41Z" duration-ms="2588" status="PASS">
+    <test started-at="2024-01-02T12:04:15Z" name="Test" finished-at="2024-01-02T12:04:59Z" duration-ms="44103">
+      <class name="Serien.SerienLive.LoginPageTest">
+        <test-method is-config="true" signature="lunchApplication()[pri:0, instance:Serien.SerienLive.LoginPageTest@636e8cc]" started-at="2024-01-02T12:04:16Z" name="lunchApplication" finished-at="2024-01-02T12:04:21Z" duration-ms="5587" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- lunchApplication -->
-        <test-method signature="CreatingGroupinAdminPanle(java.util.HashMap)[pri:0, instance:Serien.SerienLive.GroupTest@7c8c9a05]" started-at="2023-12-21T10:58:41Z" name="CreatingGroupinAdminPanle" data-provider="getdata4" finished-at="2023-12-21T10:58:54Z" duration-ms="13216" status="FAIL">
+        <test-method signature="invaildeCredentional(java.util.HashMap)[pri:1, instance:Serien.SerienLive.LoginPageTest@636e8cc]" started-at="2024-01-02T12:04:21Z" name="invaildeCredentional" data-provider="getdata" finished-at="2024-01-02T12:04:25Z" duration-ms="3395" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{GroupName=Group xyz1, Useremail=omkar@krishworks.com, Adminuserpass=pass2023, expectedExpText=Subscription Expired, userpass=password, AdminUseremail=admin@demo.com}]]>
+                <![CDATA[{valideEmail=omkar@krishworks.com, pass=123456, capitalEmail=OMKAR@Krishworks.CoM, ValidePass=password, extraSpaceEmail=  omkar@krishworks.com  , email=om1@gmail.com}]]>
               </value>
             </param>
           </params>
-          <exception class="org.openqa.selenium.TimeoutException">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- invaildeCredentional -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Serien.SerienLive.LoginPageTest@636e8cc]" started-at="2024-01-02T12:04:25Z" name="tearDown" finished-at="2024-01-02T12:04:25Z" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="lunchApplication()[pri:0, instance:Serien.SerienLive.LoginPageTest@636e8cc]" started-at="2024-01-02T12:04:25Z" name="lunchApplication" finished-at="2024-01-02T12:04:28Z" duration-ms="3695" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- lunchApplication -->
+        <test-method signature="vaildeCredentional(java.util.HashMap)[pri:2, instance:Serien.SerienLive.LoginPageTest@636e8cc]" started-at="2024-01-02T12:04:28Z" name="vaildeCredentional" data-provider="getdata" finished-at="2024-01-02T12:04:34Z" duration-ms="5751" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{valideEmail=omkar@krishworks.com, pass=123456, capitalEmail=OMKAR@Krishworks.CoM, ValidePass=password, extraSpaceEmail=  omkar@krishworks.com  , email=om1@gmail.com}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- vaildeCredentional -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Serien.SerienLive.LoginPageTest@636e8cc]" started-at="2024-01-02T12:04:34Z" name="tearDown" finished-at="2024-01-02T12:04:34Z" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="lunchApplication()[pri:0, instance:Serien.SerienLive.LoginPageTest@636e8cc]" started-at="2024-01-02T12:04:34Z" name="lunchApplication" finished-at="2024-01-02T12:04:38Z" duration-ms="3629" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- lunchApplication -->
+        <test-method signature="InvalidespaceEmail(java.util.HashMap)[pri:3, instance:Serien.SerienLive.LoginPageTest@636e8cc]" started-at="2024-01-02T12:04:38Z" name="InvalidespaceEmail" data-provider="getdata" finished-at="2024-01-02T12:04:50Z" duration-ms="12674" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{valideEmail=omkar@krishworks.com, pass=123456, capitalEmail=OMKAR@Krishworks.CoM, ValidePass=password, extraSpaceEmail=  omkar@krishworks.com  , email=om1@gmail.com}]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
-              <![CDATA[Expected condition failed: waiting for visibility of all [[[ChromeDriver: chrome on linux (f41a904adb8b9e9bc72b197109ada874)] -> xpath: //div[@class='admin-overdue-bottom-table-cnt-grp']//div[3]]] (tried for 10 second(s) with 500 milliseconds interval)
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//li[6]//div[1]//div[1]"}
+  (Session info: chrome=119.0.6045.105)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.10.0', revision: 'c14d967899'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.2.0-36-generic', java.version: '17.0.6'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.105, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:40457}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:40457/devtoo..., se:cdpVersion: 119.0.6045.105, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: f41a904adb8b9e9bc72b197109ada874]]>
+Command: [21c9532fc915b457b312b4497b044aa3, findElement {using=xpath, value=//li[6]//div[1]//div[1]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.105, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:42465}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:42465/devtoo..., se:cdpVersion: 119.0.6045.105, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 21c9532fc915b457b312b4497b044aa3]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of all [[[ChromeDriver: chrome on linux (f41a904adb8b9e9bc72b197109ada874)] -> xpath: //div[@class='admin-overdue-bottom-table-cnt-grp']//div[3]]] (tried for 10 second(s) with 500 milliseconds interval)
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//li[6]//div[1]//div[1]"}
+  (Session info: chrome=119.0.6045.105)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.10.0', revision: 'c14d967899'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.2.0-36-generic', java.version: '17.0.6'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.105, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:40457}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:40457/devtoo..., se:cdpVersion: 119.0.6045.105, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: f41a904adb8b9e9bc72b197109ada874
-at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
-at Serien.AbstractComponents.abstractReusable.waitForWebElementTOApper(abstractReusable.java:30)
-at Serien.SerienLive.AdminGroupPage.creatingGroup(AdminGroupPage.java:70)
-at Serien.SerienLive.GroupTest.CreatingGroupinAdminPanle(GroupTest.java:22)
+Command: [21c9532fc915b457b312b4497b044aa3, findElement {using=xpath, value=//li[6]//div[1]//div[1]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.105, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:42465}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:42465/devtoo..., se:cdpVersion: 119.0.6045.105, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 21c9532fc915b457b312b4497b044aa3
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:199)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:132)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:51)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:531)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+at jdk.proxy2/jdk.proxy2.$Proxy19.click(Unknown Source)
+at Serien.SerienLive.Profile.gotoProfile(Profile.java:52)
+at Serien.SerienLive.LoginPageTest.InvalidespaceEmail(LoginPageTest.java:57)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -67,34 +127,34 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- CreatingGroupinAdminPanle -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:Serien.SerienLive.GroupTest@7c8c9a05]" started-at="2023-12-21T10:58:54Z" name="tearDown" finished-at="2023-12-21T10:58:54Z" duration-ms="0" status="PASS">
+        </test-method> <!-- InvalidespaceEmail -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Serien.SerienLive.LoginPageTest@636e8cc]" started-at="2024-01-02T12:04:51Z" name="tearDown" finished-at="2024-01-02T12:04:51Z" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="lunchApplication()[pri:0, instance:Serien.SerienLive.GroupTest@7c8c9a05]" started-at="2023-12-21T10:58:54Z" name="lunchApplication" finished-at="2023-12-21T10:58:58Z" duration-ms="4520" status="PASS">
+        <test-method is-config="true" signature="lunchApplication()[pri:0, instance:Serien.SerienLive.LoginPageTest@636e8cc]" started-at="2024-01-02T12:04:51Z" name="lunchApplication" finished-at="2024-01-02T12:04:54Z" duration-ms="3843" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- lunchApplication -->
-        <test-method signature="ValidationOfGroupNameUserCountEnrollmentsCount(java.util.HashMap)[pri:0, instance:Serien.SerienLive.GroupTest@7c8c9a05]" started-at="2023-12-21T10:58:58Z" name="ValidationOfGroupNameUserCountEnrollmentsCount" data-provider="getdata4" finished-at="2023-12-21T10:59:22Z" duration-ms="23484" status="PASS">
+        <test-method signature="ValidateEmailFieldByEnteringCapitalLaters(java.util.HashMap)[pri:4, instance:Serien.SerienLive.LoginPageTest@636e8cc]" started-at="2024-01-02T12:04:54Z" name="ValidateEmailFieldByEnteringCapitalLaters" data-provider="getdata" finished-at="2024-01-02T12:04:59Z" duration-ms="4971" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{GroupName=Group xyz1, Useremail=omkar@krishworks.com, Adminuserpass=pass2023, expectedExpText=Subscription Expired, userpass=password, AdminUseremail=admin@demo.com}]]>
+                <![CDATA[{valideEmail=omkar@krishworks.com, pass=123456, capitalEmail=OMKAR@Krishworks.CoM, ValidePass=password, extraSpaceEmail=  omkar@krishworks.com  , email=om1@gmail.com}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ValidationOfGroupNameUserCountEnrollmentsCount -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:Serien.SerienLive.GroupTest@7c8c9a05]" started-at="2023-12-21T10:59:22Z" name="tearDown" finished-at="2023-12-21T10:59:22Z" duration-ms="0" status="PASS">
+        </test-method> <!-- ValidateEmailFieldByEnteringCapitalLaters -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Serien.SerienLive.LoginPageTest@636e8cc]" started-at="2024-01-02T12:04:59Z" name="tearDown" finished-at="2024-01-02T12:04:59Z" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- Serien.SerienLive.GroupTest -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+      </class> <!-- Serien.SerienLive.LoginPageTest -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
 </testng-results>

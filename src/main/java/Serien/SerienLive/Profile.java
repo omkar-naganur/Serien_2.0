@@ -26,7 +26,7 @@ public class Profile extends abstractReusable {
 	@FindBy(xpath = "//div[@class='hrpageheding MuiBox-root css-0']")
 	WebElement userName;
 	
-	@FindBy(xpath = "//div[@class='hrbodytext MuiBox-root css-i5q2k0']/div[1]")
+	@FindBy(xpath = "//div[@class='MuiBox-root css-1hg9omi']")
 	WebElement userEmail;
 	
 	@FindBy(xpath = "//div[@class='hrbodytext MuiBox-root css-i5q2k0']/div[3]")

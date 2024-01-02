@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>1/0/1</td>
+<td>Tests passed/Failed/Skipped:</td><td>3/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Fri Jul 28 11:05:20 IST 2023</td>
+<td>Started on:</td><td>Tue Jan 02 17:34:15 IST 2024</td>
 </tr>
-<tr><td>Total time:</td><td>33 seconds (33685 ms)</td>
+<tr><td>Total time:</td><td>44 seconds (44103 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,36 +67,24 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-passed'>
-<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
 <td width="30%"><b>Exception</b></td>
 <td width="10%"><b>Time (seconds)</b></td>
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='Serien.SerienLive.ErrorValidationInLoginPage.invaildeCredentional()'><b>invaildeCredentional</b><br>Test class: Serien.SerienLive.ErrorValidationInLoginPage<br>Parameters: rixij84515@rc3s.com, password</td>
-<td></td>
-<td>7</td>
-<td>Serien.SerienLive.ErrorValidationInLoginPage@225129c</td></tr>
-</table><p>
-<table width='100%' border='1' class='invocation-skipped'>
-<tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
-<tr><td><b>Test method</b></td>
-<td width="30%"><b>Exception</b></td>
-<td width="10%"><b>Time (seconds)</b></td>
-<td><b>Instance</b></td>
-</tr>
-<tr>
-<td title='Serien.SerienLive.ErrorValidationInLoginPage.invaildeCredentional()'><b>invaildeCredentional</b><br>Test class: Serien.SerienLive.ErrorValidationInLoginPage<br>Parameters: rixij84515@rc3s.com, password</td>
-<td><div><pre>org.openqa.selenium.ElementClickInterceptedException: Element &lt;button class=&quot;MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeSmall MuiButton-textSizeSmall MuiButtonBase-root LoginPage_loginBtn__No3Ol css-1b4ljc8&quot; type=&quot;submit&quot;&gt; is not clickable at point (387,652) because another element &lt;p class=&quot;MuiTypography-root MuiTypography-body1 LoginPage_animeText__V2Qj+ css-1fb00z5&quot;&gt; obscures it
+<td title='Serien.SerienLive.LoginPageTest.InvalidespaceEmail()'><b>InvalidespaceEmail</b><br>Test class: Serien.SerienLive.LoginPageTest<br>Parameters: {valideEmail=omkar@krishworks.com, pass=123456, capitalEmail=OMKAR@Krishworks.CoM, ValidePass=password, extraSpaceEmail=  omkar@krishworks.com  , email=om1@gmail.com}</td>
+<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//li[6]//div[1]//div[1]&quot;}
+  (Session info: chrome=119.0.6045.105)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: &apos;4.10.0&apos;, revision: &apos;c14d967899&apos;
-System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;5.19.0-42-generic&apos;, java.version: &apos;17.0.6&apos;
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Command: [f4d46f8a-6e9e-4365-946c-62a6a073ea8f, clickElement {id=5a8e94e1-435c-4dbc-abca-1b524ada7fb4}]
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 116.0, moz:accessibilityChecks: false, moz:buildID: 20230724170120, moz:debuggerAddress: 127.0.0.1:23254, moz:geckodriverVersion: 0.33.0, moz:headless: false, moz:platformVersion: 5.19.0-42-generic, moz:processID: 14201, moz:profile: /tmp/rust_mozprofileWzuNeB, moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://127.0.0.1:23254/devtoo..., se:cdpVersion: 85.0, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Element: [[FirefoxDriver: firefox on linux (f4d46f8a-6e9e-4365-946c-62a6a073ea8f)] -&gt; xpath: //button[@type=&apos;submit&apos;]]
-Session ID: f4d46f8a-6e9e-4365-946c-62a6a073ea8f
+System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.2.0-36-generic&apos;, java.version: &apos;17.0.6&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [21c9532fc915b457b312b4497b044aa3, findElement {using=xpath, value=//li[6]//div[1]//div[1]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.105, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:42465}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:42465/devtoo..., se:cdpVersion: 119.0.6045.105, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 21c9532fc915b457b312b4497b044aa3
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:199)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:132)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:51)
@@ -104,21 +92,25 @@ Session ID: f4d46f8a-6e9e-4365-946c-62a6a073ea8f
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:531)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:242)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:77)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
-	at jdk.proxy2/jdk.proxy2.$Proxy18.click(Unknown Source)
-	at Serien.SerienLive.LoginPage.serienLogin(LoginPage.java:49)
-	at Serien.SerienLive.ErrorValidationInLoginPage.invaildeCredentional(ErrorValidationInLoginPage.java:28)
-... Removed 34 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2067586671", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace2067586671'><pre>org.openqa.selenium.ElementClickInterceptedException: Element &lt;button class=&quot;MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeSmall MuiButton-textSizeSmall MuiButtonBase-root LoginPage_loginBtn__No3Ol css-1b4ljc8&quot; type=&quot;submit&quot;&gt; is not clickable at point (387,652) because another element &lt;p class=&quot;MuiTypography-root MuiTypography-body1 LoginPage_animeText__V2Qj+ css-1fb00z5&quot;&gt; obscures it
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy19.click(Unknown Source)
+	at Serien.SerienLive.Profile.gotoProfile(Profile.java:52)
+	at Serien.SerienLive.LoginPageTest.InvalidespaceEmail(LoginPageTest.java:57)
+... Removed 30 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace757660418", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace757660418'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//li[6]//div[1]//div[1]&quot;}
+  (Session info: chrome=119.0.6045.105)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: &apos;4.10.0&apos;, revision: &apos;c14d967899&apos;
-System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;5.19.0-42-generic&apos;, java.version: &apos;17.0.6&apos;
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Command: [f4d46f8a-6e9e-4365-946c-62a6a073ea8f, clickElement {id=5a8e94e1-435c-4dbc-abca-1b524ada7fb4}]
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 116.0, moz:accessibilityChecks: false, moz:buildID: 20230724170120, moz:debuggerAddress: 127.0.0.1:23254, moz:geckodriverVersion: 0.33.0, moz:headless: false, moz:platformVersion: 5.19.0-42-generic, moz:processID: 14201, moz:profile: /tmp/rust_mozprofileWzuNeB, moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://127.0.0.1:23254/devtoo..., se:cdpVersion: 85.0, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Element: [[FirefoxDriver: firefox on linux (f4d46f8a-6e9e-4365-946c-62a6a073ea8f)] -&gt; xpath: //button[@type=&apos;submit&apos;]]
-Session ID: f4d46f8a-6e9e-4365-946c-62a6a073ea8f
+System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.2.0-36-generic&apos;, java.version: &apos;17.0.6&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [21c9532fc915b457b312b4497b044aa3, findElement {using=xpath, value=//li[6]//div[1]//div[1]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.105, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:42465}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:42465/devtoo..., se:cdpVersion: 119.0.6045.105, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 21c9532fc915b457b312b4497b044aa3
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -131,16 +123,15 @@ Session ID: f4d46f8a-6e9e-4365-946c-62a6a073ea8f
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:531)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:242)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:77)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
-	at jdk.proxy2/jdk.proxy2.$Proxy18.click(Unknown Source)
-	at Serien.SerienLive.LoginPage.serienLogin(LoginPage.java:49)
-	at Serien.SerienLive.ErrorValidationInLoginPage.invaildeCredentional(ErrorValidationInLoginPage.java:28)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy19.click(Unknown Source)
+	at Serien.SerienLive.Profile.gotoProfile(Profile.java:52)
+	at Serien.SerienLive.LoginPageTest.InvalidespaceEmail(LoginPageTest.java:57)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -167,8 +158,31 @@ Session ID: f4d46f8a-6e9e-4365-946c-62a6a073ea8f
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
-<td>2</td>
-<td>Serien.SerienLive.ErrorValidationInLoginPage@225129c</td></tr>
+<td>12</td>
+<td>Serien.SerienLive.LoginPageTest@636e8cc</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='Serien.SerienLive.LoginPageTest.ValidateEmailFieldByEnteringCapitalLaters()'><b>ValidateEmailFieldByEnteringCapitalLaters</b><br>Test class: Serien.SerienLive.LoginPageTest<br>Parameters: {valideEmail=omkar@krishworks.com, pass=123456, capitalEmail=OMKAR@Krishworks.CoM, ValidePass=password, extraSpaceEmail=  omkar@krishworks.com  , email=om1@gmail.com}</td>
+<td></td>
+<td>4</td>
+<td>Serien.SerienLive.LoginPageTest@636e8cc</td></tr>
+<tr>
+<td title='Serien.SerienLive.LoginPageTest.invaildeCredentional()'><b>invaildeCredentional</b><br>Test class: Serien.SerienLive.LoginPageTest<br>Parameters: {valideEmail=omkar@krishworks.com, pass=123456, capitalEmail=OMKAR@Krishworks.CoM, ValidePass=password, extraSpaceEmail=  omkar@krishworks.com  , email=om1@gmail.com}</td>
+<td></td>
+<td>3</td>
+<td>Serien.SerienLive.LoginPageTest@636e8cc</td></tr>
+<tr>
+<td title='Serien.SerienLive.LoginPageTest.vaildeCredentional()'><b>vaildeCredentional</b><br>Test class: Serien.SerienLive.LoginPageTest<br>Parameters: {valideEmail=omkar@krishworks.com, pass=123456, capitalEmail=OMKAR@Krishworks.CoM, ValidePass=password, extraSpaceEmail=  omkar@krishworks.com  , email=om1@gmail.com}</td>
+<td></td>
+<td>5</td>
+<td>Serien.SerienLive.LoginPageTest@636e8cc</td></tr>
 </table><p>
 </body>
 </html>

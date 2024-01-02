@@ -1,5 +1,7 @@
 package Serien.SerienLive;
 
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -45,7 +47,7 @@ public class Subscription extends BaseTest {
 		au.SearchByUserName(input.get("userName"));
 		String ActualName=au.validateTheCompanyNameFromUser(input.get("companyName"));
 		String cpname=input.get("companyName");
-		Assert.assertEquals(ActualName, cpname);
+		AssertJUnit.assertEquals(ActualName, cpname);
 		au.adminLogout();
 		
 		// From Here HR Login start
@@ -58,7 +60,7 @@ public class Subscription extends BaseTest {
 		learningPagePermission.add("Micro-learnings");
 		learningPagePermission.add("Webinars");
 		learningPagePermission.add("Games");
-		Assert.assertEquals(acctualPermission,learningPagePermission);
+		AssertJUnit.assertEquals(acctualPermission,learningPagePermission);
 		System.out.println(acctualPermission+"acctualPermission");
 		System.out.println(learningPagePermission+"learningPagePermission");
 		
@@ -79,7 +81,7 @@ public class Subscription extends BaseTest {
 		ArrayList<String> expectedName=new ArrayList<String>();
 		expectedName.add("Psychological Safety");
 		expectedName.add("Bystander Intervention");
-		Assert.assertEquals(actualtabName,expectedName);
+		AssertJUnit.assertEquals(actualtabName,expectedName);
 		System.out.println("InclusionMetric passed");
 		
 	/*	DiversityMetricEle dme= new DiversityMetricEle(driver);
