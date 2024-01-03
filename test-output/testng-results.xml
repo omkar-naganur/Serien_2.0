@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="12" total="13" passed="1" failed="0" skipped="0">
+<testng-results ignored="13" total="14" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-01-03T11:10:53Z" name="Default suite" finished-at="2024-01-03T11:11:00Z" duration-ms="6810">
+  <suite started-at="2024-01-03T11:49:55Z" name="Default suite" finished-at="2024-01-03T11:50:01Z" duration-ms="6013">
     <groups>
     </groups>
-    <test started-at="2024-01-03T11:10:53Z" name="Default test" finished-at="2024-01-03T11:11:00Z" duration-ms="6810">
+    <test started-at="2024-01-03T11:49:55Z" name="Default test" finished-at="2024-01-03T11:50:01Z" duration-ms="6013">
       <class name="Serien.SerienLive.LoginPageTest">
-        <test-method is-config="true" signature="lunchApplication()[pri:0, instance:Serien.SerienLive.LoginPageTest@6af9fcb2]" started-at="2024-01-03T11:10:53Z" name="lunchApplication" finished-at="2024-01-03T11:10:56Z" duration-ms="3343" status="PASS">
+        <test-method is-config="true" signature="lunchApplication()[pri:0, instance:Serien.SerienLive.LoginPageTest@6cce16f4]" started-at="2024-01-03T11:49:55Z" name="lunchApplication" finished-at="2024-01-03T11:49:58Z" duration-ms="2491" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- lunchApplication -->
-        <test-method signature="ValidationOfErrorMessageInvalidEmailInForgetPasswordPage(java.util.HashMap)[pri:13, instance:Serien.SerienLive.LoginPageTest@6af9fcb2]" started-at="2024-01-03T11:10:56Z" name="ValidationOfErrorMessageInvalidEmailInForgetPasswordPage" data-provider="getdata2" finished-at="2024-01-03T11:10:59Z" duration-ms="3345" status="PASS">
+        <test-method signature="ValidationOfSetPasswordLinkSendSucessfully(java.util.HashMap)[pri:14, instance:Serien.SerienLive.LoginPageTest@6cce16f4]" started-at="2024-01-03T11:49:58Z" name="ValidationOfSetPasswordLinkSendSucessfully" data-provider="getdata2" finished-at="2024-01-03T11:50:01Z" duration-ms="3402" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{fp URL=forgot password, Fp=Forgot password, err=Please enter your email, emailErr=Inavlid Email, invalidEmail=Test@gmail.com}]]>
+                <![CDATA[{fp URL=forgot password, err=Please enter your email, emailErr=Inavlid Email, Fp=Forgot password, sucessfullMsg=A password recovery link has been sent to your registered email id. Please check your spam folder if you do not see the email in your inbox., invalidEmail=Test@gmail.com}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ValidationOfErrorMessageInvalidEmailInForgetPasswordPage -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:Serien.SerienLive.LoginPageTest@6af9fcb2]" started-at="2024-01-03T11:10:59Z" name="tearDown" finished-at="2024-01-03T11:11:00Z" duration-ms="108" status="PASS">
+        </test-method> <!-- ValidationOfSetPasswordLinkSendSucessfully -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Serien.SerienLive.LoginPageTest@6cce16f4]" started-at="2024-01-03T11:50:01Z" name="tearDown" finished-at="2024-01-03T11:50:01Z" duration-ms="109" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

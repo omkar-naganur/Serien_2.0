@@ -43,6 +43,9 @@ public class ForgetPassword extends abstractReusable {
 	@FindBy(xpath = "//p[@class='MuiTypography-root MuiTypography-body1 css-z9tt10']")
 	WebElement actErrorMess;
 	
+	@FindBy(xpath = "//div[@class='MuiBox-root css-1v4omxe']//p")
+	WebElement SucessfullyMsg;
+	
 	
 	public void getTitle () throws Throwable
 	{
@@ -67,6 +70,13 @@ public class ForgetPassword extends abstractReusable {
 	{
 		waitForWebElementTOApper(emailtextbox);
 		emailtextbox.sendKeys(email);
+	}
+	
+	public String GetsucesssfullyMessage () throws Throwable
+	{
+		waitForWebElementTOApper(SucessfullyMsg);
+		String succMes=SucessfullyMsg.getText();
+		return succMes;
 	}
 	
 }

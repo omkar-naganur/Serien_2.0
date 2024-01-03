@@ -23,6 +23,8 @@ import serien.TestComponents.BaseTest;
 
 public class LoginPageTest extends BaseTest {
 	
+	String validEmail = "omkar@krishworks.com";
+//	String validEmail;
 	//data provide by the DataProvider 
 	
 	@Test(dataProvider = "getdata", priority = 1)
@@ -37,7 +39,7 @@ public class LoginPageTest extends BaseTest {
 	@Test(dataProvider = "getdata", priority = 2)
 	public void vaildeCredentional(HashMap<String, String> input) throws Throwable
 	{	
-		
+		validEmail = (input.get("valideEmail"));
 		Profile valideProfile=LoginPage.serienLogin(input.get("valideEmail"), input.get("ValidePass"));
 		Profile pf=new Profile(driver);
 		pf.gotoProfile();
@@ -164,7 +166,20 @@ public class LoginPageTest extends BaseTest {
 		fp.ClickOnSubmitButton();
 		Thread.sleep(1000);
 		Boolean errormatch= (input.get("emailErr")).equals(fp.GetErroeMessage());
-		System.out.println(fp.GetErroeMessage());
+	//	System.out.println(fp.GetErroeMessage());
+		Assert.assertTrue(errormatch);
+	}
+	
+	@Test(dataProvider = "getdata2", priority = 14)
+	public void ValidationOfSetPasswordLinkSendSucessfully (HashMap<String, String> input) throws Throwable
+	{	
+		LoginPage lp= new LoginPage(driver);
+		lp.ForgotPasswordLink();
+		ForgetPassword fp=new ForgetPassword(driver);
+		fp.EnterEmail(validEmail);
+		fp.ClickOnSubmitButton();
+		Boolean errormatch= (input.get("sucessfullMsg")).equals(fp.GetsucesssfullyMessage());
+		System.out.println(fp.GetsucesssfullyMessage());
 		Assert.assertTrue(errormatch);
 	}
 	
@@ -184,6 +199,7 @@ public class LoginPageTest extends BaseTest {
 		map.put("err", "Please enter your email");
 		map.put("invalidEmail", "Test@gmail.com");
 		map.put("emailErr", "Inavlid Email");
+		map.put("sucessfullMsg", "A password recovery link has been sent to your registered email id. Please check your spam folder if you do not see the email in your inbox.");
 		
 		return new Object[][] {{map}};
 	}
