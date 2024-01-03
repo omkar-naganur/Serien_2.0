@@ -34,6 +34,9 @@ public class LoginPage extends abstractReusable {
 	@FindBy(xpath = "//div/span[1]")
 	WebElement LoginErroeMessage1;
 	
+	@FindBy(xpath = "//a[@href='/forgot-password-page']")
+	WebElement ForgotPassword;
+	
 //	@FindBy(xpath = "//div/span[1]")
 //	By LoginErroeMessage;
 	
@@ -66,6 +69,13 @@ public class LoginPage extends abstractReusable {
 		return ErroeMess;
 	}
 	
+	public void ForgotPasswordLink () throws Throwable
+	{
+		waitForWebElementTOApper(ForgotPassword);
+		Thread.sleep(2000);
+		ForgotPassword.click();
+		
+	}
 	
 }
 

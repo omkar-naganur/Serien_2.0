@@ -6,7 +6,7 @@
       <class name="Serien.SerienLive.LoginPageTest">
         <methods>
           <include name="tearDown"/>
-          <include name="ValidatingThePageTitleAndURL" invocation-numbers="0"/>
+          <include name="ValidationOfErrorMessageInvalidEmailInForgetPasswordPage" invocation-numbers="0"/>
           <include name="lunchApplication"/>
         </methods>
       </class> <!-- Serien.SerienLive.LoginPageTest -->

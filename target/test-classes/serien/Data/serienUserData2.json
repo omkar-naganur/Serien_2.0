@@ -11,7 +11,8 @@
 "invalidePass":"abcd",
 "noDataInEmial":"",
 "PageTitle":"Serein's Inc – Culture and Compliance",
-"LoginURL":"https://sereindevweb.kdev.co.in/"
+"LoginURL":"https://sereindevweb.kdev.co.in/",
+"err":"Inavlid Email"
 }	
 
 ]

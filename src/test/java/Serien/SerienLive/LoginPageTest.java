@@ -131,7 +131,41 @@ public class LoginPageTest extends BaseTest {
 		Assert.assertTrue(matchTitle);
 		Boolean MatchURl= LoginUrl.equals(input.get("LoginURL"));
 		Assert.assertTrue(MatchURl);
-		
+	}
+	
+	@Test(dataProvider = "getdata2", priority = 11)
+	public void NavigationToForgetPasswordPage (HashMap<String, String> input) throws Throwable
+	{	
+		LoginPage lp= new LoginPage(driver);
+		lp.ForgotPasswordLink();
+		ForgetPassword fp=new ForgetPassword(driver);
+		Boolean titelmatch= (input.get("Fp")).equals(fp.titleOfBox.getText());
+		Assert.assertTrue(titelmatch);	
+	}
+	
+	@Test(dataProvider = "getdata2", priority = 12)
+	public void ValidationOfErrorMessageInForgetPasswordPage (HashMap<String, String> input) throws Throwable
+	{	
+		LoginPage lp= new LoginPage(driver);
+		lp.ForgotPasswordLink();
+		ForgetPassword fp=new ForgetPassword(driver);
+		fp.ClickOnSubmitButton();
+		Boolean errormatch= (input.get("err")).equals(fp.GetErroeMessage());
+		Assert.assertTrue(errormatch);	
+	}
+	
+	@Test(dataProvider = "getdata2", priority = 13)
+	public void ValidationOfErrorMessageInvalidEmailInForgetPasswordPage (HashMap<String, String> input) throws Throwable
+	{	
+		LoginPage lp= new LoginPage(driver);
+		lp.ForgotPasswordLink();
+		ForgetPassword fp=new ForgetPassword(driver);
+		fp.EnterEmail((input.get("invalidEmail")));
+		fp.ClickOnSubmitButton();
+		Thread.sleep(1000);
+		Boolean errormatch= (input.get("emailErr")).equals(fp.GetErroeMessage());
+		System.out.println(fp.GetErroeMessage());
+		Assert.assertTrue(errormatch);
 	}
 	
 	@DataProvider
@@ -139,6 +173,19 @@ public class LoginPageTest extends BaseTest {
 	{	
 		List<HashMap<String,String>> data = getJsonDataToMap(System.getProperty("user.dir")+"//src//test//java//serien//Data//serienUserData2.json");
 		return new Object[][]  { {data.get(0)} };
+	}
+	
+	@DataProvider
+	public Object[][] getdata2()
+	{
+		HashMap<String, String> map= new HashMap<String, String>();
+		map.put("Fp", "Forgot password");
+		map.put("fp URL", "forgot password");
+		map.put("err", "Please enter your email");
+		map.put("invalidEmail", "Test@gmail.com");
+		map.put("emailErr", "Inavlid Email");
+		
+		return new Object[][] {{map}};
 	}
 
 }

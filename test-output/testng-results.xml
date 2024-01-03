@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="9" total="10" passed="1" failed="0" skipped="0">
+<testng-results ignored="12" total="13" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-01-03T07:37:54Z" name="Default suite" finished-at="2024-01-03T07:37:59Z" duration-ms="5489">
+  <suite started-at="2024-01-03T11:10:53Z" name="Default suite" finished-at="2024-01-03T11:11:00Z" duration-ms="6810">
     <groups>
     </groups>
-    <test started-at="2024-01-03T07:37:54Z" name="Default test" finished-at="2024-01-03T07:37:59Z" duration-ms="5489">
+    <test started-at="2024-01-03T11:10:53Z" name="Default test" finished-at="2024-01-03T11:11:00Z" duration-ms="6810">
       <class name="Serien.SerienLive.LoginPageTest">
-        <test-method is-config="true" signature="lunchApplication()[pri:0, instance:Serien.SerienLive.LoginPageTest@4716be8b]" started-at="2024-01-03T07:37:54Z" name="lunchApplication" finished-at="2024-01-03T07:37:59Z" duration-ms="4972" status="PASS">
+        <test-method is-config="true" signature="lunchApplication()[pri:0, instance:Serien.SerienLive.LoginPageTest@6af9fcb2]" started-at="2024-01-03T11:10:53Z" name="lunchApplication" finished-at="2024-01-03T11:10:56Z" duration-ms="3343" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- lunchApplication -->
-        <test-method signature="ValidatingThePageTitleAndURL(java.util.HashMap)[pri:10, instance:Serien.SerienLive.LoginPageTest@4716be8b]" started-at="2024-01-03T07:37:59Z" name="ValidatingThePageTitleAndURL" data-provider="getdata" finished-at="2024-01-03T07:37:59Z" duration-ms="53" status="PASS">
+        <test-method signature="ValidationOfErrorMessageInvalidEmailInForgetPasswordPage(java.util.HashMap)[pri:13, instance:Serien.SerienLive.LoginPageTest@6af9fcb2]" started-at="2024-01-03T11:10:56Z" name="ValidationOfErrorMessageInvalidEmailInForgetPasswordPage" data-provider="getdata2" finished-at="2024-01-03T11:10:59Z" duration-ms="3345" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{InvalideCredentionalErrorMessages=Enter valid Credentials, pass=123456, PageTitle=Serein's Inc – Culture and Compliance, capitalEmail=OMKAR@Krishworks.CoM, noDataInEmial=, LoginURL=https://sereindevweb.kdev.co.in/, invalidePass=abcd, valideEmail=omkar@krishworks.com, ValidePass=password, extraSpaceEmail=  omkar@krishworks.com  , invalideEmail=rockey@gmail.com, email=om1@gmail.com}]]>
+                <![CDATA[{fp URL=forgot password, Fp=Forgot password, err=Please enter your email, emailErr=Inavlid Email, invalidEmail=Test@gmail.com}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ValidatingThePageTitleAndURL -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:Serien.SerienLive.LoginPageTest@4716be8b]" started-at="2024-01-03T07:37:59Z" name="tearDown" finished-at="2024-01-03T07:37:59Z" duration-ms="127" status="PASS">
+        </test-method> <!-- ValidationOfErrorMessageInvalidEmailInForgetPasswordPage -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Serien.SerienLive.LoginPageTest@6af9fcb2]" started-at="2024-01-03T11:10:59Z" name="tearDown" finished-at="2024-01-03T11:11:00Z" duration-ms="108" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
