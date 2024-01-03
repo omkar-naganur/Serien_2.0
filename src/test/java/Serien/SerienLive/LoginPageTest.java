@@ -32,7 +32,6 @@ public class LoginPageTest extends BaseTest {
 		String expectedErrorMessage="Enter valid Credentials";
 		Boolean ErroeMess=LoginPage.ErrorMessage(expectedErrorMessage);
 		Assert.assertTrue(ErroeMess);
-		driver.close();
 	}
 	
 	@Test(dataProvider = "getdata", priority = 2)
@@ -46,7 +45,6 @@ public class LoginPageTest extends BaseTest {
 		 boolean emailTest = actEmail.equals(input.get("valideEmail"));
 		Assert.assertTrue(emailTest);
 		System.out.println(actEmail);
-		driver.close();
 	}
 	
 	@Test(dataProvider = "getdata", priority = 3)
@@ -59,7 +57,6 @@ public class LoginPageTest extends BaseTest {
 		 boolean emailTest = actEmail.equals(input.get("valideEmail"));
 		Assert.assertTrue(emailTest);
 		System.out.println(actEmail);
-		driver.close();
 	}
 	
 	@Test(dataProvider = "getdata", priority = 4)
@@ -72,7 +69,6 @@ public class LoginPageTest extends BaseTest {
 		 boolean emailTest = actEmail.equals(input.get("valideEmail"));
 		Assert.assertTrue(emailTest);
 		System.out.println(actEmail);
-		driver.close();
 	}
 	
 	@Test(dataProvider = "getdata", priority = 5)
@@ -82,7 +78,48 @@ public class LoginPageTest extends BaseTest {
 		String expectedErrorMessage="Enter valid Credentials";
 		Boolean ErroeMess=LoginPage.ErrorMessage(expectedErrorMessage);
 		Assert.assertTrue(ErroeMess);
-		driver.close();
+	}
+	
+	@Test(dataProvider = "getdata", priority = 6)
+	public void ValidateLoginWithInvalidPasswordCredentials(HashMap<String, String> input) throws Throwable
+	{	
+		Profile valideProfile=LoginPage.serienLogin(input.get("valideEmail"), input.get("invalidePass"));
+		String expectedErrorMessage="Enter valid Credentials";
+		Boolean ErroeMess=LoginPage.ErrorMessage(expectedErrorMessage);
+		Assert.assertTrue(ErroeMess);	
+	}
+	
+	@Test(dataProvider = "getdata", priority = 7)
+	public void ValidateEmailFieldWithoutAddingAnyDataIntoIt (HashMap<String, String> input) throws Throwable
+	{	
+		Profile valideProfile=LoginPage.serienLogin(input.get("noDataInEmial"), input.get("invalidePass"));
+		String expectedErrorMessage="Enter valid Credentials";
+		Boolean ErroeMess=LoginPage.ErrorMessage(expectedErrorMessage);
+		Assert.assertTrue(ErroeMess);	
+	}
+	
+	@Test(dataProvider = "getdata", priority = 8)
+	public void ValidatePasswordFieldWithoutEnteringThePasswordInThePasswordField (HashMap<String, String> input) throws Throwable
+	{	
+		Profile valideProfile=LoginPage.serienLogin(input.get("noDataInEmial"), input.get("invalidePass"));
+		String expectedErrorMessage="Enter valid Credentials";
+		Boolean ErroeMess=LoginPage.ErrorMessage(expectedErrorMessage);
+		Assert.assertTrue(ErroeMess);	
+	}
+	
+	@Test(dataProvider = "getdata", priority = 9)
+	public void ValidatingLoginWithBrowserBack (HashMap<String, String> input) throws Throwable
+	{	
+		String LoginUrl=driver.getCurrentUrl();
+		Profile valideProfile=LoginPage.serienLogin(input.get("valideEmail"), input.get("ValidePass"));
+		Thread.sleep(2000);
+		driver.navigate().back();
+		Thread.sleep(2000);
+		String CurrentUrl=driver.getCurrentUrl();
+		Boolean URLmatches=LoginUrl.equals(CurrentUrl);
+	//	System.out.println(URLmatches);
+		Assert.assertFalse(URLmatches);
+		Thread.sleep(2000);	
 	}
 	
 	@DataProvider

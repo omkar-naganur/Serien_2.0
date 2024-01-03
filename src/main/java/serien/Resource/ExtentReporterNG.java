@@ -11,7 +11,7 @@ public class ExtentReporterNG {
 		ExtentSparkReporter reporter = new ExtentSparkReporter(path);
 		reporter.config().setReportName(" Serien Web Automation Results");
 		reporter.config().setDocumentTitle("Serien Test Results");
-		
+		//reporter.config().setTheme("DARK");
 		ExtentReports extent =new ExtentReports();
 		extent.attachReporter(reporter);
 		extent.setSystemInfo("Tester", "Omkar");

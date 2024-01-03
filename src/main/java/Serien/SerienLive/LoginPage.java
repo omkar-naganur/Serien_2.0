@@ -47,7 +47,6 @@ public class LoginPage extends abstractReusable {
 		Password.sendKeys(password);
 		Thread.sleep(2000);
 		LoginButton.click();
-		
 		// this helps to move to Profile page objective
 		Profile profile= new Profile(driver);
 		return profile;

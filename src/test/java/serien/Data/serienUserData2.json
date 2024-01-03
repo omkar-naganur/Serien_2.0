@@ -7,7 +7,9 @@
 "extraSpaceEmail":"  omkar@krishworks.com  ",
 "capitalEmail":"OMKAR@Krishworks.CoM",
 "invalideEmail":"rockey@gmail.com",
-"InvalideCredentionalErrorMessages":"Enter valid Credentials"
+"InvalideCredentionalErrorMessages":"Enter valid Credentials",
+"invalidePass":"abcd",
+"noDataInEmial":""
 }	
 
 ]
