@@ -26,7 +26,7 @@ public class LoginPageTest extends BaseTest {
 	//data provide by the DataProvider 
 	
 	@Test(dataProvider = "getdata", priority = 1)
-	public void invaildeCredentional(HashMap<String, String> input) throws Throwable
+	public void ValidateInEmailAndPasswordInvalideCredentials(HashMap<String, String> input) throws Throwable
 	{	
 		Profile profile=LoginPage.serienLogin(input.get("email"), input.get("pass"));
 		String expectedErrorMessage="Enter valid Credentials";
@@ -120,6 +120,18 @@ public class LoginPageTest extends BaseTest {
 	//	System.out.println(URLmatches);
 		Assert.assertFalse(URLmatches);
 		Thread.sleep(2000);	
+	}
+	
+	@Test(dataProvider = "getdata", priority = 10)
+	public void ValidatingThePageTitleAndURL (HashMap<String, String> input) throws Throwable
+	{	
+		String LoginUrl=driver.getCurrentUrl();
+		String getTitle=driver.getTitle();
+		Boolean matchTitle =getTitle.equals(input.get("PageTitle"));
+		Assert.assertTrue(matchTitle);
+		Boolean MatchURl= LoginUrl.equals(input.get("LoginURL"));
+		Assert.assertTrue(MatchURl);
+		
 	}
 	
 	@DataProvider

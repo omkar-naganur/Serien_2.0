@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="8" total="9" passed="1" failed="0" skipped="0">
+<testng-results ignored="9" total="10" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-01-03T06:56:46Z" name="Default suite" finished-at="2024-01-03T06:56:58Z" duration-ms="12248">
+  <suite started-at="2024-01-03T07:37:54Z" name="Default suite" finished-at="2024-01-03T07:37:59Z" duration-ms="5489">
     <groups>
     </groups>
-    <test started-at="2024-01-03T06:56:46Z" name="Default test" finished-at="2024-01-03T06:56:58Z" duration-ms="12248">
+    <test started-at="2024-01-03T07:37:54Z" name="Default test" finished-at="2024-01-03T07:37:59Z" duration-ms="5489">
       <class name="Serien.SerienLive.LoginPageTest">
-        <test-method is-config="true" signature="lunchApplication()[pri:0, instance:Serien.SerienLive.LoginPageTest@146dfe6]" started-at="2024-01-03T06:56:46Z" name="lunchApplication" finished-at="2024-01-03T06:56:51Z" duration-ms="5062" status="PASS">
+        <test-method is-config="true" signature="lunchApplication()[pri:0, instance:Serien.SerienLive.LoginPageTest@4716be8b]" started-at="2024-01-03T07:37:54Z" name="lunchApplication" finished-at="2024-01-03T07:37:59Z" duration-ms="4972" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- lunchApplication -->
-        <test-method signature="ValidatingLoginWithBrowserBack(java.util.HashMap)[pri:9, instance:Serien.SerienLive.LoginPageTest@146dfe6]" started-at="2024-01-03T06:56:51Z" name="ValidatingLoginWithBrowserBack" data-provider="getdata" finished-at="2024-01-03T06:56:58Z" duration-ms="6736" status="PASS">
+        <test-method signature="ValidatingThePageTitleAndURL(java.util.HashMap)[pri:10, instance:Serien.SerienLive.LoginPageTest@4716be8b]" started-at="2024-01-03T07:37:59Z" name="ValidatingThePageTitleAndURL" data-provider="getdata" finished-at="2024-01-03T07:37:59Z" duration-ms="53" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{InvalideCredentionalErrorMessages=Enter valid Credentials, valideEmail=omkar@krishworks.com, pass=123456, capitalEmail=OMKAR@Krishworks.CoM, noDataInEmial=, ValidePass=password, extraSpaceEmail=  omkar@krishworks.com  , invalideEmail=rockey@gmail.com, email=om1@gmail.com, invalidePass=abcd}]]>
+                <![CDATA[{InvalideCredentionalErrorMessages=Enter valid Credentials, pass=123456, PageTitle=Serein's Inc – Culture and Compliance, capitalEmail=OMKAR@Krishworks.CoM, noDataInEmial=, LoginURL=https://sereindevweb.kdev.co.in/, invalidePass=abcd, valideEmail=omkar@krishworks.com, ValidePass=password, extraSpaceEmail=  omkar@krishworks.com  , invalideEmail=rockey@gmail.com, email=om1@gmail.com}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ValidatingLoginWithBrowserBack -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:Serien.SerienLive.LoginPageTest@146dfe6]" started-at="2024-01-03T06:56:58Z" name="tearDown" finished-at="2024-01-03T06:56:58Z" duration-ms="116" status="PASS">
+        </test-method> <!-- ValidatingThePageTitleAndURL -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Serien.SerienLive.LoginPageTest@4716be8b]" started-at="2024-01-03T07:37:59Z" name="tearDown" finished-at="2024-01-03T07:37:59Z" duration-ms="127" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

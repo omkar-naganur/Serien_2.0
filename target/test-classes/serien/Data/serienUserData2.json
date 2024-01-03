@@ -9,7 +9,9 @@
 "invalideEmail":"rockey@gmail.com",
 "InvalideCredentionalErrorMessages":"Enter valid Credentials",
 "invalidePass":"abcd",
-"noDataInEmial":""
+"noDataInEmial":"",
+"PageTitle":"Serein's Inc – Culture and Compliance",
+"LoginURL":"https://sereindevweb.kdev.co.in/"
 }	
 
 ]
