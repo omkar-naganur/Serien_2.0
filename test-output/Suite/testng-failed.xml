@@ -9,8 +9,11 @@
       <class name="Serien.SerienLive.LoginPageTest">
         <methods>
           <include name="tearDown"/>
+          <include name="ValidatingLoginWithBrowserBack" invocation-numbers="0"/>
           <include name="InvalidespaceEmail" invocation-numbers="0"/>
+          <include name="ValidateEmailFieldWithoutAddingAnyDataIntoIt" invocation-numbers="0"/>
           <include name="lunchApplication"/>
+          <include name="ValidatePasswordFieldWithoutEnteringThePasswordInThePasswordField" invocation-numbers="0"/>
         </methods>
       </class> <!-- Serien.SerienLive.LoginPageTest -->
     </classes>

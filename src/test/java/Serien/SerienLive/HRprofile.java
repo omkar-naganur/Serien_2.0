@@ -18,7 +18,21 @@ import org.testng.annotations.Test;
 
 import serien.TestComponents.BaseTest;
 
-public class Subscription extends BaseTest {
+public class HRprofile extends BaseTest {
+	
+	@Test(dataProvider = "getdata1", priority = 1)
+	public void ValidationOfSubscriptionDateInHRpanle(HashMap<String, String> input) throws Throwable
+	{	
+		Profile profile=LoginPage.serienLogin(input.get("adminEmail"), input.get("adminPass"));
+		AdminDashboard as = new AdminDashboard(driver);
+		as.GotoAdminSetting();
+		AdminSetting ass= new AdminSetting(driver);
+		ass.CompanySettingsOpen();
+		ass.ClickonSelectedCompanyEditAAplyStreamFunction(input.get("testCompanyName"), input.get("startdate"), input.get("enddate"), input.get("noticeperiod"));
+		Thread.sleep(1000);
+			
+	}
+	
 	
 	@Test(dataProvider = "getdata1")
 	public void ValidationOfSubscriptionEndDate (HashMap<String, String> input) throws Throwable
@@ -124,6 +138,7 @@ public class Subscription extends BaseTest {
 		int randomInt = random.nextInt(100);
 		String comName = "om"+randomInt;
 		map.put("companyName",comName);
+		map.put("testCompanyName","TCS");
 		map.put("startdate","08-08-2023");
 		map.put("enddate","30-08-2023");
 		map.put("noticeperiod","10");
@@ -132,6 +147,8 @@ public class Subscription extends BaseTest {
 		map.put("userpass", "password");
 		map.put("grptit", "Overall gender representation");
 		map.put("userName", "omkar");
+		map.put("adminEmail", "admin@demo.com");
+		map.put("adminPass", "pass2023");
 		return new Object[][] {{map}};
 	}
 

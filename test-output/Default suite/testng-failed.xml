@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Serien.SerienLive.LoginPageTest">
+      <class name="Serien.SerienLive.HRprofile">
         <methods>
-          <include name="ValidationOfSetPasswordLinkSendSucessfully" invocation-numbers="0"/>
           <include name="tearDown"/>
+          <include name="ValidationOfSubscriptionDateInHRpanle" invocation-numbers="0"/>
           <include name="lunchApplication"/>
         </methods>
-      </class> <!-- Serien.SerienLive.LoginPageTest -->
+      </class> <!-- Serien.SerienLive.HRprofile -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

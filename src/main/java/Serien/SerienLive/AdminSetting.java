@@ -22,7 +22,7 @@ public class AdminSetting extends abstractReusable{
 	// Generate random integer between 0 (inclusive) and 100 (exclusive)
 	int randomInt = random.nextInt(100);
 	String SubName = "xyz"+randomInt;
-	String companynameforEdit = "TCS";
+	String companynameforEdit ;
 	WebDriver driver;
 	public AdminSetting(WebDriver driver)
 	{
@@ -98,6 +98,9 @@ public class AdminSetting extends abstractReusable{
 	@FindBy(xpath = "//a[@href='/admin/settings/companycreate']")
 	List<WebElement> CompanyEditButtonList;
 	
+	@FindBy(xpath = "//div[@class='outer-inner-container']//div[@class='templatename'][1]")
+	List<WebElement> onlycompanyName;
+	
 	public void SubscriptionSettingOpen () throws Throwable
 	{
 		waitForWebElementTOApper(SubscriptionListSettingOpen);
@@ -160,17 +163,18 @@ public class AdminSetting extends abstractReusable{
 	         String s = m.get(i).getText();
 	         System.out.println(s);
 	         b=s;
-	         
-	         }
-	      
-	      if(b.equals(companyName))
+	         if(b.equals(companyName))
 	         {
-	        	 System.out.println(b);
+	         	 break;
 	         }
 	         else
 	         {
-	        	 System.out.println("company creation fail");
+	        	 System.out.println("company name not matched");
 	         }
+	         
+	         }
+	      
+	     
 	}
 	
 	public void AddSubscription () throws Throwable
@@ -214,8 +218,9 @@ public class AdminSetting extends abstractReusable{
 	      BackButton.click();
 	}
 	// not complated
-	public void ClickonSelectedCompanyEdit () throws Throwable
+	public void ClickonSelectedCompanyEdit (String comame) throws Throwable
 	{
+		companynameforEdit= comame;
 		//waitForWebElementTOApper(CompanyNameListfor);
 		String exname= CompanyNameListforfirstone.getText();
 		//System.out.println(ListofComapnyNames);
@@ -231,10 +236,10 @@ public class AdminSetting extends abstractReusable{
 	         b=s;
 	         if(b.equals(companynameforEdit))
 	         {
-	    	  
 	        	 System.out.println("ok");
 	        	 // we need to click the Edit button here need to write the Logic
 	        	// CompanyNameListforALL.in
+	        	 
 	        	 break;
 	        	 
 	         }
@@ -243,6 +248,43 @@ public class AdminSetting extends abstractReusable{
 	        	 System.out.println("companyNameNotFound");
 	         }
 	         }
+		
+	}
+	
+	public void ClickonSelectedCompanyEditAAplyStreamFunction (String comame, String startdate, String enddate, String noticeperiod) throws Throwable
+	{
+		companynameforEdit= comame;
+		
+		String b = "";
+		List<WebElement> m = onlycompanyName;
+	      // iterate over list
+	      for(int i = 0; i< m.size(); i++) {
+	         //obtain text
+	         String s = m.get(i).getText();
+	         System.out.println(s);
+	         b=s;
+	    
+	         if(b.equals(companynameforEdit))
+	         {
+	        	 System.out.println("ok");
+	        	 
+	       driver.findElements(By.xpath("//div[@class='setting_details_table']//div[@class='outer-inner-container']/div[@class='templatename']/..//div[3]//div[3]//a[@href='/admin/settings/companycreate']")).get(i).click();
+	       Thread.sleep(2000);
+	        break;
+	        	 
+	         }
+	      else
+	         {
+	        	 System.out.println("companyNameNotFound");
+	         }
+	         }
+	      planStartDate.click();
+	      planStartDate.sendKeys(startdate);
+			planStartDate.sendKeys(Keys.TAB);
+			planEndDate.sendKeys(enddate);
+			planEndDate.sendKeys(Keys.TAB);
+			noticePeriod.sendKeys(noticeperiod);
+			CompanySettingsSubmit.click();
 		
 	}
 	

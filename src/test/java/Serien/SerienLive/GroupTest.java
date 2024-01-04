@@ -1,6 +1,7 @@
 package Serien.SerienLive;
 
 import org.testng.annotations.Test;
+import org.testng.annotations.Test;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -24,16 +25,16 @@ public class GroupTest extends BaseTest {
 		driver.quit();
 	}
 	
-//	@Test(dataProvider = "getdata4")
-//	public void ValidationOfGroupNameUserCountEnrollmentsCount(HashMap<String, String> input) throws Throwable
-//	{
-//		LoginPage Dm= new LoginPage(driver);
-//		Dm.serienLogin(input.get("AdminUseremail"), input.get("Adminuserpass"));
-//		Dm.groups();
-//		AdminGroupPage ag=new AdminGroupPage(driver);
-//		ag.SearchingComapnyNameInGroupListSecond();
-//		
-//	}
+	@Test(dataProvider = "getdata4")
+	public void ValidationOfGroupNameUserCountEnrollmentsCount(HashMap<String, String> input) throws Throwable
+	{
+		LoginPage Dm= new LoginPage(driver);
+		Dm.serienLogin(input.get("AdminUseremail"), input.get("Adminuserpass"));
+		Dm.groups();
+		AdminGroupPage ag=new AdminGroupPage(driver);
+		ag.SearchingComapnyNameInGroupListSecond();
+		
+	}
 	
 	@DataProvider
 	public Object[][] getdata4()

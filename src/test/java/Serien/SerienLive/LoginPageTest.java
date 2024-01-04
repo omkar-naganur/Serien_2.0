@@ -1,5 +1,7 @@
 package Serien.SerienLive;
 import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
+import org.testng.annotations.Test;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -23,8 +25,9 @@ import serien.TestComponents.BaseTest;
 
 public class LoginPageTest extends BaseTest {
 	
-	String validEmail = "omkar@krishworks.com";
-//	String validEmail;
+//	String validEmail = "omkar@krishworks.com";
+	String validEmail; // ValidationOfSetPasswordLinkSendSucessfully  depend on vaildeCredentional
+	
 	//data provide by the DataProvider 
 	
 	@Test(dataProvider = "getdata", priority = 1)
@@ -45,7 +48,7 @@ public class LoginPageTest extends BaseTest {
 		pf.gotoProfile();
 		String actEmail=pf.validateUserEmail();
 		 boolean emailTest = actEmail.equals(input.get("valideEmail"));
-		Assert.assertTrue(emailTest);
+		AssertJUnit.assertTrue(emailTest);
 		System.out.println(actEmail);
 	}
 	
@@ -57,7 +60,7 @@ public class LoginPageTest extends BaseTest {
 		pf.gotoProfile();
 		String actEmail=pf.validateUserEmail();
 		 boolean emailTest = actEmail.equals(input.get("valideEmail"));
-		Assert.assertTrue(emailTest);
+		AssertJUnit.assertTrue(emailTest);
 		System.out.println(actEmail);
 	}
 	
@@ -69,7 +72,7 @@ public class LoginPageTest extends BaseTest {
 		pf.gotoProfile();
 		String actEmail=pf.validateUserEmail();
 		 boolean emailTest = actEmail.equals(input.get("valideEmail"));
-		Assert.assertTrue(emailTest);
+		AssertJUnit.assertTrue(emailTest);
 		System.out.println(actEmail);
 	}
 	
@@ -92,7 +95,7 @@ public class LoginPageTest extends BaseTest {
 	}
 	
 	@Test(dataProvider = "getdata", priority = 7)
-	public void ValidateEmailFieldWithoutAddingAnyDataIntoIt (HashMap<String, String> input) throws Throwable
+	public void ValidateEmailFieldWithoutAddingAnyDataIntoInEmailTextFiled (HashMap<String, String> input) throws Throwable
 	{	
 		Profile valideProfile=LoginPage.serienLogin(input.get("noDataInEmial"), input.get("invalidePass"));
 		String expectedErrorMessage="Enter valid Credentials";
@@ -170,7 +173,7 @@ public class LoginPageTest extends BaseTest {
 		Assert.assertTrue(errormatch);
 	}
 	
-	@Test(dataProvider = "getdata2", priority = 14)
+	@Test(dataProvider = "getdata2", priority = 14, dependsOnMethods={"vaildeCredentional"})
 	public void ValidationOfSetPasswordLinkSendSucessfully (HashMap<String, String> input) throws Throwable
 	{	
 		LoginPage lp= new LoginPage(driver);
