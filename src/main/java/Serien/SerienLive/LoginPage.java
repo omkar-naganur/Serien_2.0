@@ -45,10 +45,13 @@ public class LoginPage extends abstractReusable {
 	//By LoginErroeMessage =By.xpath("//button[@type='submit']");
 	
 	public Profile serienLogin (String Username, String password) throws Throwable
-	{
+	{	
+		waitForWebElementTOApper(userNameTextFiled);
 		userNameTextFiled.sendKeys(Username);
+		waitForWebElementTOApper(Password);
 		Password.sendKeys(password);
 		Thread.sleep(2000);
+		waitForWebElementTOApper(LoginButton);
 		LoginButton.click();
 		// this helps to move to Profile page objective
 		Profile profile= new Profile(driver);

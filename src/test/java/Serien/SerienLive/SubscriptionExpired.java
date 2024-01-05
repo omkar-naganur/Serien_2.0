@@ -28,7 +28,7 @@ public class SubscriptionExpired extends BaseTest {
 		Dm.Setting();
 		AdminSetting as= new AdminSetting(driver);
 		as.CompanySettingsOpen();
-		as.ClickonSelectedCompanyEdit();	
+		as.ClickonSelectedCompanyEdit("tcs");	
 	}
 	
 /*	@Test(dataProvider = "getdata2")

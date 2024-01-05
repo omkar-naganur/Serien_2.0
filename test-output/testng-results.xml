@@ -2,27 +2,27 @@
 <testng-results ignored="1" total="2" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-01-04T11:05:52Z" name="Default suite" finished-at="2024-01-04T11:06:08Z" duration-ms="16098">
+  <suite started-at="2024-01-05T07:21:50Z" name="Default suite" finished-at="2024-01-05T07:22:11Z" duration-ms="21385">
     <groups>
     </groups>
-    <test started-at="2024-01-04T11:05:52Z" name="Default test" finished-at="2024-01-04T11:06:08Z" duration-ms="16098">
+    <test started-at="2024-01-05T07:21:50Z" name="Default test" finished-at="2024-01-05T07:22:11Z" duration-ms="21385">
       <class name="Serien.SerienLive.HRprofile">
-        <test-method is-config="true" signature="lunchApplication()[pri:0, instance:Serien.SerienLive.HRprofile@558bdf1f]" started-at="2024-01-04T11:05:52Z" name="lunchApplication" finished-at="2024-01-04T11:05:57Z" duration-ms="5047" status="PASS">
+        <test-method is-config="true" signature="lunchApplication()[pri:0, instance:Serien.SerienLive.HRprofile@558bdf1f]" started-at="2024-01-05T07:21:50Z" name="lunchApplication" finished-at="2024-01-05T07:21:53Z" duration-ms="2906" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- lunchApplication -->
-        <test-method signature="ValidationOfSubscriptionDateInHRpanle(java.util.HashMap)[pri:1, instance:Serien.SerienLive.HRprofile@558bdf1f]" started-at="2024-01-04T11:05:57Z" name="ValidationOfSubscriptionDateInHRpanle" data-provider="getdata1" finished-at="2024-01-04T11:06:08Z" duration-ms="10899" status="PASS">
+        <test-method signature="ValidationOfSubscriptionDateInHRpanle(java.util.HashMap)[pri:1, instance:Serien.SerienLive.HRprofile@558bdf1f]" started-at="2024-01-05T07:21:53Z" name="ValidationOfSubscriptionDateInHRpanle" data-provider="getdata1" finished-at="2024-01-05T07:22:11Z" duration-ms="18468" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{Useremail=omkar@krishworks.com, enddate=30-08-2023, grptit=Overall gender representation, testCompanyName=TCS, userpass=password, companyName=om26, adminPass=pass2023, startdate=08-08-2023, userName=omkar, noticeperiod=10, adminEmail=admin@demo.com}]]>
+                <![CDATA[{Useremail=omkar@krishworks.com, enddate=30-08-2024, grptit=Overall gender representation, testCompanyName=TCS, userpass=password, companyName=om79, adminPass=pass2023, startdate=08-08-2023, userName=omkar, noticeperiod=10, adminEmail=admin@demo.com}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ValidationOfSubscriptionDateInHRpanle -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:Serien.SerienLive.HRprofile@558bdf1f]" started-at="2024-01-04T11:06:08Z" name="tearDown" finished-at="2024-01-04T11:06:08Z" duration-ms="118" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Serien.SerienLive.HRprofile@558bdf1f]" started-at="2024-01-05T07:22:11Z" name="tearDown" finished-at="2024-01-05T07:22:11Z" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

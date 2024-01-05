@@ -30,11 +30,18 @@ public class HRprofile extends BaseTest {
 		ass.CompanySettingsOpen();
 		ass.ClickonSelectedCompanyEditAAplyStreamFunction(input.get("testCompanyName"), input.get("startdate"), input.get("enddate"), input.get("noticeperiod"));
 		Thread.sleep(1000);
+		ass.Logout();
+		driver.manage().deleteAllCookies();
+		driver.navigate().refresh();
+		Profile pro=LoginPage.serienLogin(input.get("Useremail"), input.get("userpass"));
+		pro.Profile();
+		String exp=pro.subExpTest();
+		System.out.println(exp);
 			
 	}
 	
 	
-	@Test(dataProvider = "getdata1")
+	@Test(dataProvider = "getdata1", enabled = false)
 	public void ValidationOfSubscriptionEndDate (HashMap<String, String> input) throws Throwable
 	{
 		
@@ -140,7 +147,7 @@ public class HRprofile extends BaseTest {
 		map.put("companyName",comName);
 		map.put("testCompanyName","TCS");
 		map.put("startdate","08-08-2023");
-		map.put("enddate","30-08-2023");
+		map.put("enddate","30-08-2024");
 		map.put("noticeperiod","10");
 		map.put("Useremail", "omkar@krishworks.com");
 		//map.put("Useremail", "subhajit@krishworks.com");

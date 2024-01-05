@@ -1,7 +1,9 @@
 package Serien.SerienLive;
 
 import java.util.List;
+import java.net.URL;
 import java.time.format.DateTimeFormatter;
+import java.net.HttpURLConnection;
 import java.time.LocalDateTime;  
 
 import org.openqa.selenium.By;
@@ -284,7 +286,25 @@ public class AdminSetting extends abstractReusable{
 			planEndDate.sendKeys(enddate);
 			planEndDate.sendKeys(Keys.TAB);
 			noticePeriod.sendKeys(noticeperiod);
+			Thread.sleep(2000);
 			CompanySettingsSubmit.click();
+			// after click on submite button still data not chnaged in back end but it working manual test fine
+			try {
+	            // establish, open connection with URL
+	            HttpURLConnection cn = (HttpURLConnection) new URL(driver.getCurrentUrl()).openConnection();
+	            // set HEADER request
+	            cn.setRequestMethod("HEAD");
+	            // connection initiate
+	            cn.connect();
+	            //get response code
+	            int res = cn.getResponseCode();
+	            //Display
+	            System.out.println("Http response code: " + res);
+	            Thread.sleep(2000);
+	        } catch (Exception e) {
+	            e.printStackTrace();
+	        }
+			
 		
 	}
 	
