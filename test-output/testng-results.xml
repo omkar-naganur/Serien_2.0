@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="2" total="3" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-01-05T10:19:50Z" name="Default suite" finished-at="2024-01-05T10:20:10Z" duration-ms="20381">
+  <suite started-at="2024-01-05T12:37:13Z" name="Default suite" finished-at="2024-01-05T12:37:21Z" duration-ms="8600">
     <groups>
     </groups>
-    <test started-at="2024-01-05T10:19:50Z" name="Default test" finished-at="2024-01-05T10:20:10Z" duration-ms="20381">
-      <class name="Serien.SerienLive.HRprofile">
-        <test-method is-config="true" signature="lunchApplication()[pri:0, instance:Serien.SerienLive.HRprofile@8576fa0]" started-at="2024-01-05T10:19:50Z" name="lunchApplication" finished-at="2024-01-05T10:19:52Z" duration-ms="2363" status="PASS">
+    <test started-at="2024-01-05T12:37:13Z" name="Default test" finished-at="2024-01-05T12:37:21Z" duration-ms="8600">
+      <class name="Serien.SerienLive.AdminEnrollments">
+        <test-method is-config="true" signature="lunchApplication()[pri:0, instance:Serien.SerienLive.AdminEnrollments@27216cd]" started-at="2024-01-05T12:37:13Z" name="lunchApplication" finished-at="2024-01-05T12:37:16Z" duration-ms="3306" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- lunchApplication -->
-        <test-method signature="ValidationOfUserNameAndEmailFromAdminPanleToHRpanle(java.util.HashMap)[pri:2, instance:Serien.SerienLive.HRprofile@8576fa0]" started-at="2024-01-05T10:19:52Z" name="ValidationOfUserNameAndEmailFromAdminPanleToHRpanle" data-provider="getdata1" finished-at="2024-01-05T10:20:10Z" duration-ms="18007" status="PASS">
+        <test-method signature="CreatingGroupEnrollmentOfCourse(java.util.HashMap)[pri:1, instance:Serien.SerienLive.AdminEnrollments@27216cd]" started-at="2024-01-05T12:37:16Z" name="CreatingGroupEnrollmentOfCourse" data-provider="getdata" finished-at="2024-01-05T12:37:21Z" duration-ms="5279" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{Useremail=omkar@krishworks.com, enddate=30-08-2024, grptit=Overall gender representation, testCompanyName=TCS, userpass=password, companyName=om55, adminPass=pass2023, startdate=08-08-2023, userName=omkar123456, noticeperiod=10, adminEmail=admin@demo.com}]]>
+                <![CDATA[{Useremail=omkar@krishworks.com, adminPass=pass2023, userpass=password, adminEmail=admin@demo.com}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ValidationOfUserNameAndEmailFromAdminPanleToHRpanle -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:Serien.SerienLive.HRprofile@8576fa0]" started-at="2024-01-05T10:20:10Z" name="tearDown" finished-at="2024-01-05T10:20:10Z" duration-ms="0" status="PASS">
+        </test-method> <!-- CreatingGroupEnrollmentOfCourse -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Serien.SerienLive.AdminEnrollments@27216cd]" started-at="2024-01-05T12:37:21Z" name="tearDown" finished-at="2024-01-05T12:37:21Z" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- Serien.SerienLive.HRprofile -->
+      </class> <!-- Serien.SerienLive.AdminEnrollments -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
