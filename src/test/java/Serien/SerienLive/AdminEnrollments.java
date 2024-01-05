@@ -19,9 +19,10 @@ public class AdminEnrollments extends BaseTest{
 		ae.groupEnrollment();
 		ae.gotoAddNewGroupEnrollment();
 		ae.selectTrainingType(input.get("typeOfTraining"));
-		ae.selectCourseName(input.get(""));
-		ae.selectGroupName(input.get(""));
-		
+		ae.selectCourseName(input.get("CourseName"));
+		ae.selectGroupName(input.get("GroupName"));
+		ae.selectDueDate(input.get("dueDate"));
+		ae.saveGroupEnrollment();
 		
 	}
 	
@@ -36,9 +37,9 @@ public class AdminEnrollments extends BaseTest{
 		map.put("typeOfTraining", "course");
 	//	map.put("typeOfTraining", "Micro course");
 	//	map.put("typeOfTraining", "Games");
-		map.put("CourseName", "");
-		map.put("GroupName", "");
-		
+		map.put("CourseName", "asd");
+		map.put("GroupName", "Udhyam Group");
+		map.put("dueDate", "12122024");
 		
 		return new Object[][] {{map}};
 	}

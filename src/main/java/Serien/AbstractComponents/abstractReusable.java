@@ -3,6 +3,7 @@ package Serien.AbstractComponents;
 import java.time.Duration;
 import java.util.List;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -38,6 +39,14 @@ public class abstractReusable {
 		public void waitForElementTODissApper(WebElement ele) {
 			WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(5));	
 			 wait.until(ExpectedConditions.invisibilityOfAllElements(ele));	
+		}
+		
+		public String alertAccepectMethod () {
+			Alert alr = driver.switchTo().alert();
+			String text=alr.getText();
+			System.out.println(text);
+			alr.accept();
+			return text;
 		}
 	
 	// this Elements for HR & User Panel

@@ -153,10 +153,11 @@ public class AdminUser extends abstractReusable {
 		waitForWebElementTOApper(userSave);
 		userSave.click();
 		Thread.sleep(2000);
-		Alert alr = driver.switchTo().alert();
-		String text=alr.getText();
-		System.out.println(text);
-		alr.accept();
+		alertAccepectMethod();
+//		Alert alr = driver.switchTo().alert();
+//		String text=alr.getText();
+//		System.out.println(text);
+//		alr.accept();
 	}
 }
 
