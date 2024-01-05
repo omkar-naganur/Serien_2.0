@@ -40,6 +40,26 @@ public class HRprofile extends BaseTest {
 			
 	}
 	
+	@Test(dataProvider = "getdata1", priority = 2)
+	public void ValidationOfUserNameFromAdminPanleToHRpanle(HashMap<String, String> input) throws Throwable
+	{	
+		Profile profile=LoginPage.serienLogin(input.get("adminEmail"), input.get("adminPass"));
+		AdminDashboard as = new AdminDashboard(driver);
+		as.users();
+		AdminUser au= new AdminUser(driver);
+		au.searchByEmail(input.get("Useremail"));
+		au.clickOnEditButton();
+		au.changeUsername(input.get("userName"));
+		au.saveUserDeatils();
+		au.adminLogout();
+		Profile hr=LoginPage.serienLogin(input.get("Useremail"), input.get("userpass"));
+		hr.Profile();
+		String actUserName=hr.getUserNameFromProfile();
+		Boolean nameMatch=actUserName.equals(input.get("userName"));
+		Assert.assertTrue(nameMatch);
+		
+	}
+	
 	
 	@Test(dataProvider = "getdata1", enabled = false)
 	public void ValidationOfSubscriptionEndDate (HashMap<String, String> input) throws Throwable
@@ -153,7 +173,7 @@ public class HRprofile extends BaseTest {
 		//map.put("Useremail", "subhajit@krishworks.com");
 		map.put("userpass", "password");
 		map.put("grptit", "Overall gender representation");
-		map.put("userName", "omkar");
+		map.put("userName", "omkar123456");
 		map.put("adminEmail", "admin@demo.com");
 		map.put("adminPass", "pass2023");
 		return new Object[][] {{map}};

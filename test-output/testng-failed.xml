@@ -6,8 +6,8 @@
       <class name="Serien.SerienLive.HRprofile">
         <methods>
           <include name="tearDown"/>
-          <include name="ValidationOfSubscriptionDateInHRpanle" invocation-numbers="0"/>
           <include name="lunchApplication"/>
+          <include name="ValidationOfUserNameAndEmailFromAdminPanleToHRpanle" invocation-numbers="0"/>
         </methods>
       </class> <!-- Serien.SerienLive.HRprofile -->
     </classes>

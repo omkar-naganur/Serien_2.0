@@ -3,6 +3,7 @@ package Serien.SerienLive;
 import java.time.Duration;
 import java.util.List;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -12,7 +13,10 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.github.dockerjava.api.model.Driver;
+
 import Serien.AbstractComponents.abstractReusable;
+import freemarker.core.ReturnInstruction.Return;
 
 public class AdminUser extends abstractReusable {
 
@@ -57,6 +61,16 @@ public class AdminUser extends abstractReusable {
 	
 	@FindBy(xpath = "//div[@class='spinner-container']")
 	WebElement LoadingScreeen;
+	
+	@FindBy(xpath = "//input[@name='email']")
+	WebElement emailSearch;
+	
+	@FindBy(xpath = "//input[@name='email']/../div")
+	WebElement emailSearchButton;
+	
+	@FindBy(id = "name")
+	WebElement nameFiled;
+	
 	
 	public void GotoUser () throws Throwable
 	{
@@ -117,6 +131,32 @@ public class AdminUser extends abstractReusable {
 		userCancel.click();
 	}
 	
+	public void searchByEmail(String email) throws Throwable
+	{
+		waitForWebElementTOApper(emailSearch);
+		emailSearch.click();
+		emailSearch.sendKeys(email);
+		emailSearchButton.click();
+		Thread.sleep(2000);
+	}
 	
+	public void changeUsername (String name) throws Throwable
+	{
+		waitForWebElementTOApper(nameFiled);
+		Thread.sleep(3000);
+		nameFiled.clear();
+		nameFiled.sendKeys(name);	
+	}
+	
+	public void saveUserDeatils () throws Throwable
+	{
+		waitForWebElementTOApper(userSave);
+		userSave.click();
+		Thread.sleep(2000);
+		Alert alr = driver.switchTo().alert();
+		String text=alr.getText();
+		System.out.println(text);
+		alr.accept();
+	}
 }
 

@@ -92,5 +92,13 @@ public class Profile extends abstractReusable {
 		return 	subexpText;
 	}
 	
+	public String getUserNameFromProfile () throws Throwable
+	{
+		Thread.sleep(2000);
+		waitForWebElementTOApper(userName);
+		String Username=userName.getText();
+		return 	Username;
+	}
+	
 }
 

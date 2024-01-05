@@ -90,10 +90,14 @@ public class abstractReusable {
 	
 	// HR and User panle navigations
 	
-	public void adminLogout()
+	public void adminLogout() throws Throwable
 	{
 		waitForWebElementTOApper(adminLogut);
 		adminLogut.click();
+		Thread.sleep(1000);
+		driver.manage().deleteAllCookies();
+		driver.navigate().refresh();
+		Thread.sleep(1000);
 	}
 	
 	public void userLogout()
