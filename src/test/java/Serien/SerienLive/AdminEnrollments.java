@@ -10,7 +10,7 @@ import serien.TestComponents.BaseTest;
 
 public class AdminEnrollments extends BaseTest{
 
-
+	
 	@Test(dataProvider = "getdata", priority = 1)
 	public void CreatingGroupEnrollmentOfCourse (HashMap<String, String> input) throws Throwable
 	{	
@@ -37,7 +37,7 @@ public class AdminEnrollments extends BaseTest{
 		map.put("typeOfTraining", "course");
 	//	map.put("typeOfTraining", "Micro course");
 	//	map.put("typeOfTraining", "Games");
-		map.put("CourseName", "asd");
+		map.put("CourseName", "no disclaimer");
 		map.put("GroupName", "Udhyam Group");
 		map.put("dueDate", "12122024");
 		

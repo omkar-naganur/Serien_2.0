@@ -103,15 +103,14 @@ public class AdminGroupEnrollment extends abstractReusable{
 		if (actMes.equals(error))
 		{
 			enrollmentCancel.click();
+			System.out.println("enrollmentCancel");
+			Thread.sleep(1000);
 		}
-	
 	}
-	catch (Exception e) {
-		
-		System.out.println("something went wrong in catch block");
-		
+	catch (Exception e) 
+	{
+		System.out.println("No Alaert Found");
 	}
-	Thread.sleep(1000);
 	
 	String acttext= groupEnrollmetText.getText();
 	

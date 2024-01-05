@@ -2,27 +2,27 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-01-05T15:05:25Z" name="Default suite" finished-at="2024-01-05T15:05:40Z" duration-ms="14821">
+  <suite started-at="2024-01-05T15:18:11Z" name="Default suite" finished-at="2024-01-05T15:18:26Z" duration-ms="14984">
     <groups>
     </groups>
-    <test started-at="2024-01-05T15:05:25Z" name="Default test" finished-at="2024-01-05T15:05:40Z" duration-ms="14821">
+    <test started-at="2024-01-05T15:18:11Z" name="Default test" finished-at="2024-01-05T15:18:26Z" duration-ms="14984">
       <class name="Serien.SerienLive.AdminEnrollments">
-        <test-method is-config="true" signature="lunchApplication()[pri:0, instance:Serien.SerienLive.AdminEnrollments@27216cd]" started-at="2024-01-05T15:05:25Z" name="lunchApplication" finished-at="2024-01-05T15:05:27Z" duration-ms="2469" status="PASS">
+        <test-method is-config="true" signature="lunchApplication()[pri:0, instance:Serien.SerienLive.AdminEnrollments@27216cd]" started-at="2024-01-05T15:18:11Z" name="lunchApplication" finished-at="2024-01-05T15:18:14Z" duration-ms="3409" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- lunchApplication -->
-        <test-method signature="CreatingGroupEnrollmentOfCourse(java.util.HashMap)[pri:1, instance:Serien.SerienLive.AdminEnrollments@27216cd]" started-at="2024-01-05T15:05:27Z" name="CreatingGroupEnrollmentOfCourse" data-provider="getdata" finished-at="2024-01-05T15:05:40Z" duration-ms="12342" status="PASS">
+        <test-method signature="CreatingGroupEnrollmentOfCourse(java.util.HashMap)[pri:1, instance:Serien.SerienLive.AdminEnrollments@27216cd]" started-at="2024-01-05T15:18:14Z" name="CreatingGroupEnrollmentOfCourse" data-provider="getdata" finished-at="2024-01-05T15:18:26Z" duration-ms="11563" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{CourseName=asd, GroupName=Udhyam Group, Useremail=omkar@krishworks.com, typeOfTraining=course, userpass=password, dueDate=12122024, adminPass=pass2023, adminEmail=admin@demo.com}]]>
+                <![CDATA[{CourseName=no disclaimer, GroupName=Udhyam Group, Useremail=omkar@krishworks.com, typeOfTraining=course, userpass=password, dueDate=12122024, adminPass=pass2023, adminEmail=admin@demo.com}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CreatingGroupEnrollmentOfCourse -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:Serien.SerienLive.AdminEnrollments@27216cd]" started-at="2024-01-05T15:05:40Z" name="tearDown" finished-at="2024-01-05T15:05:40Z" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Serien.SerienLive.AdminEnrollments@27216cd]" started-at="2024-01-05T15:18:26Z" name="tearDown" finished-at="2024-01-05T15:18:26Z" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
