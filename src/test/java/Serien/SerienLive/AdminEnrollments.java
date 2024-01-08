@@ -32,7 +32,7 @@ public class AdminEnrollments extends BaseTest{
 		Profile profile=LoginPage.serienLogin(input.get("adminEmail"), input.get("adminPass"));
 		AdminGroupEnrollment ae= new AdminGroupEnrollment(driver);
 		ae.groupEnrollment();
-		ae.enrollmentConfirmatioInEnrloomentList();		
+		ae.enrollmentConfirmatioInEnrloomentList(input.get("CourseName"), input.get("GroupName"));		
 	}
 	
 	@DataProvider
@@ -46,8 +46,8 @@ public class AdminEnrollments extends BaseTest{
 		map.put("typeOfTraining", "course");
 	//	map.put("typeOfTraining", "Micro course");
 	//	map.put("typeOfTraining", "Games");
-		map.put("CourseName", "no disclaimer");
-		map.put("GroupName", "Udhyam Group");
+		map.put("CourseName", "Safety and inclusion at the workplace");
+		map.put("GroupName", "Sitero_PoSH_2023");
 		map.put("dueDate", "12122024");
 		
 		return new Object[][] {{map}};

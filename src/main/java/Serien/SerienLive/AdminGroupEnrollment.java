@@ -25,7 +25,8 @@ public class AdminGroupEnrollment extends abstractReusable{
 		PageFactory.initElements(driver, this);
 	}
 	
-	String groupname;
+//	String groupname;
+	
 
 	@FindBy(xpath = "//a[@href='/admin/groupEnrollmentEdits/']")
 	WebElement addNewGroupEnrollment;
@@ -145,7 +146,7 @@ public class AdminGroupEnrollment extends abstractReusable{
 	
 	}
 
-	public void enrollmentConfirmatioInEnrloomentList () throws Throwable
+	public void enrollmentConfirmatioInEnrloomentList (String CoursesName, String Groupname) throws Throwable
 	{
 		waitForWebElementTOApper(groupNameSearchBar);
 		waitForWebElementTOApper(groupNameSearchButton);
@@ -153,52 +154,54 @@ public class AdminGroupEnrollment extends abstractReusable{
 		groupNameSearchBar.sendKeys("Mastec Quadgen Group");
 		groupNameSearchButton.click();
 		
-		 
 				waitForWebElementTOApper(getCoursesNameList);
 				Thread.sleep(2000);
 				ArrayList<String> lastArray = new ArrayList<String>() ;
+				ArrayList<String> lastsArray = new ArrayList<String>() ;
 				boolean milgya = false;
 				while(!milgya) {
 					ArrayList<String> ar = new ArrayList<String>();
+					ArrayList<String> ars = new ArrayList<String>();
 					for(int i = 0; i< getCoursesNameList.size(); i++) 
 				      {   	  
-				         String s = getCoursesNameList.get(i).getText();
-				         groupname = getGroupNameList.get(i).getText();
+				      String s = getCoursesNameList.get(i).getText();
+				      String groupname = getGroupNameList.get(i).getText();
 				         ar.add(s);
+				         ars.add(groupname);
 				         
 				      }
-				     
-				      if(ar.contains("Affinity bias") && groupname.equals("Serein Inc Group"))
-				         {
-				    	  milgya = true;
-				        	 System.out.println("milgya***********************");
-				        	 System.out.println(groupname);
-				        	 			        	
-				         }else  {
-				        	 if(lastArray.size()!= 0) {
-						    	  boolean xyz = false;
-						    	  for(int i = 0 ; i < lastArray.size() && i < ar.size();i++) {
-						    		  System.out.println(lastArray.get(i)+" == "+ar.get(i));
-						    		  if(!lastArray.get(i).equals(ar.get(i))) {
-						    			  i = lastArray.size();
-						    			  xyz = true;
-						    		  }
-						    	  }
-						    	  System.out.println("xyz : "+ xyz);
-						    	  if(!xyz) {
-						    		  milgya = true;
-						    		  System.out.println("NAhi mil raha");
-						    	  }
-						      }
-						       lastArray = ar;
-				        	 PagenationForwardButton.click();
-				        	 Thread.sleep(2000);
-				         }
-				      
+					
+					for(int i = 0 ; i < ar.size() ; i++) {
+						System.out.println(ar.get(i)+ "=="+ ars.get(i));
+						if(ar.get(i).equals(CoursesName)&& ars.get(i).equals(Groupname)){
+							System.out.println("milgya***********************");
+							milgya = true;
+						}
+					}
+					if(!milgya) {
+						if(lastArray.size()!= 0) {
+					    	  boolean xyz = 	false;
+					    	  for(int i = 0 ; i < lastArray.size() && i < ar.size();i++) {
+					    		  System.out.println(lastArray.get(i)+" == "+ar.get(i));
+					    		  if(!lastArray.get(i).equals(ar.get(i))) {
+					    			  i = lastArray.size();
+					    			  xyz = true;
+					    		  }
+					    	  }
+					    	  System.out.println("xyz : "+ xyz);
+					    	  if(!xyz) {
+					    		  milgya = true;
+					    		  System.out.println("NAhi mil raha");
+					    	  }
+					      }
+					       lastArray = ar;
+					       lastsArray = ars;
+			        	 PagenationForwardButton.click();
+			        	 Thread.sleep(2000);
+					}else {
+						System.out.println("milgya***********************kyu mara rahe ho");
+					} 
 				}
-			     
-		
-
 
 }}
 	
