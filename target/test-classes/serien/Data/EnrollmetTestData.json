@@ -1,0 +1,18 @@
+[
+{
+"email":"om1@gmail.com",
+"pass":"123456",
+"valideEmail":"omkar@krishworks.com",
+"ValidePass":"password",
+"extraSpaceEmail":"  omkar@krishworks.com  ",
+"capitalEmail":"OMKAR@Krishworks.CoM",
+"invalideEmail":"rockey@gmail.com",
+"InvalideCredentionalErrorMessages":"Enter valid Credentials",
+"invalidePass":"abcd",
+"noDataInEmial":"",
+"PageTitle":"Serein's Inc – Culture and Compliance",
+"LoginURL":"https://sereindevweb.kdev.co.in/",
+"err":"Inavlid Email"
+}	
+
+]

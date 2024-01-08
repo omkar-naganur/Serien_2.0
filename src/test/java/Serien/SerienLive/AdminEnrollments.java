@@ -26,6 +26,15 @@ public class AdminEnrollments extends BaseTest{
 		
 	}
 	
+	@Test(dataProvider = "getdata", priority = 2)
+	public void ValidatingTheEnrollmentListForEnrollmentConfirmation (HashMap<String, String> input) throws Throwable
+	{	
+		Profile profile=LoginPage.serienLogin(input.get("adminEmail"), input.get("adminPass"));
+		AdminGroupEnrollment ae= new AdminGroupEnrollment(driver);
+		ae.groupEnrollment();
+		ae.enrollmentConfirmatioInEnrloomentList();		
+	}
+	
 	@DataProvider
 	public Object[][] getdata()
 	{
