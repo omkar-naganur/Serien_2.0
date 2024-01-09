@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="1" total="2" passed="1" failed="0" skipped="0">
+<testng-results ignored="2" total="3" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-01-08T14:35:59Z" name="Default suite" finished-at="2024-01-08T14:36:51Z" duration-ms="51145">
+  <suite started-at="2024-01-09T05:48:18Z" name="Default suite" finished-at="2024-01-09T05:48:25Z" duration-ms="7395">
     <groups>
     </groups>
-    <test started-at="2024-01-08T14:35:59Z" name="Default test" finished-at="2024-01-08T14:36:51Z" duration-ms="51145">
+    <test started-at="2024-01-09T05:48:18Z" name="Default test" finished-at="2024-01-09T05:48:25Z" duration-ms="7395">
       <class name="Serien.SerienLive.AdminEnrollments">
-        <test-method is-config="true" signature="lunchApplication()[pri:0, instance:Serien.SerienLive.AdminEnrollments@558bdf1f]" started-at="2024-01-08T14:35:59Z" name="lunchApplication" finished-at="2024-01-08T14:36:03Z" duration-ms="3573" status="PASS">
+        <test-method is-config="true" signature="lunchApplication()[pri:0, instance:Serien.SerienLive.AdminEnrollments@8576fa0]" started-at="2024-01-09T05:48:18Z" name="lunchApplication" finished-at="2024-01-09T05:48:22Z" duration-ms="3711" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- lunchApplication -->
-        <test-method signature="ValidatingTheEnrollmentListForEnrollmentConfirmation(java.util.HashMap)[pri:2, instance:Serien.SerienLive.AdminEnrollments@558bdf1f]" started-at="2024-01-08T14:36:03Z" name="ValidatingTheEnrollmentListForEnrollmentConfirmation" data-provider="getdata" finished-at="2024-01-08T14:36:51Z" duration-ms="47561" status="PASS">
+        <test-method signature="validationOfCoursesEnrollmentFromHRpanle(java.util.HashMap)[pri:3, instance:Serien.SerienLive.AdminEnrollments@8576fa0]" started-at="2024-01-09T05:48:22Z" name="validationOfCoursesEnrollmentFromHRpanle" data-provider="getdata" finished-at="2024-01-09T05:48:25Z" duration-ms="3671" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -21,8 +21,8 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ValidatingTheEnrollmentListForEnrollmentConfirmation -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:Serien.SerienLive.AdminEnrollments@558bdf1f]" started-at="2024-01-08T14:36:51Z" name="tearDown" finished-at="2024-01-08T14:36:51Z" duration-ms="0" status="PASS">
+        </test-method> <!-- validationOfCoursesEnrollmentFromHRpanle -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Serien.SerienLive.AdminEnrollments@8576fa0]" started-at="2024-01-09T05:48:25Z" name="tearDown" finished-at="2024-01-09T05:48:25Z" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

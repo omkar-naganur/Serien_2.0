@@ -32,11 +32,25 @@ public class Learning extends abstractReusable{
 	@FindBy(xpath = "(//div[@class='sectionname MuiBox-root css-1isemmb'])[4]")
 	WebElement Games;
 	
-	@FindBy(xpath = "//input[@type='password']")
-	WebElement Password;
+	@FindBy(xpath = "//div[contains(@class, \"zoomtwo\")]/p")
+	WebElement learningPageCoursesName;
 	
-	@FindBy(xpath = "//button[@type='submit']")
-	WebElement LoginButton;
+	//List OF view all buttons
+	
+	@FindBy(xpath = "//div[contains(text(),'Courses')]/..//div[4]")
+	WebElement coursesViewall;
+	
+	@FindBy(xpath = "//div[contains(text(),'Micro-learnings')]/..//div[4]")
+	WebElement microLearningViewall;
+	
+	@FindBy(xpath = "//div[contains(text(),'Webinars')]/..//div[4]")
+	WebElement WebinarsViewall;
+	
+	@FindBy(xpath = "//div[contains(text(),'Games')]/..//div[4]")
+	WebElement gameViewall;
+	
+	//**********************************
+	
 	
 	@FindBy(xpath = "//li[3]//div[1]//div[1]")
 	WebElement learning;
@@ -79,6 +93,8 @@ public class Learning extends abstractReusable{
 	@FindBy(xpath = "(//div[@class='message-box-buttons-panel__buttons'])//button[2]")
 	WebElement resumeNo;
 	
+	
+	
 	public void scromCourseResume ()
 	{
 		waitForWebElementTOApper(iframeScrom);
@@ -90,7 +106,6 @@ public class Learning extends abstractReusable{
 		resumeYes.click();
 		driver.switchTo().defaultContent();
 	}
-	
 	
 	
 	public void coursesPopup()
@@ -137,6 +152,14 @@ public class Learning extends abstractReusable{
 	public void coursesStart() {
 		waitForWebElementTOApper(start);
 		start.click();
+		
+	}
+	
+	public String learningPageSampleCourseNameGet () {
+		waitForWebElementTOApper(learningPageCoursesName);
+		String sampleCoursesName =learningPageCoursesName.getText();
+		System.out.println(sampleCoursesName);
+		return sampleCoursesName ;
 		
 	}
 

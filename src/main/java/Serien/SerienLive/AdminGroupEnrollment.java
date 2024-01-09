@@ -151,7 +151,7 @@ public class AdminGroupEnrollment extends abstractReusable{
 		waitForWebElementTOApper(groupNameSearchBar);
 		waitForWebElementTOApper(groupNameSearchButton);
 		groupNameSearchBar.click();
-		groupNameSearchBar.sendKeys("Mastec Quadgen Group");
+		groupNameSearchBar.sendKeys(Groupname);
 		groupNameSearchButton.click();
 		
 				waitForWebElementTOApper(getCoursesNameList);
