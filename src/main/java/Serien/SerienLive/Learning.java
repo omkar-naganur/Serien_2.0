@@ -58,6 +58,14 @@ public class Learning extends abstractReusable{
 	@FindBy(xpath = "//div[contains(@class, 'microlerningdiscription')]")
 	List<WebElement> getMicroLearningNames;
 	
+	@FindBy(xpath = "//div[@class='MuiBox-root css-1en0sct']//div")
+	List<WebElement> gamesNames;
+	
+	@FindBy(xpath = "//div[@class='MuiBox-root css-122xxno']//div[1]")
+	List<WebElement> getallgamesNames;
+	
+	
+	
 	
 	@FindBy(xpath = "//li[3]//div[1]//div[1]")
 	WebElement learning;
@@ -238,7 +246,48 @@ public class Learning extends abstractReusable{
 			break ;
 		}	
 		
+		return FlageCourseFound ;
 		
+	}
+	
+	public Boolean GameNameValidationFromHRPanle (String gameName) throws Throwable  {
+		Boolean FlageCourseFound =false ;
+		waitForWebElementTOApper(gamesNames);
+		ArrayList<String> lastArray = new ArrayList<String>() ;
+		
+		for (int i=0; i< gamesNames.size(); i++)
+		{
+			String mr =gamesNames.get(i).getText();
+			lastArray.add(mr);
+			
+			if(mr.equals(gameName)) {
+				System.out.println("Courses Found = "+mr);
+				FlageCourseFound = true ;
+				break ;
+			}
+			else {
+				waitForWebElementTOApper(gameViewall);
+				gameViewall.click();
+				waitForWebElementTOApper(getallgamesNames);
+				
+				for(int j=0; i< getallgamesNames.size(); j++)
+				{
+					String actCoursesName = getallgamesNames.get(j).getText();
+					
+					if (actCoursesName.equals(gameName))
+					{	
+						System.out.println("Courses Found in view all section= "+actCoursesName);
+						FlageCourseFound = true ;
+						break ;
+					}
+					else {
+						 System.out.println("Courses not found in view all section");
+						 FlageCourseFound = false ;
+						 }
+				}
+			}
+			break ;
+		}	
 		
 		return FlageCourseFound ;
 		

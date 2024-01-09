@@ -5,9 +5,9 @@
     <classes>
       <class name="Serien.SerienLive.AdminEnrollments">
         <methods>
-          <include name="validationOfMicroLearningEnrollmentFromHRpanle" invocation-numbers="0"/>
           <include name="tearDown"/>
           <include name="lunchApplication"/>
+          <include name="validationOfGamesEnrollmentFromHRpanle" invocation-numbers="0"/>
         </methods>
       </class> <!-- Serien.SerienLive.AdminEnrollments -->
     </classes>

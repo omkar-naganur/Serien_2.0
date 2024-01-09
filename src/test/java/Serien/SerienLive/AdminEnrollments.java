@@ -58,11 +58,10 @@ public class AdminEnrollments extends BaseTest{
 	@Test(dataProvider = "getdata", priority = 5)
 	public void validationOfGamesEnrollmentFromHRpanle (HashMap<String, String> input) throws Throwable
 	{	
-		
-		// need to work here
+
 		Profile profile=LoginPage.serienLogin(input.get("Useremail"), input.get("userpass"));
 		Learning lr=new Learning(driver);
-		Boolean CourseFound = lr.MicroLearningNameValidationFromHRPanle(input.get("MicroLearningCourses"));
+		Boolean CourseFound = lr.GameNameValidationFromHRPanle(input.get("Gamesname"));
 		Assert.assertTrue(CourseFound);
 			
 	}
@@ -82,6 +81,7 @@ public class AdminEnrollments extends BaseTest{
 		map.put("GroupName", "Sitero_PoSH_2023");
 		map.put("dueDate", "12122024");
 		map.put("MicroLearningCourses", "Confirmation bias");
+		map.put("Gamesname", "Omkar test");
 		
 		return new Object[][] {{map}};
 	}
