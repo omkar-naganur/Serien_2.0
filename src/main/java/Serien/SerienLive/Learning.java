@@ -1,6 +1,7 @@
 package Serien.SerienLive;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -51,6 +52,8 @@ public class Learning extends abstractReusable{
 	
 	//**********************************
 	
+	@FindBy(xpath = "//div[@class='MuiBox-root css-9t70b9']/p")
+	List<WebElement> getAllCoursesName;
 	
 	@FindBy(xpath = "//li[3]//div[1]//div[1]")
 	WebElement learning;
@@ -155,11 +158,39 @@ public class Learning extends abstractReusable{
 		
 	}
 	
-	public String learningPageSampleCourseNameGet () {
+	public Boolean learningPageSampleCourseNameGet (String CoursesName) throws Throwable  {
 		waitForWebElementTOApper(learningPageCoursesName);
 		String sampleCoursesName =learningPageCoursesName.getText();
-		System.out.println(sampleCoursesName);
-		return sampleCoursesName ;
+		
+		Boolean FlageCourseFound =false ;
+		
+		if(sampleCoursesName.equals(CoursesName)) {
+			System.out.println("Courses Found = "+sampleCoursesName);
+			FlageCourseFound = true ;
+		}
+		else {
+			waitForWebElementTOApper(coursesViewall);
+			coursesViewall.click();
+			waitForWebElementTOApper(getAllCoursesName);
+		//	Thread.sleep(2000);
+			
+			for(int i=0; i< getAllCoursesName.size(); i++)
+			{
+				String actCoursesName = getAllCoursesName.get(i).getText();
+				
+				if (actCoursesName.equals(CoursesName))
+				{	
+					System.out.println("Courses Found in view all section= "+actCoursesName);
+					FlageCourseFound = true ;
+				}
+				else {
+					 System.out.println("Courses not found in view all section");
+					 FlageCourseFound = false ;
+					 }
+			}
+		}
+		
+		return FlageCourseFound ;
 		
 	}
 

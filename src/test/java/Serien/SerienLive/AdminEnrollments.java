@@ -40,7 +40,8 @@ public class AdminEnrollments extends BaseTest{
 	{	
 		Profile profile=LoginPage.serienLogin(input.get("Useremail"), input.get("userpass"));
 		Learning lr=new Learning(driver);
-		lr.learningPageSampleCourseNameGet();
+		Boolean CourseFound = lr.learningPageSampleCourseNameGet(input.get("CourseName"));
+		Assert.assertTrue(CourseFound);
 			
 	}
 	
@@ -55,7 +56,7 @@ public class AdminEnrollments extends BaseTest{
 		map.put("typeOfTraining", "course");
 	//	map.put("typeOfTraining", "Micro course");
 	//	map.put("typeOfTraining", "Games");
-		map.put("CourseName", "Safety and inclusion at the workplace");
+		map.put("CourseName", "Safety and inclusion at the workplace"); //Safety and inclusion at the workplace
 		map.put("GroupName", "Sitero_PoSH_2023");
 		map.put("dueDate", "12122024");
 		
