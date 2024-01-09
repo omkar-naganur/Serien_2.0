@@ -40,7 +40,29 @@ public class AdminEnrollments extends BaseTest{
 	{	
 		Profile profile=LoginPage.serienLogin(input.get("Useremail"), input.get("userpass"));
 		Learning lr=new Learning(driver);
-		Boolean CourseFound = lr.learningPageSampleCourseNameGet(input.get("CourseName"));
+		Boolean CourseFound = lr.CoursesNameValidationFromHRPanle(input.get("CourseName"));
+		Assert.assertTrue(CourseFound);
+			
+	}
+	
+	@Test(dataProvider = "getdata", priority = 4)
+	public void validationOfMicroLearningEnrollmentFromHRpanle (HashMap<String, String> input) throws Throwable
+	{	
+		Profile profile=LoginPage.serienLogin(input.get("Useremail"), input.get("userpass"));
+		Learning lr=new Learning(driver);
+		Boolean CourseFound = lr.MicroLearningNameValidationFromHRPanle(input.get("MicroLearningCourses"));
+		Assert.assertTrue(CourseFound);
+			
+	}
+	
+	@Test(dataProvider = "getdata", priority = 5)
+	public void validationOfGamesEnrollmentFromHRpanle (HashMap<String, String> input) throws Throwable
+	{	
+		
+		// need to work here
+		Profile profile=LoginPage.serienLogin(input.get("Useremail"), input.get("userpass"));
+		Learning lr=new Learning(driver);
+		Boolean CourseFound = lr.MicroLearningNameValidationFromHRPanle(input.get("MicroLearningCourses"));
 		Assert.assertTrue(CourseFound);
 			
 	}
@@ -59,6 +81,7 @@ public class AdminEnrollments extends BaseTest{
 		map.put("CourseName", "Safety and inclusion at the workplace"); //Safety and inclusion at the workplace
 		map.put("GroupName", "Sitero_PoSH_2023");
 		map.put("dueDate", "12122024");
+		map.put("MicroLearningCourses", "Confirmation bias");
 		
 		return new Object[][] {{map}};
 	}

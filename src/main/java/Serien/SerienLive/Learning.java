@@ -55,6 +55,10 @@ public class Learning extends abstractReusable{
 	@FindBy(xpath = "//div[@class='MuiBox-root css-9t70b9']/p")
 	List<WebElement> getAllCoursesName;
 	
+	@FindBy(xpath = "//div[contains(@class, 'microlerningdiscription')]")
+	List<WebElement> getMicroLearningNames;
+	
+	
 	@FindBy(xpath = "//li[3]//div[1]//div[1]")
 	WebElement learning;
 	
@@ -158,7 +162,7 @@ public class Learning extends abstractReusable{
 		
 	}
 	
-	public Boolean learningPageSampleCourseNameGet (String CoursesName) throws Throwable  {
+	public Boolean CoursesNameValidationFromHRPanle (String CoursesName) throws Throwable  {
 		waitForWebElementTOApper(learningPageCoursesName);
 		String sampleCoursesName =learningPageCoursesName.getText();
 		
@@ -193,6 +197,53 @@ public class Learning extends abstractReusable{
 		return FlageCourseFound ;
 		
 	}
+	
+	public Boolean MicroLearningNameValidationFromHRPanle (String microLearning) throws Throwable  {
+		Boolean FlageCourseFound =false ;
+		waitForWebElementTOApper(getMicroLearningNames);
+		
+		ArrayList<String> lastArray = new ArrayList<String>() ;
+		for (int i=0; i< getMicroLearningNames.size(); i++)
+		{
+			String mr =getMicroLearningNames.get(i).getText();
+			lastArray.add(mr);
+			
+			if(mr.equals(microLearning)) {
+				System.out.println("Courses Found = "+mr);
+				FlageCourseFound = true ;
+				break ;
+			}
+			else {
+				waitForWebElementTOApper(microLearningViewall);
+				microLearningViewall.click();
+				waitForWebElementTOApper(getMicroLearningNames);
+			//	Thread.sleep(2000);
+				
+				for(int j=0; i< getMicroLearningNames.size(); j++)
+				{
+					String actCoursesName = getMicroLearningNames.get(j).getText();
+					
+					if (actCoursesName.equals(microLearning))
+					{	
+						System.out.println("Courses Found in view all section= "+actCoursesName);
+						FlageCourseFound = true ;
+						break ;
+					}
+					else {
+						 System.out.println("Courses not found in view all section");
+						 FlageCourseFound = false ;
+						 }
+				}
+			}
+			break ;
+		}	
+		
+		
+		
+		return FlageCourseFound ;
+		
+	}
+		
 
 }
 
