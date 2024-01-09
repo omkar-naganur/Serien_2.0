@@ -51,17 +51,15 @@ public class AdminEnrollments extends BaseTest{
 		Profile profile=LoginPage.serienLogin(input.get("Useremail"), input.get("userpass"));
 		Learning lr=new Learning(driver);
 		Boolean CourseFound = lr.MicroLearningNameValidationFromHRPanle(input.get("MicroLearningCourses"));
-		Assert.assertTrue(CourseFound);
-			
+		Assert.assertTrue(CourseFound);			
 	}
 	
 	@Test(dataProvider = "getdata", priority = 5)
 	public void validationOfGamesEnrollmentFromHRpanle (HashMap<String, String> input) throws Throwable
 	{	
-
 		Profile profile=LoginPage.serienLogin(input.get("Useremail"), input.get("userpass"));
 		Learning lr=new Learning(driver);
-		Boolean CourseFound = lr.GameNameValidationFromHRPanle(input.get("Gamesname"));
+		Boolean CourseFound = lr.gameNameValidationFromHRPanel(input.get("Gamesname"));
 		Assert.assertTrue(CourseFound);
 			
 	}

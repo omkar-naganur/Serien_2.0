@@ -75,6 +75,9 @@ public class Learning extends abstractReusable{
 	@FindBy(xpath = "//button[@type='button']")
 	WebElement startCourses;
 	
+	@FindBy(xpath = "//button[@type='button']")
+	List<WebElement> startCoursesList;
+	
 	@FindBy(xpath = "(//div[@class='css-fk1ch0']//div)[1]")
 	WebElement coursesTitle;
 	
@@ -121,7 +124,6 @@ public class Learning extends abstractReusable{
 		resumeYes.click();
 		driver.switchTo().defaultContent();
 	}
-	
 	
 	public void coursesPopup()
 	{
@@ -250,44 +252,72 @@ public class Learning extends abstractReusable{
 		
 	}
 	
-	public Boolean GameNameValidationFromHRPanle (String gameName) throws Throwable  {
-		Boolean FlageCourseFound =false ;
-		waitForWebElementTOApper(gamesNames);
-		ArrayList<String> lastArray = new ArrayList<String>() ;
+	public Boolean gameNameValidationFromHRPanel(String gameName) throws Throwable {
+	    Boolean flagCourseFound = false;
+	    waitForWebElementTOApper(gamesNames);
+
+	    for (WebElement game : gamesNames) {
+	        String courseName = game.getText();
+	        if (courseName.equals(gameName)) {
+	            System.out.println("Course Found: " + courseName);
+	            flagCourseFound = true;
+	            break;
+	        }
+	    }
+
+	    if (!flagCourseFound) {
+	        waitForWebElementTOApper(gameViewall);
+	        gameViewall.click();
+	        waitForWebElementTOApper(getallgamesNames);
+
+	        for (WebElement allGame : getallgamesNames) {
+	            String actCoursesName = allGame.getText();
+	            if (actCoursesName.equals(gameName)) {
+	                System.out.println("Course Found in View All section: " + actCoursesName);
+	                flagCourseFound = true;
+	                break;
+	            }
+	        }
+	    }
+
+	    if (!flagCourseFound) {
+	        System.out.println("Course not found in View All section");
+	    }
+
+	    return flagCourseFound;
+	}
+	
+	public Boolean OpenTheCourses (String CoursesName) throws Throwable  {
+		waitForWebElementTOApper(learningPageCoursesName);
+		String sampleCoursesName =learningPageCoursesName.getText();
 		
-		for (int i=0; i< gamesNames.size(); i++)
-		{
-			String mr =gamesNames.get(i).getText();
-			lastArray.add(mr);
+		Boolean FlageCourseFound =false ;
+		
+		if(sampleCoursesName.equals(CoursesName)) {
+			System.out.println("Courses Found = "+sampleCoursesName);
+			FlageCourseFound = true ;
+			startCourses.click();
+		}
+		else {
+			waitForWebElementTOApper(coursesViewall);
+			coursesViewall.click();
+			}
+		
+			waitForWebElementTOApper(getAllCoursesName);
+		//	Thread.sleep(2000);
 			
-			if(mr.equals(gameName)) {
-				System.out.println("Courses Found = "+mr);
-				FlageCourseFound = true ;
-				break ;
-			}
-			else {
-				waitForWebElementTOApper(gameViewall);
-				gameViewall.click();
-				waitForWebElementTOApper(getallgamesNames);
+			for(int i=0; i< getAllCoursesName.size(); i++)
+			{
+				String actCoursesName = getAllCoursesName.get(i).getText();
 				
-				for(int j=0; i< getallgamesNames.size(); j++)
-				{
-					String actCoursesName = getallgamesNames.get(j).getText();
-					
-					if (actCoursesName.equals(gameName))
-					{	
-						System.out.println("Courses Found in view all section= "+actCoursesName);
-						FlageCourseFound = true ;
-						break ;
-					}
-					else {
-						 System.out.println("Courses not found in view all section");
-						 FlageCourseFound = false ;
-						 }
+				if (actCoursesName.equals(CoursesName))
+				{	
+					System.out.println("Courses Found in view all section= "+actCoursesName);
+					FlageCourseFound = true ;
+					startCoursesList.get(i).click();
 				}
+				
 			}
-			break ;
-		}	
 		
 		return FlageCourseFound ;
 		
