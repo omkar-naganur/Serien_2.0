@@ -6,7 +6,7 @@
       <class name="Serien.SerienLive.HRlearning">
         <methods>
           <include name="tearDown"/>
-          <include name="ValidationOfDisclimerAccepectingAcknowledgeAndStartTheCourses" invocation-numbers="0"/>
+          <include name="ValidationOfDisclimerAccepectingAcknowledgeAndStartMicroLearning" invocation-numbers="0"/>
           <include name="lunchApplication"/>
         </methods>
       </class> <!-- Serien.SerienLive.HRlearning -->

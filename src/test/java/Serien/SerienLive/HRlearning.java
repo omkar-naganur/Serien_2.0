@@ -36,6 +36,18 @@ public class HRlearning extends BaseTest{
 		Assert.assertTrue(coursesStarted);
 	}
 	
+	@Test(dataProvider = "getdata", priority = 3)
+	public void ValidationOfDisclimerAccepectingAcknowledgeAndStartMicroLearning (HashMap<String, String> input) throws Throwable
+	{	
+		Profile profile=LoginPage.serienLogin(input.get("Useremail"), input.get("userpass"));
+		Learning lr= new Learning(driver);
+		lr.OpenTheMicroLearning(input.get("MicroLearningCourses"));
+		lr.AccepectingAcknowledge();
+		lr.coursesStart();
+		Boolean coursesStarted =lr.MicroLearningAndGameAceesProgressReading();
+		Assert.assertTrue(coursesStarted);
+	}
+	
 	
 	@DataProvider
 	public Object[][] getdata()
@@ -52,7 +64,7 @@ public class HRlearning extends BaseTest{
 	//	map.put("CourseName", "Prevention of sexual harassment in the workplace – Hindi"); 
 		map.put("GroupName", "Sitero_PoSH_2023");
 		map.put("dueDate", "12122024");
-		map.put("MicroLearningCourses", "Confirmation bias");
+		map.put("MicroLearningCourses", "Affinity bias");
 		map.put("Gamesname", "Omkar test");
 		map.put("ExpDiscilemrAlertMeg", "Please Acknowledge Disclaimer First !");
 		

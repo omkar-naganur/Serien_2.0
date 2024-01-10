@@ -74,7 +74,7 @@ public class Learning extends abstractReusable{
 	@FindBy(xpath = "//li[3]//div[1]//div[1]")
 	WebElement learning;
 	
-	@FindBy(xpath = "//button[contains(text(), 'Acknowledge')]")
+	@FindBy(xpath = "//div[@class='MuiBox-root css-1bvc4cc']/button")
 	WebElement AcknowledgeButton;
 	
 	//Courses Elements
@@ -84,6 +84,9 @@ public class Learning extends abstractReusable{
 	
 	@FindBy(xpath = "//button[@type='button']")
 	List<WebElement> startCoursesList;
+	
+	@FindBy(xpath = "//div[@class='MuiBox-root css-ckyhk3']")
+	List<WebElement> continueMicroLearning;
 	
 	@FindBy(xpath = "(//div[@class='css-fk1ch0']//div)[1]")
 	WebElement coursesTitle;
@@ -99,6 +102,9 @@ public class Learning extends abstractReusable{
 	
 	@FindBy(xpath = "(//div[@class='MuiBox-root css-gg4vpm']/p)[2]")
 	WebElement insideCoursesProgress;
+	
+	@FindBy(xpath = "(//div[@class='MuiBox-root css-gg4vpm']/p)[1]")
+	WebElement insideProgressOFMicroLearningAndGame;
 	
 	// Scrom Elements
 	
@@ -359,6 +365,41 @@ public class Learning extends abstractReusable{
 	return proMatch;
 		
 	}
+	
+	public Boolean MicroLearningAndGameAceesProgressReading() {
+		waitForWebElementTOApper(insideProgressOFMicroLearningAndGame);
+	String	actProgress= insideProgressOFMicroLearningAndGame.getText();
+	Boolean proMatch= actProgress.contains("0");
+	return proMatch;
+		
+	}
+
+	public Boolean OpenTheMicroLearning (String microLearning) {
+		Boolean FlageCourseFound = false;
+				waitForWebElementTOApper(microLearningViewall);
+				microLearningViewall.click();
+				waitForWebElementTOApper(getMicroLearningNames);
+			//	Thread.sleep(2000);
+				
+				for(int j=0; j< getMicroLearningNames.size(); j++)
+				{
+					String actCoursesName = getMicroLearningNames.get(j).getText();
+					
+					if (actCoursesName.equals(microLearning))
+					{	
+						System.out.println("Courses Found in view all section= "+actCoursesName);
+						continueMicroLearning.get(j).click();
+						FlageCourseFound = true ;
+						break ;
+					}
+					else {
+						 System.out.println("Courses not found in view all section");
+						 FlageCourseFound = false ;
+						 }
+				}
+				return FlageCourseFound ;
+			}
+	
 		
 
 }
