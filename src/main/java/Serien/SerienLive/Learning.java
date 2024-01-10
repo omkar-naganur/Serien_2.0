@@ -51,6 +51,7 @@ public class Learning extends abstractReusable{
 	WebElement gameViewall;
 	
 	//**********************************
+	//get List Of Elements
 	
 	@FindBy(xpath = "//div[@class='MuiBox-root css-9t70b9']/p")
 	List<WebElement> getAllCoursesName;
@@ -64,12 +65,17 @@ public class Learning extends abstractReusable{
 	@FindBy(xpath = "//div[@class='MuiBox-root css-122xxno']//div[1]")
 	List<WebElement> getallgamesNames;
 	
+	//*************************************
+	//Courses OverView Page
+	
 	@FindBy(xpath = "//div[@role='alert']//div[2]")
 	WebElement actDisclimerAlert;
 	
-	
 	@FindBy(xpath = "//li[3]//div[1]//div[1]")
 	WebElement learning;
+	
+	@FindBy(xpath = "//button[contains(text(), 'Acknowledge')]")
+	WebElement AcknowledgeButton;
 	
 	//Courses Elements
 	
@@ -88,13 +94,11 @@ public class Learning extends abstractReusable{
 	@FindBy(xpath = "(//div[@class='css-fk1ch0']//div)[3]//div[2]")
 	WebElement CoursesComProgression;
 	
-	//@FindBy(xpath = "(//button[@type='button'])[2]")
-	//WebElement start;
-	
 	@FindBy(xpath = "//div[@class='css-fk1ch0']//button")
 	WebElement start;
 	
-	//div[@class='css-fk1ch0']//button
+	@FindBy(xpath = "(//div[@class='MuiBox-root css-gg4vpm']/p)[2]")
+	WebElement insideCoursesProgress;
 	
 	// Scrom Elements
 	
@@ -331,6 +335,29 @@ public class Learning extends abstractReusable{
 		String actAler = actDisclimerAlert.getText();
 		System.out.println(actAler);
 		return actAler;
+	}
+
+	public void AccepectingAcknowledge() throws Throwable {
+		
+		try {
+			
+			waitForWebElementTOApper(AcknowledgeButton);
+			AcknowledgeButton.click();	
+			Thread.sleep(2000);
+		
+		} catch (Exception e) {
+			Thread.sleep(1000);
+			System.out.println("AcknowledgeButton not availabe");
+		}
+		
+	}
+
+	public Boolean coursesAceesProgressReading() {
+		waitForWebElementTOApper(insideCoursesProgress);
+	String	actProgress= insideCoursesProgress.getText();
+	Boolean proMatch= actProgress.contains("0");
+	return proMatch;
+		
 	}
 		
 

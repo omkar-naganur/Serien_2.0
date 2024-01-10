@@ -10,7 +10,6 @@ import org.testng.annotations.Test;
 import serien.TestComponents.BaseTest;
 
 public class HRlearning extends BaseTest{
-
 	
 	@Test(dataProvider = "getdata", priority = 1)
 	public void ValidationOfDisclimerErrorMesg (HashMap<String, String> input) throws Throwable
@@ -23,6 +22,18 @@ public class HRlearning extends BaseTest{
 		Boolean alertMatch= actAlertMeg.equals(input.get("ExpDiscilemrAlertMeg"));
 		Assert.assertTrue(alertMatch);
 			
+	}
+	
+	@Test(dataProvider = "getdata", priority = 2)
+	public void ValidationOfDisclimerAccepectingAcknowledgeAndStartTheCourses (HashMap<String, String> input) throws Throwable
+	{	
+		Profile profile=LoginPage.serienLogin(input.get("Useremail"), input.get("userpass"));
+		Learning lr= new Learning(driver);
+		lr.OpenTheCourses(input.get("CourseName"));
+		lr.AccepectingAcknowledge();
+		lr.coursesStart();
+		Boolean coursesStarted =lr.coursesAceesProgressReading();
+		Assert.assertTrue(coursesStarted);
 	}
 	
 	
