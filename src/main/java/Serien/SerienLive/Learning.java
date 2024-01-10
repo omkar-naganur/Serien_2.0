@@ -400,6 +400,43 @@ public class Learning extends abstractReusable{
 				return FlageCourseFound ;
 			}
 	
+	public Boolean OpenTheGame (String gameName) throws Throwable {
+	    Boolean flagCourseFound = false;
+	    waitForWebElementTOApper(gamesNames);
+
+//	    for (WebElement game : gamesNames) {
+//	        String courseName = game.getText();
+//	        if (courseName.equals(gameName)) {
+//	            System.out.println("Course Found: " + courseName);
+//	            game.click();
+//	            flagCourseFound = true;
+//	            break;
+//	        }
+//	    }
+
+	    if (!flagCourseFound) {
+	        waitForWebElementTOApper(gameViewall);
+	        gameViewall.click();
+	        waitForWebElementTOApper(getallgamesNames);
+
+	        for (WebElement allGame : getallgamesNames) {
+	            String actCoursesName = allGame.getText();
+	            if (actCoursesName.equals(gameName)) {
+	                System.out.println("Course Found in View All section: " + actCoursesName);
+	                allGame.click();
+	                flagCourseFound = true;
+	                break;
+	            }
+	        }
+	    }
+
+	    if (!flagCourseFound) {
+	        System.out.println("Course not found in View All section");
+	    }
+
+	    return flagCourseFound;
+	}
+	
 		
 
 }

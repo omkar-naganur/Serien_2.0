@@ -48,6 +48,18 @@ public class HRlearning extends BaseTest{
 		Assert.assertTrue(coursesStarted);
 	}
 	
+	@Test(dataProvider = "getdata", priority = 4)
+	public void ValidationOfDisclimerAccepectingAcknowledgeAndStartGame (HashMap<String, String> input) throws Throwable
+	{	
+		Profile profile=LoginPage.serienLogin(input.get("Useremail"), input.get("userpass"));
+		Learning lr= new Learning(driver);
+		lr.OpenTheGame(input.get("Gamesname"));
+		lr.AccepectingAcknowledge();
+		lr.coursesStart();
+		Boolean coursesStarted =lr.MicroLearningAndGameAceesProgressReading();
+		Assert.assertTrue(coursesStarted);
+	}
+	
 	
 	@DataProvider
 	public Object[][] getdata()

@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="2" total="3" passed="1" failed="0" skipped="0">
+<testng-results ignored="3" total="4" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-01-10T11:15:37Z" name="Default suite" finished-at="2024-01-10T11:15:47Z" duration-ms="9768">
+  <suite started-at="2024-01-10T12:28:35Z" name="Default suite" finished-at="2024-01-10T12:28:44Z" duration-ms="9374">
     <groups>
     </groups>
-    <test started-at="2024-01-10T11:15:37Z" name="Default test" finished-at="2024-01-10T11:15:47Z" duration-ms="9768">
+    <test started-at="2024-01-10T12:28:35Z" name="Default test" finished-at="2024-01-10T12:28:44Z" duration-ms="9374">
       <class name="Serien.SerienLive.HRlearning">
-        <test-method is-config="true" signature="lunchApplication()[pri:0, instance:Serien.SerienLive.HRlearning@8576fa0]" started-at="2024-01-10T11:15:37Z" name="lunchApplication" finished-at="2024-01-10T11:15:40Z" duration-ms="2643" status="PASS">
+        <test-method is-config="true" signature="lunchApplication()[pri:0, instance:Serien.SerienLive.HRlearning@7582ff54]" started-at="2024-01-10T12:28:35Z" name="lunchApplication" finished-at="2024-01-10T12:28:38Z" duration-ms="2461" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- lunchApplication -->
-        <test-method signature="ValidationOfDisclimerAccepectingAcknowledgeAndStartMicroLearning(java.util.HashMap)[pri:3, instance:Serien.SerienLive.HRlearning@8576fa0]" started-at="2024-01-10T11:15:40Z" name="ValidationOfDisclimerAccepectingAcknowledgeAndStartMicroLearning" data-provider="getdata" finished-at="2024-01-10T11:15:47Z" duration-ms="7116" status="PASS">
+        <test-method signature="ValidationOfDisclimerAccepectingAcknowledgeAndStartGame(java.util.HashMap)[pri:4, instance:Serien.SerienLive.HRlearning@7582ff54]" started-at="2024-01-10T12:28:38Z" name="ValidationOfDisclimerAccepectingAcknowledgeAndStartGame" data-provider="getdata" finished-at="2024-01-10T12:28:44Z" duration-ms="6902" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -21,8 +21,8 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ValidationOfDisclimerAccepectingAcknowledgeAndStartMicroLearning -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:Serien.SerienLive.HRlearning@8576fa0]" started-at="2024-01-10T11:15:47Z" name="tearDown" finished-at="2024-01-10T11:15:47Z" duration-ms="0" status="PASS">
+        </test-method> <!-- ValidationOfDisclimerAccepectingAcknowledgeAndStartGame -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Serien.SerienLive.HRlearning@7582ff54]" started-at="2024-01-10T12:28:44Z" name="tearDown" finished-at="2024-01-10T12:28:44Z" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
