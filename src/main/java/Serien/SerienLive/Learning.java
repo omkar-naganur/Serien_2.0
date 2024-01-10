@@ -64,7 +64,8 @@ public class Learning extends abstractReusable{
 	@FindBy(xpath = "//div[@class='MuiBox-root css-122xxno']//div[1]")
 	List<WebElement> getallgamesNames;
 	
-	
+	@FindBy(xpath = "//div[@role='alert']//div[2]")
+	WebElement actDisclimerAlert;
 	
 	
 	@FindBy(xpath = "//li[3]//div[1]//div[1]")
@@ -302,6 +303,7 @@ public class Learning extends abstractReusable{
 			waitForWebElementTOApper(coursesViewall);
 			coursesViewall.click();
 			}
+		if(!FlageCourseFound) {
 		
 			waitForWebElementTOApper(getAllCoursesName);
 		//	Thread.sleep(2000);
@@ -318,9 +320,17 @@ public class Learning extends abstractReusable{
 				}
 				
 			}
+		}
 		
 		return FlageCourseFound ;
 		
+	}
+
+	public String getDisclimerAlertMessage() throws Throwable {
+		waitForWebElementTOApper(actDisclimerAlert);
+		String actAler = actDisclimerAlert.getText();
+		System.out.println(actAler);
+		return actAler;
 	}
 		
 

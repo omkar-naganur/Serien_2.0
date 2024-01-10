@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+
+<listeners>
+<listener class-name ="serien.TestComponents.Listeners"/>
+</listeners>
+
+  <test thread-count="5" name="Test0">
+    <classes>
+      <class name="Serien.SerienLive.AdminEnrollments"/>
+        
+    </classes>
+  </test> <!-- Test -->
+  
+    <test thread-count="5" name="Test1">
+    <classes>
+      <class name="Serien.SerienLive.LoginPageTest"/>
+        
+    </classes>
+  </test> <!-- Test -->
+  
+    <test thread-count="5" name="Test2">
+    <classes>
+      <class name="Serien.SerienLive.HRprofile"/>
+        
+    </classes>
+  </test> <!-- Test -->
+  
+    <test thread-count="5" name="Test3">
+    <classes>
+      <class name="Serien.SerienLive.HRlearning"/>
+        
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

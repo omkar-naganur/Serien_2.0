@@ -1,6 +1,7 @@
 package serien.TestComponents;
 
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterMethod;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -118,6 +119,7 @@ public class BaseTest {
 		return LoginPage;
 	}
 	
+
 	@AfterMethod
 	public void tearDown()
 	{
