@@ -12,6 +12,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import Serien.AbstractComponents.abstractReusable;
+import freemarker.core.ReturnInstruction.Return;
 
 public class ProgressReport extends abstractReusable{
 
@@ -44,9 +45,24 @@ public class ProgressReport extends abstractReusable{
 	@FindBy(xpath = "//div[@class='MuiBox-root css-5hqcx']")
 	List<WebElement> GameNameListInReport;
 	
-	
 	@FindBy(xpath = "//div[@class='MuiBox-root css-n4ie87']//div[@class='MuiBox-root css-13o8bqy']/..//div[@class='MuiBox-root css-evh4dy']")
 	WebElement exter;
+	
+	@FindBy(xpath = "//div[@class='MuiBox-root css-evh4dy']")
+	List<WebElement> enterToCourses;
+	
+	@FindBy(xpath = "//div[@class='MuiBox-root css-12230cn']//div[@class='MuiBox-root css-xrxgzc']")
+	List<WebElement> enterToGame;
+	
+	@FindBy(xpath = "//div[@class='MuiBox-root css-1og3357']//div[@class='MuiBox-root css-xrxgzc']")
+	List<WebElement> enterToMicroLearning;
+	
+	// both are same based on situation
+//	@FindBy(xpath = "((//div[@class='MuiBox-root css-9nh4zr'][1])/..//div[1])[1]")
+//	WebElement countTotalnoofemployees;
+	
+	@FindBy(xpath = "(//div[contains(@class, 'microlerningdiscription MuiBox-root css-1sacc3f')])[1]")
+	WebElement countTotalnoofemployees;
 	
 	public ArrayList<String> SubscriptioDeatilsfromUser () throws Throwable
 	{
@@ -94,6 +110,59 @@ public class ProgressReport extends abstractReusable{
 			nameOfGame.add(nameOfGames);
 		}
 		return nameOfGame;
+	}
+	
+	public String TotalNoOfEmployees(String Courses) throws Throwable {
+		
+		enterningToCourses(Courses);
+		waitForWebElementTOApper(countTotalnoofemployees);
+		String count=countTotalnoofemployees.getText();
+		return count;
+	}
+	
+	public ArrayList<String> enterningToCourses (String Courses) throws Throwable {
+		Boolean checkCourses = false ;
+		ArrayList<String> allCoursesNames = new ArrayList<String>();
+		Thread.sleep(1000);
+		
+		if(!checkCourses) {
+		waitForWebElementTOApper(GameNameListInReport);
+		for(int i=0; i<GameNameListInReport.size(); i++)
+		{
+			String nameOfGames=GameNameListInReport.get(i).getText();
+			if(nameOfGames.equals(Courses)) {
+				enterToGame.get(i).click();
+				checkCourses = true ;
+			}
+			allCoursesNames.add(nameOfGames);
+		}
+		}
+		
+		if(!checkCourses) {
+			for(int i=0; i<MicroLearningListInReport.size(); i++)
+			{
+				String nameOfMicroLearning=MicroLearningListInReport.get(i).getText();
+				if(nameOfMicroLearning.equals(Courses)) {
+					enterToMicroLearning.get(i).click();
+					checkCourses = true ;
+				}
+				allCoursesNames.add(nameOfMicroLearning);
+			}
+		}
+		
+		if(!checkCourses) {
+			for(int i=0; i<courseNamesListInReport.size(); i++)
+			{
+				String coursesName=courseNamesListInReport.get(i).getText();
+				if(coursesName.equals(Courses)) {
+					enterToCourses.get(i).click();
+					checkCourses = true ;
+				}
+				allCoursesNames.add(coursesName);
+			}
+		} 
+			System.out.println(allCoursesNames);
+		return allCoursesNames;
 	}
 		
 	public void normalCourseslist (String courseName)

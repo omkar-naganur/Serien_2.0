@@ -7,7 +7,7 @@
         <methods>
           <include name="tearDown"/>
           <include name="lunchApplication"/>
-          <include name="ValidatingEnrolledMicroLearningNameShouldDisplayInHRprogressReportPage" invocation-numbers="0"/>
+          <include name="ValidatingTotalNoOfEmployees" invocation-numbers="0"/>
         </methods>
       </class> <!-- Serien.SerienLive.HRprogressReport -->
     </classes>

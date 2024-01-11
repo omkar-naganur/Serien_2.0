@@ -66,8 +66,11 @@ public class abstractReusable {
 	@FindBy(xpath = "//li[3]//div[1]//div[1]")
 	WebElement Learning;
 	
-	@FindBy(xpath = "//li[4]//div[1]//div[1]")
+	@FindBy(xpath = "(//li[@class='MuiListItem-root MuiListItem-gutters tooltip-wrap css-humwks'])[4]")
 	WebElement ProgresReport;
+	
+//	@FindBy(xpath = "//li[4]//div[1]//div[1]")
+//	WebElement ProgresReport;
 	
 	@FindBy(xpath = "//li[5]//div[1]//div[1]")
 	WebElement DEIcalender;
@@ -132,7 +135,7 @@ public class abstractReusable {
 		Learning.click();
 	}
 	
-	public void ProgresReport()
+	public void ProgresReport() 
 	{
 		waitForWebElementTOApper(ProgresReport);
 		ProgresReport.click();

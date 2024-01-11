@@ -49,6 +49,18 @@ public class HRprogressReport extends BaseTest{
 		Assert.assertTrue(gameMatch);		
 	}
 	
+	@Test(dataProvider = "getdata", priority = 4)
+	public void ValidatingTotalNoOfEmployees  (HashMap<String, String> input) throws Throwable
+	{	
+		Profile profile=LoginPage.serienLogin(input.get("Useremail"), input.get("userpass"));
+		Thread.sleep(5000);
+		ProgressReport pr= new ProgressReport(driver);
+		pr.ProgresReport();
+		// Below code is Dynamic for all the type of Courses, Micro Learning, Games
+		String Count =pr.TotalNoOfEmployees(input.get("CourseName"));
+		System.out.println(Count);
+			
+	}
 	
 	@DataProvider
 	public Object[][] getdata()
@@ -61,7 +73,7 @@ public class HRprogressReport extends BaseTest{
 		map.put("typeOfTraining", "course");
 	//	map.put("typeOfTraining", "Micro course");
 	//	map.put("typeOfTraining", "Games");
-		map.put("CourseName", "Safety and inclusion at the workplace"); 
+		map.put("CourseName", "Omkar test"); 
 	//	map.put("CourseName", "Prevention of sexual harassment in the workplace – Hindi"); 
 		map.put("GroupName", "Sitero_PoSH_2023");
 		map.put("dueDate", "12122024");
