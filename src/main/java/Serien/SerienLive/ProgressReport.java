@@ -35,6 +35,10 @@ public class ProgressReport extends abstractReusable{
 	@FindBy(xpath = "//div[@class='MuiBox-root css-n4ie87']//div[@class='MuiBox-root css-13o8bqy']")
 	List<WebElement> courseNames;
 	
+	@FindBy(xpath = "//div[@class='MuiBox-root css-13o8bqy']")
+	List<WebElement> courseNames1;
+	////div[@class='MuiBox-root css-1vsn9zb']/div[@class='MuiBox-root css-1732m2u']/div[2]
+	
 	@FindBy(xpath = "//div[@class='MuiBox-root css-n4ie87']//div[@class='MuiBox-root css-13o8bqy']/..//div[@class='MuiBox-root css-evh4dy']")
 	WebElement exter;
 	
@@ -48,6 +52,19 @@ public class ProgressReport extends abstractReusable{
 		UserProgressReportSubData.add(actUserEndDate);
 		return UserProgressReportSubData;
 		
+	}
+	
+	public ArrayList<String> getCoursesNameInReport() throws Throwable {
+		Thread.sleep(1000);
+		waitForWebElementTOApper(courseNames1);
+		ArrayList<String> nameOfCourses = new ArrayList<String>();
+		for(int i=0; i<courseNames1.size(); i++)
+		{
+			String coursesName=courseNames1.get(i).getText();
+			//System.out.println(coursesName);
+			nameOfCourses.add(coursesName);
+		}
+		return nameOfCourses;
 	}
 		
 	public void normalCourseslist (String courseName)

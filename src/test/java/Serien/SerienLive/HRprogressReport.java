@@ -1,6 +1,8 @@
 package Serien.SerienLive;
 
 import org.testng.annotations.Test;
+
+import java.util.ArrayList;
 import java.util.HashMap;
 
 import org.testng.Assert;
@@ -15,12 +17,14 @@ public class HRprogressReport extends BaseTest{
 	public void ValidationOfDisclimerErrorMesg (HashMap<String, String> input) throws Throwable
 	{	
 		Profile profile=LoginPage.serienLogin(input.get("Useremail"), input.get("userpass"));
-		Learning lr= new Learning(driver);
-		lr.OpenTheCourses(input.get("CourseName"));
-		lr.coursesStart();
-		String actAlertMeg= lr.getDisclimerAlertMessage();
-		Boolean alertMatch= actAlertMeg.equals(input.get("ExpDiscilemrAlertMeg"));
-		Assert.assertTrue(alertMatch);
+		ProgressReport pr= new ProgressReport(driver);
+		pr.ProgresReport();
+		ArrayList<String> nameOfCourses = pr.getCoursesNameInReport();
+		System.out.println(nameOfCourses);
+		Boolean coursesMatch=nameOfCourses.contains(input.get("CourseName"));
+		Assert.assertTrue(coursesMatch);
+		
+	
 			
 	}
 	
