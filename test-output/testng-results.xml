@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="1" total="2" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-01-11T06:35:06Z" name="Default suite" finished-at="2024-01-11T06:35:13Z" duration-ms="7047">
+  <suite started-at="2024-01-11T07:25:17Z" name="Default suite" finished-at="2024-01-11T07:25:26Z" duration-ms="9640">
     <groups>
     </groups>
-    <test started-at="2024-01-11T06:35:06Z" name="Default test" finished-at="2024-01-11T06:35:13Z" duration-ms="7047">
+    <test started-at="2024-01-11T07:25:17Z" name="Default test" finished-at="2024-01-11T07:25:26Z" duration-ms="9640">
       <class name="Serien.SerienLive.HRprogressReport">
-        <test-method is-config="true" signature="lunchApplication()[pri:0, instance:Serien.SerienLive.HRprogressReport@27216cd]" started-at="2024-01-11T06:35:06Z" name="lunchApplication" finished-at="2024-01-11T06:35:08Z" duration-ms="2365" status="PASS">
+        <test-method is-config="true" signature="lunchApplication()[pri:0, instance:Serien.SerienLive.HRprogressReport@558bdf1f]" started-at="2024-01-11T07:25:17Z" name="lunchApplication" finished-at="2024-01-11T07:25:20Z" duration-ms="3459" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- lunchApplication -->
-        <test-method signature="ValidationOfDisclimerErrorMesg(java.util.HashMap)[pri:1, instance:Serien.SerienLive.HRprogressReport@27216cd]" started-at="2024-01-11T06:35:08Z" name="ValidationOfDisclimerErrorMesg" data-provider="getdata" finished-at="2024-01-11T06:35:13Z" duration-ms="4670" status="PASS">
+        <test-method signature="ValidatingEnrolledMicroLearningNameShouldDisplayInHRprogressReportPage(java.util.HashMap)[pri:2, instance:Serien.SerienLive.HRprogressReport@558bdf1f]" started-at="2024-01-11T07:25:20Z" name="ValidatingEnrolledMicroLearningNameShouldDisplayInHRprogressReportPage" data-provider="getdata" finished-at="2024-01-11T07:25:26Z" duration-ms="6167" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -19,10 +19,49 @@
               </value>
             </param>
           </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:96)
+at org.testng.Assert.failNotEquals(Assert.java:776)
+at org.testng.Assert.assertTrue(Assert.java:44)
+at org.testng.Assert.assertTrue(Assert.java:54)
+at Serien.SerienLive.HRprogressReport.ValidatingEnrolledMicroLearningNameShouldDisplayInHRprogressReportPage(HRprogressReport.java:37)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ValidationOfDisclimerErrorMesg -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:Serien.SerienLive.HRprogressReport@27216cd]" started-at="2024-01-11T06:35:13Z" name="tearDown" finished-at="2024-01-11T06:35:13Z" duration-ms="0" status="PASS">
+        </test-method> <!-- ValidatingEnrolledMicroLearningNameShouldDisplayInHRprogressReportPage -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Serien.SerienLive.HRprogressReport@558bdf1f]" started-at="2024-01-11T07:25:26Z" name="tearDown" finished-at="2024-01-11T07:25:26Z" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

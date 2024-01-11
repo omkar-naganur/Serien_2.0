@@ -14,7 +14,7 @@ import serien.TestComponents.BaseTest;
 public class HRprogressReport extends BaseTest{
 	
 	@Test(dataProvider = "getdata", priority = 1)
-	public void ValidationOfDisclimerErrorMesg (HashMap<String, String> input) throws Throwable
+	public void ValidatingEnrolledCoursesNameShouldDisplayInHRprogressReportPage (HashMap<String, String> input) throws Throwable
 	{	
 		Profile profile=LoginPage.serienLogin(input.get("Useremail"), input.get("userpass"));
 		ProgressReport pr= new ProgressReport(driver);
@@ -22,10 +22,19 @@ public class HRprogressReport extends BaseTest{
 		ArrayList<String> nameOfCourses = pr.getCoursesNameInReport();
 		System.out.println(nameOfCourses);
 		Boolean coursesMatch=nameOfCourses.contains(input.get("CourseName"));
-		Assert.assertTrue(coursesMatch);
-		
+		Assert.assertTrue(coursesMatch);		
+	}
 	
-			
+	@Test(dataProvider = "getdata", priority = 2)
+	public void ValidatingEnrolledMicroLearningNameShouldDisplayInHRprogressReportPage (HashMap<String, String> input) throws Throwable
+	{	
+		Profile profile=LoginPage.serienLogin(input.get("Useremail"), input.get("userpass"));
+		ProgressReport pr= new ProgressReport(driver);
+		pr.ProgresReport();
+		ArrayList<String> nameOfMicroLearning = pr.getMicroLearningNameInReport();
+		System.out.println(nameOfMicroLearning);
+		Boolean microLearningMatch=nameOfMicroLearning.contains(input.get("MicroLearningCourses"));
+		Assert.assertTrue(microLearningMatch);		
 	}
 	
 	

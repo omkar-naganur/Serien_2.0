@@ -36,8 +36,14 @@ public class ProgressReport extends abstractReusable{
 	List<WebElement> courseNames;
 	
 	@FindBy(xpath = "//div[@class='MuiBox-root css-13o8bqy']")
-	List<WebElement> courseNames1;
-	////div[@class='MuiBox-root css-1vsn9zb']/div[@class='MuiBox-root css-1732m2u']/div[2]
+	List<WebElement> courseNamesListInReport;
+	
+	@FindBy(xpath = "//div[@class='MuiBox-root css-j4kjxm']")
+	List<WebElement> MicroLearningListInReport;
+	
+	@FindBy(xpath = "//div[@class='MuiBox-root css-5hqcx']")
+	List<WebElement> GameNameListInReport;
+	
 	
 	@FindBy(xpath = "//div[@class='MuiBox-root css-n4ie87']//div[@class='MuiBox-root css-13o8bqy']/..//div[@class='MuiBox-root css-evh4dy']")
 	WebElement exter;
@@ -56,15 +62,26 @@ public class ProgressReport extends abstractReusable{
 	
 	public ArrayList<String> getCoursesNameInReport() throws Throwable {
 		Thread.sleep(1000);
-		waitForWebElementTOApper(courseNames1);
+		waitForWebElementTOApper(courseNamesListInReport);
 		ArrayList<String> nameOfCourses = new ArrayList<String>();
-		for(int i=0; i<courseNames1.size(); i++)
+		for(int i=0; i<courseNamesListInReport.size(); i++)
 		{
-			String coursesName=courseNames1.get(i).getText();
-			//System.out.println(coursesName);
+			String coursesName=courseNamesListInReport.get(i).getText();
 			nameOfCourses.add(coursesName);
 		}
 		return nameOfCourses;
+	}
+	
+	public ArrayList<String> getMicroLearningNameInReport() throws Throwable {
+		Thread.sleep(1000);
+		waitForWebElementTOApper(MicroLearningListInReport);
+		ArrayList<String> nameOfMicro = new ArrayList<String>();
+		for(int i=0; i<MicroLearningListInReport.size(); i++)
+		{
+			String nameOfMicroLearning=MicroLearningListInReport.get(i).getText();
+			nameOfMicro.add(nameOfMicroLearning);
+		}
+		return nameOfMicro;
 	}
 		
 	public void normalCourseslist (String courseName)
