@@ -83,6 +83,18 @@ public class ProgressReport extends abstractReusable{
 		}
 		return nameOfMicro;
 	}
+	
+	public ArrayList<String> getGameNameInReport() throws Throwable {
+		Thread.sleep(1000);
+		waitForWebElementTOApper(GameNameListInReport);
+		ArrayList<String> nameOfGame = new ArrayList<String>();
+		for(int i=0; i<GameNameListInReport.size(); i++)
+		{
+			String nameOfGames=GameNameListInReport.get(i).getText();
+			nameOfGame.add(nameOfGames);
+		}
+		return nameOfGame;
+	}
 		
 	public void normalCourseslist (String courseName)
 	{

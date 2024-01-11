@@ -37,6 +37,18 @@ public class HRprogressReport extends BaseTest{
 		Assert.assertTrue(microLearningMatch);		
 	}
 	
+	@Test(dataProvider = "getdata", priority = 3)
+	public void ValidatingEnrolledGameNameShouldDisplayInHRprogressReportPage (HashMap<String, String> input) throws Throwable
+	{	
+		Profile profile=LoginPage.serienLogin(input.get("Useremail"), input.get("userpass"));
+		ProgressReport pr= new ProgressReport(driver);
+		pr.ProgresReport();
+		ArrayList<String> nameOfGames = pr.getGameNameInReport();
+		System.out.println(nameOfGames);
+		Boolean gameMatch=nameOfGames.contains(input.get("Gamesname"));
+		Assert.assertTrue(gameMatch);		
+	}
+	
 	
 	@DataProvider
 	public Object[][] getdata()

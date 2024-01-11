@@ -9,28 +9,31 @@
   <test thread-count="5" name="Test0">
     <classes>
       <class name="Serien.SerienLive.AdminEnrollments"/>
-        
     </classes>
   </test> <!-- Test -->
   
     <test thread-count="5" name="Test1">
     <classes>
       <class name="Serien.SerienLive.LoginPageTest"/>
-        
     </classes>
   </test> <!-- Test -->
   
     <test thread-count="5" name="Test2">
     <classes>
       <class name="Serien.SerienLive.HRprofile"/>
-        
     </classes>
   </test> <!-- Test -->
   
     <test thread-count="5" name="Test3">
     <classes>
-      <class name="Serien.SerienLive.HRlearning"/>
-        
+      <class name="Serien.SerienLive.HRlearning"/>    
     </classes>
+    </test> <!-- Test -->
+    
+     <test thread-count="5" name="Test4">
+    <classes>
+      <class name="Serien.SerienLive.HRprogressReport"/>   
+    </classes>
+    
   </test> <!-- Test -->
 </suite> <!-- Suite -->
