@@ -56,11 +56,18 @@ public class HRprogressReport extends BaseTest{
 		Thread.sleep(5000);
 		ProgressReport pr= new ProgressReport(driver);
 		pr.ProgresReport();
-		// Below code is Dynamic for all the type of Courses, Micro Learning, Games
-		String Count =pr.TotalNoOfEmployees(input.get("CourseName"));
+		// Below code is Dynamic for all the type of Courses, Micro Learning, Games you need to pass the name only
+		ArrayList<String> Count =pr.TotalNoOfEmployees(input.get("anyCourseName"));
 		System.out.println(Count);
+		int countTotalnoofemployees =Integer.parseInt(Count.get(0));
+		int countEmployeesCompletedCourse =Integer.parseInt(Count.get(1));
+		int countEmployeesNotCompletedCourse =Integer.parseInt(Count.get(2));
+		System.out.println(countTotalnoofemployees);
+		System.out.println(countEmployeesCompletedCourse);
+		System.out.println(countEmployeesNotCompletedCourse);
 			
 	}
+	
 	
 	@DataProvider
 	public Object[][] getdata()
@@ -80,6 +87,7 @@ public class HRprogressReport extends BaseTest{
 		map.put("MicroLearningCourses", "Affinity bias");
 		map.put("Gamesname", "Omkar test");
 		map.put("ExpDiscilemrAlertMeg", "Please Acknowledge Disclaimer First !");
+		map.put("anyCourseName", "Omkar test"); 
 		
 		return new Object[][] {{map}};
 	}

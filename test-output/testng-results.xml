@@ -2,27 +2,27 @@
 <testng-results ignored="3" total="4" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-01-11T13:35:36Z" name="Default suite" finished-at="2024-01-11T13:36:01Z" duration-ms="25589">
+  <suite started-at="2024-01-12T06:04:56Z" name="Default suite" finished-at="2024-01-12T06:05:17Z" duration-ms="21551">
     <groups>
     </groups>
-    <test started-at="2024-01-11T13:35:36Z" name="Default test" finished-at="2024-01-11T13:36:01Z" duration-ms="25589">
+    <test started-at="2024-01-12T06:04:56Z" name="Default test" finished-at="2024-01-12T06:05:17Z" duration-ms="21551">
       <class name="Serien.SerienLive.HRprogressReport">
-        <test-method is-config="true" signature="lunchApplication()[pri:0, instance:Serien.SerienLive.HRprogressReport@7582ff54]" started-at="2024-01-11T13:35:36Z" name="lunchApplication" finished-at="2024-01-11T13:35:42Z" duration-ms="6435" status="PASS">
+        <test-method is-config="true" signature="lunchApplication()[pri:0, instance:Serien.SerienLive.HRprogressReport@7582ff54]" started-at="2024-01-12T06:04:56Z" name="lunchApplication" finished-at="2024-01-12T06:04:59Z" duration-ms="2646" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- lunchApplication -->
-        <test-method signature="ValidatingTotalNoOfEmployees(java.util.HashMap)[pri:4, instance:Serien.SerienLive.HRprogressReport@7582ff54]" started-at="2024-01-11T13:35:42Z" name="ValidatingTotalNoOfEmployees" data-provider="getdata" finished-at="2024-01-11T13:36:01Z" duration-ms="19142" status="PASS">
+        <test-method signature="ValidatingTotalNoOfEmployees(java.util.HashMap)[pri:4, instance:Serien.SerienLive.HRprogressReport@7582ff54]" started-at="2024-01-12T06:04:59Z" name="ValidatingTotalNoOfEmployees" data-provider="getdata" finished-at="2024-01-12T06:05:17Z" duration-ms="18893" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{CourseName=Omkar test, GroupName=Sitero_PoSH_2023, Useremail=omkar@krishworks.com, typeOfTraining=course, userpass=password, dueDate=12122024, Gamesname=Omkar test, adminPass=pass2023, ExpDiscilemrAlertMeg=Please Acknowledge Disclaimer First !, adminEmail=admin@demo.com, MicroLearningCourses=Affinity bias}]]>
+                <![CDATA[{CourseName=Omkar test, GroupName=Sitero_PoSH_2023, dueDate=12122024, adminPass=pass2023, ExpDiscilemrAlertMeg=Please Acknowledge Disclaimer First !, anyCourseName=Omkar test, MicroLearningCourses=Affinity bias, Useremail=omkar@krishworks.com, typeOfTraining=course, userpass=password, Gamesname=Omkar test, adminEmail=admin@demo.com}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ValidatingTotalNoOfEmployees -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:Serien.SerienLive.HRprogressReport@7582ff54]" started-at="2024-01-11T13:36:01Z" name="tearDown" finished-at="2024-01-11T13:36:01Z" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Serien.SerienLive.HRprogressReport@7582ff54]" started-at="2024-01-12T06:05:17Z" name="tearDown" finished-at="2024-01-12T06:05:17Z" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

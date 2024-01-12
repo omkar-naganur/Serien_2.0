@@ -1,5 +1,6 @@
 package Serien.SerienLive;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -61,8 +62,15 @@ public class ProgressReport extends abstractReusable{
 //	@FindBy(xpath = "((//div[@class='MuiBox-root css-9nh4zr'][1])/..//div[1])[1]")
 //	WebElement countTotalnoofemployees;
 	
+	// Below elements for taking counts
 	@FindBy(xpath = "(//div[contains(@class, 'microlerningdiscription MuiBox-root css-1sacc3f')])[1]")
 	WebElement countTotalnoofemployees;
+	
+	@FindBy(xpath = "(//div[contains(@class, 'microlerningdiscription MuiBox-root css-1sacc3f')])[2]")
+	WebElement countEmployeesCompletedCourse;
+	
+	@FindBy(xpath = "(//div[contains(@class, 'microlerningdiscription MuiBox-root css-1sacc3f')])[1]")
+	WebElement countEmployeesNotCompletedCourse;
 	
 	public ArrayList<String> SubscriptioDeatilsfromUser () throws Throwable
 	{
@@ -112,15 +120,22 @@ public class ProgressReport extends abstractReusable{
 		return nameOfGame;
 	}
 	
-	public String TotalNoOfEmployees(String Courses) throws Throwable {
+	public ArrayList<String> TotalNoOfEmployees(String anyCourses) throws Throwable {
 		
-		enterningToCourses(Courses);
+		ArrayList<String> Counts = new ArrayList<String>();
+		enterningToCourses(anyCourses);
 		waitForWebElementTOApper(countTotalnoofemployees);
-		String count=countTotalnoofemployees.getText();
-		return count;
+		String totalEmp=countTotalnoofemployees.getText();
+		String empComCourses=countEmployeesCompletedCourse.getText();  
+		String empNotComCourses=countEmployeesNotCompletedCourse.getText();
+		Counts.add(totalEmp);
+		Counts.add(empComCourses);
+		Counts.add(empNotComCourses);
+		
+		return Counts;
 	}
 	
-	public ArrayList<String> enterningToCourses (String Courses) throws Throwable {
+	public ArrayList<String> enterningToCourses (String anyCourses) throws Throwable {
 		Boolean checkCourses = false ;
 		ArrayList<String> allCoursesNames = new ArrayList<String>();
 		Thread.sleep(1000);
@@ -130,7 +145,7 @@ public class ProgressReport extends abstractReusable{
 		for(int i=0; i<GameNameListInReport.size(); i++)
 		{
 			String nameOfGames=GameNameListInReport.get(i).getText();
-			if(nameOfGames.equals(Courses)) {
+			if(nameOfGames.equals(anyCourses)) {
 				enterToGame.get(i).click();
 				checkCourses = true ;
 			}
@@ -142,7 +157,7 @@ public class ProgressReport extends abstractReusable{
 			for(int i=0; i<MicroLearningListInReport.size(); i++)
 			{
 				String nameOfMicroLearning=MicroLearningListInReport.get(i).getText();
-				if(nameOfMicroLearning.equals(Courses)) {
+				if(nameOfMicroLearning.equals(anyCourses)) {
 					enterToMicroLearning.get(i).click();
 					checkCourses = true ;
 				}
@@ -154,7 +169,7 @@ public class ProgressReport extends abstractReusable{
 			for(int i=0; i<courseNamesListInReport.size(); i++)
 			{
 				String coursesName=courseNamesListInReport.get(i).getText();
-				if(coursesName.equals(Courses)) {
+				if(coursesName.equals(anyCourses)) {
 					enterToCourses.get(i).click();
 					checkCourses = true ;
 				}
