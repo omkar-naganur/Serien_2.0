@@ -2,6 +2,8 @@ package Serien.SerienLive;
 
 import org.testng.annotations.Test;
 
+import static org.testng.Assert.assertThrows;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -50,14 +52,14 @@ public class HRprogressReport extends BaseTest{
 	}
 	
 	@Test(dataProvider = "getdata", priority = 4)
-	public void ValidatingTotalNoOfEmployees  (HashMap<String, String> input) throws Throwable
+	public void ValidatingContsInreport  (HashMap<String, String> input) throws Throwable
 	{	
 		Profile profile=LoginPage.serienLogin(input.get("Useremail"), input.get("userpass"));
 		Thread.sleep(5000);
 		ProgressReport pr= new ProgressReport(driver);
 		pr.ProgresReport();
 		// Below code is Dynamic for all the type of Courses, Micro Learning, Games you need to pass the name only
-		ArrayList<String> Count =pr.TotalNoOfEmployees(input.get("anyCourseName"));
+		ArrayList<String> Count =pr.getAllCountsInProgressReport(input.get("anyCourseName"));
 		System.out.println(Count);
 		int countTotalnoofemployees =Integer.parseInt(Count.get(0));
 		int countEmployeesCompletedCourse =Integer.parseInt(Count.get(1));
@@ -65,6 +67,22 @@ public class HRprogressReport extends BaseTest{
 		System.out.println(countTotalnoofemployees);
 		System.out.println(countEmployeesCompletedCourse);
 		System.out.println(countEmployeesNotCompletedCourse);
+			
+	}
+	
+	@Test(dataProvider = "getdata", priority = 5)
+	public void ValidatingSearchBarByEmployeeNameAndEmployeeEmail (HashMap<String, String> input) throws Throwable
+	{	
+		Profile profile=LoginPage.serienLogin(input.get("Useremail"), input.get("userpass"));
+		Thread.sleep(5000);
+		ProgressReport pr= new ProgressReport(driver);
+		pr.ProgresReport();
+		pr.enterningToCourses(input.get("anyCourseName"));
+		Boolean emailValidation=pr.validatonOfSearchBarWithEmail(input.get("Useremail"), input.get("userName"));
+		Assert.assertTrue(emailValidation);
+		Boolean nameValidation=pr.validatonOfSearchBarWithUserName(input.get("userName"));
+		Assert.assertTrue(nameValidation);
+		
 			
 	}
 	
@@ -88,6 +106,7 @@ public class HRprogressReport extends BaseTest{
 		map.put("Gamesname", "Omkar test");
 		map.put("ExpDiscilemrAlertMeg", "Please Acknowledge Disclaimer First !");
 		map.put("anyCourseName", "Omkar test"); 
+		map.put("userName", "omkar123456"); 
 		
 		return new Object[][] {{map}};
 	}

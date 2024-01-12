@@ -71,6 +71,27 @@ public class ProgressReport extends abstractReusable{
 	
 	@FindBy(xpath = "(//div[contains(@class, 'microlerningdiscription MuiBox-root css-1sacc3f')])[1]")
 	WebElement countEmployeesNotCompletedCourse;
+	//***************************************
+	
+	// Radio Buttons and search bard
+	@FindBy(xpath = "//input[@value='empName']")
+	WebElement employeeNameRadioButton;
+	
+	@FindBy(xpath = "//input[@value='empEmail']")
+	WebElement employeeEmailRadioButton;
+	
+	@FindBy(xpath = "//input[@type='text']")
+	WebElement searchTextBar;
+	
+	@FindBy(xpath = "//input[@type='text']/../div")
+	WebElement searchButton;
+	//**************************************
+	
+	//Report Table
+
+	@FindBy(xpath = "(//div[@class='MuiBox-root css-1txtiph'])//p[1]")
+	List<WebElement> listOfallUserName;
+	
 	
 	public ArrayList<String> SubscriptioDeatilsfromUser () throws Throwable
 	{
@@ -120,7 +141,7 @@ public class ProgressReport extends abstractReusable{
 		return nameOfGame;
 	}
 	
-	public ArrayList<String> TotalNoOfEmployees(String anyCourses) throws Throwable {
+	public ArrayList<String> getAllCountsInProgressReport(String anyCourses) throws Throwable {
 		
 		ArrayList<String> Counts = new ArrayList<String>();
 		enterningToCourses(anyCourses);
@@ -193,6 +214,46 @@ public class ProgressReport extends abstractReusable{
 		}
 		
 		
+	}
+
+	public Boolean validatonOfSearchBarWithEmail(String email, String userName) throws Throwable {
+		Boolean userfound = false;
+		waitForWebElementTOApper(employeeEmailRadioButton);
+		employeeEmailRadioButton.click();
+		searchTextBar.sendKeys(email);
+		searchButton.click();
+		Thread.sleep(2000);
+		
+		for(int i=0; i<listOfallUserName.size(); i++)
+		{
+			String nameOfUser=listOfallUserName.get(i).getText();
+			if(nameOfUser.equals(userName)) {
+				System.out.println("User Found serch email");
+				userfound = true;
+			}
+		}
+		
+		return userfound ;
+	}
+
+	public Boolean validatonOfSearchBarWithUserName(String userName) throws Throwable {
+		Boolean userfound = false;
+		waitForWebElementTOApper(employeeNameRadioButton);
+		employeeNameRadioButton.click();
+		searchTextBar.sendKeys(userName);
+		searchButton.click();
+		Thread.sleep(2000);
+		
+		for(int i=0; i<listOfallUserName.size(); i++)
+		{
+			String nameOfUser=listOfallUserName.get(i).getText();
+			if(nameOfUser.equals(userName)) {
+				System.out.println("User Found by serch name");
+				userfound = true;
+			}
+		}
+		
+		return userfound ;
 	}
 	
 	
