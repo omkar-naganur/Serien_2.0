@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Serien.SerienLive.HRprogressReport">
+      <class name="Serien.SerienLive.HRCoursesComplation">
         <methods>
           <include name="tearDown"/>
+          <include name="ValidationOfDisclimerErrorMesg" invocation-numbers="0"/>
           <include name="lunchApplication"/>
-          <include name="ValidatingTotalNoOfEmployees" invocation-numbers="0"/>
         </methods>
-      </class> <!-- Serien.SerienLive.HRprogressReport -->
+      </class> <!-- Serien.SerienLive.HRCoursesComplation -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

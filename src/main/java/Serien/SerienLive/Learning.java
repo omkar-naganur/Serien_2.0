@@ -106,6 +106,15 @@ public class Learning extends abstractReusable{
 	@FindBy(xpath = "(//div[@class='MuiBox-root css-gg4vpm']/p)[1]")
 	WebElement insideProgressOFMicroLearningAndGame;
 	
+	@FindBy(xpath = "(//div[@class='MuiBox-root css-12orj8g'])[1]")
+	WebElement coursesForwordButton;
+	
+	@FindBy(xpath = "(//div[@class='MuiBox-root css-12orj8g'])[2]")
+	WebElement coursesBackwordButton;
+	
+	
+	//*************************************************
+	
 	// Scrom Elements
 	
 	@FindBy(id = "testdomel")
@@ -113,6 +122,8 @@ public class Learning extends abstractReusable{
 	
 	@FindBy(id = "courseFrame")
 	WebElement courseFrame;
+	
+	//***********************************
 	
 	//courseFrame
 	
@@ -122,7 +133,32 @@ public class Learning extends abstractReusable{
 	@FindBy(xpath = "(//div[@class='message-box-buttons-panel__buttons'])//button[2]")
 	WebElement resumeNo;
 	
+	//****************************
 	
+	// iframe for videos
+	@FindBy(xpath = "//iframe[@title]")
+	WebElement iframeVideo;
+	
+	@FindBy(xpath = "//div[@class='TinyProgressBar_module_tinyBar__f8a567ff']")
+	WebElement PlayOrPuseButton;
+	
+	//*************************************
+	
+	//Quiz 
+	
+	@FindBy(xpath = "//div[@class='MuiBox-root css-1q2yoq2']//p")
+	List<WebElement> getallOpetioninQuiz;
+	
+	@FindBy(xpath = "//div[@class='MuiBox-root css-yuob64']//button")
+	WebElement quizSubmitButton;
+	
+	@FindBy(xpath = "//div[@class='quiziEnd-heading']")
+	WebElement quizSucessMeg;
+	
+	@FindBy(xpath = "//div[@class='quiziEnd-heading']/../..//button")
+	WebElement quizSucessContinue;
+	
+
 	
 	public void scromCourseResume ()
 	{
@@ -435,6 +471,89 @@ public class Learning extends abstractReusable{
 	    }
 
 	    return flagCourseFound;
+	}
+
+	public void coursesVideoAttend() throws Throwable {
+		Thread.sleep(3000);
+		driver.switchTo().frame(iframeVideo);
+		Thread.sleep(3000);
+		PlayOrPuseButton.click();
+		driver.switchTo().defaultContent();
+		Thread.sleep(10000);
+		Boolean videoIteam= false;
+	
+		while (!videoIteam)
+		{
+		
+		coursesBackwordButton.click();
+			
+				try {
+					
+					Thread.sleep(3000);
+					System.out.println("start try");
+					alertAccepectMethod();
+					System.out.println("try");
+					Thread.sleep(30000);
+					
+					
+				} catch (Exception e) {
+					videoIteam= true;
+					System.out.println("catch");
+				}
+				System.out.println(videoIteam);	
+		}
+				
+	}
+	
+	public Boolean coursesQuizAttend(String ans1, String ans2) throws Throwable {
+		Boolean quizStatus= false;
+		Thread.sleep(3000);
+		
+		for(int i=0; i<getallOpetioninQuiz.size(); i++)
+		{
+		String opect = getallOpetioninQuiz.get(i).getText();
+		System.out.println("ANS 1."+opect);
+			if(opect.equals(ans1))
+			{
+				getallOpetioninQuiz.get(i).click();
+				System.out.println("clicked");
+				Thread.sleep(2000);
+				quizSubmitButton.click();
+			}
+		}
+		
+		
+		for(int i=0; i<getallOpetioninQuiz.size(); i++)
+		{
+		String opect = getallOpetioninQuiz.get(i).getText();
+		System.out.println("ANS 2. "+opect);
+			if(opect.equals(ans2))
+			{
+				getallOpetioninQuiz.get(i).click();
+				System.out.println("clicked");
+				Thread.sleep(2000);
+				quizSubmitButton.click();
+			}
+		}
+		Thread.sleep(3000);
+		
+		String succMeg=quizSucessMeg.getText();
+		
+		if(succMeg.equals("Quiz completed successfully!"))
+		{
+			quizSucessContinue.click();
+			quizStatus= true;
+		}
+		else {
+			System.out.println(succMeg);
+			quizStatus= false;
+			
+		}
+		
+		return quizStatus;
+		
+		
+				
 	}
 	
 		
