@@ -2,8 +2,10 @@ package Serien.SerienLive;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -157,7 +159,12 @@ public class Learning extends abstractReusable{
 	
 	@FindBy(xpath = "//div[@class='quiziEnd-heading']/../..//button")
 	WebElement quizSucessContinue;
+	//**************************************
 	
+	//Certificate section
+	
+	@FindBy(xpath = "(//div[@class='node-container']//img)[2]")
+	WebElement certificateDownloadButton;
 
 	
 	public void scromCourseResume ()
@@ -348,6 +355,7 @@ public class Learning extends abstractReusable{
 		else {
 			waitForWebElementTOApper(coursesViewall);
 			coursesViewall.click();
+			
 			}
 		if(!FlageCourseFound) {
 		
@@ -356,6 +364,7 @@ public class Learning extends abstractReusable{
 			
 			for(int i=0; i< getAllCoursesName.size(); i++)
 			{
+				
 				String actCoursesName = getAllCoursesName.get(i).getText();
 				
 				if (actCoursesName.equals(CoursesName))
@@ -505,7 +514,7 @@ public class Learning extends abstractReusable{
 				
 	}
 	
-	public Boolean coursesQuizAttend(String ans1, String ans2) throws Throwable {
+	public Boolean coursesQuizWith2Question(String ans1, String ans2) throws Throwable {
 		Boolean quizStatus= false;
 		Thread.sleep(3000);
 		
@@ -554,6 +563,58 @@ public class Learning extends abstractReusable{
 		
 		
 				
+	}
+
+	public Boolean coursesQuizWith1Question(String ans) throws Throwable {
+		Boolean quizStatus= false;
+		Thread.sleep(3000);
+		
+		for(int i=0; i<getallOpetioninQuiz.size(); i++)
+		{
+		String opect = getallOpetioninQuiz.get(i).getText();
+		System.out.println("ANS 1. "+opect);
+			if(opect.contains(ans))
+			{
+				getallOpetioninQuiz.get(i).click();
+				System.out.println("clicked");
+				Thread.sleep(2000);
+				quizSubmitButton.click();
+			}
+		}
+Thread.sleep(3000);
+		
+		String succMeg=quizSucessMeg.getText();
+		
+		if(succMeg.equals("Quiz completed successfully!"))
+		{
+			quizSucessContinue.click();
+			quizStatus= true;
+		}
+		else {
+			System.out.println(succMeg);
+			quizStatus= false;
+			
+		}
+		
+		return quizStatus;
+	}
+	
+	public void certificateValidation () throws Throwable
+	{
+		waitForWebElementTOApper(certificateDownloadButton);
+		certificateDownloadButton.click();
+		 String currentHandle= driver.getWindowHandle();
+		
+		 Set<String> handles=driver.getWindowHandles();
+	        for(String actual: handles)
+	        {
+	          
+	         if(!actual.equalsIgnoreCase(currentHandle))
+	         {
+	             //switching to the opened tab
+	             driver.switchTo().window(actual);
+	         }
+	        }
 	}
 	
 		

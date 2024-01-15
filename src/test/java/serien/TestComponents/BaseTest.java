@@ -40,6 +40,7 @@ public class BaseTest {
 	{
 		// properties class
 		
+		
 		Properties prop= new Properties();
 		
 		//Converting file objective to input stream
