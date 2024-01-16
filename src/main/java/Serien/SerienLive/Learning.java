@@ -1,9 +1,11 @@
 package Serien.SerienLive;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
+import org.bouncycastle.asn1.eac.Flags;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -551,7 +553,7 @@ public class Learning extends abstractReusable{
 				quizSubmitButton.click();
 			}
 		}
-		Thread.sleep(3000);
+		Thread.sleep(1000);
 		
 		String succMeg=quizSucessMeg.getText();
 		
@@ -588,7 +590,7 @@ public class Learning extends abstractReusable{
 				quizSubmitButton.click();
 			}
 		}
-Thread.sleep(3000);
+Thread.sleep(1000);
 		
 		String succMeg=quizSucessMeg.getText();
 		
@@ -624,6 +626,31 @@ Thread.sleep(3000);
 	} catch (Exception e) {
 		System.out.println("Check box alred accepted");
 	}
+		
+	}
+
+	public Boolean certificateValidation() throws Throwable{
+		Boolean certifite= false;
+		Thread.sleep(3000);
+		certificateDownloadButton.click();
+		Thread.sleep(2000);
+		Set<String> handles = driver.getWindowHandles();
+		Iterator<String> it = handles.iterator();	
+		String parentWindowID=it.next();
+		String childWindowID=it.next();
+		driver.switchTo().window(childWindowID);
+		String certificateURL= driver.getCurrentUrl();	
+		Thread.sleep(2000);
+		System.out.println(certificateURL);
+		if(certificateURL.contains("//storage.googleapis.com/serein-devqa-internal-gcp.appspot.com/generatedCertificate/"))
+		{
+			certifite= true;
+		}
+		else {
+			certifite= false;
+			System.out.println("someting went worng");
+		}
+		return certifite;
 		
 	}
 	

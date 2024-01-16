@@ -22,10 +22,12 @@ public class HRCoursesComplation extends BaseTest{
 //		lr.coursesVideoAttend();
 //		Boolean quizStatus=lr.coursesQuizWith2Question(input.get("quiz1Ans1"), input.get("quiz1Ans2"));
 //		Assert.assertTrue(quizStatus);
-		lr.coursesVideoAttend();
+//		lr.coursesVideoAttend();
 		lr.PDFComplation();
 		Boolean quizStatus1=lr.coursesQuizWith1Question(input.get("quiz2Ans1"));
 		Assert.assertTrue(quizStatus1);
+		Boolean certmatch=lr.certificateValidation();
+		Assert.assertTrue(certmatch);
 		
 	}
 	

@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-01-16T06:39:57Z" name="Default suite" finished-at="2024-01-16T06:40:57Z" duration-ms="60410">
+  <suite started-at="2024-01-16T07:22:26Z" name="Default suite" finished-at="2024-01-16T07:23:13Z" duration-ms="47107">
     <groups>
     </groups>
-    <test started-at="2024-01-16T06:39:57Z" name="Default test" finished-at="2024-01-16T06:40:57Z" duration-ms="60410">
+    <test started-at="2024-01-16T07:22:26Z" name="Default test" finished-at="2024-01-16T07:23:13Z" duration-ms="47107">
       <class name="Serien.SerienLive.HRCoursesComplation">
-        <test-method is-config="true" signature="lunchApplication()[pri:0, instance:Serien.SerienLive.HRCoursesComplation@27216cd]" started-at="2024-01-16T06:39:57Z" name="lunchApplication" finished-at="2024-01-16T06:39:59Z" duration-ms="2643" status="PASS">
+        <test-method is-config="true" signature="lunchApplication()[pri:0, instance:Serien.SerienLive.HRCoursesComplation@27216cd]" started-at="2024-01-16T07:22:26Z" name="lunchApplication" finished-at="2024-01-16T07:22:29Z" duration-ms="3528" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- lunchApplication -->
-        <test-method signature="ValidationOfCoursesAttend(java.util.HashMap)[pri:1, instance:Serien.SerienLive.HRCoursesComplation@27216cd]" started-at="2024-01-16T06:39:59Z" name="ValidationOfCoursesAttend" data-provider="getdata" finished-at="2024-01-16T06:40:57Z" duration-ms="57757" status="PASS">
+        <test-method signature="ValidationOfCoursesAttend(java.util.HashMap)[pri:1, instance:Serien.SerienLive.HRCoursesComplation@27216cd]" started-at="2024-01-16T07:22:29Z" name="ValidationOfCoursesAttend" data-provider="getdata" finished-at="2024-01-16T07:23:13Z" duration-ms="43565" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -22,7 +22,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ValidationOfCoursesAttend -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:Serien.SerienLive.HRCoursesComplation@27216cd]" started-at="2024-01-16T06:40:57Z" name="tearDown" finished-at="2024-01-16T06:40:57Z" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Serien.SerienLive.HRCoursesComplation@27216cd]" started-at="2024-01-16T07:23:13Z" name="tearDown" finished-at="2024-01-16T07:23:13Z" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
