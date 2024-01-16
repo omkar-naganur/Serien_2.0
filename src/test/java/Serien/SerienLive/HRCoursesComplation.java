@@ -12,7 +12,7 @@ import serien.TestComponents.BaseTest;
 public class HRCoursesComplation extends BaseTest{
 	
 	@Test(dataProvider = "getdata", priority = 1)
-	public void ValidationOfCoursesattend (HashMap<String, String> input) throws Throwable
+	public void ValidationOfCoursesAttend (HashMap<String, String> input) throws Throwable
 	{	
 		Profile profile=LoginPage.serienLogin(input.get("Useremail"), input.get("userpass"));
 		Learning lr= new Learning(driver);	
@@ -22,8 +22,8 @@ public class HRCoursesComplation extends BaseTest{
 //		lr.coursesVideoAttend();
 //		Boolean quizStatus=lr.coursesQuizWith2Question(input.get("quiz1Ans1"), input.get("quiz1Ans2"));
 //		Assert.assertTrue(quizStatus);
-//		lr.coursesVideoAttend();
-		Thread.sleep(2000);
+		lr.coursesVideoAttend();
+		lr.PDFComplation();
 		Boolean quizStatus1=lr.coursesQuizWith1Question(input.get("quiz2Ans1"));
 		Assert.assertTrue(quizStatus1);
 		

@@ -109,11 +109,10 @@ public class Learning extends abstractReusable{
 	WebElement insideProgressOFMicroLearningAndGame;
 	
 	@FindBy(xpath = "(//div[@class='MuiBox-root css-12orj8g'])[1]")
-	WebElement coursesForwordButton;
-	
-	@FindBy(xpath = "(//div[@class='MuiBox-root css-12orj8g'])[2]")
 	WebElement coursesBackwordButton;
 	
+	@FindBy(xpath = "(//div[@class='MuiBox-root css-12orj8g'])[2]")
+	WebElement coursesForwordButton;
 	
 	//*************************************************
 	
@@ -160,6 +159,14 @@ public class Learning extends abstractReusable{
 	@FindBy(xpath = "//div[@class='quiziEnd-heading']/../..//button")
 	WebElement quizSucessContinue;
 	//**************************************
+	
+	//PDF Section
+	
+	@FindBy(xpath = "//input[@type='checkbox']")
+	WebElement checkBox;
+	
+	
+	//************************************
 	
 	//Certificate section
 	
@@ -494,7 +501,7 @@ public class Learning extends abstractReusable{
 		while (!videoIteam)
 		{
 		
-		coursesBackwordButton.click();
+			coursesForwordButton.click();
 			
 				try {
 					
@@ -599,22 +606,25 @@ Thread.sleep(3000);
 		return quizStatus;
 	}
 	
-	public void certificateValidation () throws Throwable
+	public void PDFComplation () throws Throwable
 	{
-		waitForWebElementTOApper(certificateDownloadButton);
-		certificateDownloadButton.click();
-		 String currentHandle= driver.getWindowHandle();
+		Boolean pdfStatus= false;
+		Thread.sleep(3000);
+		coursesForwordButton.click();
+	try {
 		
-		 Set<String> handles=driver.getWindowHandles();
-	        for(String actual: handles)
-	        {
-	          
-	         if(!actual.equalsIgnoreCase(currentHandle))
-	         {
-	             //switching to the opened tab
-	             driver.switchTo().window(actual);
-	         }
-	        }
+		Thread.sleep(1000);
+		alertAccepectMethod();
+		System.out.println("alert found");
+		Thread.sleep(1000);
+		checkBox.click();
+		Thread.sleep(1000);
+		coursesForwordButton.click();
+		
+	} catch (Exception e) {
+		System.out.println("Check box alred accepted");
+	}
+		
 	}
 	
 		
