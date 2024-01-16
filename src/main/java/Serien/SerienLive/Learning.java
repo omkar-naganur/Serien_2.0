@@ -412,12 +412,26 @@ public class Learning extends abstractReusable{
 		
 	}
 
-	public Boolean coursesAceesProgressReading() {
+	public Boolean coursesAceesProgressReading() throws Throwable{
 		waitForWebElementTOApper(insideCoursesProgress);
+		Thread.sleep(2000);
 	String	actProgress= insideCoursesProgress.getText();
+	System.out.println(actProgress);
 	Boolean proMatch= actProgress.contains("0");
 	return proMatch;
 		
+	}
+	
+	public int getCoursesProgressInIntger() throws Throwable{
+		waitForWebElementTOApper(insideCoursesProgress);
+		Thread.sleep(2000);
+		String	actProgress= insideCoursesProgress.getText();
+	//	System.out.println(actProgress);
+		String[] arrOfStr = actProgress.split("%");
+  //      System.out.println(arrOfStr[0]);
+        int actProgres= Integer.parseInt(arrOfStr[0]);
+        System.out.println(actProgres);
+        return actProgres;
 	}
 	
 	public Boolean MicroLearningAndGameAceesProgressReading() {

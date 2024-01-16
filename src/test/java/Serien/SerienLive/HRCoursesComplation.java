@@ -17,17 +17,21 @@ public class HRCoursesComplation extends BaseTest{
 		Profile profile=LoginPage.serienLogin(input.get("Useremail"), input.get("userpass"));
 		Learning lr= new Learning(driver);	
 		lr.OpenTheCourses(input.get("CourseName"));
-	//	lr.AccepectingAcknowledge();
+		lr.AccepectingAcknowledge();
 		lr.coursesStart();
-//		lr.coursesVideoAttend();
-//		Boolean quizStatus=lr.coursesQuizWith2Question(input.get("quiz1Ans1"), input.get("quiz1Ans2"));
-//		Assert.assertTrue(quizStatus);
-//		lr.coursesVideoAttend();
+		lr.coursesVideoAttend();
+		Boolean quizStatus=lr.coursesQuizWith2Question(input.get("quiz1Ans1"), input.get("quiz1Ans2"));
+		Assert.assertTrue(quizStatus);
+		lr.coursesVideoAttend();
 		lr.PDFComplation();
+		lr.getCoursesProgressInIntger();
 		Boolean quizStatus1=lr.coursesQuizWith1Question(input.get("quiz2Ans1"));
 		Assert.assertTrue(quizStatus1);
+		int actProgress=lr.getCoursesProgressInIntger();
+		Assert.assertTrue(actProgress==100);
 		Boolean certmatch=lr.certificateValidation();
 		Assert.assertTrue(certmatch);
+		
 		
 	}
 	
