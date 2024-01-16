@@ -18,7 +18,7 @@ public class HRCoursesComplation extends BaseTest{
 		Learning lr= new Learning(driver);	
 		lr.OpenTheCourses(input.get("CourseName"));
 		lr.AccepectingAcknowledge();
-		lr.coursesStart();
+		lr.coursesStart(); 
 		lr.coursesVideoAttend();
 		Boolean quizStatus=lr.coursesQuizWith2Question(input.get("quiz1Ans1"), input.get("quiz1Ans2"));
 		Assert.assertTrue(quizStatus);
@@ -32,11 +32,46 @@ public class HRCoursesComplation extends BaseTest{
 		Boolean certmatch=lr.certificateValidation();
 		Assert.assertTrue(certmatch);
 		
+	}
+	
+	@Test(dataProvider = "getdata1", priority = 2)
+	public void ValidationOfMicroLearningAttend (HashMap<String, String> input) throws Throwable
+	{	
+		Profile profile=LoginPage.serienLogin(input.get("Useremail"), input.get("userpass"));
+		Learning lr= new Learning(driver);	
+		lr.OpenTheMicroLearning(input.get("microLearning"));
+		lr.coursesStart(); 
+		lr.coursesVideoAttend();
+		Boolean quizStatus1=lr.coursesQuizWith1Question(input.get("quiz1Ans1"));
+		Assert.assertTrue(quizStatus1);
+		lr.PDFComplation();
+		int actProgress=lr.getCoursesProgressInIntger();
+		Assert.assertTrue(actProgress==100);
+		Boolean certmatch=lr.certificateValidation();
+		Assert.assertTrue(certmatch);
+		
+	}
+	
+	@Test(dataProvider = "getdata1", priority = 3)
+	public void ValidationOfGameAttend (HashMap<String, String> input) throws Throwable
+	{	
+		Profile profile=LoginPage.serienLogin(input.get("Useremail"), input.get("userpass"));
+		Learning lr= new Learning(driver);	
+		lr.OpenTheMicroLearning(input.get("microLearning"));
+		lr.coursesStart(); 
+		lr.coursesVideoAttend();
+		Boolean quizStatus1=lr.coursesQuizWith1Question(input.get("quiz1Ans1"));
+		Assert.assertTrue(quizStatus1);
+		lr.PDFComplation();
+		int actProgress=lr.getCoursesProgressInIntger();
+		Assert.assertTrue(actProgress==100);
+		Boolean certmatch=lr.certificateValidation();
+		Assert.assertTrue(certmatch);
 		
 	}
 	
 	@DataProvider
-	public Object[][] getdata()
+	public Object[][] getdata() //for only Courses
 	{
 		HashMap<String, String> map= new HashMap<String, String>();
 		map.put("Useremail", "omkar@krishworks.com");
@@ -54,4 +89,20 @@ public class HRCoursesComplation extends BaseTest{
 		
 		return new Object[][] {{map}};
 	}
+	
+	@DataProvider
+	public Object[][] getdata1() //for only MicroLearning
+	{
+		HashMap<String, String> map= new HashMap<String, String>();
+		map.put("Useremail", "omkar@krishworks.com");
+		map.put("userpass", "password");
+		map.put("adminEmail", "admin@demo.com");
+		map.put("adminPass", "pass2023");
+		map.put("microLearning", "Descriptive & prescriptive stereotypes");
+		//write answers
+		map.put("quiz1Ans1", "All of the above");
+		
+		return new Object[][] {{map}};
+	}
+	
 }

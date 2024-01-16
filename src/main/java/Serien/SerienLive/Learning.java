@@ -104,7 +104,11 @@ public class Learning extends abstractReusable{
 	@FindBy(xpath = "//div[@class='css-fk1ch0']//button")
 	WebElement start;
 	
-	@FindBy(xpath = "(//div[@class='MuiBox-root css-gg4vpm']/p)[2]")
+	// Below WebElement replaced
+//	@FindBy(xpath = "(//div[@class='MuiBox-root css-gg4vpm']/p)[2]")
+//	WebElement insideCoursesProgress;
+	
+	@FindBy(xpath = "(//div[@class='MuiBox-root css-gg4vpm']//p)[1]")
 	WebElement insideCoursesProgress;
 	
 	@FindBy(xpath = "(//div[@class='MuiBox-root css-gg4vpm']/p)[1]")
@@ -229,7 +233,8 @@ public class Learning extends abstractReusable{
 		return ct;
 	}
 	
-	public void coursesStart() {
+	public void coursesStart() throws Throwable {
+		Thread.sleep(2000);
 		waitForWebElementTOApper(start);
 		start.click();
 		
@@ -400,10 +405,9 @@ public class Learning extends abstractReusable{
 	public void AccepectingAcknowledge() throws Throwable {
 		
 		try {
-			
 			waitForWebElementTOApper(AcknowledgeButton);
 			AcknowledgeButton.click();	
-			Thread.sleep(2000);
+		//	Thread.sleep(2000);
 		
 		} catch (Exception e) {
 			Thread.sleep(1000);
@@ -600,7 +604,7 @@ public class Learning extends abstractReusable{
 			{
 				getallOpetioninQuiz.get(i).click();
 				System.out.println("clicked");
-				Thread.sleep(2000);
+				Thread.sleep(1000);
 				quizSubmitButton.click();
 			}
 		}
@@ -626,6 +630,7 @@ Thread.sleep(1000);
 	{
 		Boolean pdfStatus= false;
 		Thread.sleep(3000);
+		checkBox.click();
 		coursesForwordButton.click();
 	try {
 		
@@ -664,6 +669,7 @@ Thread.sleep(1000);
 			certifite= false;
 			System.out.println("someting went worng");
 		}
+		driver.switchTo().window(parentWindowID);
 		return certifite;
 		
 	}

@@ -6,8 +6,8 @@
       <class name="Serien.SerienLive.HRCoursesComplation">
         <methods>
           <include name="tearDown"/>
-          <include name="ValidationOfCoursesAttend" invocation-numbers="0"/>
           <include name="lunchApplication"/>
+          <include name="ValidationOfMicroLearningAttend" invocation-numbers="0"/>
         </methods>
       </class> <!-- Serien.SerienLive.HRCoursesComplation -->
     </classes>
