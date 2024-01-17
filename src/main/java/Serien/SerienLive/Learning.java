@@ -104,11 +104,7 @@ public class Learning extends abstractReusable{
 	@FindBy(xpath = "//div[@class='css-fk1ch0']//button")
 	WebElement start;
 	
-	// Below WebElement replaced
-//	@FindBy(xpath = "(//div[@class='MuiBox-root css-gg4vpm']/p)[2]")
-//	WebElement insideCoursesProgress;
-	
-	@FindBy(xpath = "(//div[@class='MuiBox-root css-gg4vpm']//p)[1]")
+	@FindBy(xpath = "(//div[@class='MuiBox-root css-gg4vpm']/p)[2]")
 	WebElement insideCoursesProgress;
 	
 	@FindBy(xpath = "(//div[@class='MuiBox-root css-gg4vpm']/p)[1]")
@@ -430,6 +426,18 @@ public class Learning extends abstractReusable{
 		waitForWebElementTOApper(insideCoursesProgress);
 		Thread.sleep(2000);
 		String	actProgress= insideCoursesProgress.getText();
+	//	System.out.println(actProgress);
+		String[] arrOfStr = actProgress.split("%");
+  //      System.out.println(arrOfStr[0]);
+        int actProgres= Integer.parseInt(arrOfStr[0]);
+        System.out.println(actProgres);
+        return actProgres;
+	}
+	
+	public int getMicroLearningProgressInIntger() throws Throwable{
+		waitForWebElementTOApper(insideProgressOFMicroLearningAndGame);
+		Thread.sleep(2000);
+		String	actProgress= insideProgressOFMicroLearningAndGame.getText();
 	//	System.out.println(actProgress);
 		String[] arrOfStr = actProgress.split("%");
   //      System.out.println(arrOfStr[0]);

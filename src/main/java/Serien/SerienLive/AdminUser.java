@@ -77,11 +77,21 @@ public class AdminUser extends abstractReusable {
 		User.click();
 	}
 
+	// Below 3 methods Click on action Button Edit View & delete 
+	
 	public void clickOnEditButton () throws Throwable
 	{
 		//Select se = new Select(driver.findElement(By.xpath("//div[@class='admin-overdue-bottom-table-cnt-usr']//select")));
 		Select se = new Select(UserActionDropdown);
 		se.selectByVisibleText("Edit");
+	}
+	public void clickOnViewButton() {
+		Select se = new Select(UserActionDropdown);
+		se.selectByVisibleText("View");	
+	}
+	public void clickOnDeleteButton() {
+		Select se = new Select(UserActionDropdown);
+		se.selectByVisibleText("Delete");	
 	}
 	
 	public void SearchByUserName(String userName) {
@@ -159,5 +169,7 @@ public class AdminUser extends abstractReusable {
 //		System.out.println(text);
 //		alr.accept();
 	}
+
+	
 }
 

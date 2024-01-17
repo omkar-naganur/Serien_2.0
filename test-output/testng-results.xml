@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="1" total="2" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-01-16T11:27:48Z" name="Default suite" finished-at="2024-01-16T11:28:06Z" duration-ms="17996">
+  <suite started-at="2024-01-17T07:27:55Z" name="Default suite" finished-at="2024-01-17T07:28:17Z" duration-ms="22273">
     <groups>
     </groups>
-    <test started-at="2024-01-16T11:27:48Z" name="Default test" finished-at="2024-01-16T11:28:06Z" duration-ms="17996">
-      <class name="Serien.SerienLive.HRCoursesComplation">
-        <test-method is-config="true" signature="lunchApplication()[pri:0, instance:Serien.SerienLive.HRCoursesComplation@8576fa0]" started-at="2024-01-16T11:27:48Z" name="lunchApplication" finished-at="2024-01-16T11:27:50Z" duration-ms="2461" status="PASS">
+    <test started-at="2024-01-17T07:27:55Z" name="Default test" finished-at="2024-01-17T07:28:17Z" duration-ms="22273">
+      <class name="Serien.SerienLive.scromGooglecloudTest">
+        <test-method is-config="true" signature="lunchApplication()[pri:0, instance:Serien.SerienLive.scromGooglecloudTest@27216cd]" started-at="2024-01-17T07:27:55Z" name="lunchApplication" finished-at="2024-01-17T07:27:58Z" duration-ms="3461" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- lunchApplication -->
-        <test-method signature="ValidationOfMicroLearningAttend(java.util.HashMap)[pri:2, instance:Serien.SerienLive.HRCoursesComplation@8576fa0]" started-at="2024-01-16T11:27:50Z" name="ValidationOfMicroLearningAttend" data-provider="getdata1" finished-at="2024-01-16T11:28:06Z" duration-ms="15521" status="PASS">
+        <test-method signature="scromFileUpload(java.util.HashMap)[pri:0, instance:Serien.SerienLive.scromGooglecloudTest@27216cd]" started-at="2024-01-17T07:27:58Z" name="scromFileUpload" data-provider="getdata" finished-at="2024-01-17T07:28:17Z" duration-ms="18799" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{Useremail=omkar@krishworks.com, microLearning=Descriptive & prescriptive stereotypes, userpass=password, quiz1Ans1=All of the above, adminPass=pass2023, adminEmail=admin@demo.com}]]>
+                <![CDATA[{pass=sisshribha, email=omkar@krishworks.com, filePath=sisshribha}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ValidationOfMicroLearningAttend -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:Serien.SerienLive.HRCoursesComplation@8576fa0]" started-at="2024-01-16T11:28:06Z" name="tearDown" finished-at="2024-01-16T11:28:06Z" duration-ms="0" status="PASS">
+        </test-method> <!-- scromFileUpload -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Serien.SerienLive.scromGooglecloudTest@27216cd]" started-at="2024-01-17T07:28:17Z" name="tearDown" finished-at="2024-01-17T07:28:17Z" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- Serien.SerienLive.HRCoursesComplation -->
+      </class> <!-- Serien.SerienLive.scromGooglecloudTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -11,7 +11,7 @@ import serien.TestComponents.BaseTest;
 
 public class HRCoursesComplation extends BaseTest{
 	
-	@Test(dataProvider = "getdata", priority = 1)
+	@Test(dataProvider = "getDataCourses", priority = 1)
 	public void ValidationOfCoursesAttend (HashMap<String, String> input) throws Throwable
 	{	
 		Profile profile=LoginPage.serienLogin(input.get("Useremail"), input.get("userpass"));
@@ -34,7 +34,7 @@ public class HRCoursesComplation extends BaseTest{
 		
 	}
 	
-	@Test(dataProvider = "getdata1", priority = 2)
+	@Test(dataProvider = "getDataMicroLearning", priority = 2)
 	public void ValidationOfMicroLearningAttend (HashMap<String, String> input) throws Throwable
 	{	
 		Profile profile=LoginPage.serienLogin(input.get("Useremail"), input.get("userpass"));
@@ -45,33 +45,26 @@ public class HRCoursesComplation extends BaseTest{
 		Boolean quizStatus1=lr.coursesQuizWith1Question(input.get("quiz1Ans1"));
 		Assert.assertTrue(quizStatus1);
 		lr.PDFComplation();
-		int actProgress=lr.getCoursesProgressInIntger();
+		int actProgress=lr.getMicroLearningProgressInIntger();
 		Assert.assertTrue(actProgress==100);
 		Boolean certmatch=lr.certificateValidation();
 		Assert.assertTrue(certmatch);
 		
 	}
 	
-	@Test(dataProvider = "getdata1", priority = 3)
+	@Test(dataProvider = "getDataGames", priority = 3)
 	public void ValidationOfGameAttend (HashMap<String, String> input) throws Throwable
 	{	
 		Profile profile=LoginPage.serienLogin(input.get("Useremail"), input.get("userpass"));
 		Learning lr= new Learning(driver);	
-		lr.OpenTheMicroLearning(input.get("microLearning"));
+		lr.OpenTheGame(input.get("game"));
+		lr.AccepectingAcknowledge();
 		lr.coursesStart(); 
-		lr.coursesVideoAttend();
-		Boolean quizStatus1=lr.coursesQuizWith1Question(input.get("quiz1Ans1"));
-		Assert.assertTrue(quizStatus1);
-		lr.PDFComplation();
-		int actProgress=lr.getCoursesProgressInIntger();
-		Assert.assertTrue(actProgress==100);
-		Boolean certmatch=lr.certificateValidation();
-		Assert.assertTrue(certmatch);
 		
 	}
 	
 	@DataProvider
-	public Object[][] getdata() //for only Courses
+	public Object[][] getDataCourses() //for only Courses
 	{
 		HashMap<String, String> map= new HashMap<String, String>();
 		map.put("Useremail", "omkar@krishworks.com");
@@ -91,7 +84,7 @@ public class HRCoursesComplation extends BaseTest{
 	}
 	
 	@DataProvider
-	public Object[][] getdata1() //for only MicroLearning
+	public Object[][] getDataMicroLearning() //for only MicroLearning
 	{
 		HashMap<String, String> map= new HashMap<String, String>();
 		map.put("Useremail", "omkar@krishworks.com");
@@ -99,6 +92,21 @@ public class HRCoursesComplation extends BaseTest{
 		map.put("adminEmail", "admin@demo.com");
 		map.put("adminPass", "pass2023");
 		map.put("microLearning", "Descriptive & prescriptive stereotypes");
+		//write answers
+		map.put("quiz1Ans1", "All of the above");
+		
+		return new Object[][] {{map}};
+	}
+	
+	@DataProvider
+	public Object[][] getDataGames() //for only games
+	{
+		HashMap<String, String> map= new HashMap<String, String>();
+		map.put("Useremail", "omkar@krishworks.com");
+		map.put("userpass", "password");
+		map.put("adminEmail", "admin@demo.com");
+		map.put("adminPass", "pass2023");
+		map.put("game", "What cards have you been dealt?");
 		//write answers
 		map.put("quiz1Ans1", "All of the above");
 		

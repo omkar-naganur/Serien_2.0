@@ -1,5 +1,7 @@
 package Serien.SerienLive;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
@@ -22,6 +24,12 @@ public class LoginPage extends abstractReusable {
 		PageFactory.initElements(driver, this);
 	}
 	
+	//Trial Test 
+	
+	
+	
+	//***************************************
+	// original 
 	@FindBy(xpath = "//input[@type='text']")
 	WebElement userNameTextFiled;
 	
@@ -60,8 +68,34 @@ public class LoginPage extends abstractReusable {
 	
 	public void gotoLoginPage () throws InterruptedException 
 	{
-		driver.get("https://sereindevweb.kdev.co.in/");
+		driver.get("https://console.cloud.google.com/storage/browser/sereindevcontent.kdev.co.in;tab=objects?forceOnBucketsSortingFiltering=true&project=serein-devqa-internal-gcp&prefix=&forceOnObjectsSortingFiltering=false");
+		//driver.get("https://sereindevweb.kdev.co.in/");
 		//driver.get("https://sereininc.live/");
+	}
+	
+	public void gooleColudLogin (String Username, String password) throws InterruptedException 
+	{
+		Thread.sleep(5000);
+		driver.findElement(By.xpath("//input[@type='email']")).sendKeys(Username);
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("(//button[@jscontroller='soHxf'])[2]")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//input[@type='password']")).sendKeys(password);
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("(//button[@jscontroller='soHxf'])[2]")).click();
+		
+	}
+	
+	public void gooleColudFile (String filePath) throws InterruptedException, FileNotFoundException 
+	{
+		Thread.sleep(5000);
+	    WebElement fileInput = driver.findElement(By.xpath("(//div[@jslog='54826'])//input[2]"));
+	 //   CharSequence[] fis=(System.getProperty("user.dir")+"//reports//project1");
+	 String fis=  "/media/kwsys4/nonOsPartition/AutomationSerien4.0/SerienLive/reports/project1";
+	    fileInput.sendKeys(fis);
+	    Thread.sleep(2000);
+	   
+		
 	}
 	
 	public Boolean ErrorMessage(String expectedErrorMessage) throws Throwable

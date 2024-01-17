@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Serien.SerienLive.HRCoursesComplation">
+      <class name="Serien.SerienLive.scromGooglecloudTest">
         <methods>
           <include name="tearDown"/>
+          <include name="scromFileUpload" invocation-numbers="0"/>
           <include name="lunchApplication"/>
-          <include name="ValidationOfMicroLearningAttend" invocation-numbers="0"/>
         </methods>
-      </class> <!-- Serien.SerienLive.HRCoursesComplation -->
+      </class> <!-- Serien.SerienLive.scromGooglecloudTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
