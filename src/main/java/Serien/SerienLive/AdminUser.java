@@ -1,6 +1,7 @@
 package Serien.SerienLive;
 
 import java.time.Duration;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.openqa.selenium.Alert;
@@ -68,12 +69,30 @@ public class AdminUser extends abstractReusable {
 	WebElement emailSearchButton;
 	
 	@FindBy(id = "name")
-	WebElement nameFiled;
+	WebElement nameFiled ;
 	
 	// User View section Elements
 	
 	@FindBy(xpath = "//div[@class='admin-overdue-bottom-table-td'][1]")
-	List<WebElement> coursesName;	
+	List<WebElement> coursesName ;	
+	
+	@FindBy(xpath = "//div[@class='admin-overdue-bottom-table-td'][2]")
+	List<WebElement> totalLesson ;
+	
+	@FindBy(xpath = "//div[@class='admin-overdue-bottom-table-td'][3]")
+	List<WebElement> LessonsCompleted ;
+	
+	@FindBy(xpath = "//div[@class='admin-overdue-bottom-table-td'][4]")
+	List<WebElement> LastStepCompleted ;
+	
+	@FindBy(xpath = "//div[@class='admin-overdue-bottom-table-td'][5]")
+	List<WebElement> StartDate ;
+	
+	@FindBy(xpath = "//div[@class='admin-overdue-bottom-table-td'][6]")
+	List<WebElement> CompletionDate ;
+	
+	@FindBy(xpath = "//div[@class='admin-overdue-bottom-table-td'][7]")
+	List<WebElement> Status ;
 	
 	@FindBy(xpath = "//div/select")
 	List<WebElement> actions;	
@@ -187,7 +206,7 @@ public class AdminUser extends abstractReusable {
 		
 		Thread.sleep(5000);
 		waitForWebElementTOApper(coursesName);
-		
+	
 		for(int i=0;i<coursesName.size(); i++)
 		{
 		String actCourses =coursesName.get(i).getText();
@@ -197,6 +216,29 @@ public class AdminUser extends abstractReusable {
 			test.selectByVisibleText("Delete Progress");
 		}
 		}
+	}
+
+	public ArrayList<String> getUserdeatilsOfTheCourses(String courses) throws Throwable{
+		Thread.sleep(5000);
+		waitForWebElementTOApper(coursesName);
+		ArrayList<String> userCoursesdetails = new ArrayList<String>();
+		for(int i=0;i<coursesName.size(); i++)
+		{
+		String actCourses =coursesName.get(i).getText();
+		if (actCourses.equals(courses))
+		{
+			userCoursesdetails.add(coursesName.get(i).getText());
+			userCoursesdetails.add(totalLesson.get(i).getText());
+			userCoursesdetails.add(LessonsCompleted.get(i).getText());
+			userCoursesdetails.add(LastStepCompleted.get(i).getText());
+			userCoursesdetails.add(StartDate.get(i).getText());
+			userCoursesdetails.add(CompletionDate.get(i).getText());
+			userCoursesdetails.add(Status.get(i).getText());
+		}
+		}
+		
+		return userCoursesdetails ;
+		
 	}
 
 	

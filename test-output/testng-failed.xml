@@ -5,7 +5,7 @@
     <classes>
       <class name="Serien.SerienLive.AdminUserSection">
         <methods>
-          <include name="UserCoursesProgressReset" invocation-numbers="0"/>
+          <include name="UserCoursesDeatilsFeatch" invocation-numbers="0"/>
           <include name="tearDown"/>
           <include name="lunchApplication"/>
         </methods>

@@ -1,6 +1,8 @@
 package Serien.SerienLive;
 
 import org.testng.annotations.Test;
+
+import java.util.ArrayList;
 import java.util.HashMap;
 
 import org.testng.Assert;
@@ -21,8 +23,20 @@ public class AdminUserSection extends BaseTest{
 		au.searchByEmail(input.get("Useremail"));
 		Thread.sleep(3000);
 		au.clickOnViewButton();
-		au.deleteProgress(input.get("CourseName"));
-		
+		au.deleteProgress(input.get("CourseName"));	
+	}
+	
+	@Test(dataProvider = "getdata", priority = 2)
+	public void UserCoursesDeatilsFeatch (HashMap<String, String> input) throws Throwable
+	{	
+		Profile profile=LoginPage.serienLogin(input.get("adminEmail"), input.get("adminPass"));
+		AdminUser au= new AdminUser(driver);
+		au.users();
+		au.searchByEmail(input.get("Useremail"));
+		Thread.sleep(3000);
+		au.clickOnViewButton();
+		ArrayList<String> userCoursesDeatil = au.getUserdeatilsOfTheCourses(input.get("CourseName"));
+		System.out.println(userCoursesDeatil.get(7));
 	}
 	
 	@DataProvider
@@ -36,7 +50,7 @@ public class AdminUserSection extends BaseTest{
 		map.put("typeOfTraining", "course");
 	//	map.put("typeOfTraining", "Micro course");
 	//	map.put("typeOfTraining", "Games");
-		map.put("CourseName", "Run it Bias"); //Safety and inclusion at the workplace
+		map.put("CourseName", "Descriptive & prescriptive stereotypes"); //Safety and inclusion at the workplace
 		map.put("GroupName", "Sitero_PoSH_2023");
 		map.put("dueDate", "12122024");
 		map.put("MicroLearningCourses", "Confirmation bias");
