@@ -2,31 +2,31 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-01-17T07:27:55Z" name="Default suite" finished-at="2024-01-17T07:28:17Z" duration-ms="22273">
+  <suite started-at="2024-01-17T10:22:15Z" name="Default suite" finished-at="2024-01-17T10:22:31Z" duration-ms="16510">
     <groups>
     </groups>
-    <test started-at="2024-01-17T07:27:55Z" name="Default test" finished-at="2024-01-17T07:28:17Z" duration-ms="22273">
-      <class name="Serien.SerienLive.scromGooglecloudTest">
-        <test-method is-config="true" signature="lunchApplication()[pri:0, instance:Serien.SerienLive.scromGooglecloudTest@27216cd]" started-at="2024-01-17T07:27:55Z" name="lunchApplication" finished-at="2024-01-17T07:27:58Z" duration-ms="3461" status="PASS">
+    <test started-at="2024-01-17T10:22:15Z" name="Default test" finished-at="2024-01-17T10:22:31Z" duration-ms="16510">
+      <class name="Serien.SerienLive.AdminUserSection">
+        <test-method is-config="true" signature="lunchApplication()[pri:0, instance:Serien.SerienLive.AdminUserSection@27216cd]" started-at="2024-01-17T10:22:15Z" name="lunchApplication" finished-at="2024-01-17T10:22:17Z" duration-ms="2536" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- lunchApplication -->
-        <test-method signature="scromFileUpload(java.util.HashMap)[pri:0, instance:Serien.SerienLive.scromGooglecloudTest@27216cd]" started-at="2024-01-17T07:27:58Z" name="scromFileUpload" data-provider="getdata" finished-at="2024-01-17T07:28:17Z" duration-ms="18799" status="PASS">
+        <test-method signature="UserCoursesProgressReset(java.util.HashMap)[pri:1, instance:Serien.SerienLive.AdminUserSection@27216cd]" started-at="2024-01-17T10:22:17Z" name="UserCoursesProgressReset" data-provider="getdata" finished-at="2024-01-17T10:22:31Z" duration-ms="13961" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{pass=sisshribha, email=omkar@krishworks.com, filePath=sisshribha}]]>
+                <![CDATA[{CourseName=Run it Bias, GroupName=Sitero_PoSH_2023, Useremail=omkar@krishworks.com, typeOfTraining=course, userpass=password, dueDate=12122024, Gamesname=Omkar test, adminPass=pass2023, adminEmail=admin@demo.com, MicroLearningCourses=Confirmation bias}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- scromFileUpload -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:Serien.SerienLive.scromGooglecloudTest@27216cd]" started-at="2024-01-17T07:28:17Z" name="tearDown" finished-at="2024-01-17T07:28:17Z" duration-ms="1" status="PASS">
+        </test-method> <!-- UserCoursesProgressReset -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Serien.SerienLive.AdminUserSection@27216cd]" started-at="2024-01-17T10:22:31Z" name="tearDown" finished-at="2024-01-17T10:22:31Z" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- Serien.SerienLive.scromGooglecloudTest -->
+      </class> <!-- Serien.SerienLive.AdminUserSection -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

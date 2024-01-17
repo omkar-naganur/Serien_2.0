@@ -28,7 +28,6 @@ public class AdminUser extends abstractReusable {
 		PageFactory.initElements(driver, this);
 	}
 	
-	
 	@FindBy(xpath = "//a[@href='/admin/users']")
 	WebElement User;
 	
@@ -71,6 +70,16 @@ public class AdminUser extends abstractReusable {
 	@FindBy(id = "name")
 	WebElement nameFiled;
 	
+	// User View section Elements
+	
+	@FindBy(xpath = "//div[@class='admin-overdue-bottom-table-td'][1]")
+	List<WebElement> coursesName;	
+	
+	@FindBy(xpath = "//div/select")
+	List<WebElement> actions;	
+	
+	//*********************
+	
 	
 	public void GotoUser () throws Throwable
 	{
@@ -81,7 +90,6 @@ public class AdminUser extends abstractReusable {
 	
 	public void clickOnEditButton () throws Throwable
 	{
-		//Select se = new Select(driver.findElement(By.xpath("//div[@class='admin-overdue-bottom-table-cnt-usr']//select")));
 		Select se = new Select(UserActionDropdown);
 		se.selectByVisibleText("Edit");
 	}
@@ -93,6 +101,9 @@ public class AdminUser extends abstractReusable {
 		Select se = new Select(UserActionDropdown);
 		se.selectByVisibleText("Delete");	
 	}
+	//**************************************************
+	
+	// Below Methods for User section search operations
 	
 	public void SearchByUserName(String userName) {
 		//waitForElementTODissApper(LoadingScreeen);
@@ -102,6 +113,17 @@ public class AdminUser extends abstractReusable {
 		waitForWebElementTOApper(UserNameSearchButton);
 		UserNameSearchButton.click();
 	}
+	
+	public void searchByEmail(String email) throws Throwable
+	{
+		waitForWebElementTOApper(emailSearch);
+		emailSearch.click();
+		emailSearch.sendKeys(email);
+		emailSearchButton.click();
+		Thread.sleep(2000);
+	}
+	
+	//**********************************************************
 	
 	public void EditUserCompany (String companyName)
 	{
@@ -141,15 +163,6 @@ public class AdminUser extends abstractReusable {
 		userCancel.click();
 	}
 	
-	public void searchByEmail(String email) throws Throwable
-	{
-		waitForWebElementTOApper(emailSearch);
-		emailSearch.click();
-		emailSearch.sendKeys(email);
-		emailSearchButton.click();
-		Thread.sleep(2000);
-	}
-	
 	public void changeUsername (String name) throws Throwable
 	{
 		waitForWebElementTOApper(nameFiled);
@@ -168,6 +181,22 @@ public class AdminUser extends abstractReusable {
 //		String text=alr.getText();
 //		System.out.println(text);
 //		alr.accept();
+	}
+
+	public void deleteProgress(String courses) throws Throwable{
+		
+		Thread.sleep(5000);
+		waitForWebElementTOApper(coursesName);
+		
+		for(int i=0;i<coursesName.size(); i++)
+		{
+		String actCourses =coursesName.get(i).getText();
+		if (actCourses.equals(courses))
+		{
+			Select test= new Select(actions.get(i));
+			test.selectByVisibleText("Delete Progress");
+		}
+		}
 	}
 
 	

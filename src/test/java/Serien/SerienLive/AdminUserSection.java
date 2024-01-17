@@ -21,6 +21,7 @@ public class AdminUserSection extends BaseTest{
 		au.searchByEmail(input.get("Useremail"));
 		Thread.sleep(3000);
 		au.clickOnViewButton();
+		au.deleteProgress(input.get("CourseName"));
 		
 	}
 	
@@ -35,7 +36,7 @@ public class AdminUserSection extends BaseTest{
 		map.put("typeOfTraining", "course");
 	//	map.put("typeOfTraining", "Micro course");
 	//	map.put("typeOfTraining", "Games");
-		map.put("CourseName", "Safety and inclusion at the workplace"); //Safety and inclusion at the workplace
+		map.put("CourseName", "Run it Bias"); //Safety and inclusion at the workplace
 		map.put("GroupName", "Sitero_PoSH_2023");
 		map.put("dueDate", "12122024");
 		map.put("MicroLearningCourses", "Confirmation bias");

@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Serien.SerienLive.scromGooglecloudTest">
+      <class name="Serien.SerienLive.AdminUserSection">
         <methods>
+          <include name="UserCoursesProgressReset" invocation-numbers="0"/>
           <include name="tearDown"/>
-          <include name="scromFileUpload" invocation-numbers="0"/>
           <include name="lunchApplication"/>
         </methods>
-      </class> <!-- Serien.SerienLive.scromGooglecloudTest -->
+      </class> <!-- Serien.SerienLive.AdminUserSection -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
