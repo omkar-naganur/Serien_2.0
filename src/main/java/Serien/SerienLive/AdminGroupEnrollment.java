@@ -27,7 +27,6 @@ public class AdminGroupEnrollment extends abstractReusable{
 	
 //	String groupname;
 	
-
 	@FindBy(xpath = "//a[@href='/admin/groupEnrollmentEdits/']")
 	WebElement addNewGroupEnrollment;
 	
@@ -72,6 +71,30 @@ public class AdminGroupEnrollment extends abstractReusable{
 	
 	@FindBy(xpath = "//div[@class='admin-overdue-bottom-pagination-cnt-item'][2]")
 	WebElement PagenationForwardButton;
+	
+	@FindBy(xpath = "//div[@class='admin-overdue-bottom-table-cnt-grpeden']/div[8]//select")
+	List<WebElement>  UserActionDropdown;
+	
+	// Group enrollment view section elements
+	
+	@FindBy(xpath = "//input[@type='text']")
+	WebElement searchBar ;
+	
+	@FindBy(xpath = "//input[@type='text']/..//div")
+	WebElement searchButton ;
+	
+	@FindBy(xpath = "//input[@value='empName']")
+	WebElement employeeNameRadoButton;
+	
+//	@FindBy(xpath = "//input[@value='empEmail']")
+//	WebElement employeeEmailRadoButton;
+	
+	@FindBy(xpath = "(//input[@type='radio'])[2]")
+	WebElement employeeEmailRadoButton;
+	
+	@FindBy(xpath = "//div[contains(text(),'Clear ')]")
+	WebElement clear;
+	//************************************************
 	
 	
 	public void gotoAddNewGroupEnrollment () throws Throwable
@@ -203,7 +226,93 @@ public class AdminGroupEnrollment extends abstractReusable{
 					} 
 				}
 
-}}
+}
+	
+	public void findingGroupEnrollment (String CoursesName, String Groupname) throws Throwable
+	{
+		waitForWebElementTOApper(groupNameSearchBar);
+		waitForWebElementTOApper(groupNameSearchButton);
+		groupNameSearchBar.click();
+		groupNameSearchBar.sendKeys(Groupname);
+		groupNameSearchButton.click();
+		
+				waitForWebElementTOApper(getCoursesNameList);
+				Thread.sleep(2000);
+				ArrayList<String> lastArray = new ArrayList<String>() ;
+				ArrayList<String> lastsArray = new ArrayList<String>() ;
+				boolean milgya = false;
+				while(!milgya) {
+					ArrayList<String> ar = new ArrayList<String>();
+					ArrayList<String> ars = new ArrayList<String>();
+					for(int i = 0; i< getCoursesNameList.size(); i++) 
+				      {   	  
+				      String s = getCoursesNameList.get(i).getText();
+				      String groupname = getGroupNameList.get(i).getText();
+				         ar.add(s);
+				         ars.add(groupname);
+				         
+				      }
+					
+					for(int i = 0 ; i < ar.size() ; i++) {
+						System.out.println(ar.get(i)+ "=="+ ars.get(i));
+						if(ar.get(i).equals(CoursesName)&& ars.get(i).equals(Groupname)){
+							System.out.println("milgya***********************");
+							Thread.sleep(3000);
+							System.out.println(i);
+							clickOnViewButton(i);
+							milgya = true;
+						}
+					}
+					if(!milgya) {
+						if(lastArray.size()!= 0) {
+					    	  boolean xyz = 	false;
+					    	  for(int i = 0 ; i < lastArray.size() && i < ar.size();i++) {
+					    		  System.out.println(lastArray.get(i)+" == "+ar.get(i));
+					    		  if(!lastArray.get(i).equals(ar.get(i))) {
+					    			  i = lastArray.size();
+					    			  xyz = true;
+					    		  }
+					    	  }
+					    	  System.out.println("xyz : "+ xyz);
+					    	  if(!xyz) {
+					    		  milgya = true;
+					    		  System.out.println("NAhi mil raha");
+					    	  }
+					      }
+					       lastArray = ar;
+					       lastsArray = ars;
+			        	 PagenationForwardButton.click();
+			        	 Thread.sleep(2000);
+					}else {
+						System.out.println("milgya***********************kyu mara rahe ho");
+					} 
+				}
+
+}
+	public void clickOnViewButton(int i) {
+		Select se = new Select(UserActionDropdown.get(i));
+		se.selectByVisibleText("View");	
+	}
+
+	public void searchTheUserByEmail(String email) throws Throwable {
+		Thread.sleep(1000);
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollBy(0, -500)");
+		Thread.sleep(1000);
+		employeeEmailRadoButton.click();
+		searchBar.click();
+		searchBar.sendKeys(email);
+		searchButton.click();
+		Thread.sleep(2000);
+		
+	}
+
+	public void getUserEnrollmentDetails(String string) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	}
 	
 	
 

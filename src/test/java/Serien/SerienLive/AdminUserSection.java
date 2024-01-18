@@ -36,7 +36,7 @@ public class AdminUserSection extends BaseTest{
 		Thread.sleep(3000);
 		au.clickOnViewButton();
 		ArrayList<String> userCoursesDeatil = au.getUserdeatilsOfTheCourses(input.get("CourseName"));
-		System.out.println(userCoursesDeatil.get(7));
+		System.out.println(userCoursesDeatil.get(6));
 	}
 	
 	@DataProvider
