@@ -52,7 +52,7 @@ public class AdminEnrollments extends BaseTest{
 		Profile profile=LoginPage.serienLogin(input.get("Useremail"), input.get("userpass"));
 		Learning lr=new Learning(driver);
 		Boolean CourseFound = lr.MicroLearningNameValidationFromHRPanle(input.get("MicroLearningCourses"));
-		Assert.assertTrue(CourseFound);			
+		Assert.assertTrue(CourseFound);	
 	}
 	
 	@Test(dataProvider = "getdata", priority = 5)
@@ -77,6 +77,19 @@ public class AdminEnrollments extends BaseTest{
 		
 	}
 	
+	@Test(dataProvider = "getdata1", priority = 7)
+	public void UserCoursesComplation (HashMap<String, String> input) throws Throwable
+	{	
+		Profile profile=LoginPage.serienLogin(input.get("adminEmail"), input.get("adminPass"));
+		AdminGroupEnrollment age= new AdminGroupEnrollment(driver);
+		age.groupEnrollment();
+		age.findingGroupEnrollment(input.get("Courses"), input.get("group"));
+		age.searchTheUserByEmail(input.get("Useremail"));
+		age.comapleTheUserProgress(input.get("Useremail"));
+		Boolean statusMatch=age.validationUserCoursesStatusComplated(input.get("Useremail"));
+		Assert.assertTrue(statusMatch);
+	}
+	
 	@DataProvider
 	public Object[][] getdata1()
 	{
@@ -85,7 +98,7 @@ public class AdminEnrollments extends BaseTest{
 		map.put("userpass", "password");
 		map.put("adminEmail", "admin@demo.com");
 		map.put("adminPass", "pass2023");
-		map.put("Courses", "Safety and inclusion at the workplace");
+		map.put("Courses", "Gender stereotypes");
 		map.put("group", "TCS");
 		
 		return new Object[][] {{map}};

@@ -6,8 +6,8 @@
       <class name="Serien.SerienLive.AdminEnrollments">
         <methods>
           <include name="tearDown"/>
+          <include name="UserCoursesComplation" invocation-numbers="0"/>
           <include name="lunchApplication"/>
-          <include name="GetUserEnrollmentDetails" invocation-numbers="0"/>
         </methods>
       </class> <!-- Serien.SerienLive.AdminEnrollments -->
     </classes>

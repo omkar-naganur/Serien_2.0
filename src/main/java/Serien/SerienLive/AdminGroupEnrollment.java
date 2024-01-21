@@ -89,44 +89,69 @@ public class AdminGroupEnrollment extends abstractReusable{
 	@FindBy(xpath = "//input[@value='empEmail']")
 	WebElement employeeEmailRadoButton ;
 	
-	@FindBy(xpath = "//div[contains(text(),'Clear ')]")
+	@FindBy(xpath = "//div[contains(text(),'Clear')]")
 	WebElement clear ;
+	
+	@FindBy(xpath = "//button/div[contains(text(),'Complete course')]")
+	WebElement completeCourse ;
+	
+	@FindBy(xpath = "//button/div[contains(text(),'Download report')]")
+	WebElement downloadReport ;
+	
+	@FindBy(xpath = "//button/div[contains(text(),'send reminder')]")
+	WebElement sendReminder ;
 	
 	@FindBy(xpath = "//div[@class='admin-overdue-bottom-table-cnt']//div[3]")
 	List<WebElement>  ListOfEmail ;
 	
-	@FindBy(xpath = "//div[@class='admin-overdue-bottom-table-cnt']//div[3]")
+	@FindBy(xpath = "//div[@class='admin-overdue-bottom-table-cnt']//div[1]")
 	List<WebElement>  srno ;
 	
-	@FindBy(xpath = "//div[@class='admin-overdue-bottom-table-cnt']//div[3]")
+	@FindBy(xpath = "//div[@class='admin-overdue-bottom-table-cnt']//div[2]")
 	List<WebElement>  name ;
 	
-	@FindBy(xpath = "//div[@class='admin-overdue-bottom-table-cnt']//div[3]")
+	@FindBy(xpath = "//div[@class='admin-overdue-bottom-table-cnt']//div[4]")
 	List<WebElement>  CourseName ;
 	
-	@FindBy(xpath = "//div[@class='admin-overdue-bottom-table-cnt']//div[3]")
+	@FindBy(xpath = "//div[@class='admin-overdue-bottom-table-cnt']//div[5]")
 	List<WebElement>  TotalLessonCount ;
 	
-	@FindBy(xpath = "//div[@class='admin-overdue-bottom-table-cnt']//div[3]")
+	@FindBy(xpath = "//div[@class='admin-overdue-bottom-table-cnt']//div[6]")
 	List<WebElement>  LessonCompleted ;
 	
-	@FindBy(xpath = "//div[@class='admin-overdue-bottom-table-cnt']//div[3]")
+	@FindBy(xpath = "//div[@class='admin-overdue-bottom-table-cnt']//div[7]")
 	List<WebElement>  StartDate ;
 	
-	@FindBy(xpath = "//div[@class='admin-overdue-bottom-table-cnt']//div[3]")
+	@FindBy(xpath = "//div[@class='admin-overdue-bottom-table-cnt']//div[8]")
 	List<WebElement>  CompletionDate ;
 	
-	@FindBy(xpath = "//div[@class='admin-overdue-bottom-table-cnt']//div[3]")
+	@FindBy(xpath = "//div[@class='admin-overdue-bottom-table-cnt']//div[9]")
 	List<WebElement>  Status ;
 	
-	@FindBy(xpath = "//div[@class='admin-overdue-bottom-table-cnt']//div[3]")
+	@FindBy(xpath = "//div[@class='admin-overdue-bottom-table-cnt']//div[10]")
 	List<WebElement>  Action ;
 	
 	@FindBy(xpath = "//div[@class='admin-overdue-bottom-table-cnt']")
 	List<WebElement>  ListOfDeatils ;
 	
+	@FindBy(xpath = "//input[@type='checkbox']")
+	List<WebElement>  checkbox ;
+	
+	@FindBy(xpath = "(//input[@type='checkbox'])[1]")
+	WebElement selectAllCheckBox ;
+	
 	//************************************************
 	
+	// Courses Complation Dilog box
+	
+	@FindBy(xpath = "//div[@role='dialog']")
+	WebElement dialogBOX ;
+	
+	@FindBy(xpath = "//div[contains(text(),' Module name')]/..//input[@type='checkbox']")
+	WebElement selectAllModuleCheckBox ;
+	
+	@FindBy(xpath = "//button[contains(text(),'Save')]")
+	WebElement save ;
 	
 	public void gotoAddNewGroupEnrollment () throws Throwable
 	{
@@ -290,7 +315,7 @@ public class AdminGroupEnrollment extends abstractReusable{
 							System.out.println("milgya***********************");
 							Thread.sleep(3000);
 							System.out.println(i);
-							clickOnViewButton(i);
+							clickOnViewButton(i-1);
 							milgya = true;
 						}
 					}
@@ -338,26 +363,75 @@ public class AdminGroupEnrollment extends abstractReusable{
 		
 	}
 
-	public void getUserEnrollmentDetails(String email) throws Throwable {
+	public ArrayList<String> getUserEnrollmentDetails(String email) throws Throwable {
 		
+		ArrayList<String> enrollmentDeatils = new ArrayList<String>() ;
+		Thread.sleep(2000);
+		waitForWebElementTOApper(ListOfEmail);
+		for(int i=0; i<ListOfEmail.size(); i++)
+		{
+		String actemail=ListOfEmail.get(i).getText();
+		
+		if (actemail.equals(email)) {
+			
+			enrollmentDeatils.add(srno.get(i).getText());
+			enrollmentDeatils.add(name.get(i).getText());
+			enrollmentDeatils.add(ListOfEmail.get(i).getText());
+			enrollmentDeatils.add(CourseName.get(i).getText());
+			enrollmentDeatils.add(TotalLessonCount.get(i).getText());
+			enrollmentDeatils.add(LessonCompleted.get(i).getText());
+			enrollmentDeatils.add(StartDate.get(i).getText());
+			enrollmentDeatils.add(CompletionDate.get(i).getText());
+			enrollmentDeatils.add(Status.get(i).getText());
+			//enrollmentDeatils.add(Action.get(i).getText());		
+		}
+				
+		}
+		System.out.println(enrollmentDeatils);
+		return enrollmentDeatils ;
+	}
+
+	
+	public void comapleTheUserProgress(String email) throws Throwable {
+	
 		for(int i=0; i<ListOfEmail.size(); i++)
 		{
 		String actemail=ListOfEmail.get(i).getText();
 		Thread.sleep(2000);
 		if (actemail.equals(email)) {
-			String details= ListOfDeatils.get(i).getText();
-			System.out.print(details);
-			System.out.println(" ");
-			
-			
+			checkbox.get(i).click();
+			Thread.sleep(1000);
+			completeCourse.click();
+			Thread.sleep(1000);
+			selectAllModuleCheckBox.click();
+			Thread.sleep(1000);
+			save.click();
+			Thread.sleep(2000);
+			alertAccepectMethod();
 			
 		}
 		
+	}
+	}
+
+	public Boolean validationUserCoursesStatusComplated(String email) throws Throwable {
 		
-		}
+		ArrayList<String> enrollmentDeatils = new ArrayList<String>() ;
+		clear.click();
+		Thread.sleep(1000);
+		searchTheUserByEmail(email);
+		enrollmentDeatils=getUserEnrollmentDetails(email);
+		Thread.sleep(2000);
+		String coursesStatus= enrollmentDeatils.get(8);
+		System.out.println(coursesStatus);
+		Boolean statusMatch =coursesStatus.equals("Completed");
+		return statusMatch;
+		
 	}
 	
-	}
+}
+	
+	
 	
 	
 
