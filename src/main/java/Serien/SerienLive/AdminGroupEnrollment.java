@@ -84,16 +84,47 @@ public class AdminGroupEnrollment extends abstractReusable{
 	WebElement searchButton ;
 	
 	@FindBy(xpath = "//input[@value='empName']")
-	WebElement employeeNameRadoButton;
+	WebElement employeeNameRadoButton ;
 	
-//	@FindBy(xpath = "//input[@value='empEmail']")
-//	WebElement employeeEmailRadoButton;
-	
-	@FindBy(xpath = "(//input[@type='radio'])[2]")
-	WebElement employeeEmailRadoButton;
+	@FindBy(xpath = "//input[@value='empEmail']")
+	WebElement employeeEmailRadoButton ;
 	
 	@FindBy(xpath = "//div[contains(text(),'Clear ')]")
-	WebElement clear;
+	WebElement clear ;
+	
+	@FindBy(xpath = "//div[@class='admin-overdue-bottom-table-cnt']//div[3]")
+	List<WebElement>  ListOfEmail ;
+	
+	@FindBy(xpath = "//div[@class='admin-overdue-bottom-table-cnt']//div[3]")
+	List<WebElement>  srno ;
+	
+	@FindBy(xpath = "//div[@class='admin-overdue-bottom-table-cnt']//div[3]")
+	List<WebElement>  name ;
+	
+	@FindBy(xpath = "//div[@class='admin-overdue-bottom-table-cnt']//div[3]")
+	List<WebElement>  CourseName ;
+	
+	@FindBy(xpath = "//div[@class='admin-overdue-bottom-table-cnt']//div[3]")
+	List<WebElement>  TotalLessonCount ;
+	
+	@FindBy(xpath = "//div[@class='admin-overdue-bottom-table-cnt']//div[3]")
+	List<WebElement>  LessonCompleted ;
+	
+	@FindBy(xpath = "//div[@class='admin-overdue-bottom-table-cnt']//div[3]")
+	List<WebElement>  StartDate ;
+	
+	@FindBy(xpath = "//div[@class='admin-overdue-bottom-table-cnt']//div[3]")
+	List<WebElement>  CompletionDate ;
+	
+	@FindBy(xpath = "//div[@class='admin-overdue-bottom-table-cnt']//div[3]")
+	List<WebElement>  Status ;
+	
+	@FindBy(xpath = "//div[@class='admin-overdue-bottom-table-cnt']//div[3]")
+	List<WebElement>  Action ;
+	
+	@FindBy(xpath = "//div[@class='admin-overdue-bottom-table-cnt']")
+	List<WebElement>  ListOfDeatils ;
+	
 	//************************************************
 	
 	
@@ -307,9 +338,23 @@ public class AdminGroupEnrollment extends abstractReusable{
 		
 	}
 
-	public void getUserEnrollmentDetails(String string) {
-		// TODO Auto-generated method stub
+	public void getUserEnrollmentDetails(String email) throws Throwable {
 		
+		for(int i=0; i<ListOfEmail.size(); i++)
+		{
+		String actemail=ListOfEmail.get(i).getText();
+		Thread.sleep(2000);
+		if (actemail.equals(email)) {
+			String details= ListOfDeatils.get(i).getText();
+			System.out.print(details);
+			System.out.println(" ");
+			
+			
+			
+		}
+		
+		
+		}
 	}
 	
 	}

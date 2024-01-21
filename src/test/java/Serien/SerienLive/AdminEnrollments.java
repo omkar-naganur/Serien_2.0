@@ -87,7 +87,7 @@ public class AdminEnrollments extends BaseTest{
 		map.put("adminPass", "pass2023");
 		map.put("Courses", "Safety and inclusion at the workplace");
 		map.put("group", "TCS");
-		//
+		
 		return new Object[][] {{map}};
 	}
 	

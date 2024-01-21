@@ -2,16 +2,16 @@
 <testng-results ignored="5" total="6" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-01-18T12:55:28Z" name="Default suite" finished-at="2024-01-18T12:55:49Z" duration-ms="20831">
+  <suite started-at="2024-01-21T06:23:56Z" name="Default suite" finished-at="2024-01-21T06:24:20Z" duration-ms="24180">
     <groups>
     </groups>
-    <test started-at="2024-01-18T12:55:28Z" name="Default test" finished-at="2024-01-18T12:55:49Z" duration-ms="20831">
+    <test started-at="2024-01-21T06:23:56Z" name="Default test" finished-at="2024-01-21T06:24:20Z" duration-ms="24180">
       <class name="Serien.SerienLive.AdminEnrollments">
-        <test-method is-config="true" signature="lunchApplication()[pri:0, instance:Serien.SerienLive.AdminEnrollments@5f354bcf]" started-at="2024-01-18T12:55:28Z" name="lunchApplication" finished-at="2024-01-18T12:55:31Z" duration-ms="3293" status="PASS">
+        <test-method is-config="true" signature="lunchApplication()[pri:0, instance:Serien.SerienLive.AdminEnrollments@5f354bcf]" started-at="2024-01-21T06:23:56Z" name="lunchApplication" finished-at="2024-01-21T06:23:59Z" duration-ms="2684" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- lunchApplication -->
-        <test-method signature="GetUserEnrollmentDetails(java.util.HashMap)[pri:6, instance:Serien.SerienLive.AdminEnrollments@5f354bcf]" started-at="2024-01-18T12:55:31Z" name="GetUserEnrollmentDetails" data-provider="getdata1" finished-at="2024-01-18T12:55:49Z" duration-ms="17523" status="PASS">
+        <test-method signature="GetUserEnrollmentDetails(java.util.HashMap)[pri:6, instance:Serien.SerienLive.AdminEnrollments@5f354bcf]" started-at="2024-01-21T06:23:59Z" name="GetUserEnrollmentDetails" data-provider="getdata1" finished-at="2024-01-21T06:24:20Z" duration-ms="21482" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -22,7 +22,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetUserEnrollmentDetails -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:Serien.SerienLive.AdminEnrollments@5f354bcf]" started-at="2024-01-18T12:55:49Z" name="tearDown" finished-at="2024-01-18T12:55:49Z" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Serien.SerienLive.AdminEnrollments@5f354bcf]" started-at="2024-01-21T06:24:20Z" name="tearDown" finished-at="2024-01-21T06:24:20Z" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
