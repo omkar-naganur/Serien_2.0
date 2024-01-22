@@ -27,12 +27,6 @@ public class AdminGroupPage extends abstractReusable{
 	@FindBy(xpath = "//a[@href='/admin/groupEdits/']")
 	WebElement addNewGroup;
 	
-//	@FindBy(xpath = "//li[@class='MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-18fyyqq']")
-//	List<WebElement> ListofComapny;
-	
-	@FindBy(xpath = "//li[@data-value]")
-	List<WebElement> ListofComapny;
-	
 	@FindBy(xpath = "//div[@class='MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary  css-1ebyv4v']")
 	WebElement selectComapnyDropDown;
 	
@@ -48,9 +42,11 @@ public class AdminGroupPage extends abstractReusable{
 	@FindBy(xpath = "//button[text()='SaveUpdate']")
 	WebElement SaveUpdate;
 	
-	@FindBy(xpath = "//div[@class='admin-overdue-bottom-table-cnt-grp']//div[3]") 
-	//      old > //div[@class='admin-overdue-bottom-table']//div[3]
-	List<WebElement> ListOfGroulName;
+	@FindBy(xpath = "//ul[@role='listbox']//li") 
+	List<WebElement> ListOfCompanyName;
+	
+	@FindBy(xpath = "//div[@class='admin-overdue-bottom-table-td'][3]") 
+	List<WebElement> ListOfGroupNames;
 	
 	@FindBy(xpath = "//div[@class='admin-overdue-bottom-pagination-cnt-item'][2]")
 	WebElement PagenationForwardButton;
@@ -58,24 +54,25 @@ public class AdminGroupPage extends abstractReusable{
 	@FindBy(xpath = "//div[@class='admin-overdue-bottom-pagination-cnt-item'][1]")
 	WebElement PagenationwardButton;
 	
-	public void creatingGroup(String GroupName) throws Throwable
+	public void creatingGroup(String GroupName, String companynName, String groupexp) throws Throwable
 	{
 		waitForWebElementTOApper(addNewGroup);
 		addNewGroup.click();
-		String companynameforEdit= "TCS";
+		String companynameforEdit= companynName;
 		
 		waitForWebElementTOApper(selectComapnyDropDown);
 		selectComapnyDropDown.click();
 		
-		waitForWebElementTOApper(ListOfGroulName);
-		
-	      for(int i = 0; i< ListOfGroulName.size(); i++) 
+		waitForWebElementTOApper(ListOfCompanyName);
+		System.out.println("G3");
+	      for(int i = 0; i< ListOfCompanyName.size(); i++) 
 	      {
-	         String s = ListOfGroulName.get(i).getText();
+	         String s = ListOfCompanyName.get(i).getText();
 	        System.out.println(s);
 	         
-	         if(s.equals("TCS"))
+	         if(s.equals(companynameforEdit))
 	         {
+	        	 ListOfCompanyName.get(i).click();
 	        	 System.out.println("ok");
 	        	// ListofComapny.get(i).click();
 	        	 break;
@@ -85,32 +82,33 @@ public class AdminGroupPage extends abstractReusable{
 	        	 
 	        	 System.out.println("companyNameNotFound");
 	         }
-	         groupName.sendKeys(GroupName);
-	         GroupDescription.sendKeys("HI");
-	         ExpiryDate.sendKeys("25122023");
-	            SaveUpdate.click();
+	        
 	      }   
+	      groupName.sendKeys(GroupName);
+	      GroupDescription.sendKeys("HI");
+	      ExpiryDate.sendKeys(groupexp);
+	      SaveUpdate.click();
 	}
 	
 	String s ;
-	  	public void SearchingComapnyNameInGroupListSecond() throws Throwable
+	  	public void SearchingComapnyNameInGroupListSecond(String groupName) throws Throwable
 		{
-			JavascriptExecutor js = (JavascriptExecutor) driver;
+		//	JavascriptExecutor js = (JavascriptExecutor) driver;
 			
-			waitForWebElementTOApper(ListOfGroulName);
+			waitForWebElementTOApper(ListOfGroupNames);
 			Thread.sleep(2000);
 			ArrayList<String> lastArray = new ArrayList<String>() ;
 			boolean milgya = false;
 			while(!milgya) {
 				ArrayList<String> ar = new ArrayList<String>();
-				for(int i = 0; i< ListOfGroulName.size(); i++) 
+				for(int i = 0; i< ListOfGroupNames.size(); i++) 
 			      {   	  
-			    	  waitForWebElementTOApper(ListOfGroulName);
-			         String s = ListOfGroulName.get(i).getText();
+			    	  waitForWebElementTOApper(ListOfGroupNames);
+			         String s = ListOfGroupNames.get(i).getText();
 			         ar.add(s);
 			      }
 			     
-			      if(ar.contains("Esper Group"))
+			      if(ar.contains(groupName))
 			         {
 			        	 milgya = true;
 			        	 System.out.println("milgya***********************");

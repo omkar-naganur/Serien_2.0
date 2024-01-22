@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="6" total="7" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-01-21T14:56:45Z" name="Default suite" finished-at="2024-01-21T14:57:21Z" duration-ms="36429">
+  <suite started-at="2024-01-22T10:50:40Z" name="Default suite" finished-at="2024-01-22T10:50:50Z" duration-ms="9205">
     <groups>
     </groups>
-    <test started-at="2024-01-21T14:56:45Z" name="Default test" finished-at="2024-01-21T14:57:21Z" duration-ms="36429">
-      <class name="Serien.SerienLive.AdminEnrollments">
-        <test-method is-config="true" signature="lunchApplication()[pri:0, instance:Serien.SerienLive.AdminEnrollments@3daf7722]" started-at="2024-01-21T14:56:45Z" name="lunchApplication" finished-at="2024-01-21T14:56:47Z" duration-ms="2655" status="PASS">
+    <test started-at="2024-01-22T10:50:40Z" name="Default test" finished-at="2024-01-22T10:50:50Z" duration-ms="9205">
+      <class name="Serien.SerienLive.EndToEndTestCase">
+        <test-method is-config="true" signature="lunchApplication()[pri:0, instance:Serien.SerienLive.EndToEndTestCase@27216cd]" started-at="2024-01-22T10:50:40Z" name="lunchApplication" finished-at="2024-01-22T10:50:43Z" duration-ms="2498" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- lunchApplication -->
-        <test-method signature="UserCoursesComplation(java.util.HashMap)[pri:7, instance:Serien.SerienLive.AdminEnrollments@3daf7722]" started-at="2024-01-21T14:56:47Z" name="UserCoursesComplation" data-provider="getdata1" finished-at="2024-01-21T14:57:21Z" duration-ms="33760" status="PASS">
+        <test-method signature="FromAdminPanleExpireTheSubscription(java.util.HashMap)[pri:0, instance:Serien.SerienLive.EndToEndTestCase@27216cd]" started-at="2024-01-22T10:50:43Z" name="FromAdminPanleExpireTheSubscription" data-provider="getdata2" finished-at="2024-01-22T10:50:50Z" duration-ms="6678" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{Useremail=omkar@krishworks.com, userpass=password, Courses=Gender stereotypes, adminPass=pass2023, adminEmail=admin@demo.com, group=TCS}]]>
+                <![CDATA[{Useremail=omkar@krishworks.com, Adminuserpass=pass2023, expectedExpText=Subscription Expired, groupName=TCS755Group1, enddate=30-12-2024, userpass=password, companyName=TCS755, AdminUseremail=admin@demo.com, startdate=22-01-2024, noticeperiod=10, groupExpDate=30-12-2024}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- UserCoursesComplation -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:Serien.SerienLive.AdminEnrollments@3daf7722]" started-at="2024-01-21T14:57:21Z" name="tearDown" finished-at="2024-01-21T14:57:21Z" duration-ms="0" status="PASS">
+        </test-method> <!-- FromAdminPanleExpireTheSubscription -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Serien.SerienLive.EndToEndTestCase@27216cd]" started-at="2024-01-22T10:50:50Z" name="tearDown" finished-at="2024-01-22T10:50:50Z" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- Serien.SerienLive.AdminEnrollments -->
+      </class> <!-- Serien.SerienLive.EndToEndTestCase -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

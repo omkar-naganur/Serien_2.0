@@ -144,11 +144,12 @@ public class AdminUser extends abstractReusable {
 	
 	//**********************************************************
 	
-	public void EditUserCompany (String companyName)
+	public void EditUserCompanyAndGroup (String companyName, String groupName)
 	{
 		Select se = new Select(companyNameDropDown);
 		se.selectByVisibleText(companyName);
-		userSave.click();
+		
+	//	userSave.click();
 	}
 	
 	public String validateTheCompanyNameFromUser (String companyName)

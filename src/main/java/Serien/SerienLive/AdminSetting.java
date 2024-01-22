@@ -122,6 +122,7 @@ public class AdminSetting extends abstractReusable{
 	
 	public void fillCompanyDeatils (String companyName, String startdate, String enddate, String noticeperiod) throws Throwable
 	{
+		String subscriptionName= "Testing";
 		companyNameTestFiled.click();
 		companyNameTestFiled.sendKeys(companyName);
 		SubscriptionPlans.click();
@@ -129,7 +130,7 @@ public class AdminSetting extends abstractReusable{
 		WebElement selectedElement = null;
 
 		for (WebElement element : subName) {
-		    if (element.getText().equals(SubName)) {
+		    if (element.getText().equals(subscriptionName)) {
 		        selectedElement = element;
 		        break; // Found the desired element, so exit the loop.
 		    }

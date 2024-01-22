@@ -78,7 +78,7 @@ public class AdminEnrollments extends BaseTest{
 	}
 	
 	@Test(dataProvider = "getdata1", priority = 7)
-	public void UserCoursesComplation (HashMap<String, String> input) throws Throwable
+	public void ComplateTheCourseforAParticularUser (HashMap<String, String> input) throws Throwable
 	{	
 		Profile profile=LoginPage.serienLogin(input.get("adminEmail"), input.get("adminPass"));
 		AdminGroupEnrollment age= new AdminGroupEnrollment(driver);

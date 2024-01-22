@@ -32,7 +32,7 @@ public class SubscriptionExpired extends BaseTest {
 		as.ClickonSelectedCompanyEdit("tcs");	
 	}
 	
-/*	@Test(dataProvider = "getdata2")
+	@Test(dataProvider = "getdata2")
 	public void HRporatlsubscriptionMessageTesting(HashMap<String, String> input) throws Throwable
 	{
 		LoginPage Dm= new LoginPage(driver);
@@ -42,7 +42,7 @@ public class SubscriptionExpired extends BaseTest {
 		boolean wow=actualsubexpTest.contains(input.get("expectedExpText"));
 		System.out.println(actualsubexpTest);
 		System.out.println(wow);
-	}*/
+	}
 	
 	@DataProvider
 	public Object[][] getdata2()

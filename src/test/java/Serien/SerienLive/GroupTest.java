@@ -22,7 +22,8 @@ public class GroupTest extends BaseTest {
 		Dm.serienLogin(input.get("AdminUseremail"), input.get("Adminuserpass"));
 		Dm.groups();
 		AdminGroupPage ag=new AdminGroupPage(driver);
-		ag.creatingGroup(input.get("GroupName"));
+		// need to add the data in below method
+	//	ag.creatingGroup(input.get("GroupName"));
 		driver.quit();
 	}
 	
@@ -33,7 +34,7 @@ public class GroupTest extends BaseTest {
 		Dm.serienLogin(input.get("AdminUseremail"), input.get("Adminuserpass"));
 		Dm.groups();
 		AdminGroupPage ag=new AdminGroupPage(driver);
-		ag.SearchingComapnyNameInGroupListSecond();
+		ag.SearchingComapnyNameInGroupListSecond(input.get("GroupName"));
 		
 	}
 	
