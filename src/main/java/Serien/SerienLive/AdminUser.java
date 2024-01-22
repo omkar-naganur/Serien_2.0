@@ -71,6 +71,13 @@ public class AdminUser extends abstractReusable {
 	@FindBy(id = "name")
 	WebElement nameFiled ;
 	
+	@FindBy(xpath = "//label[contains(text, '')]")
+	List<WebElement> checkBoxlable ;	
+	
+	@FindBy(xpath = "//input[@type='checkbox']")
+	List<WebElement> checkBox ;
+	
+	
 	// User View section Elements
 	
 	@FindBy(xpath = "//div[@class='admin-overdue-bottom-table-td'][1]")
@@ -144,12 +151,36 @@ public class AdminUser extends abstractReusable {
 	
 	//**********************************************************
 	
-	public void EditUserCompanyAndGroup (String companyName, String groupName)
+	public void EditUserCompanyAndGroup (String companyName, String groupName) throws Throwable
 	{
+		companyNameDropDown.click();
+		Thread.sleep(1000);
 		Select se = new Select(companyNameDropDown);
 		se.selectByVisibleText(companyName);
-		
-	//	userSave.click();
+		Thread.sleep(2000);
+		for (int i=0; i<checkBoxlable.size(); i++)
+		{
+			if (groupName.equals(checkBoxlable.get(i).getText()))
+			{
+				
+				String at = "loveday"+checkBox.get(i).getAttribute("checked");
+				 
+				if (at.equals("loveday"))
+				{
+					checkBox.get(i).click();
+				}
+				else if (at.contains("true")){
+					System.out.println("Check box alreday selected");
+				}
+				else {
+					System.out.println("no worked");
+				}
+			}
+		}
+		Thread.sleep(1000);
+		userSave.click();
+		Thread.sleep(3000);
+		alertAccepectMethod();  
 	}
 	
 	public String validateTheCompanyNameFromUser (String companyName)

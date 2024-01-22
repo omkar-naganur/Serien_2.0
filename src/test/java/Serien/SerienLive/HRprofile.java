@@ -83,7 +83,7 @@ public class HRprofile extends BaseTest {
 		Thread.sleep(2000);
 		au.SearchByUserName(input.get("userName"));
 		au.clickOnEditButton();
-		au.EditUserCompany(input.get("companyName"));
+		au.EditUserCompanyAndGroup(input.get("companyName"), input.get(""));
 		// this line of code is write because of application issue not for QA issue 
 		Thread.sleep(3000);
 		au.UserEditOrSaveCancel();
@@ -178,6 +178,7 @@ public class HRprofile extends BaseTest {
 		map.put("userName", "omkar123456");
 		map.put("adminEmail", "admin@demo.com");
 		map.put("adminPass", "pass2023");
+		map.put("groupName", "TCS");
 		return new Object[][] {{map}};
 	}
 

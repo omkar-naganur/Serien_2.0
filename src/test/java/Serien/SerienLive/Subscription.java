@@ -42,7 +42,7 @@ public class Subscription extends BaseTest {
 		Thread.sleep(2000);
 		au.SearchByUserName(input.get("userName"));
 		au.clickOnEditButton();
-		au.EditUserCompany(input.get("companyName"));
+		au.EditUserCompanyAndGroup(input.get("companyName"), input.get("groupName"));
 		// this line of code is write because of application issue not for QA issue 
 		Thread.sleep(3000);
 		au.UserEditOrSaveCancel();
@@ -134,6 +134,7 @@ public class Subscription extends BaseTest {
 		map.put("userpass", "password");
 		map.put("grptit", "Overall gender representation");
 		map.put("userName", "omkar");
+		map.put("groupName", "TCS");
 		return new Object[][] {{map}};
 	}
 
