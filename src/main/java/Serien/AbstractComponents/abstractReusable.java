@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -88,7 +89,7 @@ public class abstractReusable {
 	@FindBy(xpath = "//div[@class='sidebar-cnt']//a[@href='/admin']")
 	WebElement dashboard;
 	
-	@FindBy(xpath = "//div[@class='sidebar-cnt']//a[@href='/admin/users']")
+	@FindBy(xpath = "//a[@href='/admin/users']")
 	WebElement users;
 	
 	@FindBy(xpath = "//div[@class='sidebar-cnt']//a[@href='/admin/groups']")
@@ -195,6 +196,12 @@ public class abstractReusable {
 	{
 		waitForWebElementTOApper(setting);
 		setting.click();
+	}
+	
+	public void ScrollUp500() {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollBy(0, -500)");
+	
 	}
 	
 }

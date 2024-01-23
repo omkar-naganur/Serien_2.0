@@ -26,95 +26,98 @@ public class Learning extends abstractReusable{
 	}
 	
 	@FindBy(xpath = "(//div[@class='sectionname MuiBox-root css-1isemmb'])[1]")
-	WebElement coursesAcees;
+	WebElement coursesAcees ;
 	
 	@FindBy(xpath = "(//div[@class='sectionname MuiBox-root css-1isemmb'])[2]")
-	WebElement MicroLearnings;
+	WebElement MicroLearnings ;
 	
 	@FindBy(xpath = "(//div[@class='sectionname MuiBox-root css-1isemmb'])[3]")
-	WebElement Webinars;
+	WebElement Webinars ;
 	
 	@FindBy(xpath = "(//div[@class='sectionname MuiBox-root css-1isemmb'])[4]")
-	WebElement Games;
+	WebElement Games ;
 	
 	@FindBy(xpath = "//div[contains(@class, \"zoomtwo\")]/p")
-	WebElement learningPageCoursesName;
+	WebElement learningPageCoursesName ;
 	
 	//List OF view all buttons
 	
 	@FindBy(xpath = "//div[contains(text(),'Courses')]/..//div[4]")
-	WebElement coursesViewall;
+	WebElement coursesViewall ;
 	
 	@FindBy(xpath = "//div[contains(text(),'Micro-learnings')]/..//div[4]")
-	WebElement microLearningViewall;
+	WebElement microLearningViewall ;
 	
 	@FindBy(xpath = "//div[contains(text(),'Webinars')]/..//div[4]")
-	WebElement WebinarsViewall;
+	WebElement WebinarsViewall ;
 	
 	@FindBy(xpath = "//div[contains(text(),'Games')]/..//div[4]")
-	WebElement gameViewall;
+	WebElement gameViewall ;
 	
 	//**********************************
 	//get List Of Elements
 	
 	@FindBy(xpath = "//div[@class='MuiBox-root css-9t70b9']/p")
-	List<WebElement> getAllCoursesName;
+	List<WebElement> getAllCoursesName ;
 	
 	@FindBy(xpath = "//div[contains(@class, 'microlerningdiscription')]")
-	List<WebElement> getMicroLearningNames;
+	List<WebElement> getMicroLearningNames ;
 	
 	@FindBy(xpath = "//div[@class='MuiBox-root css-1en0sct']//div")
-	List<WebElement> gamesNames;
+	List<WebElement> gamesNames ;
 	
 	@FindBy(xpath = "//div[@class='MuiBox-root css-122xxno']//div[1]")
-	List<WebElement> getallgamesNames;
+	List<WebElement> getallgamesNames ;
 	
 	//*************************************
 	//Courses OverView Page
 	
 	@FindBy(xpath = "//div[@role='alert']//div[2]")
-	WebElement actDisclimerAlert;
+	WebElement actDisclimerAlert ;
 	
 	@FindBy(xpath = "//li[3]//div[1]//div[1]")
-	WebElement learning;
+	WebElement learning ;
 	
 	@FindBy(xpath = "//div[@class='MuiBox-root css-1bvc4cc']/button")
-	WebElement AcknowledgeButton;
+	WebElement AcknowledgeButton ;
+	
+	@FindBy(xpath = "//div[@class='corsediscriptioncontentpage MuiBox-root css-1q7njkh']")
+	WebElement coursesProgress ;
 	
 	//Courses Elements
 	
 	@FindBy(xpath = "//button[@type='button']")
-	WebElement startCourses;
+	WebElement startCourses ;
 	
 	@FindBy(xpath = "//button[@type='button']")
-	List<WebElement> startCoursesList;
+	List<WebElement> startCoursesList ;
 	
 	@FindBy(xpath = "//div[@class='MuiBox-root css-ckyhk3']")
-	List<WebElement> continueMicroLearning;
+	List<WebElement> continueMicroLearning ;
 	
 	@FindBy(xpath = "(//div[@class='css-fk1ch0']//div)[1]")
-	WebElement coursesTitle;
+	WebElement coursesTitle ;
 	
 	@FindBy(xpath = "(//div[@class='css-fk1ch0']//div)[2]")
-	WebElement coursesDescriptiuon;
+	WebElement coursesDescriptiuon ;
 	
 	@FindBy(xpath = "(//div[@class='css-fk1ch0']//div)[3]//div[2]")
-	WebElement CoursesComProgression;
+	WebElement CoursesComProgression ;
 	
 	@FindBy(xpath = "//div[@class='css-fk1ch0']//button")
-	WebElement start;
+	WebElement start ;
 	
 	@FindBy(xpath = "(//div[@class='MuiBox-root css-gg4vpm']/p)[2]")
-	WebElement insideCoursesProgress;
+	WebElement insideCoursesProgress ;
 	
 	@FindBy(xpath = "(//div[@class='MuiBox-root css-gg4vpm']/p)[1]")
-	WebElement insideProgressOFMicroLearningAndGame;
+	WebElement insideProgressOFMicroLearningAndGame ;
 	
 	@FindBy(xpath = "(//div[@class='MuiBox-root css-12orj8g'])[1]")
-	WebElement coursesBackwordButton;
+	WebElement coursesBackwordButton ;
 	
 	@FindBy(xpath = "(//div[@class='MuiBox-root css-12orj8g'])[2]")
-	WebElement coursesForwordButton;
+	WebElement coursesForwordButton ;
 	
 	//*************************************************
 	
@@ -703,8 +706,58 @@ Thread.sleep(1000);
 			certifite= false;
 			System.out.println("someting went worng");
 		}
+		driver.close();
+		Thread.sleep(2000);
 		driver.switchTo().window(parentWindowID);
 		return certificateURL;
+		
+	}
+	
+	public int getCoursesProgressOnly (String CoursesName) throws Throwable  {
+		waitForWebElementTOApper(learningPageCoursesName);
+		String sampleCoursesName =learningPageCoursesName.getText();
+		String Progress = null ;
+		Boolean FlageCourseFound =false ;
+		
+		if(sampleCoursesName.equals(CoursesName)) {
+			System.out.println("Courses Found = "+sampleCoursesName);
+			FlageCourseFound = true ;
+			startCourses.click();
+			Thread.sleep(3000);
+			Progress= coursesProgress.getText();
+		}
+		else {
+			waitForWebElementTOApper(coursesViewall);
+			coursesViewall.click();
+			
+			}
+		if(!FlageCourseFound) {
+		
+			waitForWebElementTOApper(getAllCoursesName);
+		//	Thread.sleep(2000);
+			
+			for(int i=0; i< getAllCoursesName.size(); i++)
+			{
+				
+				String actCoursesName = getAllCoursesName.get(i).getText();
+				
+				if (actCoursesName.equals(CoursesName))
+				{	
+					System.out.println("Courses Found in view all section= "+actCoursesName);
+					FlageCourseFound = true ;
+					startCoursesList.get(i).click();
+					Thread.sleep(3000);
+					Progress= coursesProgress.getText();
+				}
+				
+			}
+		}
+		String[] arrOfStr = Progress.split(" ");
+		  //      System.out.println(arrOfStr[0]);
+		        int actProgres= Integer.parseInt(arrOfStr[0]);
+		
+		
+		return actProgres ;
 		
 	}
 	

@@ -304,7 +304,7 @@ public class ProgressReport extends abstractReusable{
 				userCourseDeatils.add(getCertificateURL(i));
 				System.out.println("User Found serch email");
 				userfound = true;
-			}
+			}	
 		}
 		
 		return userCourseDeatils ;
@@ -331,6 +331,7 @@ public class ProgressReport extends abstractReusable{
 			certifite= false;
 			System.out.println("someting went worng");
 		}*/
+		driver.close();
 		driver.switchTo().window(parentWindowID);
 		return certificateURL;
 		

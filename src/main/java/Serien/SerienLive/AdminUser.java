@@ -157,7 +157,7 @@ public class AdminUser extends abstractReusable {
 		Thread.sleep(1000);
 		Select se = new Select(companyNameDropDown);
 		se.selectByVisibleText(companyName);
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		for (int i=0; i<checkBoxlable.size(); i++)
 		{
 			if (groupName.equals(checkBoxlable.get(i).getText()))
@@ -173,6 +173,7 @@ public class AdminUser extends abstractReusable {
 					System.out.println("Check box alreday selected");
 				}
 				else {
+					checkBox.get(i).click();
 					System.out.println("no worked");
 				}
 			}
@@ -249,6 +250,7 @@ public class AdminUser extends abstractReusable {
 			test.selectByVisibleText("Delete Progress");
 		}
 		}
+		Thread.sleep(3000);
 	}
 
 	public ArrayList<String> getUserdeatilsOfTheCourses(String courses) throws Throwable{
