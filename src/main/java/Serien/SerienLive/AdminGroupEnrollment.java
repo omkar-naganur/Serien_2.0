@@ -225,7 +225,7 @@ public class AdminGroupEnrollment extends abstractReusable{
 	
 	}
 
-	public void enrollmentConfirmatioInEnrloomentList (String CoursesName, String Groupname) throws Throwable
+	public boolean enrollmentConfirmatioInEnrloomentList (String CoursesName, String Groupname) throws Throwable
 	{
 		waitForWebElementTOApper(groupNameSearchBar);
 		waitForWebElementTOApper(groupNameSearchButton);
@@ -281,10 +281,11 @@ public class AdminGroupEnrollment extends abstractReusable{
 						System.out.println("milgya***********************kyu mara rahe ho");
 					} 
 				}
+				return milgya;
 
 }
 	
-	public void findingGroupEnrollment (String CoursesName, String Groupname) throws Throwable
+	public boolean findingGroupEnrollment (String CoursesName, String Groupname) throws Throwable
 	{
 		waitForWebElementTOApper(groupNameSearchBar);
 		waitForWebElementTOApper(groupNameSearchButton);
@@ -343,6 +344,7 @@ public class AdminGroupEnrollment extends abstractReusable{
 						System.out.println("milgya***********************kyu mara rahe ho");
 					} 
 				}
+				return milgya;
 
 }
 	public void clickOnViewButton(int i) {

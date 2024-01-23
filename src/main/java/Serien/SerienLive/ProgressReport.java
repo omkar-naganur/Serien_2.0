@@ -2,7 +2,9 @@ package Serien.SerienLive;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 
 import javax.xml.xpath.XPath;
 
@@ -69,7 +71,7 @@ public class ProgressReport extends abstractReusable{
 	@FindBy(xpath = "(//div[contains(@class, 'microlerningdiscription MuiBox-root css-1sacc3f')])[2]")
 	WebElement countEmployeesCompletedCourse;
 	
-	@FindBy(xpath = "(//div[contains(@class, 'microlerningdiscription MuiBox-root css-1sacc3f')])[1]")
+	@FindBy(xpath = "//div[contains(@class, 'microlerningdiscription MuiBox-root css-qhli3o')]")
 	WebElement countEmployeesNotCompletedCourse;
 	//***************************************
 	
@@ -91,6 +93,27 @@ public class ProgressReport extends abstractReusable{
 
 	@FindBy(xpath = "(//div[@class='MuiBox-root css-1txtiph'])//p[1]")
 	List<WebElement> listOfallUserName;
+	
+	@FindBy(xpath = "(//div[@class='MuiBox-root css-1txtiph'])//p[2]")
+	List<WebElement> TotalLessons ;
+	
+	@FindBy(xpath = "(//div[@class='MuiBox-root css-1txtiph'])//p[3]")
+	List<WebElement> LessonsCompleted ;
+	
+	@FindBy(xpath = "(//div[@class='MuiBox-root css-1txtiph'])//p[4]")
+	List<WebElement> LastStepCompleted ;
+	
+	@FindBy(xpath = "(//div[@class='MuiBox-root css-1txtiph'])//p[5]")
+	List<WebElement> StartDate ;
+	
+	@FindBy(xpath = "(//div[@class='MuiBox-root css-1txtiph'])//p[6]")
+	List<WebElement> CompletionDate ;
+	
+	@FindBy(xpath = "(//div[@class='MuiBox-root css-1txtiph'])//div[1]")
+	List<WebElement> Status ;
+	
+	@FindBy(xpath = "(//div[@class='MuiBox-root css-1txtiph'])//div[2]")
+	List<WebElement> DownloadCertificate ;
 	
 	
 	public ArrayList<String> SubscriptioDeatilsfromUser () throws Throwable
@@ -162,6 +185,18 @@ public class ProgressReport extends abstractReusable{
 		Thread.sleep(1000);
 		
 		if(!checkCourses) {
+			for(int i=0; i<courseNamesListInReport.size(); i++)
+			{
+				String coursesName=courseNamesListInReport.get(i).getText();
+				if(coursesName.equals(anyCourses)) {
+					enterToCourses.get(i).click();
+					checkCourses = true ;
+				}
+				allCoursesNames.add(coursesName);
+			}
+		} 
+		
+		if(!checkCourses) {
 		waitForWebElementTOApper(GameNameListInReport);
 		for(int i=0; i<GameNameListInReport.size(); i++)
 		{
@@ -186,17 +221,7 @@ public class ProgressReport extends abstractReusable{
 			}
 		}
 		
-		if(!checkCourses) {
-			for(int i=0; i<courseNamesListInReport.size(); i++)
-			{
-				String coursesName=courseNamesListInReport.get(i).getText();
-				if(coursesName.equals(anyCourses)) {
-					enterToCourses.get(i).click();
-					checkCourses = true ;
-				}
-				allCoursesNames.add(coursesName);
-			}
-		} 
+		
 			System.out.println(allCoursesNames);
 		return allCoursesNames;
 	}
@@ -256,6 +281,60 @@ public class ProgressReport extends abstractReusable{
 		return userfound ;
 	}
 	
+	public ArrayList<String> getUserCoursesDetails(String email, String userName) throws Throwable {
+		ArrayList<String> userCourseDeatils = new ArrayList<String>();
+		Boolean userfound = false;
+		waitForWebElementTOApper(employeeEmailRadioButton);
+		employeeEmailRadioButton.click();
+		searchTextBar.sendKeys(email);
+		searchButton.click();
+		Thread.sleep(2000);
+		
+		for(int i=0; i<listOfallUserName.size(); i++)
+		{
+			String nameOfUser=listOfallUserName.get(i).getText();
+			if(nameOfUser.equals(userName)) {
+				userCourseDeatils.add(listOfallUserName.get(i).getText());
+				userCourseDeatils.add(TotalLessons.get(i).getText());
+				userCourseDeatils.add(LessonsCompleted.get(i).getText());
+				userCourseDeatils.add(LastStepCompleted.get(i).getText());
+				userCourseDeatils.add(StartDate.get(i).getText());
+				userCourseDeatils.add(CompletionDate.get(i).getText());
+				userCourseDeatils.add(Status.get(i).getText());
+				userCourseDeatils.add(getCertificateURL(i));
+				System.out.println("User Found serch email");
+				userfound = true;
+			}
+		}
+		
+		return userCourseDeatils ;
+	}
+	
+	public String getCertificateURL(int i) throws Throwable{
+		Boolean certifite= false;
+		//Thread.sleep(3000);
+		DownloadCertificate.get(i).click();
+		Thread.sleep(2000);
+		Set<String> handles = driver.getWindowHandles();
+		Iterator<String> it = handles.iterator();	
+		String parentWindowID=it.next();
+		String childWindowID=it.next();
+		driver.switchTo().window(childWindowID);
+		String certificateURL= driver.getCurrentUrl();	
+		Thread.sleep(2000);
+		System.out.println(certificateURL);
+/*		if(certificateURL.contains("//storage.googleapis.com/serein-devqa-internal-gcp.appspot.com/generatedCertificate/"))
+		{
+			certifite= true;
+		}
+		else {
+			certifite= false;
+			System.out.println("someting went worng");
+		}*/
+		driver.switchTo().window(parentWindowID);
+		return certificateURL;
+		
+	}
 	
 	
 }

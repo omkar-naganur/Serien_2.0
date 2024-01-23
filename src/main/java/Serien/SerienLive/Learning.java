@@ -682,6 +682,32 @@ Thread.sleep(1000);
 		
 	}
 	
+	public String getCertificate() throws Throwable{
+		Boolean certifite= false;
+		Thread.sleep(3000);
+		certificateDownloadButton.click();
+		Thread.sleep(2000);
+		Set<String> handles = driver.getWindowHandles();
+		Iterator<String> it = handles.iterator();	
+		String parentWindowID=it.next();
+		String childWindowID=it.next();
+		driver.switchTo().window(childWindowID);
+		String certificateURL= driver.getCurrentUrl();	
+		Thread.sleep(2000);
+		System.out.println(certificateURL);
+		if(certificateURL.contains("//storage.googleapis.com/serein-devqa-internal-gcp.appspot.com/generatedCertificate/"))
+		{
+			certifite= true;
+		}
+		else {
+			certifite= false;
+			System.out.println("someting went worng");
+		}
+		driver.switchTo().window(parentWindowID);
+		return certificateURL;
+		
+	}
+	
 		
 
 }
