@@ -432,6 +432,17 @@ public class AdminGroupEnrollment extends abstractReusable{
 		
 	}
 	
+	public void creatingNewGroupEnrollemnt (String typeOfTraining, String CourseName, String GroupName, String groupExpDate) throws Throwable {
+		gotoAddNewGroupEnrollment();
+		selectTrainingType(typeOfTraining);
+		selectCourseName(CourseName);
+		selectGroupName(GroupName);
+		selectDueDate(groupExpDate);
+		saveGroupEnrollment();  
+		Thread.sleep(2000);
+		ScrollUp500();
+	}
+	
 }
 	
 	

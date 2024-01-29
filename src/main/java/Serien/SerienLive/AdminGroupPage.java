@@ -64,7 +64,7 @@ public class AdminGroupPage extends abstractReusable{
 		selectComapnyDropDown.click();
 		
 		waitForWebElementTOApper(ListOfCompanyName);
-		System.out.println("G3");
+	//	System.out.println("G3");
 	      for(int i = 0; i< ListOfCompanyName.size(); i++) 
 	      {
 	         String s = ListOfCompanyName.get(i).getText();
@@ -80,7 +80,7 @@ public class AdminGroupPage extends abstractReusable{
 	         else
 	         {
 	        	 
-	        	 System.out.println("companyNameNotFound");
+	        	 System.out.println("company Name Not Found");
 	         }
 	        
 	      }   

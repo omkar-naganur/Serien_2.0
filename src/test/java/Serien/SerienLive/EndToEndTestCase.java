@@ -3,6 +3,8 @@ package Serien.SerienLive;
 import org.testng.annotations.Test;
 import org.testng.annotations.Test;
 import org.testng.annotations.Test;
+
+import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -25,8 +27,8 @@ import serien.TestComponents.BaseTest;
 
 public class EndToEndTestCase extends BaseTest {
 	
-	@Test(dataProvider = "getdata2")
-	public void FromAdminPanleExpireTheSubscription(HashMap<String, String> input) throws Throwable {
+	@Test(dataProvider = "getdata2", priority = 1)
+	public void NewCompanyWithHRcoursesComplation (HashMap<String, String> input) throws Throwable {
 		String companyname=input.get("companyName");
 		String groupName= input.get("GroupName");
 		String CourseName= input.get("CourseName");
@@ -143,6 +145,28 @@ public class EndToEndTestCase extends BaseTest {
 		int progress=hrl.getCoursesProgressOnly(CourseName);
 		Assert.assertTrue(progress==0);
 		
+	}
+	
+	@Test(dataProvider = "getdataFormJson", priority = 2)
+	public void ValidationOfCoursesComplationFromTheAdmin (HashMap<String, String> input) throws Throwable {
+		String companyName = input.get("companyName");
+		String groupName = input.get("groupName");
+		String typeOfTraining = input.get("typeOfTraining");
+		
+		Profile profile=LoginPage.serienLogin(input.get("adminEmail"), input.get("adminPass"));
+		AdminGroupPage group= new AdminGroupPage(driver);
+		group.creatingGroup(input.get("groupName"), input.get("companyName"), input.get("groupExp"));
+		AdminGroupEnrollment enrollment= new AdminGroupEnrollment(driver);
+		enrollment.groupEnrollment();
+		enrollment.creatingNewGroupEnrollemnt(typeOfTraining, companyName, groupName, input.get("groupExp"));
+		
+	}
+	
+	@DataProvider
+	public Object[][] getdataFormJson() throws Throwable
+	{
+		List<HashMap<String,String>> data = getJsonDataToMap(System.getProperty("user.dir")+"//src//test//java//serien//Data//EndToEndTestCase.json");
+		return new Object[][]  { {data.get(0)} };
 	}
 	
 	@DataProvider
