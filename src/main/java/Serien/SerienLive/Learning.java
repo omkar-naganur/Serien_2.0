@@ -598,8 +598,6 @@ public class Learning extends abstractReusable{
 		}
 		
 		return quizStatus;
-		
-		
 				
 	}
 
@@ -761,7 +759,5 @@ Thread.sleep(1000);
 		
 	}
 	
-		
-
 }
 

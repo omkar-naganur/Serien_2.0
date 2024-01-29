@@ -186,10 +186,11 @@ public class abstractReusable {
 		groups.click();
 	}
 	
-	public void Logout()
+	public void Logout() throws Throwable
 	{
 		waitForWebElementTOApper(Logout);
 		Logout.click();
+		Thread.sleep(1000);
 	}
 	
 	public void Setting()

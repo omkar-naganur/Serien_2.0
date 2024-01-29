@@ -152,13 +152,44 @@ public class EndToEndTestCase extends BaseTest {
 		String companyName = input.get("companyName");
 		String groupName = input.get("groupName");
 		String typeOfTraining = input.get("typeOfTraining");
+		String CourseName = input.get("CourseName");
 		
 		Profile profile=LoginPage.serienLogin(input.get("adminEmail"), input.get("adminPass"));
 		AdminGroupPage group= new AdminGroupPage(driver);
-		group.creatingGroup(input.get("groupName"), input.get("companyName"), input.get("groupExp"));
+		group.groups();
+		group.creatingGroup(groupName, companyName, input.get("groupExp"));
+		AdminUser au= new AdminUser(driver);
+		au.users();
+		au.searchByEmail(input.get("userEmail"));
+		au.clickOnEditButton();
+		au.EditUserCompanyAndGroup(companyName, groupName);
+		
 		AdminGroupEnrollment enrollment= new AdminGroupEnrollment(driver);
 		enrollment.groupEnrollment();
-		enrollment.creatingNewGroupEnrollemnt(typeOfTraining, companyName, groupName, input.get("groupExp"));
+		enrollment.creatingNewGroupEnrollemnt(typeOfTraining, CourseName, groupName, input.get("groupExp"));
+		enrollment.adminLogout();
+		
+		
+		LoginPage.serienLogin(input.get("userEmail"), input.get("userPass"));
+		Learning lr= new Learning(driver);
+		int beforeCom=lr.getCoursesProgressOnly(CourseName);
+		Assert.assertTrue(beforeCom==0);
+		lr.Profile();
+		lr.Logout();
+		
+		LoginPage.serienLogin(input.get("adminEmail"), input.get("adminPass"));
+		enrollment.groupEnrollment();
+		enrollment.findingGroupEnrollment(CourseName, groupName);
+		enrollment.comapleTheUserProgress(input.get("userEmail"));
+		enrollment.groupEnrollment();
+		enrollment.Logout();
+		
+		LoginPage.serienLogin(input.get("userEmail"), input.get("userPass"));
+		int afterCom=lr.getCoursesProgressOnly(CourseName);
+		Assert.assertTrue(afterCom==100);
+		lr.Profile();
+		lr.Logout();
+		
 		
 	}
 	

@@ -1,13 +1,21 @@
 [
 {
+" ":"// login credentionals & user deatils",
+
 "userEmail":"omkar@krishworks.com",
 "userPass":"password",
 "adminEmail":"admin@demo.com",
 "adminPass":"pass2023",
 "empName": "omkar",
+
+"// group creation & enrollment deatils":"",
+
 "groupName":"TCS Part 2",
 "companyName":"TCS",
-"groupExp":"29/12/2024"
+"groupExp":"29/12/2024",
+"typeOfTraining":"course",
+"CourseName":"automatiom Test Training"
+
 
 }	
 

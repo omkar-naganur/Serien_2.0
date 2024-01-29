@@ -88,6 +88,8 @@ public class AdminGroupPage extends abstractReusable{
 	      GroupDescription.sendKeys("HI");
 	      ExpiryDate.sendKeys(groupexp);
 	      SaveUpdate.click();
+	      Thread.sleep(2000);
+	      ScrollUp500();
 	}
 	
 	String s ;
