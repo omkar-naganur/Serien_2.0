@@ -1,7 +1,9 @@
 package Serien.SerienLive;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -136,6 +138,9 @@ public class AdminGroupEnrollment extends abstractReusable{
 	
 	@FindBy(xpath = "//input[@type='checkbox']")
 	List<WebElement>  checkbox ;
+	
+	@FindBy(xpath = "//select/option[2]")
+	List<WebElement> DownloadCertificate ;
 	
 	@FindBy(xpath = "(//input[@type='checkbox'])[1]")
 	WebElement selectAllCheckBox ;
@@ -386,15 +391,33 @@ public class AdminGroupEnrollment extends abstractReusable{
 			enrollmentDeatils.add(StartDate.get(i).getText());
 			enrollmentDeatils.add(CompletionDate.get(i).getText());
 			enrollmentDeatils.add(Status.get(i).getText());
-			//enrollmentDeatils.add(Action.get(i).getText());		
+			enrollmentDeatils.add(getCertificateURL(i));
+				
 		}
 				
 		}
 		System.out.println(enrollmentDeatils);
 		return enrollmentDeatils ;
 	}
-
 	
+	public String getCertificateURL(int i) throws Throwable {
+		Boolean certifite= false;
+	//	Thread.sleep(2000);
+		DownloadCertificate.get(i-1).click();
+		Thread.sleep(2000);
+		Set<String> handles = driver.getWindowHandles();
+		Iterator<String> it = handles.iterator();	
+		String parentWindowID=it.next();
+		String childWindowID=it.next();
+		driver.switchTo().window(childWindowID);
+		String certificateURL= driver.getCurrentUrl();	
+		Thread.sleep(2000);
+		System.out.println(certificateURL);
+		driver.close();
+		driver.switchTo().window(parentWindowID);
+		return certificateURL;
+	}
+
 	public void comapleTheUserProgress(String email) throws Throwable {
 	
 		for(int i=0; i<ListOfEmail.size(); i++)

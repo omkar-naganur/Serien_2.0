@@ -14,7 +14,11 @@
 "companyName":"TCS",
 "groupExp":"29/12/2024",
 "typeOfTraining":"course",
-"CourseName":"automatiom Test Training"
+"CourseName":"automatiom Test Training",
+
+"totalEmp":"1",
+"empComCourses":"1",
+"empNotComCourses":"0"
 
 
 }	

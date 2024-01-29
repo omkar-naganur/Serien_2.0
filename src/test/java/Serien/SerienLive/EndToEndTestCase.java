@@ -153,42 +153,84 @@ public class EndToEndTestCase extends BaseTest {
 		String groupName = input.get("groupName");
 		String typeOfTraining = input.get("typeOfTraining");
 		String CourseName = input.get("CourseName");
+		String adminEmail = input.get("adminEmail");
+		String adminPass= input.get("adminPass");
+		String userEmail = input.get("userEmail");
+		String userPass = input.get("userPass");
 		
-		Profile profile=LoginPage.serienLogin(input.get("adminEmail"), input.get("adminPass"));
-		AdminGroupPage group= new AdminGroupPage(driver);
-		group.groups();
-		group.creatingGroup(groupName, companyName, input.get("groupExp"));
-		AdminUser au= new AdminUser(driver);
-		au.users();
-		au.searchByEmail(input.get("userEmail"));
-		au.clickOnEditButton();
-		au.EditUserCompanyAndGroup(companyName, groupName);
-		
+//		Profile profile=LoginPage.serienLogin(input.get("adminEmail"), input.get("adminPass"));
+//		AdminGroupPage group= new AdminGroupPage(driver);
+//		group.groups();
+//		group.creatingGroup(groupName, companyName, input.get("groupExp"));
+//		AdminUser au= new AdminUser(driver);
+//		au.users();
+//		au.searchByEmail(input.get("userEmail"));
+//		au.clickOnEditButton();
+//		au.EditUserCompanyAndGroup(companyName, groupName);
+//		
 		AdminGroupEnrollment enrollment= new AdminGroupEnrollment(driver);
-		enrollment.groupEnrollment();
-		enrollment.creatingNewGroupEnrollemnt(typeOfTraining, CourseName, groupName, input.get("groupExp"));
-		enrollment.adminLogout();
-		
-		
-		LoginPage.serienLogin(input.get("userEmail"), input.get("userPass"));
+//		enrollment.groupEnrollment();
+//		enrollment.creatingNewGroupEnrollemnt(typeOfTraining, CourseName, groupName, input.get("groupExp"));
+//		enrollment.adminLogout();
+//		
+//		
+//		LoginPage.serienLogin(input.get("userEmail"), input.get("userPass"));
 		Learning lr= new Learning(driver);
-		int beforeCom=lr.getCoursesProgressOnly(CourseName);
-		Assert.assertTrue(beforeCom==0);
-		lr.Profile();
-		lr.Logout();
-		
-		LoginPage.serienLogin(input.get("adminEmail"), input.get("adminPass"));
-		enrollment.groupEnrollment();
-		enrollment.findingGroupEnrollment(CourseName, groupName);
-		enrollment.comapleTheUserProgress(input.get("userEmail"));
-		enrollment.groupEnrollment();
-		enrollment.Logout();
+//		int beforeCom=lr.getCoursesProgressOnly(CourseName);
+//		Assert.assertTrue(beforeCom==0);
+//		lr.Profile();
+//		lr.Logout();
+//		
+//		LoginPage.serienLogin(input.get("adminEmail"), input.get("adminPass"));
+//		enrollment.groupEnrollment();
+//		enrollment.findingGroupEnrollment(CourseName, groupName);
+//		enrollment.comapleTheUserProgress(input.get("userEmail"));
+//		enrollment.groupEnrollment();
+//		enrollment.Logout();
 		
 		LoginPage.serienLogin(input.get("userEmail"), input.get("userPass"));
 		int afterCom=lr.getCoursesProgressOnly(CourseName);
 		Assert.assertTrue(afterCom==100);
-		lr.Profile();
-		lr.Logout();
+//		
+//		//*******************************************
+		ProgressReport pr =new ProgressReport(driver);
+		pr.ProgresReport();
+		ArrayList<String> coursesName = pr.getCoursesNameInReport();
+		Assert.assertTrue(coursesName.contains(CourseName));
+		ArrayList<String> listofcount = pr.getAllCountsInProgressReport(CourseName);
+		String totalemp = listofcount.get(0);
+		Assert.assertTrue(totalemp.equals(input.get("totalEmp")));
+		String empComCourses = listofcount.get(1);
+		Assert.assertTrue(empComCourses.equals(input.get("empComCourses")));
+		String empNotComCourses = listofcount.get(2);
+		Assert.assertTrue(empNotComCourses.equals(input.get("empNotComCourses")));
+		ArrayList<String> HrPanleUserDeatils = pr.getUserCoursesDetails(input.get("userEmail"), input.get("empName"));
+		System.out.println(HrPanleUserDeatils);
+		String Status=HrPanleUserDeatils.get(6);
+		Assert.assertTrue(Status.equals("Completed"));
+		pr.Profile();
+		pr.userLogout();
+		
+		//admin verification
+		LoginPage.serienLogin(adminEmail, adminPass);
+		enrollment.groupEnrollment();
+		enrollment.findingGroupEnrollment(CourseName, groupName);
+		enrollment.searchTheUserByEmail(userEmail);
+		ArrayList<String> adminViewUserCoursesDeatils = enrollment.getUserEnrollmentDetails(userEmail);
+		String ComplationDateinHrPanle= adminViewUserCoursesDeatils.get(7);
+	//	 we need to write the equeales method here for hr panle details and admin panle details
+		Assert.assertTrue(adminViewUserCoursesDeatils.get(8).equals(HrPanleUserDeatils.get(6))); 
+		System.out.println("Courses Status matched");
+		Assert.assertTrue(adminViewUserCoursesDeatils.get(7).equals(HrPanleUserDeatils.get(5)));
+		System.out.println(" Courses complation date");
+		Assert.assertTrue(adminViewUserCoursesDeatils.get(6).equals(HrPanleUserDeatils.get(4)));
+		System.out.println("Courses start date");
+		Assert.assertTrue(adminViewUserCoursesDeatils.get(5).equals(HrPanleUserDeatils.get(2)));	
+		System.out.println("lesson complated");
+		Assert.assertTrue(adminViewUserCoursesDeatils.get(4).equals(HrPanleUserDeatils.get(1)));
+		System.out.println("Courses Total lessons");
+		Assert.assertTrue(adminViewUserCoursesDeatils.get(9).equals(HrPanleUserDeatils.get(7)));
+		System.out.println("Certificate matched");
 		
 		
 	}

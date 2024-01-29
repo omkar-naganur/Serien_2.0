@@ -2,27 +2,27 @@
 <testng-results ignored="1" total="2" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-01-29T10:42:55Z" name="Default suite" finished-at="2024-01-29T10:44:04Z" duration-ms="68881">
+  <suite started-at="2024-01-29T13:04:28Z" name="Default suite" finished-at="2024-01-29T13:05:17Z" duration-ms="48962">
     <groups>
     </groups>
-    <test started-at="2024-01-29T10:42:55Z" name="Default test" finished-at="2024-01-29T10:44:04Z" duration-ms="68881">
+    <test started-at="2024-01-29T13:04:28Z" name="Default test" finished-at="2024-01-29T13:05:17Z" duration-ms="48962">
       <class name="Serien.SerienLive.EndToEndTestCase">
-        <test-method is-config="true" signature="lunchApplication()[pri:0, instance:Serien.SerienLive.EndToEndTestCase@8576fa0]" started-at="2024-01-29T10:42:56Z" name="lunchApplication" finished-at="2024-01-29T10:42:59Z" duration-ms="3805" status="PASS">
+        <test-method is-config="true" signature="lunchApplication()[pri:0, instance:Serien.SerienLive.EndToEndTestCase@8576fa0]" started-at="2024-01-29T13:04:28Z" name="lunchApplication" finished-at="2024-01-29T13:04:31Z" duration-ms="3119" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- lunchApplication -->
-        <test-method signature="ValidationOfCoursesComplationFromTheAdmin(java.util.HashMap)[pri:2, instance:Serien.SerienLive.EndToEndTestCase@8576fa0]" started-at="2024-01-29T10:42:59Z" name="ValidationOfCoursesComplationFromTheAdmin" data-provider="getdataFormJson" finished-at="2024-01-29T10:44:04Z" duration-ms="64880" status="PASS">
+        <test-method signature="ValidationOfCoursesComplationFromTheAdmin(java.util.HashMap)[pri:2, instance:Serien.SerienLive.EndToEndTestCase@8576fa0]" started-at="2024-01-29T13:04:31Z" name="ValidationOfCoursesComplationFromTheAdmin" data-provider="getdataFormJson" finished-at="2024-01-29T13:05:17Z" duration-ms="45683" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{ =// login credentionals & user deatils, CourseName=automatiom Test Training, userPass=password, companyName=TCS, adminPass=pass2023, groupExp=29/12/2024, groupName=TCS Part 2, typeOfTraining=course, empName=omkar, userEmail=omkar@krishworks.com, // group creation & enrollment deatils=, adminEmail=admin@demo.com}]]>
+                <![CDATA[{ =// login credentionals & user deatils, CourseName=automatiom Test Training, empComCourses=1, userPass=password, companyName=TCS, empNotComCourses=0, adminPass=pass2023, groupExp=29/12/2024, groupName=TCS Part 2, typeOfTraining=course, totalEmp=1, empName=omkar, userEmail=omkar@krishworks.com, // group creation & enrollment deatils=, adminEmail=admin@demo.com}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ValidationOfCoursesComplationFromTheAdmin -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:Serien.SerienLive.EndToEndTestCase@8576fa0]" started-at="2024-01-29T10:44:04Z" name="tearDown" finished-at="2024-01-29T10:44:04Z" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Serien.SerienLive.EndToEndTestCase@8576fa0]" started-at="2024-01-29T13:05:17Z" name="tearDown" finished-at="2024-01-29T13:05:17Z" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
