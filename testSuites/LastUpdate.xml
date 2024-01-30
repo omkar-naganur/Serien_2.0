@@ -6,15 +6,15 @@
 <listener class-name ="serien.TestComponents.Listeners"/>
 </listeners>
 
-  <test thread-count="5" name="Test0">
-    <classes>
-      <class name="Serien.SerienLive.AdminEnrollments"/>
-    </classes>
-  </test> <!-- Test -->
-  
     <test thread-count="5" name="Test1">
     <classes>
       <class name="Serien.SerienLive.LoginPageTest"/>
+    </classes>
+  </test> <!-- Test -->
+  
+  <test thread-count="5" name="Test0">
+    <classes>
+      <class name="Serien.SerienLive.AdminEnrollments"/>
     </classes>
   </test> <!-- Test -->
   

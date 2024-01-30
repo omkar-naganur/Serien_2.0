@@ -1,0 +1,34 @@
+[
+{
+	"Useremail":"omkar@krishworks.com",
+	"userpass":"password",
+	"adminEmail":"admin@demo.com",
+	"adminPass":"pass2023",
+	"typeOfTraining":"course",
+	"CourseName":"Safety and inclusion at the workplace",
+	"GroupName":"Sitero_PoSH_2023",
+	"dueDate":"12/12/2024",
+	"MicroLearningCourses":"Confirmation bias",
+	"Gamesname":"Omkar test"
+},
+{
+	"Useremail":"omkar@krishworks.com",
+	"userpass":"password",
+	"adminEmail":"admin@demo.com",
+	"adminPass":"pass2023",
+	"typeOfTraining":"Micro course",
+	"GroupName":"Sitero_PoSH_2023",
+	"dueDate":"12/12/2024",
+	"MicroLearningCourses":"Confirmation bias"
+},
+{
+	"Useremail":"omkar@krishworks.com",
+	"userpass":"password",
+	"adminEmail":"admin@demo.com",
+	"adminPass":"pass2023",
+	"typeOfTraining":"Games",
+	"GroupName":"Sitero_PoSH_2023",
+	"dueDate":"12/12/2024",
+	"Gamesname":"Omkar test"
+}
+]

@@ -1,7 +1,10 @@
 package Serien.SerienLive;
 
 import org.testng.annotations.Test;
+
+import java.io.IOException;
 import java.util.HashMap;
+import java.util.List;
 
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
@@ -9,10 +12,9 @@ import org.testng.annotations.Test;
 
 import serien.TestComponents.BaseTest;
 
-public class AdminEnrollments extends BaseTest{
-
+public class AdminEnrollments extends BaseTest {
 	
-	@Test(dataProvider = "getdata", priority = 1)
+	@Test(dataProvider = "CreatingGroupEnrollmentOfCourse", priority = 1)
 	public void CreatingGroupEnrollmentOfCourse (HashMap<String, String> input) throws Throwable
 	{	
 		Profile profile=LoginPage.serienLogin(input.get("adminEmail"), input.get("adminPass"));
@@ -27,7 +29,7 @@ public class AdminEnrollments extends BaseTest{
 		
 	}
 	
-	@Test(dataProvider = "getdata", priority = 2)
+	@Test(dataProvider = "ValidatingTheEnrollmentListForEnrollmentConfirmation", priority = 2)
 	public void ValidatingTheEnrollmentListForEnrollmentConfirmation (HashMap<String, String> input) throws Throwable
 	{	
 		Profile profile=LoginPage.serienLogin(input.get("adminEmail"), input.get("adminPass"));
@@ -43,7 +45,6 @@ public class AdminEnrollments extends BaseTest{
 		Learning lr=new Learning(driver);
 		Boolean CourseFound = lr.CoursesNameValidationFromHRPanle(input.get("CourseName"));
 		Assert.assertTrue(CourseFound);
-			
 	}
 	
 	@Test(dataProvider = "getdata", priority = 4)
@@ -62,7 +63,6 @@ public class AdminEnrollments extends BaseTest{
 		Learning lr=new Learning(driver);
 		Boolean CourseFound = lr.gameNameValidationFromHRPanel(input.get("Gamesname"));
 		Assert.assertTrue(CourseFound);
-			
 	}
 	
 	@Test(dataProvider = "getdata1", priority = 6)
@@ -74,7 +74,6 @@ public class AdminEnrollments extends BaseTest{
 		age.findingGroupEnrollment(input.get("Courses"), input.get("group"));
 		age.searchTheUserByEmail(input.get("Useremail"));
 		age.getUserEnrollmentDetails(input.get("Useremail"));
-		
 	}
 	
 	@Test(dataProvider = "getdata1", priority = 7)
@@ -105,22 +104,23 @@ public class AdminEnrollments extends BaseTest{
 	}
 	
 	@DataProvider
-	public Object[][] getdata()
+	public Object[][] getdata() throws Throwable
 	{
-		HashMap<String, String> map= new HashMap<String, String>();
-		map.put("Useremail", "omkar@krishworks.com");
-		map.put("userpass", "password");
-		map.put("adminEmail", "admin@demo.com");
-		map.put("adminPass", "pass2023");
-		map.put("typeOfTraining", "course");
-	//	map.put("typeOfTraining", "Micro course");
-	//	map.put("typeOfTraining", "Games");
-		map.put("CourseName", "Safety and inclusion at the workplace"); //Safety and inclusion at the workplace
-		map.put("GroupName", "Sitero_PoSH_2023");
-		map.put("dueDate", "12122024");
-		map.put("MicroLearningCourses", "Confirmation bias");
-		map.put("Gamesname", "Omkar test");
-		
-		return new Object[][] {{map}};
+		List<HashMap<String,String>> data = getJsonDataToMap(System.getProperty("user.dir")+"//src//test//java//serien//Data//EndToEndTestCase.json");
+		return new Object[][]  { {data.get(0)}, {data.get(1)}, {data.get(0)} };
+	}
+	
+	@DataProvider
+	public Object[][] ValidatingTheEnrollmentListForEnrollmentConfirmation() throws Throwable
+	{
+		List<HashMap<String,String>> data = getJsonDataToMap(System.getProperty("user.dir")+"//src//test//java//serien//Data//EndToEndTestCase.json");
+		return new Object[][]  { {data.get(0)}, {data.get(1)}, {data.get(0)} };
+	}
+	
+	@DataProvider
+	public Object[][] CreatingGroupEnrollmentOfCourse() throws Throwable
+	{
+		List<HashMap<String,String>> data = getJsonDataToMap(System.getProperty("user.dir")+"//src//test//java//serien//Data//EndToEndTestCase.json");
+		return new Object[][]  { {data.get(0)}, {data.get(1)}, {data.get(0)} };
 	}
 }
