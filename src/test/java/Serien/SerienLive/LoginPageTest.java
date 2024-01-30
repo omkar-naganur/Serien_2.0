@@ -147,7 +147,10 @@ public class LoginPageTest extends BaseTest {
 		lp.ForgotPasswordLink();
 		ForgetPassword fp=new ForgetPassword(driver);
 		Boolean titelmatch= (input.get("Fp")).equals(fp.titleOfBox.getText());
-		Assert.assertTrue(titelmatch);	
+		Assert.assertTrue(titelmatch);
+		String url=driver.getCurrentUrl();
+		Assert.assertTrue(url.contains("forgot-password-page"));
+		
 	}
 	
 	@Test(dataProvider = "getdata2", priority = 12)

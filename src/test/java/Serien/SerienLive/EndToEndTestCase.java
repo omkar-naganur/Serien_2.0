@@ -29,7 +29,7 @@ import serien.TestComponents.BaseTest;
 
 public class EndToEndTestCase extends BaseTest {
 	
-	@Test(dataProvider = "getdata2", priority = 1)
+	@Test(dataProvider = "NewCompanyWithHRcoursesComplation", priority = 1)
 	public void NewCompanyWithHRcoursesComplation (HashMap<String, String> input) throws Throwable {
 		String companyname=input.get("companyName");
 		String groupName= input.get("GroupName");
@@ -149,7 +149,7 @@ public class EndToEndTestCase extends BaseTest {
 		
 	}
 	
-	@Test(dataProvider = "getdataFormJson", priority = 2)
+	@Test(dataProvider = "ValidationOfCoursesComplationFromTheAdmin", priority = 2)
 	public void ValidationOfCoursesComplationFromTheAdmin (HashMap<String, String> input) throws Throwable {
 		String companyName = input.get("companyName");
 		String groupName = input.get("groupName");
@@ -160,39 +160,39 @@ public class EndToEndTestCase extends BaseTest {
 		String userEmail = input.get("userEmail");
 		String userPass = input.get("userPass");
 		
-//		Profile profile=LoginPage.serienLogin(input.get("adminEmail"), input.get("adminPass"));
-//		AdminGroupPage group= new AdminGroupPage(driver);
-//		group.groups();
-//		group.creatingGroup(groupName, companyName, input.get("groupExp"));
+		Profile profile=LoginPage.serienLogin(input.get("adminEmail"), input.get("adminPass"));
+		AdminGroupPage group= new AdminGroupPage(driver);
+		group.groups();
+		group.creatingGroup(groupName, companyName, input.get("groupExp"));
 		AdminUser au= new AdminUser(driver);
-//		au.users();
-//		au.searchByEmail(input.get("userEmail"));
-//		au.clickOnEditButton();
-//		au.EditUserCompanyAndGroup(companyName, groupName);
+		au.users();
+		au.searchByEmail(input.get("userEmail"));
+		au.clickOnEditButton();
+		au.EditUserCompanyAndGroup(companyName, groupName);
 //		
 		AdminGroupEnrollment enrollment= new AdminGroupEnrollment(driver);
-//		enrollment.groupEnrollment();
-//		enrollment.creatingNewGroupEnrollemnt(typeOfTraining, CourseName, groupName, input.get("groupExp"));
-//		enrollment.adminLogout();
-//		
-//		LoginPage.serienLogin(input.get("userEmail"), input.get("userPass"));
+		enrollment.groupEnrollment();
+		enrollment.creatingNewGroupEnrollemnt(typeOfTraining, CourseName, groupName, input.get("groupExp"));
+		enrollment.adminLogout();
+		
+		LoginPage.serienLogin(input.get("userEmail"), input.get("userPass"));
 		Learning lr= new Learning(driver);
-//		int beforeCom=lr.getCoursesProgressOnly(CourseName);
-//		Assert.assertTrue(beforeCom==0);
-//		lr.Profile();
-//		lr.Logout();
-//		
-//		LoginPage.serienLogin(input.get("adminEmail"), input.get("adminPass"));
-//		enrollment.groupEnrollment();
-//		enrollment.findingGroupEnrollment(CourseName, groupName);
-//		enrollment.comapleTheUserProgress(input.get("userEmail"));
-//		enrollment.groupEnrollment();
-//		enrollment.Logout();
+		int beforeCom=lr.getCoursesProgressOnly(CourseName);
+		Assert.assertTrue(beforeCom==0);
+		lr.Profile();
+		lr.Logout();
+		
+		LoginPage.serienLogin(input.get("adminEmail"), input.get("adminPass"));
+		enrollment.groupEnrollment();
+		enrollment.findingGroupEnrollment(CourseName, groupName);
+		enrollment.comapleTheUserProgress(input.get("userEmail"));
+		enrollment.groupEnrollment();
+		enrollment.Logout();
 		
 		LoginPage.serienLogin(input.get("userEmail"), input.get("userPass"));
 		int afterCom=lr.getCoursesProgressOnly(CourseName);
 		Assert.assertTrue(afterCom==100);
-//		
+		
 //		//*******************************************
 		ProgressReport pr =new ProgressReport(driver);
 		pr.ProgresReport();
@@ -311,58 +311,16 @@ public class EndToEndTestCase extends BaseTest {
 	}
 	
 	@DataProvider
-	public Object[][] getdataFormJson() throws Throwable
+	public Object[][] ValidationOfCoursesComplationFromTheAdmin() throws Throwable
 	{
 		List<HashMap<String,String>> data = getJsonDataToMap(System.getProperty("user.dir")+"//src//test//java//serien//Data//EndToEndTestCase.json");
 		return new Object[][]  { {data.get(0)} };
 	}
 	
 	@DataProvider
-	public Object[][] getdata2()
+	public Object[][] NewCompanyWithHRcoursesComplation() throws Throwable
 	{
-		HashMap<String, String> map= new HashMap<String, String>();
-		// Login deatils 
-		map.put("Useremail", "omkar@krishworks.com");
-		map.put("userpass", "password");
-		map.put("AdminUseremail", "admin@demo.com");
-		map.put("Adminuserpass", "pass2023");
-		map.put("empName", "omkar");
-		//*********************************
-		Random rand = new Random();
-		int rand_int1 = rand.nextInt(1000);
-		String companyName = "TCS"+rand_int1;
-		map.put("companyName", "TCS123");
-		//***************************************
-	    LocalDateTime currentLocalDateTime = LocalDateTime.now(); 
-        // Create DateTimeFormatter instance with specified format
-        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
-        // Format LocalDateTime to String
-        String formattedDateTime = currentLocalDateTime.format(dateTimeFormatter);  
-        map.put("startdate", formattedDateTime);
-	//**********************************************************
-		map.put("enddate", "30-12-2024");
-		map.put("noticeperiod", "10");
-		map.put("expectedExpText", "Subscription Expired");
-		map.put("GroupName", "TCS755Group2");
-		map.put("groupExpDate", "30-12-2024");
-		map.put("CourseName", "automatiom Test Training");
-		map.put("typeOfTraining", "course");
-		map.put("enrollmentDueDate", "30-12-2024");
-		map.put("cerLink", "//storage.googleapis.com/serein-devqa-internal-gcp.appspot.com/generatedCertificate/");
-		
-		//*********************************
-		// courses answer
-		
-		map.put("quiz1Ans1", "Priya can reach out to both her company’s IC or the client's IC based on her comfort.");
-		map.put("quiz1Ans2", "Three colleagues go to a cafe for a weekend brunch. One of them is verbally harassed by the staff of the restaurant.");
-		map.put("quiz2Ans1", "The impact of Gaurav’s behaviour on Nisha is certainly more relevant here.");
-		//*********************
-		
-		//progress report expected results
-		map.put("totalEmp", "1");
-		map.put("empComCourses", "1");
-		map.put("empNotComCourses", "0");
-		
-		return new Object[][] {{map}};
+		List<HashMap<String,String>> data = getJsonDataToMap(System.getProperty("user.dir")+"//src//test//java//serien//Data//EndToEndTestCase.json");
+		return new Object[][]  { {data.get(3)} };
 	}
 }

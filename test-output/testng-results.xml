@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="2" total="3" passed="1" failed="0" skipped="0">
+<testng-results ignored="13" total="14" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-01-30T12:09:54Z" name="Default suite" finished-at="2024-01-30T12:11:13Z" duration-ms="79139">
+  <suite started-at="2024-01-30T13:22:11Z" name="Default suite" finished-at="2024-01-30T13:22:16Z" duration-ms="4919">
     <groups>
     </groups>
-    <test started-at="2024-01-30T12:09:54Z" name="Default test" finished-at="2024-01-30T12:11:13Z" duration-ms="79139">
-      <class name="Serien.SerienLive.EndToEndTestCase">
-        <test-method is-config="true" signature="lunchApplication()[pri:0, instance:Serien.SerienLive.EndToEndTestCase@67545b57]" started-at="2024-01-30T12:09:54Z" name="lunchApplication" finished-at="2024-01-30T12:10:01Z" duration-ms="6872" status="PASS">
+    <test started-at="2024-01-30T13:22:11Z" name="Default test" finished-at="2024-01-30T13:22:16Z" duration-ms="4919">
+      <class name="Serien.SerienLive.LoginPageTest">
+        <test-method is-config="true" signature="lunchApplication()[pri:0, instance:Serien.SerienLive.LoginPageTest@6cce16f4]" started-at="2024-01-30T13:22:11Z" name="lunchApplication" finished-at="2024-01-30T13:22:14Z" duration-ms="2798" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- lunchApplication -->
-        <test-method signature="ValidationOfGroupDateExpired(java.util.HashMap)[pri:3, instance:Serien.SerienLive.EndToEndTestCase@67545b57]" started-at="2024-01-30T12:10:01Z" name="ValidationOfGroupDateExpired" data-provider="ValidationOfGroupDateExpiredDataSheet" finished-at="2024-01-30T12:11:13Z" duration-ms="71912" status="PASS">
+        <test-method signature="NavigationToForgetPasswordPage(java.util.HashMap)[pri:11, instance:Serien.SerienLive.LoginPageTest@6cce16f4]" started-at="2024-01-30T13:22:14Z" name="NavigationToForgetPasswordPage" data-provider="getdata2" finished-at="2024-01-30T13:22:16Z" duration-ms="2110" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{CourseName=Prevention of sexual harassment in the workplace – Hindi, userPass=password, companyName=TCS, adminPass=pass2023, groupName=TCS part2, typeOfTraining=course, Validation Of Group Date Expired Data Sheet=, empName=omkar, // login credentionals & user deatils=, userEmail=omkar@krishworks.com, groupExpInValid=30/01/2024, groupExpValid=29/12/2024, // group creation & enrollment deatils=, adminEmail=admin@demo.com}]]>
+                <![CDATA[{fp URL=forgot password, err=Please enter your email, emailErr=Inavlid Email, Fp=Forgot password, sucessfullMsg=A password recovery link has been sent to your registered email id. Please check your spam folder if you do not see the email in your inbox., invalidEmail=Test@gmail.com}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ValidationOfGroupDateExpired -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:Serien.SerienLive.EndToEndTestCase@67545b57]" started-at="2024-01-30T12:11:13Z" name="tearDown" finished-at="2024-01-30T12:11:13Z" duration-ms="0" status="PASS">
+        </test-method> <!-- NavigationToForgetPasswordPage -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Serien.SerienLive.LoginPageTest@6cce16f4]" started-at="2024-01-30T13:22:16Z" name="tearDown" finished-at="2024-01-30T13:22:16Z" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- Serien.SerienLive.EndToEndTestCase -->
+      </class> <!-- Serien.SerienLive.LoginPageTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

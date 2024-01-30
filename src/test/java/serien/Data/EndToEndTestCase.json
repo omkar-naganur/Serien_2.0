@@ -1,5 +1,7 @@
 [
 {
+"ValidationOfCoursesComplationFromTheAdmin":"",
+
 " ":"// login credentionals & user deatils",
 
 "userEmail":"omkar@krishworks.com",
@@ -42,6 +44,45 @@
 "typeOfTraining":"course",
 "CourseName":"Prevention of sexual harassment in the workplace – Hindi"
 
-}	
+},
+
+{
+	"New Company With HRcourses Complation ":"",
+	" Login deatils":"", 
+	"Useremail":"omkar@krishworks.com",
+	"userpass": "password",
+	"AdminUseremail": "admin@demo.com",
+	"Adminuserpass": "pass2023",
+	"empName": "omkar",
+		"//*********************************":"",
+		
+		"companyName":"TCS123",
+		"//***************************************":"",
+	      
+     "startdate":"29/01/2024",
+	"//**********************************************************":"",
+	"enddate": "30-12-2024",
+	"noticeperiod": "10",
+	"expectedExpText": "Subscription Expired",
+	"GroupName":"TCS755Group2",
+	"groupExpDate":"30-12-2024",
+	"CourseName":"automatiom Test Training",
+	"typeOfTraining":"course",
+	"enrollmentDueDate":"30-12-2024",
+	"cerLink":"//storage.googleapis.com/serein-devqa-internal-gcp.appspot.com/generatedCertificate/",
+		
+	"//********************************":"",
+	"courses answer":"",
+		
+	"quiz1Ans1":"Priya can reach out to both her company’s IC or the client's IC based on her comfort.",
+	"quiz1Ans2":"Three colleagues go to a cafe for a weekend brunch. One of them is verbally harassed by the staff of the restaurant.",
+	"quiz2Ans1":"The impact of Gaurav’s behaviour on Nisha is certainly more relevant here.",
+		"":"//*********************",
+		
+		"//progress report expected results":"",
+	"totalEmp":"1",
+	"empComCourses":"1",
+	"empNotComCourses":"0"
+}
 
 ]
