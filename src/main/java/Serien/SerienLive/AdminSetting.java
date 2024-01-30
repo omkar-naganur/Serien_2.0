@@ -17,7 +17,7 @@ import Serien.AbstractComponents.abstractReusable;
 import net.bytebuddy.asm.MemberSubstitution.FieldValue;
 import java.util.Random;
 
-public class AdminSetting extends abstractReusable{
+public class AdminSetting extends abstractReusable {
 
 	// Create an instance of Random class
 	Random random = new Random();

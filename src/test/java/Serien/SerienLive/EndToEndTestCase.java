@@ -162,7 +162,7 @@ public class EndToEndTestCase extends BaseTest {
 //		AdminGroupPage group= new AdminGroupPage(driver);
 //		group.groups();
 //		group.creatingGroup(groupName, companyName, input.get("groupExp"));
-//		AdminUser au= new AdminUser(driver);
+		AdminUser au= new AdminUser(driver);
 //		au.users();
 //		au.searchByEmail(input.get("userEmail"));
 //		au.clickOnEditButton();
@@ -172,7 +172,6 @@ public class EndToEndTestCase extends BaseTest {
 //		enrollment.groupEnrollment();
 //		enrollment.creatingNewGroupEnrollemnt(typeOfTraining, CourseName, groupName, input.get("groupExp"));
 //		enrollment.adminLogout();
-//		
 //		
 //		LoginPage.serienLogin(input.get("userEmail"), input.get("userPass"));
 		Learning lr= new Learning(driver);
@@ -232,7 +231,56 @@ public class EndToEndTestCase extends BaseTest {
 		Assert.assertTrue(adminViewUserCoursesDeatils.get(9).equals(HrPanleUserDeatils.get(7)));
 		System.out.println("Certificate matched");
 		
+		// user progress reset
+		au.users();
+		au.searchByEmail(input.get("Useremail"));
+		Thread.sleep(3000);
+		au.clickOnViewButton();
+		au.deleteProgress(input.get("CourseName"));	
+		au.users();
+		au.adminLogout();  
+		Thread.sleep(2000);
 		
+		
+	}
+	
+	@Test(dataProvider = "ValidationOfGroupDateExpiredDataSheet", priority = 2)
+	public void ValidationOfGroupDateExpired (HashMap<String, String> input) throws Throwable{
+		String companyName = input.get("companyName");
+		String groupName = input.get("groupName");
+		String typeOfTraining = input.get("typeOfTraining");
+		String CourseName = input.get("CourseName");
+		String adminEmail = input.get("adminEmail");
+		String adminPass= input.get("adminPass");
+		String userEmail = input.get("userEmail");
+		String userPass = input.get("userPass");
+		String groupExpValid = input.get("groupExpValid");
+		
+		LoginPage.serienLogin(adminEmail, adminPass);
+		
+		AdminGroupPage group= new AdminGroupPage(driver);
+		group.creatingGroup(groupName, companyName, groupExpValid);
+		
+		AdminUser au= new AdminUser(driver);
+		// Create a new group
+		au.users();
+		au.searchByEmail(userEmail);
+		au.clickOnEditButton();
+		au.EditUserCompanyAndGroup(companyName, groupName);
+		
+		// creating new group enrollment
+		AdminGroupEnrollment enrollment= new AdminGroupEnrollment(driver);
+		enrollment.creatingNewGroupEnrollemnt(typeOfTraining, CourseName, groupName, groupExpValid);
+		
+		enrollment.SwitchToUser(userEmail, userPass);
+		
+	}
+	
+	@DataProvider
+	public Object[][] ValidationOfGroupDateExpiredDataSheet () throws Throwable
+	{
+		List<HashMap<String,String>> data = getJsonDataToMap(System.getProperty("user.dir")+"//src//test//java//serien//Data//EndToEndTestCase.json");
+		return new Object[][]  { {data.get(1)} };
 	}
 	
 	@DataProvider
@@ -258,12 +306,12 @@ public class EndToEndTestCase extends BaseTest {
 		String companyName = "TCS"+rand_int1;
 		map.put("companyName", "TCS123");
 		//***************************************
-		   LocalDateTime currentLocalDateTime = LocalDateTime.now(); 
-	        // Create DateTimeFormatter instance with specified format
-	        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
-	        // Format LocalDateTime to String
-	        String formattedDateTime = currentLocalDateTime.format(dateTimeFormatter);  
-		map.put("startdate", formattedDateTime);
+	    LocalDateTime currentLocalDateTime = LocalDateTime.now(); 
+        // Create DateTimeFormatter instance with specified format
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        // Format LocalDateTime to String
+        String formattedDateTime = currentLocalDateTime.format(dateTimeFormatter);  
+        map.put("startdate", formattedDateTime);
 	//**********************************************************
 		map.put("enddate", "30-12-2024");
 		map.put("noticeperiod", "10");

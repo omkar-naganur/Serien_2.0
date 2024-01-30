@@ -24,7 +24,6 @@ public class LoginPage extends abstractReusable {
 		PageFactory.initElements(driver, this);
 	}
 	
-	
 	@FindBy(xpath = "//input[@type='text']")
 	WebElement userNameTextFiled;
 	
@@ -61,6 +60,17 @@ public class LoginPage extends abstractReusable {
 		return profile;
 	}
 	
+	public void serienWebLogin (String Username, String password) throws Throwable
+	{	
+		waitForWebElementTOApper(userNameTextFiled);
+		userNameTextFiled.sendKeys(Username);
+		waitForWebElementTOApper(Password);
+		Password.sendKeys(password);
+		Thread.sleep(2000);
+		waitForWebElementTOApper(LoginButton);
+		LoginButton.click();
+		
+	}
 	public void gotoLoginPage () throws InterruptedException 
 	{
 		//driver.get("https://console.cloud.google.com/storage/browser/sereindevcontent.kdev.co.in;tab=objects?forceOnBucketsSortingFiltering=true&project=serein-devqa-internal-gcp&prefix=&forceOnObjectsSortingFiltering=false");

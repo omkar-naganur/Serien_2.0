@@ -13,6 +13,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import Serien.SerienLive.LoginPage;
+
 public class abstractReusable {
 	WebDriver driver;
 
@@ -204,5 +206,20 @@ public class abstractReusable {
         js.executeScript("window.scrollBy(0, -500)");
 	
 	}
+	
+	public void SwitchToAdmin(String adminEmail, String adminPass) throws Throwable{
+		Profile();
+		Logout();
+		LoginPage lp= new LoginPage(driver);
+		lp.serienWebLogin(adminEmail, adminPass);
+	
+	}
+	
+	public void SwitchToUser(String userEmail, String UserPass) throws Throwable {
+			adminLogout();
+			LoginPage lp= new LoginPage(driver);
+			lp.serienWebLogin(userEmail, UserPass);
+	}
+
 	
 }
