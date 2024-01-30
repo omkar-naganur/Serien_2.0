@@ -204,7 +204,6 @@ public class abstractReusable {
 	public void ScrollUp500() {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0, -500)");
-	
 	}
 	
 	public void SwitchToAdmin(String adminEmail, String adminPass) throws Throwable{
@@ -212,7 +211,6 @@ public class abstractReusable {
 		Logout();
 		LoginPage lp= new LoginPage(driver);
 		lp.serienWebLogin(adminEmail, adminPass);
-	
 	}
 	
 	public void SwitchToUser(String userEmail, String UserPass) throws Throwable {

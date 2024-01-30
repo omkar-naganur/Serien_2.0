@@ -265,7 +265,7 @@ public class AdminGroupEnrollment extends abstractReusable{
 					}
 					if(!milgya) {
 						if(lastArray.size()!= 0) {
-					    	  boolean xyz = 	false;
+					    	  boolean xyz = false;
 					    	  for(int i = 0 ; i < lastArray.size() && i < ar.size();i++) {
 					    		  System.out.println(lastArray.get(i)+" == "+ar.get(i));
 					    		  if(!lastArray.get(i).equals(ar.get(i))) {

@@ -43,26 +43,31 @@ public class ProgressReport extends abstractReusable{
 	List<WebElement> courseNamesListInReport;
 	
 	@FindBy(xpath = "//div[@class='MuiBox-root css-j4kjxm']")
-	List<WebElement> MicroLearningListInReport;
+	List<WebElement> MicroLearningListInReport ;
 	
 	@FindBy(xpath = "//div[@class='MuiBox-root css-5hqcx']")
-	List<WebElement> GameNameListInReport;
+	List<WebElement> GameNameListInReport ;
 	
 	@FindBy(xpath = "//div[@class='MuiBox-root css-n4ie87']//div[@class='MuiBox-root css-13o8bqy']/..//div[@class='MuiBox-root css-evh4dy']")
 	WebElement exter;
 	
 	@FindBy(xpath = "//div[@class='MuiBox-root css-evh4dy']")
-	List<WebElement> enterToCourses;
+	List<WebElement> enterToCourses ;
 	
 	@FindBy(xpath = "//div[@class='MuiBox-root css-12230cn']//div[@class='MuiBox-root css-xrxgzc']")
-	List<WebElement> enterToGame;
+	List<WebElement> enterToGame ;
 	
 	@FindBy(xpath = "//div[@class='MuiBox-root css-1og3357']//div[@class='MuiBox-root css-xrxgzc']")
-	List<WebElement> enterToMicroLearning;
+	List<WebElement> enterToMicroLearning ;
 	
-	// both are same based on situation
-//	@FindBy(xpath = "((//div[@class='MuiBox-root css-9nh4zr'][1])/..//div[1])[1]")
-//	WebElement countTotalnoofemployees;
+	@FindBy(xpath = "//div[@class=\"MuiBox-root css-uykbcz\"]/p")
+	WebElement GROUPEXPIRED ;
+	
+	@FindBy(xpath = "//div[@class='MuiFormControl-root css-1jemdng']//div[@role='button']")
+	WebElement groupDropDown ;
+	
+	@FindBy(xpath = "//ul[@role='listbox']//li")
+	List<WebElement> listOfGroupNames ;
 	
 	// Below elements for taking counts
 	@FindBy(xpath = "(//div[contains(@class, 'microlerningdiscription MuiBox-root css-1sacc3f')])[1]")
@@ -114,6 +119,10 @@ public class ProgressReport extends abstractReusable{
 	
 	@FindBy(xpath = "(//div[@class='MuiBox-root css-1txtiph'])//div[2]")
 	List<WebElement> DownloadCertificate ;
+	
+	//Side panle test
+	@FindBy(xpath = "//div[@role='button']/../div[2]/div")
+	List<WebElement> sidePanleNames;
 	
 	
 	public ArrayList<String> SubscriptioDeatilsfromUser () throws Throwable
@@ -221,8 +230,7 @@ public class ProgressReport extends abstractReusable{
 			}
 		}
 		
-		
-			System.out.println(allCoursesNames);
+		System.out.println(allCoursesNames);
 		return allCoursesNames;
 	}
 		
@@ -237,8 +245,6 @@ public class ProgressReport extends abstractReusable{
 		        break; 
 		    }
 		}
-		
-		
 	}
 
 	public Boolean validatonOfSearchBarWithEmail(String email, String userName) throws Throwable {
@@ -334,6 +340,48 @@ public class ProgressReport extends abstractReusable{
 		driver.close();
 		driver.switchTo().window(parentWindowID);
 		return certificateURL;
+		
+	}
+
+	public Boolean VaildationOfGroupExpiredMessage() {
+		boolean ExpiredMeg = false ;
+		
+		try {
+			waitForWebElementTOApper(GROUPEXPIRED);
+			String text=GROUPEXPIRED.getText();
+			System.out.println(text);
+			ExpiredMeg = true ;
+			
+		} catch (Exception e) {
+			System.out.println("GROUPEXPIRED message not found");
+		}
+		return ExpiredMeg;
+	}
+
+	public void getTextFormSidePanle() {
+		
+		for (int i= 0; i<sidePanleNames.size(); i++) {
+			String names =sidePanleNames.get(i).getText();	
+			System.out.println(names);
+		}
+	}
+
+	public void searchGroupName(String groupName) throws Throwable{
+		try {
+			waitForWebElementTOApper(groupDropDown);
+			groupDropDown.click();
+			Thread.sleep(1000);
+			for(int i =0 ; i<listOfGroupNames.size(); i++) {
+				String groupslist = listOfGroupNames.get(i).getText();
+				if (groupslist.equals(groupName)) {
+					listOfGroupNames.get(i).click();
+				}
+			}
+			
+		} catch (Exception e) {
+			System.out.println("drop down not found");
+		}
+		
 		
 	}
 	

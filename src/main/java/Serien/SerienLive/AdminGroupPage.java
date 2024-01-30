@@ -11,6 +11,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
 
 import Serien.AbstractComponents.abstractReusable;
 
@@ -47,6 +48,9 @@ public class AdminGroupPage extends abstractReusable{
 	
 	@FindBy(xpath = "//div[@class='admin-overdue-bottom-table-td'][3]") 
 	List<WebElement> ListOfGroupNames;
+	
+	@FindBy(xpath = "//div[@class='admin-overdue-bottom-table-td'][7]//select") 
+	List<WebElement> ListOfActionButton;
 	
 	@FindBy(xpath = "//div[@class='admin-overdue-bottom-pagination-cnt-item'][2]")
 	WebElement PagenationForwardButton;
@@ -95,7 +99,6 @@ public class AdminGroupPage extends abstractReusable{
 	String s ;
 	  	public void SearchingComapnyNameInGroupListSecond(String groupName) throws Throwable
 		{
-		//	JavascriptExecutor js = (JavascriptExecutor) driver;
 			
 			waitForWebElementTOApper(ListOfGroupNames);
 			Thread.sleep(2000);
@@ -138,5 +141,76 @@ public class AdminGroupPage extends abstractReusable{
 			      
 			}
 		     
-	}}
+	}
+	  	
+	  	
+	  	public boolean groupEdit (String Groupname) throws Throwable
+		{
+			
+					waitForWebElementTOApper(ListOfGroupNames);
+					Thread.sleep(2000);
+					ArrayList<String> lastArray = new ArrayList<String>() ;
+					ArrayList<String> lastsArray = new ArrayList<String>() ;
+					boolean milgya = false;
+					while(!milgya) {
+						ArrayList<String> ar = new ArrayList<String>();
+						for(int i = 0; i< ListOfGroupNames.size(); i++) 
+					      {   	   		      
+					         ar.add(ListOfGroupNames.get(i).getText());       
+					      }
+						
+						for(int i = 0 ; i < ar.size() ; i++) {
+							String wow= ar.get(i);
+							if(wow.equals(Groupname)){
+								System.out.println("milgya***********************");
+								System.out.println(i);
+								clickOnViewButton(i);
+								milgya = true;
+								Thread.sleep(1000);
+							}
+						}
+						if(!milgya) {
+							if(lastArray.size()!= 0) {
+						    	  boolean xyz = 	false;
+						    	  for(int i = 0 ; i < lastArray.size() && i < ar.size();i++) {
+						    		  System.out.println(lastArray.get(i)+" == "+ar.get(i));
+						    		  if(!lastArray.get(i).equals(ar.get(i))) {
+						    			  i = lastArray.size();
+						    			  xyz = true;
+						    		  }
+						    	  }
+						    	  System.out.println("xyz : "+ xyz);
+						    	  if(!xyz) {
+						    		  milgya = true;
+						    		  System.out.println("NAhi mil raha");
+						    	  }
+						      }
+						       lastArray = ar;
+						       
+				        	 PagenationForwardButton.click();
+				        	 Thread.sleep(2000);
+						}else {
+							System.out.println("milgya***********************Double check");
+						} 
+					}
+					return milgya;
+
+	}
+		public void clickOnViewButton(int i) {
+			Select se = new Select(ListOfActionButton.get(i));
+			se.selectByVisibleText(" Edit");	
+		}
+
+	public void UpdateGroupExpiredDate(String GropExpInvalide, String gpName) throws Throwable {
+		groupEdit(gpName);
+		waitForWebElementTOApper(ExpiryDate);
+		ExpiryDate.sendKeys(GropExpInvalide);
+		Thread.sleep(1000);
+		waitForWebElementTOApper(SaveUpdate);
+		SaveUpdate.click();
+		Thread.sleep(2000);
+		
+	}
+		
+}
 

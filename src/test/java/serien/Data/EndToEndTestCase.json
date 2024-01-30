@@ -10,7 +10,7 @@
 
 "// group creation & enrollment deatils":"",
 
-"groupName":"TCS Part 2",
+"groupName":"TCS test 1",
 "companyName":"TCS",
 "groupExp":"29/12/2024",
 "typeOfTraining":"course",
@@ -35,9 +35,10 @@
 
 "// group creation & enrollment deatils":"",
 
-"groupName":"TCS Part 3",
+"groupName":"TCS part2",
 "companyName":"TCS",
 "groupExpValid":"29/12/2024",
+"groupExpInValid":"30/01/2024",
 "typeOfTraining":"course",
 "CourseName":"Prevention of sexual harassment in the workplace – Hindi"
 

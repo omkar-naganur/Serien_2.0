@@ -4,6 +4,8 @@ import org.testng.annotations.Test;
 import org.testng.annotations.Test;
 import org.testng.annotations.Test;
 
+import static org.testng.Assert.assertEquals;
+
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -241,10 +243,9 @@ public class EndToEndTestCase extends BaseTest {
 		au.adminLogout();  
 		Thread.sleep(2000);
 		
-		
 	}
 	
-	@Test(dataProvider = "ValidationOfGroupDateExpiredDataSheet", priority = 2)
+	@Test(dataProvider = "ValidationOfGroupDateExpiredDataSheet", priority = 3)
 	public void ValidationOfGroupDateExpired (HashMap<String, String> input) throws Throwable{
 		String companyName = input.get("companyName");
 		String groupName = input.get("groupName");
@@ -255,10 +256,12 @@ public class EndToEndTestCase extends BaseTest {
 		String userEmail = input.get("userEmail");
 		String userPass = input.get("userPass");
 		String groupExpValid = input.get("groupExpValid");
+		String groupExpInValid = input.get("groupExpInValid");
 		
 		LoginPage.serienLogin(adminEmail, adminPass);
 		
 		AdminGroupPage group= new AdminGroupPage(driver);
+		group.groups();
 		group.creatingGroup(groupName, companyName, groupExpValid);
 		
 		AdminUser au= new AdminUser(driver);
@@ -270,9 +273,33 @@ public class EndToEndTestCase extends BaseTest {
 		
 		// creating new group enrollment
 		AdminGroupEnrollment enrollment= new AdminGroupEnrollment(driver);
+		enrollment.groupEnrollment();
 		enrollment.creatingNewGroupEnrollemnt(typeOfTraining, CourseName, groupName, groupExpValid);
 		
 		enrollment.SwitchToUser(userEmail, userPass);
+		// ensuring the courses present or not
+		Learning learning= new Learning(driver);
+		Boolean coursesMatch=learning.CoursesNameValidationFromHRPanle(CourseName);
+		Assert.assertTrue(coursesMatch);
+		
+		// ensuring the group expire messge not displaying
+		ProgressReport pr= new ProgressReport(driver);
+		pr.ProgresReport();
+		pr.searchGroupName(groupName);
+		Boolean megMatchFalse = pr.VaildationOfGroupExpiredMessage();
+		Assert.assertFalse(megMatchFalse);
+		learning.SwitchToAdmin(adminEmail, adminPass);
+		
+		// updating the group expire date
+		group.groups();
+		group.UpdateGroupExpiredDate(groupExpInValid, groupName);
+		group.SwitchToUser(userEmail, userPass);
+		
+		//ensuring the group expire message displaying
+		pr.ProgresReport();
+		pr.searchGroupName(groupName);
+		Boolean megMatchTrue = pr.VaildationOfGroupExpiredMessage();
+		Assert.assertTrue(megMatchTrue);
 		
 	}
 	
