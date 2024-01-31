@@ -3,6 +3,7 @@ package Serien.SerienLive;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -14,7 +15,7 @@ import serien.TestComponents.BaseTest;
 
 public class AdminEnrollments extends BaseTest {
 	
-	@Test(dataProvider = "CreatingGroupEnrollmentOfCourse", priority = 1)
+	@Test(dataProvider = "all3TypeCourses", priority = 1)
 	public void CreatingGroupEnrollmentOfCourse (HashMap<String, String> input) throws Throwable
 	{	
 		Profile profile=LoginPage.serienLogin(input.get("adminEmail"), input.get("adminPass"));
@@ -23,22 +24,22 @@ public class AdminEnrollments extends BaseTest {
 		ae.gotoAddNewGroupEnrollment();
 		ae.selectTrainingType(input.get("typeOfTraining"));
 		ae.selectCourseName(input.get("CourseName"));
-		ae.selectGroupName(input.get("GroupName"));
+		ae.selectGroupName(input.get("groupName"));
 		ae.selectDueDate(input.get("dueDate"));
 		ae.saveGroupEnrollment();
 		
 	}
 	
-	@Test(dataProvider = "ValidatingTheEnrollmentListForEnrollmentConfirmation", priority = 2)
+	@Test(dataProvider = "all3TypeCourses", priority = 2)
 	public void ValidatingTheEnrollmentListForEnrollmentConfirmation (HashMap<String, String> input) throws Throwable
 	{	
 		Profile profile=LoginPage.serienLogin(input.get("adminEmail"), input.get("adminPass"));
 		AdminGroupEnrollment ae= new AdminGroupEnrollment(driver);
 		ae.groupEnrollment();
-		ae.enrollmentConfirmatioInEnrloomentList(input.get("CourseName"), input.get("GroupName"));		
+		ae.enrollmentConfirmatioInEnrloomentList(input.get("CourseName"), input.get("groupName"));		
 	}
 	
-	@Test(dataProvider = "getdata", priority = 3)
+	@Test(dataProvider = "coursesDeatilsOnly", priority = 3)
 	public void validationOfCoursesEnrollmentFromHRpanle (HashMap<String, String> input) throws Throwable
 	{	
 		Profile profile=LoginPage.serienLogin(input.get("Useremail"), input.get("userpass"));
@@ -47,42 +48,44 @@ public class AdminEnrollments extends BaseTest {
 		Assert.assertTrue(CourseFound);
 	}
 	
-	@Test(dataProvider = "getdata", priority = 4)
+	@Test(dataProvider = "MicroLearningOnlay", priority = 4)
 	public void validationOfMicroLearningEnrollmentFromHRpanle (HashMap<String, String> input) throws Throwable
 	{	
 		Profile profile=LoginPage.serienLogin(input.get("Useremail"), input.get("userpass"));
 		Learning lr=new Learning(driver);
-		Boolean CourseFound = lr.MicroLearningNameValidationFromHRPanle(input.get("MicroLearningCourses"));
+		Boolean CourseFound = lr.MicroLearningNameValidationFromHRPanle(input.get("CourseName"));
 		Assert.assertTrue(CourseFound);	
 	}
 	
-	@Test(dataProvider = "getdata", priority = 5)
+	@Test(dataProvider = "GamesOnlay", priority = 5)
 	public void validationOfGamesEnrollmentFromHRpanle (HashMap<String, String> input) throws Throwable
 	{	
 		Profile profile=LoginPage.serienLogin(input.get("Useremail"), input.get("userpass"));
 		Learning lr=new Learning(driver);
-		Boolean CourseFound = lr.gameNameValidationFromHRPanel(input.get("Gamesname"));
+		Boolean CourseFound = lr.gameNameValidationFromHRPanel(input.get("CourseName"));
 		Assert.assertTrue(CourseFound);
 	}
 	
-	@Test(dataProvider = "getdata1", priority = 6)
+	@Test(dataProvider = "coursesDeatilsOnly", priority = 6)
 	public void GetUserEnrollmentDetails (HashMap<String, String> input) throws Throwable
 	{	
 		Profile profile=LoginPage.serienLogin(input.get("adminEmail"), input.get("adminPass"));
 		AdminGroupEnrollment age= new AdminGroupEnrollment(driver);
 		age.groupEnrollment();
-		age.findingGroupEnrollment(input.get("Courses"), input.get("group"));
+		age.findingGroupEnrollment(input.get("CourseName"), input.get("groupName"));
 		age.searchTheUserByEmail(input.get("Useremail"));
-		age.getUserEnrollmentDetails(input.get("Useremail"));
+		ArrayList<String> indexCount = age.getUserEnrollmentDetails(input.get("Useremail"));
+		Assert.assertTrue(indexCount.size()==10);
 	}
 	
-	@Test(dataProvider = "getdata1", priority = 7)
+	@Test(dataProvider = "all3TypeCourses", priority = 7)
 	public void ComplateTheCourseforAParticularUser (HashMap<String, String> input) throws Throwable
 	{	
 		Profile profile=LoginPage.serienLogin(input.get("adminEmail"), input.get("adminPass"));
 		AdminGroupEnrollment age= new AdminGroupEnrollment(driver);
 		age.groupEnrollment();
-		age.findingGroupEnrollment(input.get("Courses"), input.get("group"));
+		
+		age.findingGroupEnrollment(input.get("CourseName"), input.get("groupName"));
 		age.searchTheUserByEmail(input.get("Useremail"));
 		age.comapleTheUserProgress(input.get("Useremail"));
 		Boolean statusMatch=age.validationUserCoursesStatusComplated(input.get("Useremail"));
@@ -90,37 +93,30 @@ public class AdminEnrollments extends BaseTest {
 	}
 	
 	@DataProvider
-	public Object[][] getdata1()
+	public Object[][] GamesOnlay() throws Throwable
 	{
-		HashMap<String, String> map= new HashMap<String, String>();
-		map.put("Useremail", "omkar@krishworks.com");
-		map.put("userpass", "password");
-		map.put("adminEmail", "admin@demo.com");
-		map.put("adminPass", "pass2023");
-		map.put("Courses", "Gender stereotypes");
-		map.put("group", "TCS");
-		
-		return new Object[][] {{map}};
+		List<HashMap<String,String>> data = getJsonDataToMap(System.getProperty("user.dir")+"//src//test//java//serien//Data//AdminEnrollments.json");
+		return new Object[][]  { {data.get(2)} };
 	}
 	
 	@DataProvider
-	public Object[][] getdata() throws Throwable
+	public Object[][] MicroLearningOnlay() throws Throwable
 	{
-		List<HashMap<String,String>> data = getJsonDataToMap(System.getProperty("user.dir")+"//src//test//java//serien//Data//EndToEndTestCase.json");
-		return new Object[][]  { {data.get(0)}, {data.get(1)}, {data.get(0)} };
+		List<HashMap<String,String>> data = getJsonDataToMap(System.getProperty("user.dir")+"//src//test//java//serien//Data//AdminEnrollments.json");
+		return new Object[][]  { {data.get(1)} };
 	}
 	
 	@DataProvider
-	public Object[][] ValidatingTheEnrollmentListForEnrollmentConfirmation() throws Throwable
+	public Object[][] coursesDeatilsOnly() throws Throwable
 	{
-		List<HashMap<String,String>> data = getJsonDataToMap(System.getProperty("user.dir")+"//src//test//java//serien//Data//EndToEndTestCase.json");
-		return new Object[][]  { {data.get(0)}, {data.get(1)}, {data.get(0)} };
+		List<HashMap<String,String>> data = getJsonDataToMap(System.getProperty("user.dir")+"//src//test//java//serien//Data//AdminEnrollments.json");
+		return new Object[][]  { {data.get(0)} };
 	}
 	
 	@DataProvider
-	public Object[][] CreatingGroupEnrollmentOfCourse() throws Throwable
+	public Object[][] all3TypeCourses() throws Throwable
 	{
-		List<HashMap<String,String>> data = getJsonDataToMap(System.getProperty("user.dir")+"//src//test//java//serien//Data//EndToEndTestCase.json");
-		return new Object[][]  { {data.get(0)}, {data.get(1)}, {data.get(0)} };
+		List<HashMap<String,String>> data = getJsonDataToMap(System.getProperty("user.dir")+"//src//test//java//serien//Data//AdminEnrollments.json");
+		return new Object[][]  { {data.get(0)}, {data.get(1)}, {data.get(2)} };
 	}
 }

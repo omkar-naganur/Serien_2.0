@@ -22,7 +22,7 @@ import serien.TestComponents.BaseTest;
 
 public class HRprofile extends BaseTest {
 	
-	@Test(dataProvider = "getdata1", priority = 1)
+	@Test(dataProvider = "basicDeatils", priority = 1)
 	public void ValidationOfSubscriptionDateInHRpanle(HashMap<String, String> input) throws Throwable
 	{	
 		Profile profile=LoginPage.serienLogin(input.get("adminEmail"), input.get("adminPass"));
@@ -31,18 +31,19 @@ public class HRprofile extends BaseTest {
 		AdminSetting ass= new AdminSetting(driver);
 		ass.CompanySettingsOpen();
 		ass.ClickonSelectedCompanyEditAAplyStreamFunction(input.get("testCompanyName"), input.get("startdate"), input.get("enddate"), input.get("noticeperiod"));
-		Thread.sleep(1000);
+		Thread.sleep(2000); // inthis test unable to update the end date thats why we provide the thread .sleep here we need to check again
 		ass.Logout();
 		driver.manage().deleteAllCookies();
 		driver.navigate().refresh();
 		Profile pro=LoginPage.serienLogin(input.get("Useremail"), input.get("userpass"));
 		pro.Profile();
+		// in this test we need to change the data formate to validate the exp date it's take a lot of time in feature wwe can do this
 		String exp=pro.subExpTest();
 		System.out.println(exp);
 			
 	}
 	
-	@Test(dataProvider = "getdata1", priority = 2)
+	@Test(dataProvider = "basicDeatils2", priority = 2)
 	public void ValidationOfUserNameFromAdminPanleToHRpanle(HashMap<String, String> input) throws Throwable
 	{	
 		Profile profile=LoginPage.serienLogin(input.get("adminEmail"), input.get("adminPass"));
@@ -180,6 +181,20 @@ public class HRprofile extends BaseTest {
 		map.put("adminPass", "pass2023");
 		map.put("groupName", "TCS");
 		return new Object[][] {{map}};
+	}
+	
+	@DataProvider
+	public Object[][] basicDeatils() throws Throwable
+	{
+		List<HashMap<String,String>> data = getJsonDataToMap(System.getProperty("user.dir")+"//src//test//java//serien//Data//HRprofile.json");
+		return new Object[][]  { {data.get(0)} };
+	}
+	
+	@DataProvider
+	public Object[][] basicDeatils2() throws Throwable
+	{
+		List<HashMap<String,String>> data = getJsonDataToMap(System.getProperty("user.dir")+"//src//test//java//serien//Data//HRprofile.json");
+		return new Object[][]  { {data.get(1)} };
 	}
 
 }

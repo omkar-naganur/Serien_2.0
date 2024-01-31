@@ -1,34 +1,38 @@
 [
 {
-	"Useremail":"omkar@krishworks.com",
+	"Useremail":"yijise7335@notedns.com",
 	"userpass":"password",
 	"adminEmail":"admin@demo.com",
 	"adminPass":"pass2023",
+	
 	"typeOfTraining":"course",
 	"CourseName":"Safety and inclusion at the workplace",
-	"GroupName":"Sitero_PoSH_2023",
-	"dueDate":"12/12/2024",
-	"MicroLearningCourses":"Confirmation bias",
-	"Gamesname":"Omkar test"
+	"groupName":"admin Enrollments Test Autmation group 1",
+	"dueDate":"12/12/2024"
 },
+
 {
-	"Useremail":"omkar@krishworks.com",
+	"Useremail":"yijise7335@notedns.com",
 	"userpass":"password",
 	"adminEmail":"admin@demo.com",
 	"adminPass":"pass2023",
+	
 	"typeOfTraining":"Micro course",
-	"GroupName":"Sitero_PoSH_2023",
-	"dueDate":"12/12/2024",
-	"MicroLearningCourses":"Confirmation bias"
+	"CourseName":"Confirmation bias",
+	"groupName":"admin Enrollments Test Autmation group 1",
+	"dueDate":"12/12/2024"
+	
 },
+
 {
-	"Useremail":"omkar@krishworks.com",
+	"Useremail":"yijise7335@notedns.com",
 	"userpass":"password",
 	"adminEmail":"admin@demo.com",
 	"adminPass":"pass2023",
+	
 	"typeOfTraining":"Games",
-	"GroupName":"Sitero_PoSH_2023",
-	"dueDate":"12/12/2024",
-	"Gamesname":"Omkar test"
+	"CourseName":"Omkar test",
+	"groupName":"admin Enrollments Test Autmation group 1",
+	"dueDate":"12/12/2024"
 }
 ]

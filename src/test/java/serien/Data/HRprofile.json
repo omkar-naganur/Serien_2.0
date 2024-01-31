@@ -1,0 +1,21 @@
+[
+{
+	"Useremail":"yijise7335@notedns.com",
+	"userpass":"password",
+	"adminEmail":"admin@demo.com",
+	"adminPass":"pass2023",
+	"testCompanyName":"Lodhi rahul",
+	"startdate":"30/12/2024",
+	"enddate":"12/12/2024",
+	"noticeperiod":"10"
+},
+
+{
+	"Useremail":"anushan@krishworks.com",
+	"userpass":"password",
+	"adminEmail":"admin@demo.com",
+	"adminPass":"pass2023",
+	"userName":"anu"
+	
+}
+]

@@ -293,11 +293,11 @@ public class AdminGroupEnrollment extends abstractReusable{
 	
 	public boolean findingGroupEnrollment (String CoursesName, String Groupname) throws Throwable
 	{
-		waitForWebElementTOApper(groupNameSearchBar);
-		waitForWebElementTOApper(groupNameSearchButton);
-		groupNameSearchBar.click();
-		groupNameSearchBar.sendKeys(Groupname);
-		groupNameSearchButton.click();
+//		waitForWebElementTOApper(groupNameSearchBar);
+//		waitForWebElementTOApper(groupNameSearchButton);
+//		groupNameSearchBar.click();
+//		groupNameSearchBar.sendKeys(Groupname);
+//		groupNameSearchButton.click();
 		
 				waitForWebElementTOApper(getCoursesNameList);
 				Thread.sleep(2000);
@@ -320,7 +320,7 @@ public class AdminGroupEnrollment extends abstractReusable{
 						System.out.println(ar.get(i)+ "=="+ ars.get(i));
 						if(ar.get(i).equals(CoursesName)&& ars.get(i).equals(Groupname)){
 							System.out.println("milgya***********************");
-							Thread.sleep(3000);
+							Thread.sleep(1000);
 							System.out.println(i);
 							clickOnViewButton(i-1);
 							milgya = true;
