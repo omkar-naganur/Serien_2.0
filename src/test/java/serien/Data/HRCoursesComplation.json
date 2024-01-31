@@ -1,0 +1,39 @@
+[
+{
+	"Useremail":"automation1@gmail.com",
+	"userpass":"password",
+	"adminEmail":"admin@demo.com",
+	"adminPass":"pass2023",
+	"CourseName":"automatiom Test Training",
+	"//write answers":"",
+	"quiz1Ans1":"Priya can reach out to both her company’s IC or the client's IC based on her comfort.",
+	"quiz1Ans2":"Three colleagues go to a cafe for a weekend brunch. One of them is verbally harassed by the staff of the restaurant.",
+	"quiz2Ans1":"The impact of Gaurav’s behaviour on Nisha is certainly more relevant here.",
+	"//worng answers":"you need to change the data varibale in code only ",
+	"Wquiz1Ans1":"Priya must only reach out to her company’s IC for any complaint against her colleague Ravi and the client’s IC for complaint against John.",
+	"Wquiz1Ans2":"A client requesting for sexual favours over a video call in exchange for their buy-in."
+
+},
+
+{
+	"Useremail":"automation1@gmail.com",
+	"userpass":"password",
+	"adminEmail":"admin@demo.com",
+	"adminPass":"pass2023",
+	"CourseName":"Descriptive & prescriptive stereotypes",
+	"//write answers":"",
+	"quiz1Ans1":"All of the above"
+},
+
+{
+	"Useremail":"automation1@gmail.com",
+	"userpass":"password",
+	"adminEmail":"admin@demo.com",
+	"adminPass":"pass2023",
+	"CourseName":"What cards have you been dealt?",
+	"//write answers":"",
+	"quiz1Ans1":"All of the above"
+}
+
+
+]

@@ -1,7 +1,10 @@
 package Serien.SerienLive;
 
 import org.testng.annotations.Test;
+
+import java.io.IOException;
 import java.util.HashMap;
+import java.util.List;
 
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
@@ -9,7 +12,7 @@ import org.testng.annotations.Test;
 
 import serien.TestComponents.BaseTest;
 
-public class HRCoursesComplation extends BaseTest{
+public class HRCoursesComplation extends BaseTest {
 	
 	@Test(dataProvider = "getDataCourses", priority = 1)
 	public void ValidationOfCoursesAttend (HashMap<String, String> input) throws Throwable
@@ -39,7 +42,7 @@ public class HRCoursesComplation extends BaseTest{
 	{	
 		Profile profile=LoginPage.serienLogin(input.get("Useremail"), input.get("userpass"));
 		Learning lr= new Learning(driver);	
-		lr.OpenTheMicroLearning(input.get("microLearning"));
+		lr.OpenTheMicroLearning(input.get("CourseName"));
 		lr.coursesStart(); 
 		lr.coursesVideoAttend();
 		Boolean quizStatus1=lr.coursesQuizWith1Question(input.get("quiz1Ans1"));
@@ -57,60 +60,49 @@ public class HRCoursesComplation extends BaseTest{
 	{	
 		Profile profile=LoginPage.serienLogin(input.get("Useremail"), input.get("userpass"));
 		Learning lr= new Learning(driver);	
-		lr.OpenTheGame(input.get("game"));
+		lr.OpenTheGame(input.get("CourseName"));
 		lr.AccepectingAcknowledge();
 		lr.coursesStart(); 
-		
+	}
+	
+	@Test(dataProvider = "getDataGames", priority = 4)
+	public void all3CoursesProgressReset (HashMap<String, String> input) throws Throwable
+	{	
+		Profile profile=LoginPage.serienLogin(input.get("adminEmail"), input.get("adminPass"));
+		AdminUser au= new AdminUser(driver);
+		au.users();
+		au.searchByEmail(input.get("Useremail"));
+		au.clickOnViewButton();
+		au.deleteProgress(input.get("CourseName"));
+		au.users();
 	}
 	
 	@DataProvider
-	public Object[][] getDataCourses() //for only Courses
+	public Object[][] getDataCourses() throws Throwable //for only Courses
 	{
-		HashMap<String, String> map= new HashMap<String, String>();
-		map.put("Useremail", "omkar@krishworks.com");
-		map.put("userpass", "password");
-		map.put("adminEmail", "admin@demo.com");
-		map.put("adminPass", "pass2023");
-		map.put("CourseName", "automatiom Test Training");
-		//write answers
-		map.put("quiz1Ans1", "Priya can reach out to both her company’s IC or the client's IC based on her comfort.");
-		map.put("quiz1Ans2", "Three colleagues go to a cafe for a weekend brunch. One of them is verbally harassed by the staff of the restaurant.");
-		map.put("quiz2Ans1", "The impact of Gaurav’s behaviour on Nisha is certainly more relevant here.");
-		//worng answers       
-	//	map.put("quizAns1", "Priya must only reach out to her company’s IC for any complaint against her colleague Ravi and the client’s IC for complaint against John.");
-	//	map.put("quizAns2", "A client requesting for sexual favours over a video call in exchange for their buy-in.");
-		
-		return new Object[][] {{map}};
+		List<HashMap<String,String>> data = getJsonDataToMap(System.getProperty("user.dir")+"//src//test//java//serien//Data//HRCoursesComplation.json");
+		return new Object[][]  { {data.get(0)} };
 	}
 	
 	@DataProvider
-	public Object[][] getDataMicroLearning() //for only MicroLearning
+	public Object[][] getDataMicroLearning() throws Throwable //for only MicroLearning
 	{
-		HashMap<String, String> map= new HashMap<String, String>();
-		map.put("Useremail", "omkar@krishworks.com");
-		map.put("userpass", "password");
-		map.put("adminEmail", "admin@demo.com");
-		map.put("adminPass", "pass2023");
-		map.put("microLearning", "Descriptive & prescriptive stereotypes");
-		//write answers
-		map.put("quiz1Ans1", "All of the above");
-		
-		return new Object[][] {{map}};
+		List<HashMap<String,String>> data = getJsonDataToMap(System.getProperty("user.dir")+"//src//test//java//serien//Data//HRCoursesComplation.json");
+		return new Object[][]  { {data.get(1)} };
 	}
 	
 	@DataProvider
-	public Object[][] getDataGames() //for only games
+	public Object[][] getDataGames() throws Throwable //for only games
 	{
-		HashMap<String, String> map= new HashMap<String, String>();
-		map.put("Useremail", "omkar@krishworks.com");
-		map.put("userpass", "password");
-		map.put("adminEmail", "admin@demo.com");
-		map.put("adminPass", "pass2023");
-		map.put("game", "What cards have you been dealt?");
-		//write answers
-		map.put("quiz1Ans1", "All of the above");
-		
-		return new Object[][] {{map}};
+		List<HashMap<String,String>> data = getJsonDataToMap(System.getProperty("user.dir")+"//src//test//java//serien//Data//HRCoursesComplation.json");
+		return new Object[][]  { {data.get(2)} };
+	}
+	
+	@DataProvider
+	public Object[][] DataClearOrTearDown() throws Throwable //for only games
+	{
+		List<HashMap<String,String>> data = getJsonDataToMap(System.getProperty("user.dir")+"//src//test//java//serien//Data//HRCoursesComplation.json");
+		return new Object[][]  { {data.get(0)}, {data.get(1)}, {data.get(2)} };
 	}
 	
 }
