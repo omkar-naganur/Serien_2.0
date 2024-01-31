@@ -65,7 +65,7 @@ public class HRCoursesComplation extends BaseTest {
 		lr.coursesStart(); 
 	}
 	
-	@Test(dataProvider = "getDataGames", priority = 4)
+	@Test(dataProvider = "DataClearOrTearDown", priority = 4)
 	public void all3CoursesProgressReset (HashMap<String, String> input) throws Throwable
 	{	
 		Profile profile=LoginPage.serienLogin(input.get("adminEmail"), input.get("adminPass"));

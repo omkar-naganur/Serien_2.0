@@ -1,32 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="3" total="4" passed="1" failed="0" skipped="0">
+<testng-results ignored="3" total="6" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-01-31T09:28:26Z" name="Default suite" finished-at="2024-01-31T09:28:36Z" duration-ms="9289">
+  <suite started-at="2024-01-31T11:24:35Z" name="Default suite" finished-at="2024-01-31T11:25:18Z" duration-ms="42290">
     <groups>
     </groups>
-    <test started-at="2024-01-31T09:28:26Z" name="Default test" finished-at="2024-01-31T09:28:36Z" duration-ms="9289">
-      <class name="Serien.SerienLive.HRlearning">
-        <test-method is-config="true" signature="lunchApplication()[pri:0, instance:Serien.SerienLive.HRlearning@7582ff54]" started-at="2024-01-31T09:28:26Z" name="lunchApplication" finished-at="2024-01-31T09:28:29Z" duration-ms="2854" status="PASS">
+    <test started-at="2024-01-31T11:24:35Z" name="Default test" finished-at="2024-01-31T11:25:18Z" duration-ms="42290">
+      <class name="Serien.SerienLive.HRCoursesComplation">
+        <test-method is-config="true" signature="lunchApplication()[pri:0, instance:Serien.SerienLive.HRCoursesComplation@5f354bcf]" started-at="2024-01-31T11:24:36Z" name="lunchApplication" finished-at="2024-01-31T11:24:38Z" duration-ms="2669" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- lunchApplication -->
-        <test-method signature="ValidationOfDisclimerErrorMesg(java.util.HashMap)[pri:1, instance:Serien.SerienLive.HRlearning@7582ff54]" started-at="2024-01-31T09:28:29Z" name="ValidationOfDisclimerErrorMesg" data-provider="getdata" finished-at="2024-01-31T09:28:36Z" duration-ms="6273" status="PASS">
+        <test-method signature="all3CoursesProgressReset(java.util.HashMap)[pri:4, instance:Serien.SerienLive.HRCoursesComplation@5f354bcf]" started-at="2024-01-31T11:24:38Z" name="all3CoursesProgressReset" data-provider="DataClearOrTearDown" finished-at="2024-01-31T11:24:50Z" duration-ms="11901" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{CourseName=automatiom Test Training, GroupName=Sitero_PoSH_2023, Useremail=wisepot510@newnime.com, typeOfTraining=course, userpass=password, dueDate=12/12/2024, adminPass=pass2023, ExpDiscilemrAlertMeg=Please Acknowledge Disclaimer First !, adminEmail=admin@demo.com}]]>
+                <![CDATA[{CourseName=automatiom Test Training, quiz1Ans2=Three colleagues go to a cafe for a weekend brunch. One of them is verbally harassed by the staff of the restaurant., //worng answers=you need to change the data varibale in code only , quiz1Ans1=Priya can reach out to both her company’s IC or the client's IC based on her comfort., adminPass=pass2023, //write answers=, Useremail=automation1@gmail.com, Wquiz1Ans2=A client requesting for sexual favours over a video call in exchange for their buy-in., quiz2Ans1=The impact of Gaurav’s behaviour on Nisha is certainly more relevant here., Wquiz1Ans1=Priya must only reach out to her company’s IC for any complaint against her colleague Ravi and the client’s IC for complaint against John., userpass=password, adminEmail=admin@demo.com}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ValidationOfDisclimerErrorMesg -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:Serien.SerienLive.HRlearning@7582ff54]" started-at="2024-01-31T09:28:36Z" name="tearDown" finished-at="2024-01-31T09:28:36Z" duration-ms="0" status="PASS">
+        </test-method> <!-- all3CoursesProgressReset -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Serien.SerienLive.HRCoursesComplation@5f354bcf]" started-at="2024-01-31T11:24:50Z" name="tearDown" finished-at="2024-01-31T11:24:50Z" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- Serien.SerienLive.HRlearning -->
+        <test-method is-config="true" signature="lunchApplication()[pri:0, instance:Serien.SerienLive.HRCoursesComplation@5f354bcf]" started-at="2024-01-31T11:24:50Z" name="lunchApplication" finished-at="2024-01-31T11:24:52Z" duration-ms="1921" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- lunchApplication -->
+        <test-method signature="all3CoursesProgressReset(java.util.HashMap)[pri:4, instance:Serien.SerienLive.HRCoursesComplation@5f354bcf]" started-at="2024-01-31T11:24:52Z" name="all3CoursesProgressReset" data-provider="DataClearOrTearDown" finished-at="2024-01-31T11:25:04Z" duration-ms="11716" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{CourseName=Descriptive & prescriptive stereotypes, Useremail=automation1@gmail.com, userpass=password, quiz1Ans1=All of the above, adminPass=pass2023, adminEmail=admin@demo.com, //write answers=}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- all3CoursesProgressReset -->
+        <test-method is-config="true" signature="lunchApplication()[pri:0, instance:Serien.SerienLive.HRCoursesComplation@5f354bcf]" started-at="2024-01-31T11:25:04Z" name="lunchApplication" finished-at="2024-01-31T11:25:06Z" duration-ms="2379" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- lunchApplication -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Serien.SerienLive.HRCoursesComplation@5f354bcf]" started-at="2024-01-31T11:25:04Z" name="tearDown" finished-at="2024-01-31T11:25:04Z" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="all3CoursesProgressReset(java.util.HashMap)[pri:4, instance:Serien.SerienLive.HRCoursesComplation@5f354bcf]" started-at="2024-01-31T11:25:06Z" name="all3CoursesProgressReset" data-provider="DataClearOrTearDown" finished-at="2024-01-31T11:25:18Z" duration-ms="11536" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{CourseName=What cards have you been dealt?, Useremail=automation1@gmail.com, userpass=password, quiz1Ans1=All of the above, adminPass=pass2023, adminEmail=admin@demo.com, //write answers=}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- all3CoursesProgressReset -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Serien.SerienLive.HRCoursesComplation@5f354bcf]" started-at="2024-01-31T11:25:18Z" name="tearDown" finished-at="2024-01-31T11:25:18Z" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- Serien.SerienLive.HRCoursesComplation -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

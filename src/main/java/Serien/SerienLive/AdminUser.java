@@ -238,7 +238,7 @@ public class AdminUser extends abstractReusable {
 
 	public void deleteProgress(String courses) throws Throwable{
 		
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		waitForWebElementTOApper(coursesName);
 	
 		for(int i=0;i<coursesName.size(); i++)
@@ -250,7 +250,10 @@ public class AdminUser extends abstractReusable {
 			test.selectByVisibleText("Delete Progress");
 		}
 		}
-		Thread.sleep(3000);
+		Thread.sleep(2000);
+		ScrollUp500();
+		Thread.sleep(1000);
+
 	}
 
 	public ArrayList<String> getUserdeatilsOfTheCourses(String courses) throws Throwable{

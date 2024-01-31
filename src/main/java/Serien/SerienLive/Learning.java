@@ -40,6 +40,12 @@ public class Learning extends abstractReusable{
 	@FindBy(xpath = "//div[contains(@class, 'zoomtwo')]/p")
 	WebElement learningPageCoursesName ;
 	
+	@FindBy(xpath = "//div[@class='MuiBox-root css-1uu9nal']/div[1]")
+	List<WebElement> sampleMicroLearningList ;
+	
+	@FindBy(xpath = "//div[@class='MuiBox-root css-1uu9nal']/div[2]")
+	List<WebElement> microLearningViewButton ;
+	
 	//List OF view all buttons
 	
 	@FindBy(xpath = "//div[contains(text(),'Courses')]/..//div[4]")
@@ -461,6 +467,18 @@ public class Learning extends abstractReusable{
 
 	public Boolean OpenTheMicroLearning (String microLearning) {
 		Boolean FlageCourseFound = false;
+		try {
+		for(int x=0; x < sampleMicroLearningList.size(); x++ ) {
+			String micname= sampleMicroLearningList.get(x).getText();
+			if (micname.equals(microLearning)) {
+				microLearningViewButton.get(x).click();
+				FlageCourseFound = true;
+			}
+			
+		}}
+		catch (Exception e) {
+			// TODO: handle exception
+		
 				waitForWebElementTOApper(microLearningViewall);
 				microLearningViewall.click();
 				waitForWebElementTOApper(getMicroLearningNames);
@@ -482,7 +500,9 @@ public class Learning extends abstractReusable{
 						 FlageCourseFound = false ;
 						 }
 				}
-				return FlageCourseFound ;
+				
+		}
+		return FlageCourseFound ;
 			}
 	
 	public Boolean OpenTheGame (String gameName) throws Throwable {
