@@ -102,7 +102,7 @@
                     <div class="method-list-content passed suite-Default_suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="Serien.SerienLive.HRprofile" class="method navigator-link" hash-for-method="ValidationOfUserNameFromAdminPanleToHRpanle({Useremail=anushan@krishworks.com, adminPass=pass2023, userName=anu, userpass=password, adminEmail=a...)">ValidationOfUserNameFromAdminPanleToHRpanle({Useremail=anushan@krishworks.com, adminPass=pass2023, userName=anu, userpass=password, adminEmail=a...)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="Serien.SerienLive.HRlearning" class="method navigator-link" hash-for-method="ValidationOfDisclimerErrorMesg({CourseName=automatiom Test Training, GroupName=Sitero_PoSH_2023, Useremail=wisepot510@newnime.com, ...)">ValidationOfDisclimerErrorMesg({CourseName=automatiom Test Training, GroupName=Sitero_PoSH_2023, Useremail=wisepot510@newnime.com, ...)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Default_suite -->
@@ -120,15 +120,15 @@
           <div class="suite-Default_suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">Serien.SerienLive.HRprofile</span>
+              <span class="class-name">Serien.SerienLive.HRlearning</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="ValidationOfUserNameFromAdminPanleToHRpanle({Useremail=anushan@krishworks.com, adminPass=pass2023, userName=anu, userpass=password, adminEmail=a...)">
-                  </a> <!-- ValidationOfUserNameFromAdminPanleToHRpanle({Useremail=anushan@krishworks.com, adminPass=pass2023, userName=anu, userpass=password, adminEmail=a...) -->
-                  <span class="method-name">ValidationOfUserNameFromAdminPanleToHRpanle</span>
-                  <span class="parameters">({Useremail=anushan@krishworks.com, adminPass=pass2023, userName=anu, userpass=password, adminEmail=admin@demo.com})</span>
+                  <a name="ValidationOfDisclimerErrorMesg({CourseName=automatiom Test Training, GroupName=Sitero_PoSH_2023, Useremail=wisepot510@newnime.com, ...)">
+                  </a> <!-- ValidationOfDisclimerErrorMesg({CourseName=automatiom Test Training, GroupName=Sitero_PoSH_2023, Useremail=wisepot510@newnime.com, ...) -->
+                  <span class="method-name">ValidationOfDisclimerErrorMesg</span>
+                  <span class="parameters">({CourseName=automatiom Test Training, GroupName=Sitero_PoSH_2023, Useremail=wisepot510@newnime.com, typeOfTraining=course, userpass=password, dueDate=12/12/2024, adminPass=pass2023, ExpDiscilemrAlertMeg=Please Acknowledge Disclaimer First !, adminEmail=admin@demo.com})</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -136,7 +136,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">/tmp/testng-eclipse-932611724/testng-customsuite.xml</span>
+            <span class="header-content">/tmp/testng-eclipse--319177905/testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -145,11 +145,11 @@
 &lt;suite name=&quot;Default suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Default test&quot; verbose=&quot;2&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;Serien.SerienLive.HRprofile&quot;&gt;
+      &lt;class name=&quot;Serien.SerienLive.HRlearning&quot;&gt;
         &lt;methods&gt;
-          &lt;include name=&quot;ValidationOfUserNameFromAdminPanleToHRpanle&quot;/&gt;
+          &lt;include name=&quot;ValidationOfDisclimerErrorMesg&quot;/&gt;
         &lt;/methods&gt;
-      &lt;/class&gt; &lt;!-- Serien.SerienLive.HRprofile --&gt;
+      &lt;/class&gt; &lt;!-- Serien.SerienLive.HRlearning --&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -191,14 +191,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'ValidationOfUserNameFromAdminPanleToHRpanle')
-data.setCell(0, 2, 'Serien.SerienLive.HRprofile')
-data.setCell(0, 3, 22168);
+data.setCell(0, 1, 'ValidationOfDisclimerErrorMesg')
+data.setCell(0, 2, 'Serien.SerienLive.HRlearning')
+data.setCell(0, 3, 6273);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 22 seconds</span>
+              <span class="suite-total-time">Total running time: 6 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -213,15 +213,17 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">2 ignored methods</span>
+            <span class="header-content">3 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="ignored-class-div">
-              <span class="ignored-class-name">Serien.SerienLive.HRprofile</span>
+              <span class="ignored-class-name">Serien.SerienLive.HRlearning</span>
               <div class="ignored-methods-div">
-                <span class="ignored-method-name">ValidationOfSubscriptionDateInHRpanle</span>
+                <span class="ignored-method-name">ValidationOfDisclimerAccepectingAcknowledgeAndStartGame</span>
                 <br/>
-                <span class="ignored-method-name">ValidationOfSubscriptionEndDate</span>
+                <span class="ignored-method-name">ValidationOfDisclimerAccepectingAcknowledgeAndStartTheCourses</span>
+                <br/>
+                <span class="ignored-method-name">ValidationOfDisclimerAccepectingAcknowledgeAndStartMicroLearning</span>
                 <br/>
               </div> <!-- ignored-methods-div -->
             </div> <!-- ignored-class-div -->
@@ -233,18 +235,18 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">Serien.SerienLive.HRprofile</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">Serien.SerienLive.HRlearning</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">lunchApplication</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">ValidationOfUserNameFromAdminPanleToHRpanle({Useremail=anushan@krishworks.com, adminPass=pass2023, userName=anu, userpass=password, adminEmail=a...)</span>
-                <span class="method-start">5022 ms</span>
+                <span class="method-name">ValidationOfDisclimerErrorMesg({CourseName=automatiom Test Training, GroupName=Sitero_PoSH_2023, Useremail=wisepot510@newnime.com, ...)</span>
+                <span class="method-start">2855 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">27192 ms</span>
+                <span class="method-start">9129 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

@@ -1,0 +1,40 @@
+[
+{
+	"typeOfTraining":"course",
+	"Useremail":"wisepot510@newnime.com",
+	"userpass":"password",
+	"adminEmail":"admin@demo.com",
+	"adminPass":"pass2023",
+	
+	"CourseName":"automatiom Test Training", 
+	"GroupName":"Sitero_PoSH_2023",
+	"dueDate":"12/12/2024",
+	"ExpDiscilemrAlertMeg":"Please Acknowledge Disclaimer First !"
+},
+
+{	
+	"typeOfTraining":"Micro course",
+	"Useremail":"wisepot510@newnime.com",
+	"userpass":"password",
+	"adminEmail":"admin@demo.com",
+	"adminPass":"pass2023",
+	
+	"CourseName":"Disclimer autmation test HiPPO", 
+	"GroupName":"Sitero_PoSH_2023",
+	"dueDate":"12/12/2024",
+	"ExpDiscilemrAlertMeg":"Please Acknowledge Disclaimer First !"
+},
+
+{
+	"typeOfTraining":"Games",
+	"Useremail":"wisepot510@newnime.com",
+	"userpass":"password",
+	"adminEmail":"admin@demo.com",
+	"adminPass":"pass2023",
+	
+	"CourseName":"Disclimer automation test Omkar test", 
+	"GroupName":"Sitero_PoSH_2023",
+	"dueDate":"12/12/2024",
+	"ExpDiscilemrAlertMeg":"Please Acknowledge Disclaimer First !"
+}
+]

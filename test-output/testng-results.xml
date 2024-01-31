@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="2" total="3" passed="1" failed="0" skipped="0">
+<testng-results ignored="3" total="4" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-01-31T07:22:40Z" name="Default suite" finished-at="2024-01-31T07:23:08Z" duration-ms="27532">
+  <suite started-at="2024-01-31T09:28:26Z" name="Default suite" finished-at="2024-01-31T09:28:36Z" duration-ms="9289">
     <groups>
     </groups>
-    <test started-at="2024-01-31T07:22:40Z" name="Default test" finished-at="2024-01-31T07:23:08Z" duration-ms="27532">
-      <class name="Serien.SerienLive.HRprofile">
-        <test-method is-config="true" signature="lunchApplication()[pri:0, instance:Serien.SerienLive.HRprofile@67545b57]" started-at="2024-01-31T07:22:41Z" name="lunchApplication" finished-at="2024-01-31T07:22:46Z" duration-ms="5022" status="PASS">
+    <test started-at="2024-01-31T09:28:26Z" name="Default test" finished-at="2024-01-31T09:28:36Z" duration-ms="9289">
+      <class name="Serien.SerienLive.HRlearning">
+        <test-method is-config="true" signature="lunchApplication()[pri:0, instance:Serien.SerienLive.HRlearning@7582ff54]" started-at="2024-01-31T09:28:26Z" name="lunchApplication" finished-at="2024-01-31T09:28:29Z" duration-ms="2854" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- lunchApplication -->
-        <test-method signature="ValidationOfUserNameFromAdminPanleToHRpanle(java.util.HashMap)[pri:2, instance:Serien.SerienLive.HRprofile@67545b57]" started-at="2024-01-31T07:22:46Z" name="ValidationOfUserNameFromAdminPanleToHRpanle" data-provider="basicDeatils2" finished-at="2024-01-31T07:23:08Z" duration-ms="22168" status="PASS">
+        <test-method signature="ValidationOfDisclimerErrorMesg(java.util.HashMap)[pri:1, instance:Serien.SerienLive.HRlearning@7582ff54]" started-at="2024-01-31T09:28:29Z" name="ValidationOfDisclimerErrorMesg" data-provider="getdata" finished-at="2024-01-31T09:28:36Z" duration-ms="6273" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{Useremail=anushan@krishworks.com, adminPass=pass2023, userName=anu, userpass=password, adminEmail=admin@demo.com}]]>
+                <![CDATA[{CourseName=automatiom Test Training, GroupName=Sitero_PoSH_2023, Useremail=wisepot510@newnime.com, typeOfTraining=course, userpass=password, dueDate=12/12/2024, adminPass=pass2023, ExpDiscilemrAlertMeg=Please Acknowledge Disclaimer First !, adminEmail=admin@demo.com}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ValidationOfUserNameFromAdminPanleToHRpanle -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:Serien.SerienLive.HRprofile@67545b57]" started-at="2024-01-31T07:23:08Z" name="tearDown" finished-at="2024-01-31T07:23:08Z" duration-ms="0" status="PASS">
+        </test-method> <!-- ValidationOfDisclimerErrorMesg -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Serien.SerienLive.HRlearning@7582ff54]" started-at="2024-01-31T09:28:36Z" name="tearDown" finished-at="2024-01-31T09:28:36Z" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- Serien.SerienLive.HRprofile -->
+      </class> <!-- Serien.SerienLive.HRlearning -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

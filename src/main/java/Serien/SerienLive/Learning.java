@@ -37,7 +37,7 @@ public class Learning extends abstractReusable{
 	@FindBy(xpath = "(//div[@class='sectionname MuiBox-root css-1isemmb'])[4]")
 	WebElement Games ;
 	
-	@FindBy(xpath = "//div[contains(@class, \"zoomtwo\")]/p")
+	@FindBy(xpath = "//div[contains(@class, 'zoomtwo')]/p")
 	WebElement learningPageCoursesName ;
 	
 	//List OF view all buttons
@@ -359,6 +359,8 @@ public class Learning extends abstractReusable{
 		String sampleCoursesName =learningPageCoursesName.getText();
 		
 		Boolean FlageCourseFound =false ;
+//		System.out.println(sampleCoursesName);
+//		System.out.println(CoursesName);
 		
 		if(sampleCoursesName.equals(CoursesName)) {
 			System.out.println("Courses Found = "+sampleCoursesName);
