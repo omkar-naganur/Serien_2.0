@@ -1,8 +1,8 @@
 adminENrollments= yijise7335@notedns.com
 endtoEndtestcase= omkar@krishworks.com
-HRCoursesComplation= 
+HRCoursesComplation= automation1@gmail.com
 enrollment test data = 
 Hr learning = wisepot510@newnime.com
 Hr Profile = yijise7335@notedns.com , anushan@krishworks.com,
 serienUserData= 
-serien
+

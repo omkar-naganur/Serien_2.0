@@ -146,6 +146,7 @@ public class ProgressReport extends abstractReusable{
 			String coursesName=courseNamesListInReport.get(i).getText();
 			nameOfCourses.add(coursesName);
 		}
+	//	System.out.println(nameOfCourses);
 		return nameOfCourses;
 	}
 	

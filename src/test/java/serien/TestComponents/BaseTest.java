@@ -140,5 +140,4 @@ public class BaseTest {
 //		//a[contains(text(),'SAP M')]
 
 //scrcpy
-// test push from evening
 
