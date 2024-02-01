@@ -24,8 +24,10 @@ import org.openqa.selenium.interactions.Actions;
 
 public class GetSubDate extends BaseTest {
 	
+	// trail test 
+	
 	@Test(dataProvider = "getdata4")
-	public void ValidationDiversityMetric(HashMap<String, String> input) throws Throwable
+	public void getSubscriptionEndDateInProgressReport (HashMap<String, String> input) throws Throwable
 	{
 		LoginPage Dm= new LoginPage(driver);
 		Dm.serienLogin(input.get("Useremail"), input.get("userpass"));
@@ -39,7 +41,7 @@ public class GetSubDate extends BaseTest {
 		actions.doubleClick(graphElement).perform();
 		// Now, you can get the text from the double-clicked element
 		String textAfterDoubleClick = graphElement.getText();
-		System.out.println(textAfterDoubleClick);
+		System.out.println("SubscriptionEndDate"+textAfterDoubleClick);
 		
 	}
 	

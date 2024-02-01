@@ -40,6 +40,24 @@
     <classes>
       <class name="Serien.SerienLive.HRprogressReport"/>   
     </classes>
-    
   </test> <!-- Test -->
+  
+  <test thread-count="5" name="Test6">
+    <classes>
+      <class name="Serien.SerienLive.EndToEndTestCase"/>    
+    </classes>
+    </test> <!-- Test -->
+    
+      <test thread-count="5" name="Test6">
+    <classes>
+      <class name="Serien.SerienLive.GetSubDate"/>    
+    </classes>
+    </test> <!-- Test -->
+    
+      <test thread-count="5" name="Test7">
+    <classes>
+      <class name="Serien.SerienLive.GroupTest"/>    
+    </classes>
+    </test> <!-- Test -->
+  
 </suite> <!-- Suite -->

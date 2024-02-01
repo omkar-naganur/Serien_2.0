@@ -29,6 +29,8 @@ import serien.TestComponents.BaseTest;
 
 public class EndToEndTestCase extends BaseTest {
 	
+	// befor run this test set the new user for diffrent company
+	
 	@Test(dataProvider = "NewCompanyWithHRcoursesComplation", priority = 1)
 	public void NewCompanyWithHRcoursesComplation (HashMap<String, String> input) throws Throwable {
 		AdminSetting as= new AdminSetting(driver);
@@ -49,7 +51,7 @@ public class EndToEndTestCase extends BaseTest {
 		Thread.sleep(2000);
 		ag.groups();
 		ag.creatingGroup(groupName, companyname, input.get("groupExpDate"));
-		ag.SearchingComapnyNameInGroupListSecond(groupName);  
+		ag.SearchingGroupNameInGroupList(groupName);  
 		// user company and group changing 
 		
 		AdminUser au= new AdminUser(driver); 
