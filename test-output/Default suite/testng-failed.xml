@@ -3,13 +3,17 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Serien.SerienLive.AdminEnrollments">
+      <class name="Serien.SerienLive.HRlearning">
         <methods>
+          <include name="ValidationOfDisclimerAccepectingAcknowledgeAndStartGame"/>
           <include name="tearDown"/>
-          <include name="ComplateTheCourseforAParticularUser" invocation-numbers="1 2"/>
+          <include name="DeleteUserProgressForMakeDisclimerTrue"/>
+          <include name="ValidationOfDisclimerAccepectingAcknowledgeAndStartMicroLearning"/>
+          <include name="ValidationOfDisclimerAccepectingAcknowledgeAndStartTheCourses"/>
+          <include name="ValidationOfDisclimerErrorMesg" invocation-numbers="0"/>
           <include name="lunchApplication"/>
         </methods>
-      </class> <!-- Serien.SerienLive.AdminEnrollments -->
+      </class> <!-- Serien.SerienLive.HRlearning -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
