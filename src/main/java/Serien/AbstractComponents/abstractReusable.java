@@ -2,6 +2,7 @@ package Serien.AbstractComponents;
 
 import java.time.Duration;
 import java.util.List;
+import java.util.Random;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
@@ -218,6 +219,13 @@ public class abstractReusable {
 			LoginPage lp= new LoginPage(driver);
 			lp.serienWebLogin(userEmail, UserPass);
 	}
-
+	
+	public int randomNumberGenerater() {
+		 // create instance of Random class
+        Random rand = new Random();
+        // Generate random integers in range 0 to 999
+        int rand_int1 = rand.nextInt(1000);
+        return rand_int1;
+	}
 	
 }

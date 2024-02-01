@@ -17,6 +17,8 @@ import serien.TestComponents.BaseTest;
 
 public class CourseDataAndProgression extends BaseTest {
 	
+	// this class for only trailes purpose not need to run in regression 
+	
 	@Test(dataProvider = "getdata2")
 	public void ValidationCourse(HashMap<String, String> input) throws Throwable
 	{
@@ -83,8 +85,6 @@ public class CourseDataAndProgression extends BaseTest {
 			moduleName.get(i).click();
 			System.out.println(moduleName.get(i).getText());
 		}
-		
-		
 		
 		// need to change the courses then start the test
 		//modules name

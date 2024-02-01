@@ -31,12 +31,14 @@ public class EndToEndTestCase extends BaseTest {
 	
 	@Test(dataProvider = "NewCompanyWithHRcoursesComplation", priority = 1)
 	public void NewCompanyWithHRcoursesComplation (HashMap<String, String> input) throws Throwable {
-		String companyname=input.get("companyName");
-		String groupName= input.get("GroupName");
+		AdminSetting as= new AdminSetting(driver);
+		int number=as.randomNumberGenerater();
+		String companyname= (input.get("companyName")+number);
+		String groupName= input.get("GroupName")+number;
 		String CourseName= input.get("CourseName");
 		LoginPage Dm= new LoginPage(driver);
 		Dm.serienLogin(input.get("AdminUseremail"), input.get("Adminuserpass"));
-		AdminSetting as= new AdminSetting(driver);
+		
 		Dm.Setting();	
 		as.CompanySettingsOpen();
 		as.CompanyCreatePage();
@@ -64,7 +66,7 @@ public class EndToEndTestCase extends BaseTest {
 		age.gotoAddNewGroupEnrollment();
 		age.selectTrainingType(input.get("typeOfTraining"));
 		age.selectCourseName(CourseName);
-		age.selectGroupName(input.get("GroupName"));
+		age.selectGroupName(groupName);
 		age.selectDueDate(input.get("groupExpDate"));
 		age.saveGroupEnrollment();  
 		Thread.sleep(2000);
@@ -151,8 +153,10 @@ public class EndToEndTestCase extends BaseTest {
 	
 	@Test(dataProvider = "ValidationOfCoursesComplationFromTheAdmin", priority = 2)
 	public void ValidationOfCoursesComplationFromTheAdmin (HashMap<String, String> input) throws Throwable {
+		AdminGroupPage group= new AdminGroupPage(driver);
+		int number=group.randomNumberGenerater();
 		String companyName = input.get("companyName");
-		String groupName = input.get("groupName");
+		String groupName = input.get("groupName")+number;
 		String typeOfTraining = input.get("typeOfTraining");
 		String CourseName = input.get("CourseName");
 		String adminEmail = input.get("adminEmail");
@@ -161,7 +165,6 @@ public class EndToEndTestCase extends BaseTest {
 		String userPass = input.get("userPass");
 		
 		Profile profile=LoginPage.serienLogin(input.get("adminEmail"), input.get("adminPass"));
-		AdminGroupPage group= new AdminGroupPage(driver);
 		group.groups();
 		group.creatingGroup(groupName, companyName, input.get("groupExp"));
 		AdminUser au= new AdminUser(driver);
@@ -247,8 +250,10 @@ public class EndToEndTestCase extends BaseTest {
 	
 	@Test(dataProvider = "ValidationOfGroupDateExpiredDataSheet", priority = 3)
 	public void ValidationOfGroupDateExpired (HashMap<String, String> input) throws Throwable{
+		AdminGroupPage group= new AdminGroupPage(driver);
+		int number=group.randomNumberGenerater();
 		String companyName = input.get("companyName");
-		String groupName = input.get("groupName");
+		String groupName = input.get("groupName")+number;
 		String typeOfTraining = input.get("typeOfTraining");
 		String CourseName = input.get("CourseName");
 		String adminEmail = input.get("adminEmail");
@@ -259,8 +264,6 @@ public class EndToEndTestCase extends BaseTest {
 		String groupExpInValid = input.get("groupExpInValid");
 		
 		LoginPage.serienLogin(adminEmail, adminPass);
-		
-		AdminGroupPage group= new AdminGroupPage(driver);
 		group.groups();
 		group.creatingGroup(groupName, companyName, groupExpValid);
 		

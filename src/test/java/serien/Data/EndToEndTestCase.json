@@ -49,14 +49,14 @@
 {
 	"New Company With HRcourses Complation ":"",
 	" Login deatils":"", 
-	"Useremail":"omkar@krishworks.com",
+	"Useremail":"automation2@gmail.com",
 	"userpass": "password",
 	"AdminUseremail": "admin@demo.com",
 	"Adminuserpass": "pass2023",
 	"empName": "omkar",
 		"//*********************************":"",
 		
-		"companyName":"TCS123",
+		"companyName":"TCS12xyz",
 		"//***************************************":"",
 	      
      "startdate":"29/01/2024",
@@ -64,7 +64,7 @@
 	"enddate": "30-12-2024",
 	"noticeperiod": "10",
 	"expectedExpText": "Subscription Expired",
-	"GroupName":"TCS755Group2",
+	"GroupName":"TCS755Group",
 	"groupExpDate":"30-12-2024",
 	"CourseName":"automatiom Test Training",
 	"typeOfTraining":"course",
