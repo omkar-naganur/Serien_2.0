@@ -9,10 +9,107 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="7">Default suite</th></tr>
-<tr><td><a href="#t0">Default test</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">14,111</td><td></td><td></td></tr>
+<tr><td><a href="#t0">Default test</a></td><td class="num">14</td><td class="num">0</td><td class="num attn">2</td><td class="num">236,776</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">Serien.SerienLive.GroupTest</td><td><a href="#m0">ValidationOfGroupNameUserCountEnrollmentsCount</a></td><td rowspan="1">1706772792593</td><td rowspan="1">9038</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="2">Serien.SerienLive.AdminEnrollments</td><td><a href="#m0">ComplateTheCourseforAParticularUser</a></td><td rowspan="2">1706784874288</td><td rowspan="2">19912</td></tr><tr class="failedeven"><td><a href="#m1">ComplateTheCourseforAParticularUser</a></td></tr><tr><th colspan="4">Default test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="14">Serien.SerienLive.AdminEnrollments</td><td><a href="#m2">ComplateTheCourseforAParticularUser</a></td><td rowspan="1">1706784838446</td><td rowspan="1">33469</td></tr><tr class="passedeven"><td><a href="#m3">CreatingGroupEnrollmentOfCourse</a></td><td rowspan="3">1706784745763</td><td rowspan="3">11711</td></tr><tr class="passedeven"><td><a href="#m4">CreatingGroupEnrollmentOfCourse</a></td></tr><tr class="passedeven"><td><a href="#m5">CreatingGroupEnrollmentOfCourse</a></td></tr><tr class="passedeven"><td><a href="#m6">GetUserEnrollmentDetails</a></td><td rowspan="1">1706784813415</td><td rowspan="1">22760</td></tr><tr class="passedeven"><td><a href="#m7">ValidatingTheEnrollmentListForEnrollmentConfirmation</a></td><td rowspan="3">1706784774345</td><td rowspan="3">5433</td></tr><tr class="passedeven"><td><a href="#m8">ValidatingTheEnrollmentListForEnrollmentConfirmation</a></td></tr><tr class="passedeven"><td><a href="#m9">ValidatingTheEnrollmentListForEnrollmentConfirmation</a></td></tr><tr class="passedeven"><td><a href="#m10">deleteAll3Enrollments</a></td><td rowspan="3">1706784958392</td><td rowspan="3">7387</td></tr><tr class="passedeven"><td><a href="#m11">deleteAll3Enrollments</a></td></tr><tr class="passedeven"><td><a href="#m12">deleteAll3Enrollments</a></td></tr><tr class="passedeven"><td><a href="#m13">validationOfCoursesEnrollmentFromHRpanle</a></td><td rowspan="1">1706784797002</td><td rowspan="1">3390</td></tr><tr class="passedeven"><td><a href="#m14">validationOfGamesEnrollmentFromHRpanle</a></td><td rowspan="1">1706784807947</td><td rowspan="1">3576</td></tr><tr class="passedeven"><td><a href="#m15">validationOfMicroLearningEnrollmentFromHRpanle</a></td><td rowspan="1">1706784802234</td><td rowspan="1">3612</td></tr></tbody>
 </table>
-<h2>Default test</h2><h3 id="m0">Serien.SerienLive.GroupTest#ValidationOfGroupNameUserCountEnrollmentsCount</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{GroupName=courses complation sample test, Useremail=omkar@krishworks.com, Adminuserpass=pass2023, expectedExpText=Subscription Expired, userpass=password, AdminUseremail=admin@demo.com}</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Default test</h2><h3 id="m0">Serien.SerienLive.AdminEnrollments#ComplateTheCourseforAParticularUser</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{CourseName=Confirmation bias, Useremail=yijise7335@notedns.com, groupName=admin Enrollments Test Autmation group 1, typeOfTraining=Micro course, userpass=password, dueDate=12/12/2024, adminPass=pass2023, adminEmail=admin@demo.com}</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.NoAlertPresentException: no such alert
+  (Session info: chrome=119.0.6045.105)
+Build info: version: &apos;4.10.0&apos;, revision: &apos;c14d967899&apos;
+System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.2.0-36-generic&apos;, java.version: &apos;17.0.6&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [67dfca2cbab4556cb63569bbcba7297e, getAlertText {}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.105, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:34915}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:34915/devtoo..., se:cdpVersion: 119.0.6045.105, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 67dfca2cbab4556cb63569bbcba7297e
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:199)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:132)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:51)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:531)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:590)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:594)
+	at org.openqa.selenium.remote.RemoteWebDriver$RemoteTargetLocator.alert(RemoteWebDriver.java:1084)
+	at Serien.AbstractComponents.abstractReusable.alertAccepectMethod(abstractReusable.java:49)
+	at Serien.SerienLive.AdminGroupEnrollment.comapleTheUserProgress(AdminGroupEnrollment.java:443)
+	at Serien.SerienLive.AdminEnrollments.ComplateTheCourseforAParticularUser(AdminEnrollments.java:88)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:648)
+	at org.testng.TestRunner.run(TestRunner.java:505)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+	at org.testng.TestNG.runSuites(TestNG.java:1049)
+	at org.testng.TestNG.run(TestNG.java:1017)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">Serien.SerienLive.AdminEnrollments#ComplateTheCourseforAParticularUser</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{CourseName=Disclimer automation test Omkar test, Useremail=yijise7335@notedns.com, groupName=admin Enrollments Test Autmation group 1, typeOfTraining=Games, userpass=password, dueDate=12/12/2024, adminPass=pass2023, adminEmail=admin@demo.com}</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:96)
+	at org.testng.Assert.failNotEquals(Assert.java:776)
+	at org.testng.Assert.assertTrue(Assert.java:44)
+	at org.testng.Assert.assertTrue(Assert.java:54)
+	at Serien.SerienLive.AdminEnrollments.ComplateTheCourseforAParticularUser(AdminEnrollments.java:90)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:648)
+	at org.testng.TestRunner.run(TestRunner.java:505)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+	at org.testng.TestNG.runSuites(TestNG.java:1049)
+	at org.testng.TestNG.run(TestNG.java:1017)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">Serien.SerienLive.AdminEnrollments#ComplateTheCourseforAParticularUser</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{CourseName=Safety and inclusion at the workplace, Useremail=yijise7335@notedns.com, groupName=admin Enrollments Test Autmation group 1, typeOfTraining=course, userpass=password, dueDate=12/12/2024, adminPass=pass2023, adminEmail=admin@demo.com}</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">Serien.SerienLive.AdminEnrollments#CreatingGroupEnrollmentOfCourse</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{CourseName=Confirmation bias, Useremail=yijise7335@notedns.com, groupName=admin Enrollments Test Autmation group 1, typeOfTraining=Micro course, userpass=password, dueDate=12/12/2024, adminPass=pass2023, adminEmail=admin@demo.com}</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m4">Serien.SerienLive.AdminEnrollments#CreatingGroupEnrollmentOfCourse</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{CourseName=Safety and inclusion at the workplace, Useremail=yijise7335@notedns.com, groupName=admin Enrollments Test Autmation group 1, typeOfTraining=course, userpass=password, dueDate=12/12/2024, adminPass=pass2023, adminEmail=admin@demo.com}</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m5">Serien.SerienLive.AdminEnrollments#CreatingGroupEnrollmentOfCourse</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{CourseName=Disclimer automation test Omkar test, Useremail=yijise7335@notedns.com, groupName=admin Enrollments Test Autmation group 1, typeOfTraining=Games, userpass=password, dueDate=12/12/2024, adminPass=pass2023, adminEmail=admin@demo.com}</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m6">Serien.SerienLive.AdminEnrollments#GetUserEnrollmentDetails</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{CourseName=Safety and inclusion at the workplace, Useremail=yijise7335@notedns.com, groupName=admin Enrollments Test Autmation group 1, typeOfTraining=course, userpass=password, dueDate=12/12/2024, adminPass=pass2023, adminEmail=admin@demo.com}</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m7">Serien.SerienLive.AdminEnrollments#ValidatingTheEnrollmentListForEnrollmentConfirmation</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{CourseName=Safety and inclusion at the workplace, Useremail=yijise7335@notedns.com, groupName=admin Enrollments Test Autmation group 1, typeOfTraining=course, userpass=password, dueDate=12/12/2024, adminPass=pass2023, adminEmail=admin@demo.com}</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m8">Serien.SerienLive.AdminEnrollments#ValidatingTheEnrollmentListForEnrollmentConfirmation</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{CourseName=Confirmation bias, Useremail=yijise7335@notedns.com, groupName=admin Enrollments Test Autmation group 1, typeOfTraining=Micro course, userpass=password, dueDate=12/12/2024, adminPass=pass2023, adminEmail=admin@demo.com}</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m9">Serien.SerienLive.AdminEnrollments#ValidatingTheEnrollmentListForEnrollmentConfirmation</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{CourseName=Disclimer automation test Omkar test, Useremail=yijise7335@notedns.com, groupName=admin Enrollments Test Autmation group 1, typeOfTraining=Games, userpass=password, dueDate=12/12/2024, adminPass=pass2023, adminEmail=admin@demo.com}</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m10">Serien.SerienLive.AdminEnrollments#deleteAll3Enrollments</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{CourseName=Disclimer automation test Omkar test, Useremail=yijise7335@notedns.com, groupName=admin Enrollments Test Autmation group 1, typeOfTraining=Games, userpass=password, dueDate=12/12/2024, adminPass=pass2023, adminEmail=admin@demo.com}</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m11">Serien.SerienLive.AdminEnrollments#deleteAll3Enrollments</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{CourseName=Safety and inclusion at the workplace, Useremail=yijise7335@notedns.com, groupName=admin Enrollments Test Autmation group 1, typeOfTraining=course, userpass=password, dueDate=12/12/2024, adminPass=pass2023, adminEmail=admin@demo.com}</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m12">Serien.SerienLive.AdminEnrollments#deleteAll3Enrollments</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{CourseName=Confirmation bias, Useremail=yijise7335@notedns.com, groupName=admin Enrollments Test Autmation group 1, typeOfTraining=Micro course, userpass=password, dueDate=12/12/2024, adminPass=pass2023, adminEmail=admin@demo.com}</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m13">Serien.SerienLive.AdminEnrollments#validationOfCoursesEnrollmentFromHRpanle</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{CourseName=Safety and inclusion at the workplace, Useremail=yijise7335@notedns.com, groupName=admin Enrollments Test Autmation group 1, typeOfTraining=course, userpass=password, dueDate=12/12/2024, adminPass=pass2023, adminEmail=admin@demo.com}</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m14">Serien.SerienLive.AdminEnrollments#validationOfGamesEnrollmentFromHRpanle</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{CourseName=Disclimer automation test Omkar test, Useremail=yijise7335@notedns.com, groupName=admin Enrollments Test Autmation group 1, typeOfTraining=Games, userpass=password, dueDate=12/12/2024, adminPass=pass2023, adminEmail=admin@demo.com}</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m15">Serien.SerienLive.AdminEnrollments#validationOfMicroLearningEnrollmentFromHRpanle</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{CourseName=Confirmation bias, Useremail=yijise7335@notedns.com, groupName=admin Enrollments Test Autmation group 1, typeOfTraining=Micro course, userpass=password, dueDate=12/12/2024, adminPass=pass2023, adminEmail=admin@demo.com}</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

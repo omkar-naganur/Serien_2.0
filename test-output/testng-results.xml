@@ -1,32 +1,422 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="1" total="2" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="16" passed="14" failed="2" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-02-01T07:33:07Z" name="Default suite" finished-at="2024-02-01T07:33:21Z" duration-ms="14111">
+  <suite started-at="2024-02-01T10:52:09Z" name="Default suite" finished-at="2024-02-01T10:56:05Z" duration-ms="236776">
     <groups>
     </groups>
-    <test started-at="2024-02-01T07:33:07Z" name="Default test" finished-at="2024-02-01T07:33:21Z" duration-ms="14111">
-      <class name="Serien.SerienLive.GroupTest">
-        <test-method is-config="true" signature="lunchApplication()[pri:0, instance:Serien.SerienLive.GroupTest@558bdf1f]" started-at="2024-02-01T07:33:07Z" name="lunchApplication" finished-at="2024-02-01T07:33:12Z" duration-ms="5045" status="PASS">
+    <test started-at="2024-02-01T10:52:09Z" name="Default test" finished-at="2024-02-01T10:56:05Z" duration-ms="236776">
+      <class name="Serien.SerienLive.AdminEnrollments">
+        <test-method is-config="true" signature="lunchApplication()[pri:0, instance:Serien.SerienLive.AdminEnrollments@5f354bcf]" started-at="2024-02-01T10:52:09Z" name="lunchApplication" finished-at="2024-02-01T10:52:11Z" duration-ms="2461" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- lunchApplication -->
-        <test-method signature="ValidationOfGroupNameUserCountEnrollmentsCount(java.util.HashMap)[pri:0, instance:Serien.SerienLive.GroupTest@558bdf1f]" started-at="2024-02-01T07:33:12Z" name="ValidationOfGroupNameUserCountEnrollmentsCount" data-provider="getdata4" finished-at="2024-02-01T07:33:21Z" duration-ms="9038" status="PASS">
+        <test-method signature="CreatingGroupEnrollmentOfCourse(java.util.HashMap)[pri:1, instance:Serien.SerienLive.AdminEnrollments@5f354bcf]" started-at="2024-02-01T10:52:11Z" name="CreatingGroupEnrollmentOfCourse" data-provider="all3TypeCourses" finished-at="2024-02-01T10:52:23Z" duration-ms="11807" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{GroupName=courses complation sample test, Useremail=omkar@krishworks.com, Adminuserpass=pass2023, expectedExpText=Subscription Expired, userpass=password, AdminUseremail=admin@demo.com}]]>
+                <![CDATA[{CourseName=Safety and inclusion at the workplace, Useremail=yijise7335@notedns.com, groupName=admin Enrollments Test Autmation group 1, typeOfTraining=course, userpass=password, dueDate=12/12/2024, adminPass=pass2023, adminEmail=admin@demo.com}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ValidationOfGroupNameUserCountEnrollmentsCount -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:Serien.SerienLive.GroupTest@558bdf1f]" started-at="2024-02-01T07:33:21Z" name="tearDown" finished-at="2024-02-01T07:33:21Z" duration-ms="0" status="PASS">
+        </test-method> <!-- CreatingGroupEnrollmentOfCourse -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Serien.SerienLive.AdminEnrollments@5f354bcf]" started-at="2024-02-01T10:52:23Z" name="tearDown" finished-at="2024-02-01T10:52:23Z" duration-ms="108" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- Serien.SerienLive.GroupTest -->
+        <test-method is-config="true" signature="lunchApplication()[pri:0, instance:Serien.SerienLive.AdminEnrollments@5f354bcf]" started-at="2024-02-01T10:52:23Z" name="lunchApplication" finished-at="2024-02-01T10:52:25Z" duration-ms="2096" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- lunchApplication -->
+        <test-method signature="CreatingGroupEnrollmentOfCourse(java.util.HashMap)[pri:1, instance:Serien.SerienLive.AdminEnrollments@5f354bcf]" started-at="2024-02-01T10:52:25Z" name="CreatingGroupEnrollmentOfCourse" data-provider="all3TypeCourses" finished-at="2024-02-01T10:52:37Z" duration-ms="11711" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{CourseName=Confirmation bias, Useremail=yijise7335@notedns.com, groupName=admin Enrollments Test Autmation group 1, typeOfTraining=Micro course, userpass=password, dueDate=12/12/2024, adminPass=pass2023, adminEmail=admin@demo.com}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CreatingGroupEnrollmentOfCourse -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Serien.SerienLive.AdminEnrollments@5f354bcf]" started-at="2024-02-01T10:52:37Z" name="tearDown" finished-at="2024-02-01T10:52:37Z" duration-ms="105" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="lunchApplication()[pri:0, instance:Serien.SerienLive.AdminEnrollments@5f354bcf]" started-at="2024-02-01T10:52:37Z" name="lunchApplication" finished-at="2024-02-01T10:52:39Z" duration-ms="2244" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- lunchApplication -->
+        <test-method signature="CreatingGroupEnrollmentOfCourse(java.util.HashMap)[pri:1, instance:Serien.SerienLive.AdminEnrollments@5f354bcf]" started-at="2024-02-01T10:52:39Z" name="CreatingGroupEnrollmentOfCourse" data-provider="all3TypeCourses" finished-at="2024-02-01T10:52:51Z" duration-ms="11760" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{CourseName=Disclimer automation test Omkar test, Useremail=yijise7335@notedns.com, groupName=admin Enrollments Test Autmation group 1, typeOfTraining=Games, userpass=password, dueDate=12/12/2024, adminPass=pass2023, adminEmail=admin@demo.com}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CreatingGroupEnrollmentOfCourse -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Serien.SerienLive.AdminEnrollments@5f354bcf]" started-at="2024-02-01T10:52:51Z" name="tearDown" finished-at="2024-02-01T10:52:51Z" duration-ms="104" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="lunchApplication()[pri:0, instance:Serien.SerienLive.AdminEnrollments@5f354bcf]" started-at="2024-02-01T10:52:51Z" name="lunchApplication" finished-at="2024-02-01T10:52:54Z" duration-ms="2655" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- lunchApplication -->
+        <test-method signature="ValidatingTheEnrollmentListForEnrollmentConfirmation(java.util.HashMap)[pri:2, instance:Serien.SerienLive.AdminEnrollments@5f354bcf]" started-at="2024-02-01T10:52:54Z" name="ValidatingTheEnrollmentListForEnrollmentConfirmation" data-provider="all3TypeCourses" finished-at="2024-02-01T10:52:59Z" duration-ms="5433" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{CourseName=Safety and inclusion at the workplace, Useremail=yijise7335@notedns.com, groupName=admin Enrollments Test Autmation group 1, typeOfTraining=course, userpass=password, dueDate=12/12/2024, adminPass=pass2023, adminEmail=admin@demo.com}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ValidatingTheEnrollmentListForEnrollmentConfirmation -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Serien.SerienLive.AdminEnrollments@5f354bcf]" started-at="2024-02-01T10:52:59Z" name="tearDown" finished-at="2024-02-01T10:52:59Z" duration-ms="104" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="lunchApplication()[pri:0, instance:Serien.SerienLive.AdminEnrollments@5f354bcf]" started-at="2024-02-01T10:52:59Z" name="lunchApplication" finished-at="2024-02-01T10:53:01Z" duration-ms="1818" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- lunchApplication -->
+        <test-method signature="ValidatingTheEnrollmentListForEnrollmentConfirmation(java.util.HashMap)[pri:2, instance:Serien.SerienLive.AdminEnrollments@5f354bcf]" started-at="2024-02-01T10:53:01Z" name="ValidatingTheEnrollmentListForEnrollmentConfirmation" data-provider="all3TypeCourses" finished-at="2024-02-01T10:53:07Z" duration-ms="5505" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{CourseName=Confirmation bias, Useremail=yijise7335@notedns.com, groupName=admin Enrollments Test Autmation group 1, typeOfTraining=Micro course, userpass=password, dueDate=12/12/2024, adminPass=pass2023, adminEmail=admin@demo.com}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ValidatingTheEnrollmentListForEnrollmentConfirmation -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Serien.SerienLive.AdminEnrollments@5f354bcf]" started-at="2024-02-01T10:53:07Z" name="tearDown" finished-at="2024-02-01T10:53:07Z" duration-ms="104" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="lunchApplication()[pri:0, instance:Serien.SerienLive.AdminEnrollments@5f354bcf]" started-at="2024-02-01T10:53:07Z" name="lunchApplication" finished-at="2024-02-01T10:53:09Z" duration-ms="1765" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- lunchApplication -->
+        <test-method signature="ValidatingTheEnrollmentListForEnrollmentConfirmation(java.util.HashMap)[pri:2, instance:Serien.SerienLive.AdminEnrollments@5f354bcf]" started-at="2024-02-01T10:53:09Z" name="ValidatingTheEnrollmentListForEnrollmentConfirmation" data-provider="all3TypeCourses" finished-at="2024-02-01T10:53:14Z" duration-ms="5537" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{CourseName=Disclimer automation test Omkar test, Useremail=yijise7335@notedns.com, groupName=admin Enrollments Test Autmation group 1, typeOfTraining=Games, userpass=password, dueDate=12/12/2024, adminPass=pass2023, adminEmail=admin@demo.com}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ValidatingTheEnrollmentListForEnrollmentConfirmation -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Serien.SerienLive.AdminEnrollments@5f354bcf]" started-at="2024-02-01T10:53:14Z" name="tearDown" finished-at="2024-02-01T10:53:14Z" duration-ms="104" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="lunchApplication()[pri:0, instance:Serien.SerienLive.AdminEnrollments@5f354bcf]" started-at="2024-02-01T10:53:14Z" name="lunchApplication" finished-at="2024-02-01T10:53:17Z" duration-ms="2285" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- lunchApplication -->
+        <test-method signature="validationOfCoursesEnrollmentFromHRpanle(java.util.HashMap)[pri:3, instance:Serien.SerienLive.AdminEnrollments@5f354bcf]" started-at="2024-02-01T10:53:17Z" name="validationOfCoursesEnrollmentFromHRpanle" data-provider="coursesDeatilsOnly" finished-at="2024-02-01T10:53:20Z" duration-ms="3390" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{CourseName=Safety and inclusion at the workplace, Useremail=yijise7335@notedns.com, groupName=admin Enrollments Test Autmation group 1, typeOfTraining=course, userpass=password, dueDate=12/12/2024, adminPass=pass2023, adminEmail=admin@demo.com}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validationOfCoursesEnrollmentFromHRpanle -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Serien.SerienLive.AdminEnrollments@5f354bcf]" started-at="2024-02-01T10:53:20Z" name="tearDown" finished-at="2024-02-01T10:53:20Z" duration-ms="104" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="lunchApplication()[pri:0, instance:Serien.SerienLive.AdminEnrollments@5f354bcf]" started-at="2024-02-01T10:53:20Z" name="lunchApplication" finished-at="2024-02-01T10:53:22Z" duration-ms="1736" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- lunchApplication -->
+        <test-method signature="validationOfMicroLearningEnrollmentFromHRpanle(java.util.HashMap)[pri:4, instance:Serien.SerienLive.AdminEnrollments@5f354bcf]" started-at="2024-02-01T10:53:22Z" name="validationOfMicroLearningEnrollmentFromHRpanle" data-provider="MicroLearningOnlay" finished-at="2024-02-01T10:53:25Z" duration-ms="3612" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{CourseName=Confirmation bias, Useremail=yijise7335@notedns.com, groupName=admin Enrollments Test Autmation group 1, typeOfTraining=Micro course, userpass=password, dueDate=12/12/2024, adminPass=pass2023, adminEmail=admin@demo.com}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validationOfMicroLearningEnrollmentFromHRpanle -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Serien.SerienLive.AdminEnrollments@5f354bcf]" started-at="2024-02-01T10:53:25Z" name="tearDown" finished-at="2024-02-01T10:53:25Z" duration-ms="104" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="lunchApplication()[pri:0, instance:Serien.SerienLive.AdminEnrollments@5f354bcf]" started-at="2024-02-01T10:53:25Z" name="lunchApplication" finished-at="2024-02-01T10:53:27Z" duration-ms="1994" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- lunchApplication -->
+        <test-method signature="validationOfGamesEnrollmentFromHRpanle(java.util.HashMap)[pri:5, instance:Serien.SerienLive.AdminEnrollments@5f354bcf]" started-at="2024-02-01T10:53:27Z" name="validationOfGamesEnrollmentFromHRpanle" data-provider="GamesOnlay" finished-at="2024-02-01T10:53:31Z" duration-ms="3576" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{CourseName=Disclimer automation test Omkar test, Useremail=yijise7335@notedns.com, groupName=admin Enrollments Test Autmation group 1, typeOfTraining=Games, userpass=password, dueDate=12/12/2024, adminPass=pass2023, adminEmail=admin@demo.com}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validationOfGamesEnrollmentFromHRpanle -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Serien.SerienLive.AdminEnrollments@5f354bcf]" started-at="2024-02-01T10:53:31Z" name="tearDown" finished-at="2024-02-01T10:53:31Z" duration-ms="104" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="lunchApplication()[pri:0, instance:Serien.SerienLive.AdminEnrollments@5f354bcf]" started-at="2024-02-01T10:53:31Z" name="lunchApplication" finished-at="2024-02-01T10:53:33Z" duration-ms="1786" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- lunchApplication -->
+        <test-method signature="GetUserEnrollmentDetails(java.util.HashMap)[pri:6, instance:Serien.SerienLive.AdminEnrollments@5f354bcf]" started-at="2024-02-01T10:53:33Z" name="GetUserEnrollmentDetails" data-provider="coursesDeatilsOnly" finished-at="2024-02-01T10:53:56Z" duration-ms="22760" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{CourseName=Safety and inclusion at the workplace, Useremail=yijise7335@notedns.com, groupName=admin Enrollments Test Autmation group 1, typeOfTraining=course, userpass=password, dueDate=12/12/2024, adminPass=pass2023, adminEmail=admin@demo.com}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- GetUserEnrollmentDetails -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Serien.SerienLive.AdminEnrollments@5f354bcf]" started-at="2024-02-01T10:53:56Z" name="tearDown" finished-at="2024-02-01T10:53:56Z" duration-ms="105" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="lunchApplication()[pri:0, instance:Serien.SerienLive.AdminEnrollments@5f354bcf]" started-at="2024-02-01T10:53:56Z" name="lunchApplication" finished-at="2024-02-01T10:53:58Z" duration-ms="2164" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- lunchApplication -->
+        <test-method signature="ComplateTheCourseforAParticularUser(java.util.HashMap)[pri:7, instance:Serien.SerienLive.AdminEnrollments@5f354bcf]" started-at="2024-02-01T10:53:58Z" name="ComplateTheCourseforAParticularUser" data-provider="all3TypeCourses" finished-at="2024-02-01T10:54:31Z" duration-ms="33469" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{CourseName=Safety and inclusion at the workplace, Useremail=yijise7335@notedns.com, groupName=admin Enrollments Test Autmation group 1, typeOfTraining=course, userpass=password, dueDate=12/12/2024, adminPass=pass2023, adminEmail=admin@demo.com}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ComplateTheCourseforAParticularUser -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Serien.SerienLive.AdminEnrollments@5f354bcf]" started-at="2024-02-01T10:54:31Z" name="tearDown" finished-at="2024-02-01T10:54:32Z" duration-ms="106" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="lunchApplication()[pri:0, instance:Serien.SerienLive.AdminEnrollments@5f354bcf]" started-at="2024-02-01T10:54:32Z" name="lunchApplication" finished-at="2024-02-01T10:54:34Z" duration-ms="2266" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- lunchApplication -->
+        <test-method signature="ComplateTheCourseforAParticularUser(java.util.HashMap)[pri:7, instance:Serien.SerienLive.AdminEnrollments@5f354bcf]" started-at="2024-02-01T10:54:34Z" name="ComplateTheCourseforAParticularUser" data-provider="all3TypeCourses" finished-at="2024-02-01T10:54:54Z" duration-ms="19912" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{CourseName=Confirmation bias, Useremail=yijise7335@notedns.com, groupName=admin Enrollments Test Autmation group 1, typeOfTraining=Micro course, userpass=password, dueDate=12/12/2024, adminPass=pass2023, adminEmail=admin@demo.com}]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.openqa.selenium.NoAlertPresentException">
+            <message>
+              <![CDATA[no such alert
+  (Session info: chrome=119.0.6045.105)
+Build info: version: '4.10.0', revision: 'c14d967899'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.2.0-36-generic', java.version: '17.0.6'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [67dfca2cbab4556cb63569bbcba7297e, getAlertText {}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.105, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:34915}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:34915/devtoo..., se:cdpVersion: 119.0.6045.105, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 67dfca2cbab4556cb63569bbcba7297e]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoAlertPresentException: no such alert
+  (Session info: chrome=119.0.6045.105)
+Build info: version: '4.10.0', revision: 'c14d967899'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.2.0-36-generic', java.version: '17.0.6'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [67dfca2cbab4556cb63569bbcba7297e, getAlertText {}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.105, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:34915}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:34915/devtoo..., se:cdpVersion: 119.0.6045.105, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 67dfca2cbab4556cb63569bbcba7297e
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:199)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:132)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:51)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:531)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:590)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:594)
+at org.openqa.selenium.remote.RemoteWebDriver$RemoteTargetLocator.alert(RemoteWebDriver.java:1084)
+at Serien.AbstractComponents.abstractReusable.alertAccepectMethod(abstractReusable.java:49)
+at Serien.SerienLive.AdminGroupEnrollment.comapleTheUserProgress(AdminGroupEnrollment.java:443)
+at Serien.SerienLive.AdminEnrollments.ComplateTheCourseforAParticularUser(AdminEnrollments.java:88)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoAlertPresentException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ComplateTheCourseforAParticularUser -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Serien.SerienLive.AdminEnrollments@5f354bcf]" started-at="2024-02-01T10:54:54Z" name="tearDown" finished-at="2024-02-01T10:54:54Z" duration-ms="103" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="lunchApplication()[pri:0, instance:Serien.SerienLive.AdminEnrollments@5f354bcf]" started-at="2024-02-01T10:54:54Z" name="lunchApplication" finished-at="2024-02-01T10:54:56Z" duration-ms="2232" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- lunchApplication -->
+        <test-method signature="ComplateTheCourseforAParticularUser(java.util.HashMap)[pri:7, instance:Serien.SerienLive.AdminEnrollments@5f354bcf]" started-at="2024-02-01T10:54:56Z" name="ComplateTheCourseforAParticularUser" data-provider="all3TypeCourses" finished-at="2024-02-01T10:55:36Z" duration-ms="39496" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{CourseName=Disclimer automation test Omkar test, Useremail=yijise7335@notedns.com, groupName=admin Enrollments Test Autmation group 1, typeOfTraining=Games, userpass=password, dueDate=12/12/2024, adminPass=pass2023, adminEmail=admin@demo.com}]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:96)
+at org.testng.Assert.failNotEquals(Assert.java:776)
+at org.testng.Assert.assertTrue(Assert.java:44)
+at org.testng.Assert.assertTrue(Assert.java:54)
+at Serien.SerienLive.AdminEnrollments.ComplateTheCourseforAParticularUser(AdminEnrollments.java:90)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ComplateTheCourseforAParticularUser -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Serien.SerienLive.AdminEnrollments@5f354bcf]" started-at="2024-02-01T10:55:36Z" name="tearDown" finished-at="2024-02-01T10:55:36Z" duration-ms="105" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="lunchApplication()[pri:0, instance:Serien.SerienLive.AdminEnrollments@5f354bcf]" started-at="2024-02-01T10:55:36Z" name="lunchApplication" finished-at="2024-02-01T10:55:39Z" duration-ms="2924" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- lunchApplication -->
+        <test-method signature="deleteAll3Enrollments(java.util.HashMap)[pri:8, instance:Serien.SerienLive.AdminEnrollments@5f354bcf]" started-at="2024-02-01T10:55:39Z" name="deleteAll3Enrollments" data-provider="all3TypeCourses" finished-at="2024-02-01T10:55:46Z" duration-ms="7299" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{CourseName=Safety and inclusion at the workplace, Useremail=yijise7335@notedns.com, groupName=admin Enrollments Test Autmation group 1, typeOfTraining=course, userpass=password, dueDate=12/12/2024, adminPass=pass2023, adminEmail=admin@demo.com}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteAll3Enrollments -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Serien.SerienLive.AdminEnrollments@5f354bcf]" started-at="2024-02-01T10:55:46Z" name="tearDown" finished-at="2024-02-01T10:55:46Z" duration-ms="105" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="lunchApplication()[pri:0, instance:Serien.SerienLive.AdminEnrollments@5f354bcf]" started-at="2024-02-01T10:55:46Z" name="lunchApplication" finished-at="2024-02-01T10:55:49Z" duration-ms="2538" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- lunchApplication -->
+        <test-method signature="deleteAll3Enrollments(java.util.HashMap)[pri:8, instance:Serien.SerienLive.AdminEnrollments@5f354bcf]" started-at="2024-02-01T10:55:49Z" name="deleteAll3Enrollments" data-provider="all3TypeCourses" finished-at="2024-02-01T10:55:56Z" duration-ms="7295" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{CourseName=Confirmation bias, Useremail=yijise7335@notedns.com, groupName=admin Enrollments Test Autmation group 1, typeOfTraining=Micro course, userpass=password, dueDate=12/12/2024, adminPass=pass2023, adminEmail=admin@demo.com}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteAll3Enrollments -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Serien.SerienLive.AdminEnrollments@5f354bcf]" started-at="2024-02-01T10:55:56Z" name="tearDown" finished-at="2024-02-01T10:55:56Z" duration-ms="107" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="lunchApplication()[pri:0, instance:Serien.SerienLive.AdminEnrollments@5f354bcf]" started-at="2024-02-01T10:55:56Z" name="lunchApplication" finished-at="2024-02-01T10:55:58Z" duration-ms="1975" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- lunchApplication -->
+        <test-method signature="deleteAll3Enrollments(java.util.HashMap)[pri:8, instance:Serien.SerienLive.AdminEnrollments@5f354bcf]" started-at="2024-02-01T10:55:58Z" name="deleteAll3Enrollments" data-provider="all3TypeCourses" finished-at="2024-02-01T10:56:05Z" duration-ms="7387" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{CourseName=Disclimer automation test Omkar test, Useremail=yijise7335@notedns.com, groupName=admin Enrollments Test Autmation group 1, typeOfTraining=Games, userpass=password, dueDate=12/12/2024, adminPass=pass2023, adminEmail=admin@demo.com}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteAll3Enrollments -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Serien.SerienLive.AdminEnrollments@5f354bcf]" started-at="2024-02-01T10:56:05Z" name="tearDown" finished-at="2024-02-01T10:56:05Z" duration-ms="106" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- Serien.SerienLive.AdminEnrollments -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

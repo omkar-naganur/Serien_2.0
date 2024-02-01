@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>1/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>14/2/0</td>
 </tr><tr>
-<td>Started on:</td><td>Thu Feb 01 13:03:07 IST 2024</td>
+<td>Started on:</td><td>Thu Feb 01 16:22:09 IST 2024</td>
 </tr>
-<tr><td>Total time:</td><td>14 seconds (14111 ms)</td>
+<tr><td>Total time:</td><td>236 seconds (236776 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,6 +67,190 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='Serien.SerienLive.AdminEnrollments.ComplateTheCourseforAParticularUser()'><b>ComplateTheCourseforAParticularUser</b><br>Test class: Serien.SerienLive.AdminEnrollments<br>Parameters: {CourseName=Confirmation bias, Useremail=yijise7335@notedns.com, groupName=admin Enrollments Test Autmation group 1, typeOfTraining=Micro course, userpass=password, dueDate=12/12/2024, adminPass=pass2023, adminEmail=admin@demo.com}</td>
+<td><div><pre>org.openqa.selenium.NoAlertPresentException: no such alert
+  (Session info: chrome=119.0.6045.105)
+Build info: version: &apos;4.10.0&apos;, revision: &apos;c14d967899&apos;
+System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.2.0-36-generic&apos;, java.version: &apos;17.0.6&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [67dfca2cbab4556cb63569bbcba7297e, getAlertText {}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.105, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:34915}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:34915/devtoo..., se:cdpVersion: 119.0.6045.105, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 67dfca2cbab4556cb63569bbcba7297e
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:199)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:132)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:51)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:531)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:590)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:594)
+	at org.openqa.selenium.remote.RemoteWebDriver$RemoteTargetLocator.alert(RemoteWebDriver.java:1084)
+	at Serien.AbstractComponents.abstractReusable.alertAccepectMethod(abstractReusable.java:49)
+	at Serien.SerienLive.AdminGroupEnrollment.comapleTheUserProgress(AdminGroupEnrollment.java:443)
+	at Serien.SerienLive.AdminEnrollments.ComplateTheCourseforAParticularUser(AdminEnrollments.java:88)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:648)
+	at org.testng.TestRunner.run(TestRunner.java:505)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+	at org.testng.TestNG.runSuites(TestNG.java:1049)
+	at org.testng.TestNG.run(TestNG.java:1017)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1505490990", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1505490990'><pre>org.openqa.selenium.NoAlertPresentException: no such alert
+  (Session info: chrome=119.0.6045.105)
+Build info: version: &apos;4.10.0&apos;, revision: &apos;c14d967899&apos;
+System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.2.0-36-generic&apos;, java.version: &apos;17.0.6&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [67dfca2cbab4556cb63569bbcba7297e, getAlertText {}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.105, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:34915}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:34915/devtoo..., se:cdpVersion: 119.0.6045.105, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 67dfca2cbab4556cb63569bbcba7297e
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:199)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:132)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:51)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:531)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:590)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:594)
+	at org.openqa.selenium.remote.RemoteWebDriver$RemoteTargetLocator.alert(RemoteWebDriver.java:1084)
+	at Serien.AbstractComponents.abstractReusable.alertAccepectMethod(abstractReusable.java:49)
+	at Serien.SerienLive.AdminGroupEnrollment.comapleTheUserProgress(AdminGroupEnrollment.java:443)
+	at Serien.SerienLive.AdminEnrollments.ComplateTheCourseforAParticularUser(AdminEnrollments.java:88)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:648)
+	at org.testng.TestRunner.run(TestRunner.java:505)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+	at org.testng.TestNG.runSuites(TestNG.java:1049)
+	at org.testng.TestNG.run(TestNG.java:1017)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>19</td>
+<td>Serien.SerienLive.AdminEnrollments@5f354bcf</td></tr>
+<tr>
+<td title='Serien.SerienLive.AdminEnrollments.ComplateTheCourseforAParticularUser()'><b>ComplateTheCourseforAParticularUser</b><br>Test class: Serien.SerienLive.AdminEnrollments<br>Parameters: {CourseName=Disclimer automation test Omkar test, Useremail=yijise7335@notedns.com, groupName=admin Enrollments Test Autmation group 1, typeOfTraining=Games, userpass=password, dueDate=12/12/2024, adminPass=pass2023, adminEmail=admin@demo.com}</td>
+<td><div><pre>java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:96)
+	at org.testng.Assert.failNotEquals(Assert.java:776)
+	at org.testng.Assert.assertTrue(Assert.java:44)
+	at org.testng.Assert.assertTrue(Assert.java:54)
+	at Serien.SerienLive.AdminEnrollments.ComplateTheCourseforAParticularUser(AdminEnrollments.java:90)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:648)
+	at org.testng.TestRunner.run(TestRunner.java:505)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+	at org.testng.TestNG.runSuites(TestNG.java:1049)
+	at org.testng.TestNG.run(TestNG.java:1017)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div><a href='#' onClick='toggleBox("stack-trace2111462181", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2111462181'><pre>java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:96)
+	at org.testng.Assert.failNotEquals(Assert.java:776)
+	at org.testng.Assert.assertTrue(Assert.java:44)
+	at org.testng.Assert.assertTrue(Assert.java:54)
+	at Serien.SerienLive.AdminEnrollments.ComplateTheCourseforAParticularUser(AdminEnrollments.java:90)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:648)
+	at org.testng.TestRunner.run(TestRunner.java:505)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+	at org.testng.TestNG.runSuites(TestNG.java:1049)
+	at org.testng.TestNG.run(TestNG.java:1017)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>39</td>
+<td>Serien.SerienLive.AdminEnrollments@5f354bcf</td></tr>
+</table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
@@ -75,10 +259,75 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='Serien.SerienLive.GroupTest.ValidationOfGroupNameUserCountEnrollmentsCount()'><b>ValidationOfGroupNameUserCountEnrollmentsCount</b><br>Test class: Serien.SerienLive.GroupTest<br>Parameters: {GroupName=courses complation sample test, Useremail=omkar@krishworks.com, Adminuserpass=pass2023, expectedExpText=Subscription Expired, userpass=password, AdminUseremail=admin@demo.com}</td>
+<td title='Serien.SerienLive.AdminEnrollments.ComplateTheCourseforAParticularUser()'><b>ComplateTheCourseforAParticularUser</b><br>Test class: Serien.SerienLive.AdminEnrollments<br>Parameters: {CourseName=Safety and inclusion at the workplace, Useremail=yijise7335@notedns.com, groupName=admin Enrollments Test Autmation group 1, typeOfTraining=course, userpass=password, dueDate=12/12/2024, adminPass=pass2023, adminEmail=admin@demo.com}</td>
 <td></td>
-<td>9</td>
-<td>Serien.SerienLive.GroupTest@558bdf1f</td></tr>
+<td>33</td>
+<td>Serien.SerienLive.AdminEnrollments@5f354bcf</td></tr>
+<tr>
+<td title='Serien.SerienLive.AdminEnrollments.CreatingGroupEnrollmentOfCourse()'><b>CreatingGroupEnrollmentOfCourse</b><br>Test class: Serien.SerienLive.AdminEnrollments<br>Parameters: {CourseName=Safety and inclusion at the workplace, Useremail=yijise7335@notedns.com, groupName=admin Enrollments Test Autmation group 1, typeOfTraining=course, userpass=password, dueDate=12/12/2024, adminPass=pass2023, adminEmail=admin@demo.com}</td>
+<td></td>
+<td>11</td>
+<td>Serien.SerienLive.AdminEnrollments@5f354bcf</td></tr>
+<tr>
+<td title='Serien.SerienLive.AdminEnrollments.CreatingGroupEnrollmentOfCourse()'><b>CreatingGroupEnrollmentOfCourse</b><br>Test class: Serien.SerienLive.AdminEnrollments<br>Parameters: {CourseName=Confirmation bias, Useremail=yijise7335@notedns.com, groupName=admin Enrollments Test Autmation group 1, typeOfTraining=Micro course, userpass=password, dueDate=12/12/2024, adminPass=pass2023, adminEmail=admin@demo.com}</td>
+<td></td>
+<td>11</td>
+<td>Serien.SerienLive.AdminEnrollments@5f354bcf</td></tr>
+<tr>
+<td title='Serien.SerienLive.AdminEnrollments.CreatingGroupEnrollmentOfCourse()'><b>CreatingGroupEnrollmentOfCourse</b><br>Test class: Serien.SerienLive.AdminEnrollments<br>Parameters: {CourseName=Disclimer automation test Omkar test, Useremail=yijise7335@notedns.com, groupName=admin Enrollments Test Autmation group 1, typeOfTraining=Games, userpass=password, dueDate=12/12/2024, adminPass=pass2023, adminEmail=admin@demo.com}</td>
+<td></td>
+<td>11</td>
+<td>Serien.SerienLive.AdminEnrollments@5f354bcf</td></tr>
+<tr>
+<td title='Serien.SerienLive.AdminEnrollments.GetUserEnrollmentDetails()'><b>GetUserEnrollmentDetails</b><br>Test class: Serien.SerienLive.AdminEnrollments<br>Parameters: {CourseName=Safety and inclusion at the workplace, Useremail=yijise7335@notedns.com, groupName=admin Enrollments Test Autmation group 1, typeOfTraining=course, userpass=password, dueDate=12/12/2024, adminPass=pass2023, adminEmail=admin@demo.com}</td>
+<td></td>
+<td>22</td>
+<td>Serien.SerienLive.AdminEnrollments@5f354bcf</td></tr>
+<tr>
+<td title='Serien.SerienLive.AdminEnrollments.ValidatingTheEnrollmentListForEnrollmentConfirmation()'><b>ValidatingTheEnrollmentListForEnrollmentConfirmation</b><br>Test class: Serien.SerienLive.AdminEnrollments<br>Parameters: {CourseName=Safety and inclusion at the workplace, Useremail=yijise7335@notedns.com, groupName=admin Enrollments Test Autmation group 1, typeOfTraining=course, userpass=password, dueDate=12/12/2024, adminPass=pass2023, adminEmail=admin@demo.com}</td>
+<td></td>
+<td>5</td>
+<td>Serien.SerienLive.AdminEnrollments@5f354bcf</td></tr>
+<tr>
+<td title='Serien.SerienLive.AdminEnrollments.ValidatingTheEnrollmentListForEnrollmentConfirmation()'><b>ValidatingTheEnrollmentListForEnrollmentConfirmation</b><br>Test class: Serien.SerienLive.AdminEnrollments<br>Parameters: {CourseName=Confirmation bias, Useremail=yijise7335@notedns.com, groupName=admin Enrollments Test Autmation group 1, typeOfTraining=Micro course, userpass=password, dueDate=12/12/2024, adminPass=pass2023, adminEmail=admin@demo.com}</td>
+<td></td>
+<td>5</td>
+<td>Serien.SerienLive.AdminEnrollments@5f354bcf</td></tr>
+<tr>
+<td title='Serien.SerienLive.AdminEnrollments.ValidatingTheEnrollmentListForEnrollmentConfirmation()'><b>ValidatingTheEnrollmentListForEnrollmentConfirmation</b><br>Test class: Serien.SerienLive.AdminEnrollments<br>Parameters: {CourseName=Disclimer automation test Omkar test, Useremail=yijise7335@notedns.com, groupName=admin Enrollments Test Autmation group 1, typeOfTraining=Games, userpass=password, dueDate=12/12/2024, adminPass=pass2023, adminEmail=admin@demo.com}</td>
+<td></td>
+<td>5</td>
+<td>Serien.SerienLive.AdminEnrollments@5f354bcf</td></tr>
+<tr>
+<td title='Serien.SerienLive.AdminEnrollments.deleteAll3Enrollments()'><b>deleteAll3Enrollments</b><br>Test class: Serien.SerienLive.AdminEnrollments<br>Parameters: {CourseName=Safety and inclusion at the workplace, Useremail=yijise7335@notedns.com, groupName=admin Enrollments Test Autmation group 1, typeOfTraining=course, userpass=password, dueDate=12/12/2024, adminPass=pass2023, adminEmail=admin@demo.com}</td>
+<td></td>
+<td>7</td>
+<td>Serien.SerienLive.AdminEnrollments@5f354bcf</td></tr>
+<tr>
+<td title='Serien.SerienLive.AdminEnrollments.deleteAll3Enrollments()'><b>deleteAll3Enrollments</b><br>Test class: Serien.SerienLive.AdminEnrollments<br>Parameters: {CourseName=Confirmation bias, Useremail=yijise7335@notedns.com, groupName=admin Enrollments Test Autmation group 1, typeOfTraining=Micro course, userpass=password, dueDate=12/12/2024, adminPass=pass2023, adminEmail=admin@demo.com}</td>
+<td></td>
+<td>7</td>
+<td>Serien.SerienLive.AdminEnrollments@5f354bcf</td></tr>
+<tr>
+<td title='Serien.SerienLive.AdminEnrollments.deleteAll3Enrollments()'><b>deleteAll3Enrollments</b><br>Test class: Serien.SerienLive.AdminEnrollments<br>Parameters: {CourseName=Disclimer automation test Omkar test, Useremail=yijise7335@notedns.com, groupName=admin Enrollments Test Autmation group 1, typeOfTraining=Games, userpass=password, dueDate=12/12/2024, adminPass=pass2023, adminEmail=admin@demo.com}</td>
+<td></td>
+<td>7</td>
+<td>Serien.SerienLive.AdminEnrollments@5f354bcf</td></tr>
+<tr>
+<td title='Serien.SerienLive.AdminEnrollments.validationOfCoursesEnrollmentFromHRpanle()'><b>validationOfCoursesEnrollmentFromHRpanle</b><br>Test class: Serien.SerienLive.AdminEnrollments<br>Parameters: {CourseName=Safety and inclusion at the workplace, Useremail=yijise7335@notedns.com, groupName=admin Enrollments Test Autmation group 1, typeOfTraining=course, userpass=password, dueDate=12/12/2024, adminPass=pass2023, adminEmail=admin@demo.com}</td>
+<td></td>
+<td>3</td>
+<td>Serien.SerienLive.AdminEnrollments@5f354bcf</td></tr>
+<tr>
+<td title='Serien.SerienLive.AdminEnrollments.validationOfGamesEnrollmentFromHRpanle()'><b>validationOfGamesEnrollmentFromHRpanle</b><br>Test class: Serien.SerienLive.AdminEnrollments<br>Parameters: {CourseName=Disclimer automation test Omkar test, Useremail=yijise7335@notedns.com, groupName=admin Enrollments Test Autmation group 1, typeOfTraining=Games, userpass=password, dueDate=12/12/2024, adminPass=pass2023, adminEmail=admin@demo.com}</td>
+<td></td>
+<td>3</td>
+<td>Serien.SerienLive.AdminEnrollments@5f354bcf</td></tr>
+<tr>
+<td title='Serien.SerienLive.AdminEnrollments.validationOfMicroLearningEnrollmentFromHRpanle()'><b>validationOfMicroLearningEnrollmentFromHRpanle</b><br>Test class: Serien.SerienLive.AdminEnrollments<br>Parameters: {CourseName=Confirmation bias, Useremail=yijise7335@notedns.com, groupName=admin Enrollments Test Autmation group 1, typeOfTraining=Micro course, userpass=password, dueDate=12/12/2024, adminPass=pass2023, adminEmail=admin@demo.com}</td>
+<td></td>
+<td>3</td>
+<td>Serien.SerienLive.AdminEnrollments@5f354bcf</td></tr>
 </table><p>
 </body>
 </html>

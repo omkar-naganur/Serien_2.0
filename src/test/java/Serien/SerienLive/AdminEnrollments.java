@@ -27,7 +27,6 @@ public class AdminEnrollments extends BaseTest {
 		ae.selectGroupName(input.get("groupName"));
 		ae.selectDueDate(input.get("dueDate"));
 		ae.saveGroupEnrollment();
-		
 	}
 	
 	@Test(dataProvider = "all3TypeCourses", priority = 2)
@@ -84,12 +83,20 @@ public class AdminEnrollments extends BaseTest {
 		Profile profile=LoginPage.serienLogin(input.get("adminEmail"), input.get("adminPass"));
 		AdminGroupEnrollment age= new AdminGroupEnrollment(driver);
 		age.groupEnrollment();
-		
 		age.findingGroupEnrollment(input.get("CourseName"), input.get("groupName"));
 		age.searchTheUserByEmail(input.get("Useremail"));
 		age.comapleTheUserProgress(input.get("Useremail"));
 		Boolean statusMatch=age.validationUserCoursesStatusComplated(input.get("Useremail"));
 		Assert.assertTrue(statusMatch);
+	}
+	
+	@Test(dataProvider = "all3TypeCourses", priority = 8)
+	public void deleteAll3Enrollments (HashMap<String, String> input) throws Throwable
+	{	
+		Profile profile=LoginPage.serienLogin(input.get("adminEmail"), input.get("adminPass"));
+		AdminGroupEnrollment age= new AdminGroupEnrollment(driver);
+		age.groupEnrollment();
+		age.DeleteGroupEnrollmets(input.get("CourseName"), input.get("groupName"));
 	}
 	
 	@DataProvider

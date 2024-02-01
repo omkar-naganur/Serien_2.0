@@ -12,6 +12,9 @@ import org.testng.annotations.Test;
 import serien.TestComponents.BaseTest;
 
 public class scromCourses extends BaseTest {
+	
+	// don't use this class 
+	
 	String CoursesTitle;
 	@Test(dataProvider = "getdata3")
 	public void ValidationScromCoursesStartDate(HashMap<String, String> input) throws Throwable
