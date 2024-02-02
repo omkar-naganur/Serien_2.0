@@ -46,9 +46,21 @@ public class Profile extends abstractReusable {
 	@FindBy(xpath = "//div[contains(text(),'Logout')]")
 	WebElement userLogout;
 	
-//	System.out.println(userName);
-//	System.out.println(userEmail);
-//	System.out.println(userSub);
+	@FindBy(xpath = "//div[contains(text(), ' Change password')]")
+	WebElement changePassword;
+	
+	@FindBy(xpath = "//input[contains(@placeholder,'Current')] ")
+	WebElement CurrentPassword;
+	
+	@FindBy(xpath = "//input[contains(@placeholder,'New')] ")
+	WebElement newPassword;
+	
+	@FindBy(xpath = "//input[contains(@placeholder,'Confirm')] ")
+	WebElement confirmPassword;
+	
+	@FindBy(xpath = "//button[@type='submit']")
+	WebElement submitPassword;
+	
 	
 	public void gotoProfile () throws Throwable
 	{
@@ -98,6 +110,24 @@ public class Profile extends abstractReusable {
 		waitForWebElementTOApper(userName);
 		String Username=userName.getText();
 		return 	Username;
+	}
+	
+	public void changePassword (String oldpass, String newPass)throws Throwable
+	{
+		waitForWebElementTOApper(changePassword);
+		Thread.sleep(2000);
+		changePassword.click();	
+		waitForWebElementTOApper(CurrentPassword);
+		CurrentPassword.sendKeys(oldpass);
+		waitForWebElementTOApper(newPassword);
+		newPassword.sendKeys(newPass);
+		waitForWebElementTOApper(confirmPassword);
+		confirmPassword.sendKeys(newPass);
+		waitForWebElementTOApper(submitPassword);
+		submitPassword.click();
+		Thread.sleep(2000);
+		alertAccepectMethod();
+		Thread.sleep(1000);
 	}
 	
 }

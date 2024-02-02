@@ -17,5 +17,12 @@
 	"adminPass":"pass2023",
 	"userName":"anu"
 	
+},
+{
+	"Useremail":"automation3@gmail.com",
+	"userPass":"123456",
+	"userName":"automation 3",
+	"newPass":"password"
 }
+
 ]

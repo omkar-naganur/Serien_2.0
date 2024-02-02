@@ -138,6 +138,7 @@ public class BaseTest {
  */ 
 //	 	//a[contains(@class, "link")]
 //		//a[contains(text(),'SAP M')]
+// attrubites containes  //a[contains(@prop,'Foo')] 
 
 //scrcpy
 

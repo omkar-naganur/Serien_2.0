@@ -102,7 +102,7 @@
                     <div class="method-list-content passed suite-Default_suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="Serien.SerienLive.GetSubDate" class="method navigator-link" hash-for-method="getSubscriptionEndDateInProgressReport({Useremail=omkar@krishworks.com, userpass=password})">getSubscriptionEndDateInProgressReport({Useremail=omkar@krishworks.com, userpass=password})</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="Serien.SerienLive.HRprofile" class="method navigator-link" hash-for-method="ValidationHRchangePassword({newPass=password, Useremail=automation3@gmail.com, userName=automation 3, userPass=123456})">ValidationHRchangePassword({newPass=password, Useremail=automation3@gmail.com, userName=automation 3, userPass=123456})</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Default_suite -->
@@ -120,15 +120,15 @@
           <div class="suite-Default_suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">Serien.SerienLive.GetSubDate</span>
+              <span class="class-name">Serien.SerienLive.HRprofile</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="getSubscriptionEndDateInProgressReport({Useremail=omkar@krishworks.com, userpass=password})">
-                  </a> <!-- getSubscriptionEndDateInProgressReport({Useremail=omkar@krishworks.com, userpass=password}) -->
-                  <span class="method-name">getSubscriptionEndDateInProgressReport</span>
-                  <span class="parameters">({Useremail=omkar@krishworks.com, userpass=password})</span>
+                  <a name="ValidationHRchangePassword({newPass=password, Useremail=automation3@gmail.com, userName=automation 3, userPass=123456})">
+                  </a> <!-- ValidationHRchangePassword({newPass=password, Useremail=automation3@gmail.com, userName=automation 3, userPass=123456}) -->
+                  <span class="method-name">ValidationHRchangePassword</span>
+                  <span class="parameters">({newPass=password, Useremail=automation3@gmail.com, userName=automation 3, userPass=123456})</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -136,7 +136,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">/tmp/testng-eclipse-546324292/testng-customsuite.xml</span>
+            <span class="header-content">/tmp/testng-eclipse-1692274044/testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -145,11 +145,11 @@
 &lt;suite name=&quot;Default suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Default test&quot; verbose=&quot;2&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;Serien.SerienLive.GetSubDate&quot;&gt;
+      &lt;class name=&quot;Serien.SerienLive.HRprofile&quot;&gt;
         &lt;methods&gt;
-          &lt;include name=&quot;getSubscriptionEndDateInProgressReport&quot;/&gt;
+          &lt;include name=&quot;ValidationHRchangePassword&quot;/&gt;
         &lt;/methods&gt;
-      &lt;/class&gt; &lt;!-- Serien.SerienLive.GetSubDate --&gt;
+      &lt;/class&gt; &lt;!-- Serien.SerienLive.HRprofile --&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -191,14 +191,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'getSubscriptionEndDateInProgressReport')
-data.setCell(0, 2, 'Serien.SerienLive.GetSubDate')
-data.setCell(0, 3, 4509);
+data.setCell(0, 1, 'ValidationHRchangePassword')
+data.setCell(0, 2, 'Serien.SerienLive.HRprofile')
+data.setCell(0, 3, 19719);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 4 seconds</span>
+              <span class="suite-total-time">Total running time: 19 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -213,9 +213,20 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">0 ignored methods</span>
+            <span class="header-content">3 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">Serien.SerienLive.HRprofile</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">ValidationOfSubscriptionDateInHRpanle</span>
+                <br/>
+                <span class="ignored-method-name">ValidationOfSubscriptionEndDate</span>
+                <br/>
+                <span class="ignored-method-name">ValidationOfUserNameFromAdminPanleToHRpanle</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="chronological-Default_suite" class="panel">
@@ -224,18 +235,18 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">Serien.SerienLive.GetSubDate</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">Serien.SerienLive.HRprofile</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">lunchApplication</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">getSubscriptionEndDateInProgressReport({Useremail=omkar@krishworks.com, userpass=password})</span>
-                <span class="method-start">2705 ms</span>
+                <span class="method-name">ValidationHRchangePassword({newPass=password, Useremail=automation3@gmail.com, userName=automation 3, userPass=123456})</span>
+                <span class="method-start">2662 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">7215 ms</span>
+                <span class="method-start">22383 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

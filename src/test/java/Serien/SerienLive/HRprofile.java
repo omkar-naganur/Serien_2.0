@@ -63,6 +63,22 @@ public class HRprofile extends BaseTest {
 		
 	}
 	
+	@Test(dataProvider = "passwordChange", priority = 3)
+	public void ValidationHRchangePassword(HashMap<String, String> input) throws Throwable
+	{	
+		LoginPage.serienLogin(input.get("Useremail"), input.get("userPass"));
+		Profile profile= new Profile(driver);
+		profile.Profile();
+		profile.changePassword(input.get("userPass"), input.get("newPass"));
+		LoginPage.serienLogin(input.get("Useremail"), input.get("newPass"));
+		profile.Profile();
+		String userName=profile.getUserNameFromProfile();
+		Assert.assertTrue(userName.equals(input.get("userName")));
+		// tear down perpose
+		profile.changePassword(input.get("newPass"), input.get("userPass"));
+		
+	}
+	
 	@Test(dataProvider = "getdata1", enabled = false)
 	public void ValidationOfSubscriptionEndDate (HashMap<String, String> input) throws Throwable
 	{
@@ -180,6 +196,13 @@ public class HRprofile extends BaseTest {
 		map.put("adminPass", "pass2023");
 		map.put("groupName", "TCS");
 		return new Object[][] {{map}};
+	}
+	
+	@DataProvider
+	public Object[][] passwordChange() throws Throwable
+	{
+		List<HashMap<String,String>> data = getJsonDataToMap(System.getProperty("user.dir")+"//src//test//java//serien//Data//HRprofile.json");
+		return new Object[][]  { {data.get(2)} };
 	}
 	
 	@DataProvider
