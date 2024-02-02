@@ -1,108 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
+<testng-results ignored="2" total="3" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-02-01T12:09:08Z" name="Default suite" finished-at="2024-02-01T12:10:36Z" duration-ms="87893">
+  <suite started-at="2024-02-02T06:40:09Z" name="Default suite" finished-at="2024-02-02T06:41:23Z" duration-ms="74460">
     <groups>
     </groups>
-    <test started-at="2024-02-01T12:09:08Z" name="Default test" finished-at="2024-02-01T12:10:36Z" duration-ms="87893">
-      <class name="Serien.SerienLive.HRlearning">
-        <test-method is-config="true" signature="lunchApplication()[pri:0, instance:Serien.SerienLive.HRlearning@27216cd]" started-at="2024-02-01T12:09:08Z" name="lunchApplication" finished-at="2024-02-01T12:09:11Z" duration-ms="2631" status="PASS">
+    <test started-at="2024-02-02T06:40:09Z" name="Default test" finished-at="2024-02-02T06:41:23Z" duration-ms="74460">
+      <class name="Serien.SerienLive.EndToEndTestCase">
+        <test-method is-config="true" signature="lunchApplication()[pri:0, instance:Serien.SerienLive.EndToEndTestCase@8576fa0]" started-at="2024-02-02T06:40:09Z" name="lunchApplication" finished-at="2024-02-02T06:40:12Z" duration-ms="2763" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- lunchApplication -->
-        <test-method signature="ValidationOfDisclimerErrorMesg(java.util.HashMap)[pri:1, instance:Serien.SerienLive.HRlearning@27216cd]" started-at="2024-02-01T12:09:11Z" name="ValidationOfDisclimerErrorMesg" data-provider="getdata" finished-at="2024-02-01T12:09:18Z" duration-ms="6736" status="PASS">
+        <test-method signature="ValidationOfGroupDateExpired(java.util.HashMap)[pri:3, instance:Serien.SerienLive.EndToEndTestCase@8576fa0]" started-at="2024-02-02T06:40:12Z" name="ValidationOfGroupDateExpired" data-provider="ValidationOfGroupDateExpiredDataSheet" finished-at="2024-02-02T06:41:23Z" duration-ms="71546" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{CourseName=automatiom Test Training, GroupName=Sitero_PoSH_2023, Useremail=wisepot510@newnime.com, typeOfTraining=course, userpass=password, dueDate=12/12/2024, adminPass=pass2023, ExpDiscilemrAlertMeg=Please Acknowledge Disclaimer First !, adminEmail=admin@demo.com}]]>
+                <![CDATA[{CourseName=Prevention of sexual harassment in the workplace – Hindi, userPass=password, companyName=TCS, adminPass=pass2023, groupName=TCS part2, typeOfTraining=course, Validation Of Group Date Expired Data Sheet=, empName=omkar, // login credentionals & user deatils=, userEmail=omkar@krishworks.com, groupExpInValid=30/01/2024, groupExpValid=29/12/2024, // group creation & enrollment deatils=, adminEmail=admin@demo.com}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ValidationOfDisclimerErrorMesg -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:Serien.SerienLive.HRlearning@27216cd]" started-at="2024-02-01T12:09:18Z" name="tearDown" finished-at="2024-02-01T12:09:18Z" duration-ms="111" status="PASS">
+        </test-method> <!-- ValidationOfGroupDateExpired -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Serien.SerienLive.EndToEndTestCase@8576fa0]" started-at="2024-02-02T06:41:23Z" name="tearDown" finished-at="2024-02-02T06:41:23Z" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="lunchApplication()[pri:0, instance:Serien.SerienLive.HRlearning@27216cd]" started-at="2024-02-01T12:09:18Z" name="lunchApplication" finished-at="2024-02-01T12:09:20Z" duration-ms="2143" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- lunchApplication -->
-        <test-method signature="ValidationOfDisclimerAccepectingAcknowledgeAndStartTheCourses(java.util.HashMap)[pri:2, instance:Serien.SerienLive.HRlearning@27216cd]" started-at="2024-02-01T12:09:20Z" name="ValidationOfDisclimerAccepectingAcknowledgeAndStartTheCourses" data-provider="getdata" finished-at="2024-02-01T12:09:28Z" duration-ms="8456" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[{CourseName=automatiom Test Training, GroupName=Sitero_PoSH_2023, Useremail=wisepot510@newnime.com, typeOfTraining=course, userpass=password, dueDate=12/12/2024, adminPass=pass2023, ExpDiscilemrAlertMeg=Please Acknowledge Disclaimer First !, adminEmail=admin@demo.com}]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ValidationOfDisclimerAccepectingAcknowledgeAndStartTheCourses -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:Serien.SerienLive.HRlearning@27216cd]" started-at="2024-02-01T12:09:28Z" name="tearDown" finished-at="2024-02-01T12:09:29Z" duration-ms="105" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="lunchApplication()[pri:0, instance:Serien.SerienLive.HRlearning@27216cd]" started-at="2024-02-01T12:09:29Z" name="lunchApplication" finished-at="2024-02-01T12:09:30Z" duration-ms="1723" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- lunchApplication -->
-        <test-method signature="ValidationOfDisclimerAccepectingAcknowledgeAndStartMicroLearning(java.util.HashMap)[pri:3, instance:Serien.SerienLive.HRlearning@27216cd]" started-at="2024-02-01T12:09:30Z" name="ValidationOfDisclimerAccepectingAcknowledgeAndStartMicroLearning" data-provider="getdataMicroLearning" finished-at="2024-02-01T12:09:46Z" duration-ms="16053" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[{CourseName=Disclimer autmation test HiPPO, GroupName=Sitero_PoSH_2023, Useremail=wisepot510@newnime.com, typeOfTraining=Micro course, userpass=password, dueDate=12/12/2024, adminPass=pass2023, ExpDiscilemrAlertMeg=Please Acknowledge Disclaimer First !, adminEmail=admin@demo.com}]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ValidationOfDisclimerAccepectingAcknowledgeAndStartMicroLearning -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:Serien.SerienLive.HRlearning@27216cd]" started-at="2024-02-01T12:09:46Z" name="tearDown" finished-at="2024-02-01T12:09:46Z" duration-ms="104" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="lunchApplication()[pri:0, instance:Serien.SerienLive.HRlearning@27216cd]" started-at="2024-02-01T12:09:46Z" name="lunchApplication" finished-at="2024-02-01T12:09:48Z" duration-ms="1952" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- lunchApplication -->
-        <test-method signature="ValidationOfDisclimerAccepectingAcknowledgeAndStartGame(java.util.HashMap)[pri:4, instance:Serien.SerienLive.HRlearning@27216cd]" started-at="2024-02-01T12:09:48Z" name="ValidationOfDisclimerAccepectingAcknowledgeAndStartGame" data-provider="getdataGame" finished-at="2024-02-01T12:09:55Z" duration-ms="6460" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[{CourseName=Disclimer automation test Omkar test, GroupName=Sitero_PoSH_2023, Useremail=wisepot510@newnime.com, typeOfTraining=Games, userpass=password, dueDate=12/12/2024, adminPass=pass2023, ExpDiscilemrAlertMeg=Please Acknowledge Disclaimer First !, adminEmail=admin@demo.com}]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ValidationOfDisclimerAccepectingAcknowledgeAndStartGame -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:Serien.SerienLive.HRlearning@27216cd]" started-at="2024-02-01T12:09:55Z" name="tearDown" finished-at="2024-02-01T12:09:55Z" duration-ms="103" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="lunchApplication()[pri:0, instance:Serien.SerienLive.HRlearning@27216cd]" started-at="2024-02-01T12:09:55Z" name="lunchApplication" finished-at="2024-02-01T12:09:57Z" duration-ms="1994" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- lunchApplication -->
-        <test-method signature="DeleteUserProgressForMakeDisclimerTrue(java.util.HashMap)[pri:5, instance:Serien.SerienLive.HRlearning@27216cd]" started-at="2024-02-01T12:09:57Z" name="DeleteUserProgressForMakeDisclimerTrue" data-provider="getdataGame" finished-at="2024-02-01T12:10:36Z" duration-ms="39062" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[{CourseName=Disclimer automation test Omkar test, GroupName=Sitero_PoSH_2023, Useremail=wisepot510@newnime.com, typeOfTraining=Games, userpass=password, dueDate=12/12/2024, adminPass=pass2023, ExpDiscilemrAlertMeg=Please Acknowledge Disclaimer First !, adminEmail=admin@demo.com}]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- DeleteUserProgressForMakeDisclimerTrue -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:Serien.SerienLive.HRlearning@27216cd]" started-at="2024-02-01T12:10:36Z" name="tearDown" finished-at="2024-02-01T12:10:36Z" duration-ms="105" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- Serien.SerienLive.HRlearning -->
+      </class> <!-- Serien.SerienLive.EndToEndTestCase -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

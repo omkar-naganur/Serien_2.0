@@ -374,7 +374,7 @@ public class AdminGroupEnrollment extends abstractReusable{
 	public ArrayList<String> getUserEnrollmentDetails(String email) throws Throwable {
 		
 		ArrayList<String> enrollmentDeatils = new ArrayList<String>() ;
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		waitForWebElementTOApper(ListOfEmail);
 		for(int i=0; i<ListOfEmail.size(); i++)
 		{
@@ -439,7 +439,7 @@ public class AdminGroupEnrollment extends abstractReusable{
 			selectAllModuleCheckBox.click();
 			Thread.sleep(1000);
 			save.click();
-			Thread.sleep(2000);
+			Thread.sleep(3000);
 			alertAccepectMethod();
 			
 		}

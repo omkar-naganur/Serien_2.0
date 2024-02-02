@@ -312,6 +312,9 @@ public class ProgressReport extends abstractReusable{
 				System.out.println("User Found serch email");
 				userfound = true;
 			}	
+			else {
+				System.out.println(userName+ "This User name not find in HR Report section");
+			}
 		}
 		
 		return userCourseDeatils ;
@@ -382,9 +385,9 @@ public class ProgressReport extends abstractReusable{
 		} catch (Exception e) {
 			System.out.println("drop down not found");
 		}
-		
-		
 	}
+	
+	
 	
 	
 }

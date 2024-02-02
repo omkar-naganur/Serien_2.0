@@ -118,12 +118,13 @@ public class EndToEndTestCase extends BaseTest {
 		//admin verification
 		Dm.serienLogin(input.get("AdminUseremail"), input.get("Adminuserpass"));
 		age.groupEnrollment();
-		age.findingGroupEnrollment(CourseName, groupName);
-		age.searchTheUserByEmail(input.get("Useremail"));
+//		age.findingGroupEnrollment("automatiom Test Training", "TCS755Group597"); 
+		age.findingGroupEnrollment(CourseName, groupName);  
+		age.searchTheUserByEmail(input.get("Useremail"));  
 		ArrayList<String> adminViewUserCoursesDeatils = age.getUserEnrollmentDetails(input.get("Useremail"));
-		String ComplationDateinHrPanle= adminViewUserCoursesDeatils.get(7);
+		String ComplationDateinHrPanle= adminViewUserCoursesDeatils.get(7); 
 		// we need to write the equeales method here for hr panle details and admin panle deatils
-		Assert.assertTrue(adminViewUserCoursesDeatils.get(8).equals(HrPanleUserDeatils.get(6))); 
+		Assert.assertTrue(adminViewUserCoursesDeatils.get(8).equals(HrPanleUserDeatils.get(6)));
 		System.out.println("Courses Status matched");
 		Assert.assertTrue(adminViewUserCoursesDeatils.get(7).equals(HrPanleUserDeatils.get(5)));
 		System.out.println(" Courses complation date");
@@ -152,6 +153,9 @@ public class EndToEndTestCase extends BaseTest {
 		Assert.assertTrue(progress==0);
 		
 	}
+	
+	
+	// before run this class please check omkar@krishworks email should not in TCS Company
 	
 	@Test(dataProvider = "ValidationOfCoursesComplationFromTheAdmin", priority = 2)
 	public void ValidationOfCoursesComplationFromTheAdmin (HashMap<String, String> input) throws Throwable {
@@ -199,8 +203,10 @@ public class EndToEndTestCase extends BaseTest {
 		Assert.assertTrue(afterCom==100);
 		
 //		//*******************************************
+		
 		ProgressReport pr =new ProgressReport(driver);
 		pr.ProgresReport();
+		pr.searchGroupName(groupName);
 		ArrayList<String> coursesName = pr.getCoursesNameInReport();
 		Assert.assertTrue(coursesName.contains(CourseName));
 		ArrayList<String> listofcount = pr.getAllCountsInProgressReport(CourseName);
@@ -240,10 +246,13 @@ public class EndToEndTestCase extends BaseTest {
 		
 		// user progress reset
 		au.users();
-		au.searchByEmail(input.get("Useremail"));
+		au.searchByEmail(input.get("userEmail"));
+		System.out.println("g2");
 		Thread.sleep(3000);
 		au.clickOnViewButton();
-		au.deleteProgress(input.get("CourseName"));	
+		System.out.println("g3");
+		au.deleteProgress(CourseName);	
+		System.out.println("g4");
 		au.users();
 		au.adminLogout();  
 		Thread.sleep(2000);
@@ -326,6 +335,6 @@ public class EndToEndTestCase extends BaseTest {
 	public Object[][] NewCompanyWithHRcoursesComplation() throws Throwable
 	{
 		List<HashMap<String,String>> data = getJsonDataToMap(System.getProperty("user.dir")+"//src//test//java//serien//Data//EndToEndTestCase.json");
-		return new Object[][]  { {data.get(3)} };
+		return new Object[][]  { {data.get(2)} };
 	}
 }

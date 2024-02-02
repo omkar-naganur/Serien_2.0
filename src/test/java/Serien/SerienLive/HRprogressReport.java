@@ -75,6 +75,7 @@ public class HRprogressReport extends BaseTest {
 		
 	}
 	
+	
 	@Test(dataProvider = "all3typeCoursesDeatils", priority = 5)
 	public void ValidatingSearchBarByEmployeeNameAndEmployeeEmail (HashMap<String, String> input) throws Throwable
 	{	
