@@ -150,10 +150,8 @@ public class EndToEndTestCase extends BaseTest {
 		Boolean coursesMatch1= hrl.CoursesNameValidationFromHRPanle(CourseName);
 		Assert.assertTrue(coursesMatch1);
 		int progress=hrl.getCoursesProgressOnly(CourseName);
-		Assert.assertTrue(progress==0);
-		
+		Assert.assertTrue(progress==0);	
 	}
-	
 	
 	// before run this class please check omkar@krishworks email should not in TCS Company
 	

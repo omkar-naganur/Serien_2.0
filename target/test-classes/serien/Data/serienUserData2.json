@@ -10,10 +10,12 @@
 "InvalideCredentionalErrorMessages":"Enter valid Credentials",
 "invalidePass":"abcd",
 "noDataInEmial":"",
+"noDataInPass":"",
 "//////////": "/////////////////dfgdfgndfgg",
 "PageTitle":"Serein's Inc – Culture and Compliance",
 "LoginURL":"https://sereindevweb.kdev.co.in/",
 "err":"Inavlid Email"
+
 }	
 
 ]

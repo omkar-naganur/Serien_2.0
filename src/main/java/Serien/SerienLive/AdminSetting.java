@@ -97,6 +97,9 @@ public class AdminSetting extends abstractReusable {
 	@FindBy(xpath = "//a[@href='/admin/settings/companycreate']")
 	WebElement CompanyEditButton;
 	
+	@FindBy(xpath = "//input[@type='file']")
+	WebElement CompanyLogo;
+	
 	@FindBy(xpath = "//a[@href='/admin/settings/companycreate']")
 	List<WebElement> CompanyEditButtonList;
 	
@@ -104,7 +107,7 @@ public class AdminSetting extends abstractReusable {
 	List<WebElement> onlycompanyName;
 	
 	public void SubscriptionSettingOpen () throws Throwable
-	{
+	{//input[@type='file']
 		waitForWebElementTOApper(SubscriptionListSettingOpen);
 		SubscriptionListSettingOpen.click();
 		
@@ -151,6 +154,8 @@ public class AdminSetting extends abstractReusable {
 		planEndDate.sendKeys(enddate);
 		planEndDate.sendKeys(Keys.TAB);
 		noticePeriod.sendKeys(noticeperiod);
+		CompanyLogo.sendKeys("/media/kwsys4/nonOsPartition/AutomationSerien4.0/SerienLive/testSuites/apple.png");
+		Thread.sleep(2000);
 		CompanySettingsSubmit.click();
 	}
 	

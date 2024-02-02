@@ -1,57 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <listeners>
-    <listener class-name="serien.TestComponents.Listeners"/>
-  </listeners>
-  <test thread-count="5" name="Test0(failed)">
-    <classes>
-      <class name="Serien.SerienLive.LoginPageTest">
-        <methods>
-          <include name="ValidateloginWithInvalidEmailCredentials" invocation-numbers="0"/>
-          <include name="tearDown"/>
-          <include name="ValidateEmailFieldWithoutAddingAnyDataIntoInEmailTextFiled" invocation-numbers="0"/>
-          <include name="ValidateInEmailAndPasswordInvalideCredentials" invocation-numbers="0"/>
-          <include name="ValidatingLoginWithBrowserBack" invocation-numbers="0"/>
-          <include name="lunchApplication"/>
-          <include name="ValidatePasswordFieldWithoutEnteringThePasswordInThePasswordField" invocation-numbers="0"/>
-        </methods>
-      </class> <!-- Serien.SerienLive.LoginPageTest -->
-    </classes>
-  </test> <!-- Test0(failed) -->
-  <test thread-count="5" name="Test1(failed)">
-    <classes>
-      <class name="Serien.SerienLive.AdminEnrollments">
-        <methods>
-          <include name="tearDown"/>
-          <include name="ComplateTheCourseforAParticularUser" invocation-numbers="2"/>
-          <include name="lunchApplication"/>
-        </methods>
-      </class> <!-- Serien.SerienLive.AdminEnrollments -->
-    </classes>
-  </test> <!-- Test1(failed) -->
-  <test thread-count="5" name="Test6(failed)">
+<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
       <class name="Serien.SerienLive.EndToEndTestCase">
         <methods>
           <include name="tearDown"/>
-          <include name="ValidationOfGroupDateExpired" invocation-numbers="0"/>
           <include name="ValidationOfCoursesComplationFromTheAdmin" invocation-numbers="0"/>
-          <include name="NewCompanyWithHRcoursesComplation" invocation-numbers="0"/>
           <include name="lunchApplication"/>
         </methods>
       </class> <!-- Serien.SerienLive.EndToEndTestCase -->
     </classes>
-  </test> <!-- Test6(failed) -->
-  <test thread-count="5" name="Test7(failed)">
-    <classes>
-      <class name="Serien.SerienLive.GetSubDate">
-        <methods>
-          <include name="tearDown"/>
-          <include name="getSubscriptionEndDateInProgressReport" invocation-numbers="0"/>
-          <include name="lunchApplication"/>
-        </methods>
-      </class> <!-- Serien.SerienLive.GetSubDate -->
-    </classes>
-  </test> <!-- Test7(failed) -->
-</suite> <!-- Failed suite [Suite] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

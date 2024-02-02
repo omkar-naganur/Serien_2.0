@@ -6,7 +6,7 @@
       <class name="Serien.SerienLive.EndToEndTestCase">
         <methods>
           <include name="tearDown"/>
-          <include name="NewCompanyWithHRcoursesComplation" invocation-numbers="0"/>
+          <include name="ValidationOfCoursesComplationFromTheAdmin" invocation-numbers="0"/>
           <include name="lunchApplication"/>
         </methods>
       </class> <!-- Serien.SerienLive.EndToEndTestCase -->

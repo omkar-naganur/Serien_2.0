@@ -17,6 +17,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -36,7 +37,7 @@ public class LoginPageTest extends BaseTest {
 	public void ValidateInEmailAndPasswordInvalideCredentials(HashMap<String, String> input) throws Throwable
 	{	
 		Profile profile=LoginPage.serienLogin(input.get("email"), input.get("pass"));
-		String expectedErrorMessage="Enter valid Credentials";
+		String expectedErrorMessage="This user does not exist";
 		Boolean ErroeMess=LoginPage.ErrorMessage(expectedErrorMessage);
 		Assert.assertTrue(ErroeMess);
 	}
@@ -82,7 +83,7 @@ public class LoginPageTest extends BaseTest {
 	public void ValidateloginWithInvalidEmailCredentials(HashMap<String, String> input) throws Throwable
 	{	
 		Profile valideProfile=LoginPage.serienLogin(input.get("invalideEmail"), input.get("ValidePass"));
-		String expectedErrorMessage="Enter valid Credentials";
+		String expectedErrorMessage="This user does not exist";
 		Boolean ErroeMess=LoginPage.ErrorMessage(expectedErrorMessage);
 		Assert.assertTrue(ErroeMess);
 	}
@@ -100,6 +101,7 @@ public class LoginPageTest extends BaseTest {
 	public void ValidateEmailFieldWithoutAddingAnyDataIntoInEmailTextFiled (HashMap<String, String> input) throws Throwable
 	{	
 		Profile valideProfile=LoginPage.serienLogin(input.get("noDataInEmial"), input.get("invalidePass"));
+		 // Use Actions class to hover over the element and trigger the tooltip
 		String expectedErrorMessage="Enter valid Credentials";
 		Boolean ErroeMess=LoginPage.ErrorMessage(expectedErrorMessage);
 		Assert.assertTrue(ErroeMess);	
@@ -108,7 +110,7 @@ public class LoginPageTest extends BaseTest {
 	@Test(dataProvider = "getdata", priority = 8)
 	public void ValidatePasswordFieldWithoutEnteringThePasswordInThePasswordField (HashMap<String, String> input) throws Throwable
 	{	
-		Profile valideProfile=LoginPage.serienLogin(input.get("noDataInEmial"), input.get("invalidePass"));
+		Profile valideProfile=LoginPage.serienLogin(input.get("valideEmail"), input.get("noDataInPass"));
 		String expectedErrorMessage="Enter valid Credentials";
 		Boolean ErroeMess=LoginPage.ErrorMessage(expectedErrorMessage);
 		Assert.assertTrue(ErroeMess);	
