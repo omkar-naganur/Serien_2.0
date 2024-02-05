@@ -20,9 +20,9 @@
 },
 {
 	"Useremail":"automation3@gmail.com",
-	"userPass":"123456",
+	"userPass":"password",
 	"userName":"automation 3",
-	"newPass":"password"
+	"newPass":"123456"
 }
 
 ]

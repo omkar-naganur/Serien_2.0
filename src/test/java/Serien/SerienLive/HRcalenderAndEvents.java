@@ -1,8 +1,34 @@
 package Serien.SerienLive;
 
+import java.util.HashMap;
+import java.util.List;
+
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+
 import serien.TestComponents.BaseTest;
 
 public class HRcalenderAndEvents extends BaseTest{
 
+	@Test(dataProvider = "basicDeatils", priority = 1)
+	public void ValidationOfEventAndCalender(HashMap<String, String> input) throws Throwable
+	{	
+		LoginPage.serienLogin(input.get("adminEmail"), input.get("adminPass"));
+		AdminSetting ass= new AdminSetting(driver);
+		ass.Setting();
+		ass.EventOpen();
+		ass.ClickOnAddEvent();
+		ass.SelectYear("2024");
+		ass.SelectMonth("April");
+		ass.EventDescription("xyz");
+	}
 	
+	@DataProvider
+	public Object[][] basicDeatils() throws Throwable
+	{
+		List<HashMap<String,String>> data = getJsonDataToMap(System.getProperty("user.dir")+"//src//test//java//serien//Data//HRcalenderAndEvents.json");
+		return new Object[][]  { {data.get(0)} };
+	}
 }
+
+

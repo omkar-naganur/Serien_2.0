@@ -45,6 +45,11 @@ public class abstractReusable {
 			 wait.until(ExpectedConditions.invisibilityOfAllElements(ele));	
 		}
 		
+		public void waitForElementTOClickAble(WebElement ele) {
+			WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(5));	
+			 wait.until(ExpectedConditions.elementToBeClickable(ele));	
+		}
+		
 		public String alertAccepectMethod () {
 			Alert alr = driver.switchTo().alert();
 			String text=alr.getText();

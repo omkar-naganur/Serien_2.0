@@ -22,95 +22,141 @@ public class AdminSetting extends abstractReusable {
 	// Create an instance of Random class
 	Random random = new Random();
 	// Generate random integer between 0 (inclusive) and 100 (exclusive)
-	int randomInt = random.nextInt(100);
-	String SubName = "xyz"+randomInt;
+	int randomInt = random.nextInt(100) ;
+	String SubName = "xyz"+randomInt ;
 	String companynameforEdit ;
-	WebDriver driver;
+	WebDriver driver ;
 	public AdminSetting(WebDriver driver)
 	{
-		super (driver);
-		this.driver=driver;
-		PageFactory.initElements(driver, this);
+		super (driver) ;
+		this.driver=driver ;
+		PageFactory.initElements(driver, this) ;
 	}
 	
 	// Admin Subscription Web Elements
 	
 	@FindBy(xpath = "//a[@href='/admin/settings/SubscriptionList']//button")
-	WebElement SubscriptionListSettingOpen;
+	WebElement SubscriptionListSettingOpen ;
 	
 	@FindBy(xpath = "(//button[@type='button'])[2]")
-	WebElement AddSubscription;
+	WebElement AddSubscription ;
 	
 	@FindBy(xpath = "//input[@type='text']")
-	WebElement SubscriptionName;
+	WebElement SubscriptionName ;
 	
 	@FindBy(xpath = "(//input[@type='checkbox'])")
-	List<WebElement> checkbox;
+	List<WebElement> checkbox ;
 	
 	@FindBy(xpath = "(//button[@type='button'])[2]")
-	WebElement SubscriptionSave;
+	WebElement SubscriptionSave ;
 	
 	@FindBy(xpath = "//div[@class='subscriptionUserTabel subscriptionTabelTabelBody']/div[2]")
-	List<WebElement> SubscriptionNameList;
+	List<WebElement> SubscriptionNameList ;
 	
 	@FindBy(xpath = "//button[@type='button']")
-	WebElement BackButton;
+	WebElement BackButton ;
 	
 	//Admin Company Setting Web Elements
 	
 	@FindBy(xpath = "//a[@href='/admin/settings/company-department']")
-	WebElement CompanySettings;
+	WebElement CompanySettings ;
 	
 	@FindBy(xpath = "//a[@href='/admin/settings/companycreate']")
-	WebElement CompanyCreateButton;
+	WebElement CompanyCreateButton ;
 	
 	@FindBy(xpath = "//input[@name='companyName']")
-	WebElement companyNameTestFiled;
+	WebElement companyNameTestFiled ;
 	
 	@FindBy(css = "div[role='button']")
-	WebElement SubscriptionPlans;
+	WebElement SubscriptionPlans ;
 	
 	@FindBy(xpath = "//li[@role='option']")
-	List<WebElement> subName;
+	List<WebElement> subName ;
 	
 	@FindBy(xpath = "(//input[@type='date'])[1]")
-	WebElement planStartDate;
+	WebElement planStartDate ;
 	
 	@FindBy(xpath = "(//input[@type='date'])[2]")
-	WebElement planEndDate;
+	WebElement planEndDate ;
 	
 	@FindBy(xpath = "//input[@type='number']")
-	WebElement noticePeriod;
+	WebElement noticePeriod ;
 	
 	@FindBy(css = "label[role='button']")
-	WebElement CompanySettingsSubmit;
+	WebElement CompanySettingsSubmit ;
 	
 	@FindBy(xpath = "//div[@class='templatename']")
-	List<WebElement> companyNameList;
+	List<WebElement> companyNameList ;
 	
 	@FindBy(xpath ="//div[@class='setting_details_table']//div[@class='outer-inner-container']/div[@class='templatename']")
-	WebElement CompanyNameListforfirstone;
+	WebElement CompanyNameListforfirstone ;
 	
 	@FindBy(xpath ="//div[@class='setting_details_table']//div[@class='outer-inner-container']/div[@class='templatename']")
-	List<WebElement> CompanyNameListforALL;
+	List<WebElement> CompanyNameListforALL ;
 	
 	@FindBy(xpath = "//a[@href='/admin/settings/companycreate']")
-	WebElement CompanyEditButton;
+	WebElement CompanyEditButton ;
 	
 	@FindBy(xpath = "//input[@type='file']")
-	WebElement CompanyLogo;
+	WebElement CompanyLogo ;
 	
 	@FindBy(xpath = "//a[@href='/admin/settings/companycreate']")
-	List<WebElement> CompanyEditButtonList;
+	List<WebElement> CompanyEditButtonList ;
 	
 	@FindBy(xpath = "//div[@class='outer-inner-container']//div[@class='templatename'][1]")
-	List<WebElement> onlycompanyName;
+	List<WebElement> onlycompanyName ;
+	
+	// Event section Web Enements
+	
+	@FindBy(xpath = "//a[@href='/admin/settings/EventList']")
+	WebElement eventOpen ;
+	
+	@FindBy(xpath = "//button[contains(text(), 'Add')]")
+	WebElement eventAdd ;
+	
+	@FindBy(xpath = "(//div[@class='inputandlabelboxforstrategies'])/div[1]")
+	List<WebElement> getFiledNamesInAddEvent ;
+	
+	@FindBy(xpath = "//ul[@role='listbox']/li")
+	List<WebElement> dropDowns ;
+	
+	@FindBy(xpath = "(//div[@role='button'])[1]")
+	WebElement selectYear ;
+	
+	@FindBy(xpath = "(//div[@role='button'])[2]")
+	WebElement SelectMonth ;
+	
+	@FindBy(css = "input[placeholder=' Event Name']")
+	WebElement eventName ;
+	
+	@FindBy(xpath = "//div/label[@role='button']")
+	WebElement addDescriptionButton ;
+	
+	@FindBy(xpath = "//textarea[@id]")
+	WebElement addDescriptionTextArea ;
+	
+	@FindBy(xpath = "//label[contains(text(),'Month')]//../input")
+	WebElement monthRadioButton ;
+	
+	@FindBy(xpath = "//label[contains(text(),'Day')]//../input")
+	WebElement dayRadioButton ;
+	
+	@FindBy(xpath = "//input[@type='text'][contains(@placeholder, 'From')]")
+	WebElement dayFrom ;
+	
+	@FindBy(xpath = "//input[@type='text'][contains(@placeholder, 'To')]")
+	WebElement dayTo ;
 	
 	public void SubscriptionSettingOpen () throws Throwable
-	{//input[@type='file']
+	{
 		waitForWebElementTOApper(SubscriptionListSettingOpen);
 		SubscriptionListSettingOpen.click();
 		
+	}
+	public void EventOpen () throws Throwable
+	{
+		waitForWebElementTOApper(eventOpen);
+		eventOpen.click();
 	}
 	public void CompanySettingsOpen () throws Throwable
 	{
@@ -336,7 +382,80 @@ public class AdminSetting extends abstractReusable {
 		
 	}
 	
+	// below methods are use for Events section handling
+	
+	public void ClickOnAddEvent () throws Throwable
+	{
+		// this Thread.sleep is use to handle the loadning screen
+		Thread.sleep(2000);
+		waitForElementTOClickAble(eventAdd);
+		eventAdd.click();
+	}
+	
+	public void getFiledNames () throws Throwable
+	{
+		for(int i=0; i<getFiledNamesInAddEvent.size(); i++) {
+			String nameofFileds=getFiledNamesInAddEvent.get(i).getText();
+			System.out.println(nameofFileds);
+		}
+	}
+	
+	public void SelectYear (String year) throws Throwable
+	{
+		waitForElementTOClickAble(selectYear);
+		selectYear.click();
+		for(int i=0; i<dropDowns.size(); i++) {
+			String ListOfYears=dropDowns.get(i).getText();
+	//		System.out.println(ListOfYears);
+			if (ListOfYears.equals(year)) {
+				dropDowns.get(i).click();
+			}
+		}
+	}
+	
+	public void SelectMonth (String month) throws Throwable
+	{
+		waitForElementTOClickAble(SelectMonth);
+		SelectMonth.click();
+		for(int i=0; i<dropDowns.size(); i++) {
+			String ListOfMonths=dropDowns.get(i).getText();
+		//	System.out.println(ListOfMonths);
+			if (ListOfMonths.equals(month)) {
+				dropDowns.get(i).click();
+			}
+		}
+	}
+	
+	public void EventName (String name) throws Throwable
+	{
+		eventName.click();
+		eventName.sendKeys(name);
+	}
+	
+	public void EventDescription (String Description) throws Throwable
+	{
+		addDescriptionButton.click();
+		Thread.sleep(1000);
+		addDescriptionTextArea.click();
+		addDescriptionTextArea.sendKeys(Description);
+	}
+	
+	public void selectionOfRadioButton (String radio, String From, String To) throws Throwable
+	{
+		if (radio.contains("Month")) {
+			monthRadioButton.click();
+			
+		} else if(radio.contains("Day"))
+		{
+			dayRadioButton.click();
+			dayFrom.click();
+			dayFrom.sendKeys(From);
+			dayTo.click();
+			dayTo.sendKeys(To);
+		}
+	}
+		
+	}
 	
 	
-}
 
