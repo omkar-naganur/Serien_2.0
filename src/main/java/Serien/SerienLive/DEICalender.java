@@ -1,5 +1,6 @@
 package Serien.SerienLive;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
@@ -51,6 +52,21 @@ public class DEICalender extends abstractReusable{
 	@FindBy(xpath = "//div[@role='dialog']//span")
 	WebElement eventDialogCloseButton ;
 	
+	@FindBy(xpath = "//img[@class='NavbarTopImg']//..")
+	WebElement titleOfTheEvent ;
+	
+//	@FindBy(xpath = "//div[@class='MuiBox-root css-1jeyyxo']/div")
+//	List<WebElement> eventDescription ;
+	
+	@FindBy(xpath = "//div[@class='MuiBox-root css-1jeyyxo']/div")
+	WebElement eventDescription ;
+	
+	@FindBy(xpath = "//div[contains(@class, 'DEIEventViewGrid')]//div/div[1]/div[1]")
+	List<WebElement> iteamNameList ;
+	
+	@FindBy(xpath = "//div[contains(@class, 'DEIEventViewGrid')]//div/div[1]/div[2]")
+	List<WebElement> iteamDescriptionList ;
+	
 	
 	public void serienLogin (String Username, String password) throws Throwable
 	{
@@ -78,7 +94,7 @@ public class DEICalender extends abstractReusable{
 		Thread.sleep(2000);
 	}
 	
-	public void searchingEvents(String month) throws Throwable {
+	public void searchingEvents (String month, String eventName) throws Throwable {
 		Boolean eventFound = false ;
 		for (int i = 0; i < listMonth.size(); i++) {
 			String monthsname= listMonth.get(i).getText();
@@ -94,7 +110,7 @@ public class DEICalender extends abstractReusable{
 		for (int i = 0; i < listEvents.size(); i++) {
 			String eventsList =listEvents.get(i).getText();
 			System.out.println(listEvents.get(i).getText());
-			if (eventsList.contains("10th – World Mental Health Day"))
+			if (eventsList.contains(eventName))
 			{
 				listEvents.get(i).click();
 				eventFound =true;
@@ -110,19 +126,76 @@ public class DEICalender extends abstractReusable{
 				
 				for (int j = 0; j < listEventsInSeeMore.size(); j++) {
 					String eventsNameInsideSeeMore=listEventsInSeeMore.get(j).getText();
-					if (eventsNameInsideSeeMore.contains("10th – World Mental Health Day")) {
+					if (eventsNameInsideSeeMore.contains(eventName)) {
 						listEventsInSeeMore.get(j).click();
 						eventFound =true;
 						System.out.println("found");
 						break ;
 					}
 				}
-				eventDialogCloseButton.click();
+				if (!eventFound) {
+					eventDialogCloseButton.click();
+				}
+				
 			}
 		}
 		
-		
 	}
+
+	public Boolean getEventDeatils(String actTitle, String actDecs) throws Throwable {
+		Thread.sleep(2000);
+		Boolean validation =false;
+		 String TitelOfTheEvent = titleOfTheEvent.getText();
+		 String dec= eventDescription.getText();
+		 System.out.println(TitelOfTheEvent);
+		 System.out.println(dec);
+		 if (TitelOfTheEvent.equals(actTitle)&&dec.contains(actDecs)) { 
+				System.out.println("event title and description matched");
+				validation =true;
+			}
+		 else {
+			System.out.println("unable to match");
+		}
+		 return validation;
+	}
+	
+	public ArrayList<String> getEventiteamList() {
+		
+		ArrayList<String> listOfIteamNames = new ArrayList<String>() ;
+		
+		for (int i = 0; i < iteamNameList.size(); i++) {
+			listOfIteamNames.add(iteamNameList.get(i).getText());
+		}
+	//	System.out.println(listOfIteamNames);
+		return listOfIteamNames;
+	}
+	
+	public ArrayList<String> getEventiteamDescriptionList() {
+		
+		ArrayList<String> listOfDescription = new ArrayList<String>() ;
+		
+		for (int i = 0; i < iteamNameList.size(); i++) {
+			listOfDescription.add(iteamDescriptionList.get(i).getText());
+		}
+	//	System.out.println(listOfDescription);
+		return listOfDescription;
+	}
+
+	public boolean ValidationOfIteamNameAndDesc(String iteamName, String IteamDescription) {
+		boolean validation =false;
+		ArrayList<String> iteamNames = getEventiteamList();
+		ArrayList<String> iteamDesc = getEventiteamDescriptionList();
+		
+		for (int i =0; i<iteamNames.size(); i++ ) {
+			if (iteamNames.get(i).equals(iteamName) && iteamDesc.get(i).equals(IteamDescription)) {
+				System.out.println("Iteam name & descrption matched");
+				validation =true;
+			}	
+		}
+		return validation ;
+	}
+	
+	
 	
 	
 	

@@ -3,6 +3,7 @@ package Serien.SerienLive;
 import java.util.HashMap;
 import java.util.List;
 
+import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -30,8 +31,11 @@ public class HRcalenderAndEvents extends BaseTest{
 		DEICalender cal= new DEICalender(driver);
 		cal.DEIcalender();
 		cal.selectingYear("2023");
-		cal.searchingEvents("October");
-		
+		cal.searchingEvents("October", "10th – World Mental Health Day");
+		Boolean eventmatch=cal.getEventDeatils("10th – World Mental Health Day","World Mental Health Day is celebrated globally on October");
+		Assert.assertTrue(eventmatch);
+		Boolean match= cal.ValidationOfIteamNameAndDesc("Prioritising well-being","3 ways to prioritise your personal well-being");
+		Assert.assertTrue(match);
 	}
 	
 	@DataProvider
