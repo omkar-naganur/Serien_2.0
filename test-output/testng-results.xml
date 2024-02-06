@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-02-05T09:49:49Z" name="Default suite" finished-at="2024-02-05T09:50:20Z" duration-ms="30990">
+  <suite started-at="2024-02-06T09:40:50Z" name="Default suite" finished-at="2024-02-06T09:41:11Z" duration-ms="20779">
     <groups>
     </groups>
-    <test started-at="2024-02-05T09:49:49Z" name="Default test" finished-at="2024-02-05T09:50:20Z" duration-ms="30990">
+    <test started-at="2024-02-06T09:40:50Z" name="Default test" finished-at="2024-02-06T09:41:11Z" duration-ms="20779">
       <class name="Serien.SerienLive.HRcalenderAndEvents">
-        <test-method is-config="true" signature="lunchApplication()[pri:0, instance:Serien.SerienLive.HRcalenderAndEvents@27216cd]" started-at="2024-02-05T09:49:49Z" name="lunchApplication" finished-at="2024-02-05T09:49:52Z" duration-ms="2949" status="PASS">
+        <test-method is-config="true" signature="lunchApplication()[pri:0, instance:Serien.SerienLive.HRcalenderAndEvents@27216cd]" started-at="2024-02-06T09:40:50Z" name="lunchApplication" finished-at="2024-02-06T09:40:53Z" duration-ms="2867" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- lunchApplication -->
-        <test-method signature="ValidationOfEventAndCalender(java.util.HashMap)[pri:1, instance:Serien.SerienLive.HRcalenderAndEvents@27216cd]" started-at="2024-02-05T09:49:52Z" name="ValidationOfEventAndCalender" data-provider="basicDeatils" finished-at="2024-02-05T09:50:20Z" duration-ms="27875" status="PASS">
+        <test-method signature="ValidationOfEventAndCalender(java.util.HashMap)[pri:1, instance:Serien.SerienLive.HRcalenderAndEvents@27216cd]" started-at="2024-02-06T09:40:53Z" name="ValidationOfEventAndCalender" data-provider="basicDeatils" finished-at="2024-02-06T09:41:11Z" duration-ms="17746" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -22,7 +22,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ValidationOfEventAndCalender -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:Serien.SerienLive.HRcalenderAndEvents@27216cd]" started-at="2024-02-05T09:50:20Z" name="tearDown" finished-at="2024-02-05T09:50:20Z" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Serien.SerienLive.HRcalenderAndEvents@27216cd]" started-at="2024-02-06T09:41:11Z" name="tearDown" finished-at="2024-02-06T09:41:11Z" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

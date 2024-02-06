@@ -147,6 +147,40 @@ public class AdminSetting extends abstractReusable {
 	@FindBy(xpath = "//input[@type='text'][contains(@placeholder, 'To')]")
 	WebElement dayTo ;
 	
+	@FindBy(xpath = "//button[normalize-space()='Save']")
+	WebElement saveButton ;
+	
+	@FindBy(xpath =  "//button[normalize-space()='Add item']")
+	WebElement addIteamButton ;
+	
+	@FindBy(xpath = "//button[normalize-space()='Back']")
+	WebElement backButton ;
+	
+	// add iteam in events
+	
+	@FindBy(css = "input[placeholder='Item Topic']")
+	WebElement itemTopic ;
+	
+	@FindBy(xpath = "//div[@role='dialog']//textarea[contains(@placeholder, 'Description')]")
+	WebElement Description ;	
+	
+	@FindBy(xpath = "//div[@role='dialog']//label[contains(text(),'File')]//../input")
+	WebElement FileRadioButton ;
+	
+	@FindBy(xpath = "//div[@role='dialog']//label[contains(text(),'Video')]//../input")
+	WebElement  VideoLinkRadioButton ;
+	
+	@FindBy(xpath = "//input[@placeholder='Video Link']")
+	WebElement  VideoLinkAdd ;
+	
+	@FindBy(xpath = "//div[@role='dialog']//button[@type='button']")
+	WebElement iteamSaveButton ;
+	
+	@FindBy(xpath = "//input[@name='logo']")
+	WebElement logo ;
+	
+	
+	
 	public void SubscriptionSettingOpen () throws Throwable
 	{
 		waitForWebElementTOApper(SubscriptionListSettingOpen);
@@ -432,6 +466,15 @@ public class AdminSetting extends abstractReusable {
 		eventName.sendKeys(name);
 	}
 	
+	public void EventSave () throws Throwable
+	{
+		waitForElementTOClickAble(saveButton);
+		saveButton.click();
+	//	Thread.sleep(2000);
+		waitForElementTOClickAble(backButton);
+		backButton.click();
+	}
+	
 	public void EventDescription (String Description) throws Throwable
 	{
 		addDescriptionButton.click();
@@ -440,7 +483,7 @@ public class AdminSetting extends abstractReusable {
 		addDescriptionTextArea.sendKeys(Description);
 	}
 	
-	public void selectionOfRadioButton (String radio, String From, String To) throws Throwable
+	public void EventBasedOn (String radio, String From, String To) throws Throwable
 	{
 		if (radio.contains("Month")) {
 			monthRadioButton.click();
@@ -454,7 +497,42 @@ public class AdminSetting extends abstractReusable {
 			dayTo.sendKeys(To);
 		}
 	}
+	
+	public void addIteam () throws Throwable
+	{
+		waitForWebElementTOApper(addIteamButton);
+		addIteamButton.click();
+		itemTopic.click();
+		Thread.sleep(1000);
+		waitForElementTOClickAble(itemTopic);
+		itemTopic.sendKeys("xyz");
+		Description.click();
+		Description.sendKeys("des");
+		uploadFileOrVideoInAddIteam("VideoLink", "https://vimeo.com/597312672/bfdf8e5ea1");
+		iteamSaveButton.click();
+	//	Thread.sleep(2000);
 		
+	}
+	
+	public void uploadFileOrVideoInAddIteam (String doc, String link) throws Throwable
+	{
+		if(doc.contains("File"))
+		{
+			FileRadioButton.click();
+			logo.sendKeys("/media/kwsys4/nonOsPartition/AutomationSerien4.0/SerienLive/testSuites/apple.png");
+		}
+		else if(doc.contains("VideoLink")) {
+			VideoLinkRadioButton.click();
+			VideoLinkAdd.sendKeys(link);
+		}
+		else {
+			System.out.println("please pass File or VideoLink this key words");
+		}
+		
+	}
+		
+	
+	
 	}
 	
 	

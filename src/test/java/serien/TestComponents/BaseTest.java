@@ -136,7 +136,7 @@ public class BaseTest {
  * git commit -m "message"
  * git push
  */ 
-//	 	//a[contains(@class, "link")]
+//	 	//a[contains(@class, 'link')]
 //		//a[contains(text(),'SAP M')]
 // attrubites containes  //a[contains(@prop,'Foo')] 
 
