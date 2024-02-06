@@ -13,28 +13,34 @@ public class HRcalenderAndEvents extends BaseTest{
 
 	@Test(dataProvider = "basicDeatils", priority = 1)
 	public void ValidationOfEventAndCalender(HashMap<String, String> input) throws Throwable
-	{	
-//		LoginPage.serienLogin(input.get("adminEmail"), input.get("adminPass"));
-		AdminSetting ass= new AdminSetting(driver);
-//		ass.Setting();
-//		ass.EventOpen();
-//		ass.ClickOnAddEvent();
-//		ass.SelectYear("2024");
-//		ass.SelectMonth("April");
-//		ass.EventName("eve1");
-//		ass.EventDescription("xyz");
-//		ass.EventBasedOn("Month", null, null);
-//		ass.addIteam();
-//		ass.EventSave();
-//		ass.SwitchToUser(input.get("Useremail"), input.get("userpass"));
-		LoginPage.serienLogin(input.get("Useremail"), input.get("userpass"));  // this line for tempory
+	{	AdminSetting ass= new AdminSetting(driver);
+		int num=ass.randomNumberGenerater();
+		System.out.println(num);
+		String eventName=input.get("eventName")+num;
+		String eventDesc=input.get("eventDesc")+num;
+		String iteamName=input.get("iteamName")+num;
+		String iteamDesc=input.get("iteamDesc")+num;
+		
+		LoginPage.serienLogin(input.get("adminEmail"), input.get("adminPass"));
+		ass.Setting();
+		ass.EventOpen();
+		ass.ClickOnAddEvent();
+		ass.SelectYear(input.get("yearOfTheEvent"));
+		ass.SelectMonth(input.get("month"));
+		ass.EventName(eventName);
+		ass.EventDescription(eventDesc);
+		ass.EventBasedOn("Month", null, null);
+		ass.addIteam(iteamName,iteamDesc, input.get("iteamDocType"), input.get("link"));
+		ass.EventSave();
+		ass.SwitchToUser(input.get("Useremail"), input.get("userpass"));
+//		LoginPage.serienLogin(input.get("Useremail"), input.get("userpass"));  // this line for tempory
 		DEICalender cal= new DEICalender(driver);
 		cal.DEIcalender();
-		cal.selectingYear("2023");
-		cal.searchingEvents("October", "10th – World Mental Health Day");
-		Boolean eventmatch=cal.getEventDeatils("10th – World Mental Health Day","World Mental Health Day is celebrated globally on October");
+		cal.selectingYear(input.get("yearOfTheEvent"));
+		cal.searchingEvents(input.get("month"), eventName);
+		Boolean eventmatch=cal.getEventDeatils(eventName,eventDesc);
 		Assert.assertTrue(eventmatch);
-		Boolean match= cal.ValidationOfIteamNameAndDesc("Prioritising well-being","3 ways to prioritise your personal well-being");
+		Boolean match= cal.ValidationOfIteamNameAndDesc(iteamName,iteamDesc);
 		Assert.assertTrue(match);
 	}
 	

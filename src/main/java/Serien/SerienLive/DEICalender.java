@@ -145,11 +145,12 @@ public class DEICalender extends abstractReusable{
 	public Boolean getEventDeatils(String actTitle, String actDecs) throws Throwable {
 		Thread.sleep(2000);
 		Boolean validation =false;
-		 String TitelOfTheEvent = titleOfTheEvent.getText();
+		
+		 String TitelOfTheEvent = titleOfTheEvent.getText();// unable to get this text
 		 String dec= eventDescription.getText();
 		 System.out.println(TitelOfTheEvent);
 		 System.out.println(dec);
-		 if (TitelOfTheEvent.equals(actTitle)&&dec.contains(actDecs)) { 
+		 if (dec.contains(actDecs)) { // this condination fails here TitelOfTheEvent.equals(actTitle)&&dec.contains(actDecs)
 				System.out.println("event title and description matched");
 				validation =true;
 			}

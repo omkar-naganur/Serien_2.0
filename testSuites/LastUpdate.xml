@@ -59,5 +59,11 @@
       <class name="Serien.SerienLive.GroupTest"/>    
     </classes>
     </test> <!-- Test -->
+    
+     <test thread-count="5" name="Test9">
+    <classes>
+      <class name="Serien.SerienLive.HRcalenderAndEvents"/>    
+    </classes>
+    </test> <!-- Test -->
   
 </suite> <!-- Suite -->

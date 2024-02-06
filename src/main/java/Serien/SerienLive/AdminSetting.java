@@ -473,6 +473,8 @@ public class AdminSetting extends abstractReusable {
 	//	Thread.sleep(2000);
 		waitForElementTOClickAble(backButton);
 		backButton.click();
+		Thread.sleep(2000);
+		waitForElementTOClickAble(eventAdd);
 	}
 	
 	public void EventDescription (String Description) throws Throwable
@@ -498,17 +500,17 @@ public class AdminSetting extends abstractReusable {
 		}
 	}
 	
-	public void addIteam () throws Throwable
+	public void addIteam (String iteamName, String IteamDesc,String doc, String link) throws Throwable
 	{
 		waitForWebElementTOApper(addIteamButton);
 		addIteamButton.click();
 		itemTopic.click();
 		Thread.sleep(1000);
 		waitForElementTOClickAble(itemTopic);
-		itemTopic.sendKeys("xyz");
+		itemTopic.sendKeys(iteamName);
 		Description.click();
-		Description.sendKeys("des");
-		uploadFileOrVideoInAddIteam("VideoLink", "https://vimeo.com/597312672/bfdf8e5ea1");
+		Description.sendKeys(IteamDesc);
+		uploadFileOrVideoInAddIteam(doc, link);
 		iteamSaveButton.click();
 	//	Thread.sleep(2000);
 		
