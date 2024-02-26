@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 
 import serien.TestComponents.BaseTest;
 
-public class HRcalenderAndEvents extends BaseTest{
+public class HRcalenderAndEvents extends BaseTest {
 
 	@Test(dataProvider = "basicDeatils", priority = 1)
 	public void ValidationOfEventAndCalender(HashMap<String, String> input) throws Throwable
