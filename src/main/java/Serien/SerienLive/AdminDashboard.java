@@ -18,6 +18,7 @@ public class AdminDashboard extends abstractReusable{
 		PageFactory.initElements(driver, this);
 	}
 	
+	
 	@FindBy(xpath = "//a[@href='/admin/settings']")
 	WebElement Setting;
 	

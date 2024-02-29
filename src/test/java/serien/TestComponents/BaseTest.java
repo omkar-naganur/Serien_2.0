@@ -50,6 +50,7 @@ public class BaseTest {
 		prop.load(fis);
 		//get the properties file objectives {Property string key}
 		//String browserName=prop.getProperty("browser");
+		// java ternier operator used
 		String browserName = System.getProperty("browser")!=null ? System.getProperty("browser") :prop.getProperty("browser");
 		//prop.getProperty("browser");
 		
