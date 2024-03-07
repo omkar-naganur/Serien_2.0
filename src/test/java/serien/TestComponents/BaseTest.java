@@ -125,7 +125,7 @@ public class BaseTest {
 	@AfterMethod
 	public void tearDown()
 	{
-	//	driver.close();
+		driver.close();
 	}
 }
 // this link for install jankinkes 
