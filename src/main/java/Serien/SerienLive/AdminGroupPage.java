@@ -47,7 +47,13 @@ public class AdminGroupPage extends abstractReusable{
 	List<WebElement> ListOfCompanyName;
 	
 	@FindBy(xpath = "//div[@class='admin-overdue-bottom-table-td'][3]") 
-	List<WebElement> ListOfGroupNames;
+	List<WebElement> ListOfGroupNames ;
+	
+	@FindBy(xpath = "//div[@class='admin-overdue-bottom-table-td'][4]") 
+	List<WebElement> numberOfMenebrsInGroup ;
+	
+	@FindBy(xpath = "//div[@class='admin-overdue-bottom-table-td'][5]") 
+	List<WebElement> numberOfCourses ;
 	
 	@FindBy(xpath = "//div[@class='admin-overdue-bottom-table-td'][7]//select") 
 	List<WebElement> ListOfActionButton;
@@ -97,9 +103,9 @@ public class AdminGroupPage extends abstractReusable{
 	}
 	
 	String s ;
-	  	public void SearchingComapnyNameInGroupListSecond(String groupName) throws Throwable
+	  	public ArrayList<String> SearchingGroupNameInGroupList (String groupName) throws Throwable
 		{
-			
+	  		ArrayList<String> membersAndCourses = new ArrayList<String>() ;
 			waitForWebElementTOApper(ListOfGroupNames);
 			Thread.sleep(2000);
 			ArrayList<String> lastArray = new ArrayList<String>() ;
@@ -115,8 +121,13 @@ public class AdminGroupPage extends abstractReusable{
 			     
 			      if(ar.contains(groupName))
 			         {
+			    	  int num=ar.indexOf(groupName);
 			        	 milgya = true;
 			        	 System.out.println("milgya***********************");
+			        	String numOfCourses= numberOfCourses.get(num).getText();
+			        	String numOfMenebrsInGroup= numberOfMenebrsInGroup.get(num).getText();
+			        	String details= (numOfMenebrsInGroup+" "+numOfCourses);
+			        	membersAndCourses.add(details);
 			        	 break;
 			         }else  {
 			        	 if(lastArray.size()!= 0) {
@@ -140,6 +151,7 @@ public class AdminGroupPage extends abstractReusable{
 			         }
 			      
 			}
+			return membersAndCourses;
 		     
 	}
 	  	

@@ -374,7 +374,7 @@ public class AdminGroupEnrollment extends abstractReusable{
 	public ArrayList<String> getUserEnrollmentDetails(String email) throws Throwable {
 		
 		ArrayList<String> enrollmentDeatils = new ArrayList<String>() ;
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		waitForWebElementTOApper(ListOfEmail);
 		for(int i=0; i<ListOfEmail.size(); i++)
 		{
@@ -391,7 +391,14 @@ public class AdminGroupEnrollment extends abstractReusable{
 			enrollmentDeatils.add(StartDate.get(i).getText());
 			enrollmentDeatils.add(CompletionDate.get(i).getText());
 			enrollmentDeatils.add(Status.get(i).getText());
-			enrollmentDeatils.add(getCertificateURL(i));
+			try {
+				enrollmentDeatils.add(getCertificateURL(i));
+				
+			} catch (Exception e) {
+				System.out.println("certificate not available");
+				enrollmentDeatils.add("certificate not available");
+			}
+			
 				
 		}
 				
@@ -432,7 +439,7 @@ public class AdminGroupEnrollment extends abstractReusable{
 			selectAllModuleCheckBox.click();
 			Thread.sleep(1000);
 			save.click();
-			Thread.sleep(2000);
+			Thread.sleep(3000);
 			alertAccepectMethod();
 			
 		}
@@ -464,6 +471,71 @@ public class AdminGroupEnrollment extends abstractReusable{
 		saveGroupEnrollment();  
 		Thread.sleep(2000);
 		ScrollUp500();
+	}
+	
+	public boolean DeleteGroupEnrollmets (String CoursesName, String Groupname) throws Throwable
+	{
+				waitForWebElementTOApper(getCoursesNameList);
+				Thread.sleep(2000);
+				ArrayList<String> lastArray = new ArrayList<String>() ;
+				ArrayList<String> lastsArray = new ArrayList<String>() ;
+				boolean milgya = false;
+				while(!milgya) {
+					ArrayList<String> ar = new ArrayList<String>();
+					ArrayList<String> ars = new ArrayList<String>();
+					for(int i = 0; i< getCoursesNameList.size(); i++) 
+				      {   	  
+				      String s = getCoursesNameList.get(i).getText();
+				      String groupname = getGroupNameList.get(i).getText();
+				         ar.add(s);
+				         ars.add(groupname);
+				         
+				      }
+					
+					for(int i = 0 ; i < ar.size() ; i++) {
+						System.out.println(ar.get(i)+ "=="+ ars.get(i));
+						if(ar.get(i).equals(CoursesName)&& ars.get(i).equals(Groupname)){
+							System.out.println("milgya***********************");
+							Thread.sleep(1000);
+							System.out.println(i);
+							clickOnDeleteButton(i-1);
+							Thread.sleep(1000);
+							alertAccepectMethod();
+							milgya = true;
+						}
+					}
+					if(!milgya) {
+						if(lastArray.size()!= 0) {
+					    	  boolean xyz = 	false;
+					    	  for(int i = 0 ; i < lastArray.size() && i < ar.size();i++) {
+					    		  System.out.println(lastArray.get(i)+" == "+ar.get(i));
+					    		  if(!lastArray.get(i).equals(ar.get(i))) {
+					    			  i = lastArray.size();
+					    			  xyz = true;
+					    		  }
+					    	  }
+					    	  System.out.println("xyz : "+ xyz);
+					    	  if(!xyz) {
+					    		  milgya = true;
+					    		  System.out.println("NAhi mil raha");
+					    	  }
+					      }
+					       lastArray = ar;
+					       lastsArray = ars;
+			        	 PagenationForwardButton.click();
+			        	 Thread.sleep(2000);
+					}else {
+						System.out.println("milgya***********************kyu mara rahe ho");
+					} 
+				}
+				return milgya;
+
+}
+
+	public void clickOnDeleteButton(int i) {
+		Select se = new Select(UserActionDropdown.get(i));
+		se.selectByVisibleText("Delete");	
+		
 	}
 	
 }

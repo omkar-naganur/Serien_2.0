@@ -1,0 +1,25 @@
+[
+{
+	"typeOfTraining":"course",
+	"Useremail":"automation1@gmail.com",
+	"userpass":"password",
+	"CourseName":"automatiom Test Training",
+	"userName":"automation Tester 1"
+},
+
+{
+	"typeOfTraining":"Micro course",
+	"Useremail":"automation1@gmail.com",
+	"userpass":"password",
+	"CourseName":"Descriptive & prescriptive stereotypes",
+	"userName":"automation Tester 1"
+},
+
+{
+	"typeOfTraining":"Games",
+	"Useremail":"automation1@gmail.com",
+	"userpass":"password",
+	"CourseName":"What cards have you been dealt?",
+	"userName":"automation Tester 1"
+}
+]

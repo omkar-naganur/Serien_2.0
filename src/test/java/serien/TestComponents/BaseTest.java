@@ -50,6 +50,7 @@ public class BaseTest {
 		prop.load(fis);
 		//get the properties file objectives {Property string key}
 		//String browserName=prop.getProperty("browser");
+		// java ternier operator used
 		String browserName = System.getProperty("browser")!=null ? System.getProperty("browser") :prop.getProperty("browser");
 		//prop.getProperty("browser");
 		
@@ -124,7 +125,7 @@ public class BaseTest {
 	@AfterMethod
 	public void tearDown()
 	{
-		//driver.close();
+		driver.close();
 	}
 }
 // this link for install jankinkes 
@@ -136,9 +137,9 @@ public class BaseTest {
  * git commit -m "message"
  * git push
  */ 
-//	 	//a[contains(@class, "link")]
+//	 	//a[contains(@class, 'link')]
 //		//a[contains(text(),'SAP M')]
+// attrubites containes  //a[contains(@prop,'Foo')] 
 
 //scrcpy
-
 

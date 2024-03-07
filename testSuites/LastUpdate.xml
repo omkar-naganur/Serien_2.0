@@ -6,13 +6,13 @@
 <listener class-name ="serien.TestComponents.Listeners"/>
 </listeners>
 
-    <test thread-count="5" name="Test1">
+    <test thread-count="5" name="Test0">
     <classes>
       <class name="Serien.SerienLive.LoginPageTest"/>
     </classes>
   </test> <!-- Test -->
   
-  <test thread-count="5" name="Test0">
+  <test thread-count="5" name="Test1">
     <classes>
       <class name="Serien.SerienLive.AdminEnrollments"/>
     </classes>
@@ -40,6 +40,30 @@
     <classes>
       <class name="Serien.SerienLive.HRprogressReport"/>   
     </classes>
-    
   </test> <!-- Test -->
+  
+  <test thread-count="5" name="Test6">
+    <classes>
+      <class name="Serien.SerienLive.EndToEndTestCase"/>    
+    </classes>
+    </test> <!-- Test -->
+    
+      <test thread-count="5" name="Test7">
+    <classes>
+      <class name="Serien.SerienLive.GetSubDate"/>    
+    </classes>
+    </test> <!-- Test -->
+    
+      <test thread-count="5" name="Test8">
+    <classes>
+      <class name="Serien.SerienLive.GroupTest"/>    
+    </classes>
+    </test> <!-- Test -->
+    
+     <test thread-count="5" name="Test9">
+    <classes>
+      <class name="Serien.SerienLive.HRcalenderAndEvents"/>    
+    </classes>
+    </test> <!-- Test -->
+  
 </suite> <!-- Suite -->

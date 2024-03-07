@@ -15,6 +15,8 @@ import serien.TestComponents.BaseTest;
 
 public class DiversityMetric extends BaseTest {
 	
+	// this class is under development no clear gols availabe 
+	
 	@Test(dataProvider = "getdata4")
 	public void ValidationDiversityMetric(HashMap<String, String> input) throws Throwable
 	{
@@ -26,8 +28,6 @@ public class DiversityMetric extends BaseTest {
 		System.out.println(s);
 		List<WebElement> p = diversit.ValidationTopTabsText();	
 		System.out.println(p);
-		System.out.println("test git push");
-		System.out.println("Rajan");
 	}
 	
 	@DataProvider
@@ -35,7 +35,6 @@ public class DiversityMetric extends BaseTest {
 	{
 		HashMap<String, String> map= new HashMap<String, String>();
 		map.put("Useremail", "omkar@krishworks.com");
-		//map.put("Useremail", "subhajit@krishworks.com");
 		map.put("userpass", "password");
 		return new Object[][] {{map}};
 	}

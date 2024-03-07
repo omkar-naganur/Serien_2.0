@@ -24,8 +24,7 @@ public class Subscription extends BaseTest {
 	
 	@Test(dataProvider = "getdata1")
 	public void ValidationOfSubscriptionEndDate (HashMap<String, String> input) throws Throwable
-	{
-		
+	{	
 		LoginPage Dm= new LoginPage(driver);
 		Dm.serienLogin("admin@demo.com", "pass2023");
 		AdminDashboard as = new AdminDashboard(driver);

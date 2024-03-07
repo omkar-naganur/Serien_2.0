@@ -11,8 +11,9 @@ import org.testng.annotations.Test;
 
 import serien.TestComponents.BaseTest;
 
-public class AdminUserSection extends BaseTest{
+public class AdminUserSection extends BaseTest {
 
+	// no need to run this test for regression  or automation this class method user in other class 
 	
 	@Test(dataProvider = "getdata", priority = 1)
 	public void UserCoursesProgressReset (HashMap<String, String> input) throws Throwable

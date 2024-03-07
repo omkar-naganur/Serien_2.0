@@ -29,14 +29,18 @@ import serien.TestComponents.BaseTest;
 
 public class EndToEndTestCase extends BaseTest {
 	
+	// befor run this test set the new user for diffrent company
+	
 	@Test(dataProvider = "NewCompanyWithHRcoursesComplation", priority = 1)
 	public void NewCompanyWithHRcoursesComplation (HashMap<String, String> input) throws Throwable {
-		String companyname=input.get("companyName");
-		String groupName= input.get("GroupName");
+		AdminSetting as= new AdminSetting(driver);
+		int number=as.randomNumberGenerater();
+		String companyname= (input.get("companyName")+number);
+		String groupName= input.get("GroupName")+number;
 		String CourseName= input.get("CourseName");
 		LoginPage Dm= new LoginPage(driver);
 		Dm.serienLogin(input.get("AdminUseremail"), input.get("Adminuserpass"));
-		AdminSetting as= new AdminSetting(driver);
+		
 		Dm.Setting();	
 		as.CompanySettingsOpen();
 		as.CompanyCreatePage();
@@ -47,7 +51,7 @@ public class EndToEndTestCase extends BaseTest {
 		Thread.sleep(2000);
 		ag.groups();
 		ag.creatingGroup(groupName, companyname, input.get("groupExpDate"));
-		ag.SearchingComapnyNameInGroupListSecond(groupName);  
+		ag.SearchingGroupNameInGroupList(groupName);  
 		// user company and group changing 
 		
 		AdminUser au= new AdminUser(driver); 
@@ -64,7 +68,7 @@ public class EndToEndTestCase extends BaseTest {
 		age.gotoAddNewGroupEnrollment();
 		age.selectTrainingType(input.get("typeOfTraining"));
 		age.selectCourseName(CourseName);
-		age.selectGroupName(input.get("GroupName"));
+		age.selectGroupName(groupName);
 		age.selectDueDate(input.get("groupExpDate"));
 		age.saveGroupEnrollment();  
 		Thread.sleep(2000);
@@ -114,12 +118,13 @@ public class EndToEndTestCase extends BaseTest {
 		//admin verification
 		Dm.serienLogin(input.get("AdminUseremail"), input.get("Adminuserpass"));
 		age.groupEnrollment();
-		age.findingGroupEnrollment(CourseName, groupName);
-		age.searchTheUserByEmail(input.get("Useremail"));
+//		age.findingGroupEnrollment("automatiom Test Training", "TCS755Group597"); 
+		age.findingGroupEnrollment(CourseName, groupName);  
+		age.searchTheUserByEmail(input.get("Useremail"));  
 		ArrayList<String> adminViewUserCoursesDeatils = age.getUserEnrollmentDetails(input.get("Useremail"));
-		String ComplationDateinHrPanle= adminViewUserCoursesDeatils.get(7);
+		String ComplationDateinHrPanle= adminViewUserCoursesDeatils.get(7); 
 		// we need to write the equeales method here for hr panle details and admin panle deatils
-		Assert.assertTrue(adminViewUserCoursesDeatils.get(8).equals(HrPanleUserDeatils.get(6))); 
+		Assert.assertTrue(adminViewUserCoursesDeatils.get(8).equals(HrPanleUserDeatils.get(6)));
 		System.out.println("Courses Status matched");
 		Assert.assertTrue(adminViewUserCoursesDeatils.get(7).equals(HrPanleUserDeatils.get(5)));
 		System.out.println(" Courses complation date");
@@ -145,14 +150,17 @@ public class EndToEndTestCase extends BaseTest {
 		Boolean coursesMatch1= hrl.CoursesNameValidationFromHRPanle(CourseName);
 		Assert.assertTrue(coursesMatch1);
 		int progress=hrl.getCoursesProgressOnly(CourseName);
-		Assert.assertTrue(progress==0);
-		
+		Assert.assertTrue(progress==0);	
 	}
+	
+	// before run this class please check omkar@krishworks email should not in TCS Company
 	
 	@Test(dataProvider = "ValidationOfCoursesComplationFromTheAdmin", priority = 2)
 	public void ValidationOfCoursesComplationFromTheAdmin (HashMap<String, String> input) throws Throwable {
+		AdminGroupPage group= new AdminGroupPage(driver);
+		int number=group.randomNumberGenerater();
 		String companyName = input.get("companyName");
-		String groupName = input.get("groupName");
+		String groupName = input.get("groupName")+number;
 		String typeOfTraining = input.get("typeOfTraining");
 		String CourseName = input.get("CourseName");
 		String adminEmail = input.get("adminEmail");
@@ -161,7 +169,6 @@ public class EndToEndTestCase extends BaseTest {
 		String userPass = input.get("userPass");
 		
 		Profile profile=LoginPage.serienLogin(input.get("adminEmail"), input.get("adminPass"));
-		AdminGroupPage group= new AdminGroupPage(driver);
 		group.groups();
 		group.creatingGroup(groupName, companyName, input.get("groupExp"));
 		AdminUser au= new AdminUser(driver);
@@ -194,8 +201,10 @@ public class EndToEndTestCase extends BaseTest {
 		Assert.assertTrue(afterCom==100);
 		
 //		//*******************************************
+		
 		ProgressReport pr =new ProgressReport(driver);
 		pr.ProgresReport();
+		pr.searchGroupName(groupName);
 		ArrayList<String> coursesName = pr.getCoursesNameInReport();
 		Assert.assertTrue(coursesName.contains(CourseName));
 		ArrayList<String> listofcount = pr.getAllCountsInProgressReport(CourseName);
@@ -235,10 +244,13 @@ public class EndToEndTestCase extends BaseTest {
 		
 		// user progress reset
 		au.users();
-		au.searchByEmail(input.get("Useremail"));
+		au.searchByEmail(input.get("userEmail"));
+		System.out.println("g2");
 		Thread.sleep(3000);
 		au.clickOnViewButton();
-		au.deleteProgress(input.get("CourseName"));	
+		System.out.println("g3");
+		au.deleteProgress(CourseName);	
+		System.out.println("g4");
 		au.users();
 		au.adminLogout();  
 		Thread.sleep(2000);
@@ -247,8 +259,10 @@ public class EndToEndTestCase extends BaseTest {
 	
 	@Test(dataProvider = "ValidationOfGroupDateExpiredDataSheet", priority = 3)
 	public void ValidationOfGroupDateExpired (HashMap<String, String> input) throws Throwable{
+		AdminGroupPage group= new AdminGroupPage(driver);
+		int number=group.randomNumberGenerater();
 		String companyName = input.get("companyName");
-		String groupName = input.get("groupName");
+		String groupName = input.get("groupName")+number;
 		String typeOfTraining = input.get("typeOfTraining");
 		String CourseName = input.get("CourseName");
 		String adminEmail = input.get("adminEmail");
@@ -259,8 +273,6 @@ public class EndToEndTestCase extends BaseTest {
 		String groupExpInValid = input.get("groupExpInValid");
 		
 		LoginPage.serienLogin(adminEmail, adminPass);
-		
-		AdminGroupPage group= new AdminGroupPage(driver);
 		group.groups();
 		group.creatingGroup(groupName, companyName, groupExpValid);
 		
@@ -321,6 +333,6 @@ public class EndToEndTestCase extends BaseTest {
 	public Object[][] NewCompanyWithHRcoursesComplation() throws Throwable
 	{
 		List<HashMap<String,String>> data = getJsonDataToMap(System.getProperty("user.dir")+"//src//test//java//serien//Data//EndToEndTestCase.json");
-		return new Object[][]  { {data.get(3)} };
+		return new Object[][]  { {data.get(2)} };
 	}
 }
