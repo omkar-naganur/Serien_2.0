@@ -147,4 +147,15 @@ public class BaseTest {
 // attrubites containes  //a[contains(@prop,'Foo')] 
 
 //scrcpy
+//
+// <release>17</release>
 
+/* <plugin>
+<artifactId>maven-compiler-plugin</artifactId>
+<version>3.8.0</version>
+<configuration>
+	   <source>17</source>
+     <target>17</target>
+	 
+</configuration>
+</plugin> */
