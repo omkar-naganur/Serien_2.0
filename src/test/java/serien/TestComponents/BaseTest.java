@@ -57,6 +57,11 @@ public class BaseTest {
 		if (browserName.contains("chrome")) {
 			ChromeOptions options = new ChromeOptions();
 			WebDriverManager.chromedriver().setup();
+
+			options.addArguments("--disable-dev-shm-usage");
+			options.addArguments("--ignore-ssl-errors=yes");
+			options.addArguments("--ignore-certificate-errors");
+			options.addArguments("--start-maximized");
 			//this below condination for set up the chrome headless node running 
 			//for this you can use this command 'mvn test -PRegression -Dbrowser=chromeheadless'
 			if(browserName.contains("headless")){
@@ -113,7 +118,7 @@ public class BaseTest {
 	}
 
 	@BeforeMethod
-	public LoginPage lunchApplication() throws IOException, InterruptedException
+	public LoginPage launchApplication() throws IOException, InterruptedException
 	{
 		driver =initializeDriver();
 		LoginPage = new LoginPage(driver);

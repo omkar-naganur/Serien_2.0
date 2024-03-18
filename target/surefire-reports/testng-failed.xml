@@ -1,16 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite thread-count="1" name="Failed suite [Surefire suite]" verbose="0">
-  <test thread-count="1" name="Surefire test(failed)" verbose="0">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT" verbose="0">
+  <listeners>
+    <listener class-name="serien.TestComponents.Listeners"/>
+  </listeners>
+  <test thread-count="5" name="Test(failed)" verbose="0">
     <classes>
-      <class name="Serien.SerienLive.StandAloneTest">
+      <class name="Serien.SerienLive.LoginPageTest">
         <methods>
-          <include name="profileValidation"/>
           <include name="tearDown"/>
-          <include name="profileValidation2"/>
-          <include name="lunchApplication"/>
+          <include name="ValidateInEmailAndPasswordInvalideCredentials"/>
+          <include name="ValidatingLoginWithBrowserBack"/>
+          <include name="ValidationOfErrorMessageInForgetPasswordPage"/>
+          <include name="ValidatingThePageTitleAndURL"/>
+          <include name="ValidationOfErrorMessageInvalidEmailInForgetPasswordPage"/>
+          <include name="vaildeCredentional"/>
+          <include name="NavigationToForgetPasswordPage"/>
+          <include name="ValidateloginWithInvalidEmailCredentials"/>
+          <include name="ValidationOfSetPasswordLinkSendSucessfully"/>
+          <include name="ValidateEmailFieldWithoutAddingAnyDataIntoInEmailTextFiled"/>
+          <include name="launchApplication"/>
+          <include name="ValidateLoginWithInvalidPasswordCredentials"/>
+          <include name="InvalidespaceEmail"/>
+          <include name="ValidatePasswordFieldWithoutEnteringThePasswordInThePasswordField"/>
+          <include name="ValidateEmailFieldByEnteringCapitalLaters"/>
         </methods>
-      </class> <!-- Serien.SerienLive.StandAloneTest -->
+      </class> <!-- Serien.SerienLive.LoginPageTest -->
     </classes>
-  </test> <!-- Surefire test(failed) -->
-</suite> <!-- Failed suite [Surefire suite] -->
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->

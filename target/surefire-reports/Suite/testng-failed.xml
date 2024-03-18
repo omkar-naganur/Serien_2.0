@@ -4,27 +4,28 @@
   <listeners>
     <listener class-name="serien.TestComponents.Listeners"/>
   </listeners>
-  <test thread-count="5" name="ProfileTrueValidation(failed)" verbose="0">
-    <classes>
-      <class name="Serien.SerienLive.StandAloneTest">
-        <methods>
-          <include name="profileValidation"/>
-          <include name="tearDown"/>
-          <include name="profileValidation2"/>
-          <include name="lunchApplication"/>
-        </methods>
-      </class> <!-- Serien.SerienLive.StandAloneTest -->
-    </classes>
-  </test> <!-- ProfileTrueValidation(failed) -->
   <test thread-count="5" name="Test(failed)" verbose="0">
     <classes>
-      <class name="Serien.SerienLive.ErrorValidationInLoginPage">
+      <class name="Serien.SerienLive.LoginPageTest">
         <methods>
           <include name="tearDown"/>
-          <include name="invaildeCredentional"/>
-          <include name="lunchApplication"/>
+          <include name="ValidateInEmailAndPasswordInvalideCredentials"/>
+          <include name="ValidatingLoginWithBrowserBack"/>
+          <include name="ValidationOfErrorMessageInForgetPasswordPage"/>
+          <include name="ValidatingThePageTitleAndURL"/>
+          <include name="ValidationOfErrorMessageInvalidEmailInForgetPasswordPage"/>
+          <include name="vaildeCredentional"/>
+          <include name="NavigationToForgetPasswordPage"/>
+          <include name="ValidateloginWithInvalidEmailCredentials"/>
+          <include name="ValidationOfSetPasswordLinkSendSucessfully"/>
+          <include name="ValidateEmailFieldWithoutAddingAnyDataIntoInEmailTextFiled"/>
+          <include name="launchApplication"/>
+          <include name="ValidateLoginWithInvalidPasswordCredentials"/>
+          <include name="InvalidespaceEmail"/>
+          <include name="ValidatePasswordFieldWithoutEnteringThePasswordInThePasswordField"/>
+          <include name="ValidateEmailFieldByEnteringCapitalLaters"/>
         </methods>
-      </class> <!-- Serien.SerienLive.ErrorValidationInLoginPage -->
+      </class> <!-- Serien.SerienLive.LoginPageTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
