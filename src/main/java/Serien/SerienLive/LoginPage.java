@@ -73,7 +73,7 @@ public class LoginPage extends abstractReusable {
 	}
 	public void gotoLoginPage () throws InterruptedException 
 	{
-		//driver.get("https://console.cloud.google.com/storage/browser/sereindevcontent.kdev.co.in;tab=objects?forceOnBucketsSortingFiltering=true&project=serein-devqa-internal-gcp&prefix=&forceOnObjectsSortingFiltering=false");
+		
 		driver.get("https://sereindevweb.kdev.co.in/");
 		//driver.get("https://sereininc.live/");
 	}
