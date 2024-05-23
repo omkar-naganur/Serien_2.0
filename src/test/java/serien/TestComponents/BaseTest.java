@@ -39,7 +39,7 @@ public class BaseTest {
 	public WebDriver  initializeDriver() throws IOException 
 	{
 		// properties class
-		
+		//jenkind commite
 		
 		Properties prop= new Properties();
 		
@@ -55,6 +55,12 @@ public class BaseTest {
 		//prop.getProperty("browser");
 		
 		if (browserName.contains("chrome")) {
+		//	System.out.println("Hello boss");
+		//	File chromeDriver = new File("/media/kwsys4/nonOsPartition/AutomationSerien4.0/SerienLive/driver/chromedriver.exe");
+//		    System.setProperty("webdriver.chrome.driver", "/media/kwsys4/nonOsPartition/AutomationSerien4.0/SerienLive/driver/chromedriver.exe");
+//		    driver = new ChromeDriver();
+//		    driver.manage().window().maximize();
+			
 			ChromeOptions options = new ChromeOptions();
 			WebDriverManager.chromedriver().setup();
 
@@ -117,6 +123,15 @@ public class BaseTest {
 		return System.getProperty("user.dir") + "//reports//" + testCaseName + ".png";
 	}
 
+//	@BeforeMethod
+//	public LoginPage launchApplication() throws IOException, InterruptedException
+//	{
+//		driver =initializeDriver();
+//		LoginPage = new LoginPage(driver);
+//		LoginPage.gotoLoginPage();
+//		return LoginPage;
+//	}
+	
 	@BeforeMethod
 	public LoginPage launchApplication() throws IOException, InterruptedException
 	{
@@ -130,7 +145,7 @@ public class BaseTest {
 	@AfterMethod
 	public void tearDown()
 	{
-		driver.close();
+	//	driver.close();
 	}
 }
 // this link for install jankinkes 
