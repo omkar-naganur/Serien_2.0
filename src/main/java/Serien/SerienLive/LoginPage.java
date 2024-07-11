@@ -75,7 +75,7 @@ public class LoginPage extends abstractReusable {
 	{
 		
 		driver.get("https://sereindevweb.kdev.co.in/");
-		//driver.get("https://sereininc.live/");
+		//driver.get("https://sereininc.com/");
 	}
 	
 	public Boolean ErrorMessage(String expectedErrorMessage) throws Throwable
